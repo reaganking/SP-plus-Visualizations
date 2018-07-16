@@ -124,7 +124,7 @@ class Team:
             writer.writerows(record)
 
     def make_win_probability_graph(self, file='out', hstep=40, vstep=40, margin=5, logowidth=30, logoheight=30,
-                                   absolute=False):
+                                   menuheight=40, absolute=False):
         record = self.win_totals_by_week()
         logos = Utils.get_logo_URIs()
 
@@ -136,7 +136,7 @@ class Team:
             # Write the SVG header; remember to write </svg> to close the file
             outfile.write(
                 "<svg version=\"1.1\"\n\tbaseProfile=\"full\"\n\twidth=\"{}\" height=\"{}\"\n\txmlns=\"http://www.w3.org/2000/svg\"\n\txmlns:xlink=\"http://www.w3.org/1999/xlink\"\n\tstyle=\"shape-rendering:crispEdges;\">\n".format(
-                    hstep * cols + 2 * margin, vstep * rows + 2 * margin))
+                    hstep * cols + 2 * margin, vstep * rows + 3 * margin + menuheight))
 
             # Fill the background with white
             outfile.write("<rect width=\"100%\" height=\"100%\" style=\"fill:rgb(255,255,255)\" />")
@@ -171,12 +171,52 @@ class Team:
                 "<text text-anchor=\"middle\" alignment-baseline=\"hanging\" x=\"{}\" y=\"{}\"  style=\"font-size:12px;font-family:Arial\">Prob</text>\n".format(
                     margin + hstep * 3.5, margin + vstep * 1.5 + 2))
 
-            for i in range(0, rows - 2):
+            outfile.write("<g id=\"probBoxes\">\n")
 
+            for i in range(0, rows - 2):
+                # find the max and min in this week to determine color of cell
+                # The rows can be color coded by giving scaling to the maximum likelihood within the week (relative)
+                # or by absolute likelihood (max=1.0). Default is relative.
+                if absolute:
+                    upper, lower = 1, 0
+                else:
+                    upper, lower = max(record[i]), min(record[i])
+
+                for j in range(0, len(record) + 1):
+                    if i == 0:
+                        # Add the column label
+                        outfile.write(
+                            "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\" style=\"font-size:12px;font-family:Arial\">{}{}".format(
+                                margin + hstep * (4.5 + j), margin + vstep * 1.5, j, "</text>\n"))
+
+                    if j < len(record[i]):
+                        # We need to fill the relative color code in the box initially and store the relative and absolute color codes
+                        # so that we can use them later to animate the chart
+                        r, g, b = Utils.gradient_color(lower, upper, record[i][j])
+
+                    else:
+                        r, g, b = 150, 150, 150
+
+                    # Draw the color-coded box
+                    outfile.write(
+                        "<rect id=\"{},{}\" x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"fill:rgb({},{},{})\"".format(
+                            i, j, margin + hstep * (4 + j), margin + vstep * (2 + i), hstep, vstep, r, g, b))
+                    if j < len(record[i]):
+                        r_absolute, g_absolute, b_absolute = Utils.gradient_color(0, 1, record[i][j])
+                        outfile.write(
+                            "><set attributeName =\"fill\" from=\"rgb({},{},{})\" to=\"rgb({},{},{})\" begin=\"absoluteScale.mouseover\" end=\"absoluteScale.mouseout\"/></rect>\n".format(
+                                r, g, b, r_absolute, g_absolute, b_absolute))
+                    else:
+                        outfile.write("/>")
+
+            outfile.write("</g>\n")
+
+            for i in range(0, rows - 2):
                 # Add the H/A data
                 outfile.write(
                     "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\" style=\"font-size:12px;font-family:Arial\">{}{}".format(
-                        margin + hstep * 1.5, margin + vstep * (2.5 + i), self.win_probabilities[i][2], "</text>\n"))
+                        margin + hstep * 1.5, margin + vstep * (2.5 + i), self.win_probabilities[i][2],
+                        "</text>\n"))
 
                 # Add the opponent logo
                 outfile.write(
@@ -194,37 +234,14 @@ class Team:
                 r, g, b = Utils.gradient_color(0, 1, self.win_probabilities[i][1])
                 outfile.write(
                     "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"fill:rgb({},{},{})\"/>".format(
-                        margin + hstep * 3, margin + vstep * (2 + i), hstep, vstep,
-                        r, g, b))
+                        margin + hstep * 3, margin + vstep * (2 + i), hstep, vstep, r, g, b))
                 outfile.write(
                     "<text text-anchor=\"middle\" alignment-baseline=\"central\" x=\"{}\" y=\"{}\" style=\"font-size:11px;font-family:Arial\">{}%{}".format(
-                        margin + hstep * 3.5, margin + vstep * (2.5 + i), round(100 * self.win_probabilities[i][1], 1),
+                        margin + hstep * 3.5, margin + vstep * (2.5 + i),
+                        round(100 * self.win_probabilities[i][1], 1),
                         "</text>\n"))
 
-                # find the max and min in this week to determine color of cell
-                # The rows can be color coded by giving scaling to the maximum likelihood within the week (relative)
-                # or by absolute likelihood (max=1.0). Default is relative.
-                if absolute:
-                    upper, lower = 1, 0
-                else:
-                    upper, lower = max(record[i]), min(record[i])
-
                 for j in range(0, len(record) + 1):
-                    if i == 0:
-                        # Add the column label
-                        outfile.write(
-                            "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\" style=\"font-size:12px;font-family:Arial\">{}{}".format(
-                                margin + hstep * (4.5 + j), margin + vstep * 1.5, j, "</text>\n"))
-
-                    if j < len(record[i]):
-                        r, g, b = Utils.gradient_color(lower, upper, record[i][j])
-                    else:
-                        r, g, b = 150, 150, 150
-                    # Draw the color-coded box
-                    outfile.write(
-                        "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"fill:rgb({},{},{})\"/>\n".format(
-                            margin + hstep * (4 + j), margin + vstep * (2 + i), hstep, vstep, r, g, b))
-
                     if j < len(record[i]):
                         # Write the probability in the box
                         outfile.write(
@@ -232,15 +249,16 @@ class Team:
                                 margin + hstep * (4.5 + j), margin + vstep * (2.5 + i), round(100 * record[i][j], 1),
                                 "</text>\n"))
             for i in range(2, rows):
+                # add the horizontal lines between the rows
+                outfile.write(
+                    "<line x1=\"{}\" y1=\"{}\" x2=\"{}\" y2=\"{}\" style=\"stroke:rgb(0,0,0)\"/>\n".format(
+                        margin, margin + vstep * i, margin + hstep * cols, vstep * i + margin))
                 for j in range(1, cols):
                     # add the vertical lines between the columns
                     outfile.write(
                         "<line x1=\"{}\" y1=\"{}\" x2=\"{}\" y2=\"{}\" style=\"stroke:rgb(0,0,0)\"/>\n".format(
                             margin + hstep * j, margin + vstep, margin + hstep * j, vstep * rows + margin))
-                    # add the horizontal lines between the rows
-                    outfile.write(
-                        "<line x1=\"{}\" y1=\"{}\" x2=\"{}\" y2=\"{}\" style=\"stroke:rgb(0,0,0)\"/>\n".format(
-                            margin, margin + vstep * i, margin + hstep * cols, vstep * i + margin))
+
             # Draw the outline box for the table
             outfile.write(
                 "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"stroke:rgb(0,0,0);stroke-width:2;fill-opacity:0\"/>\n".format(
@@ -260,6 +278,11 @@ class Team:
             outfile.write(
                 "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"stroke:rgb(0,0,0);stroke-width:2;fill-opacity:0\"/>".format(
                     margin + hstep * 4, margin, hstep * (cols - 4), vstep))
+
+            # Add the color changing text at the bottom of the svg
+            outfile.write(
+                "<text text-anchor=\"middle\" alignment-baseline=\"middle\" id=\"absoluteScale\" x=\"{}\" y=\"{}\" font-size=\"30\" fill=\"black\" >Absolute Color Scale</text>\n".format(
+                    (hstep * cols + 2 * margin) / 2, vstep * rows + 3 * margin + menuheight / 2))
 
             outfile.write("</svg>")
 
@@ -480,10 +503,10 @@ acc = [  # pre-season
 
 # Utils.download_images()
 # Utils.convert_to_URI(width=30, height=30)
-#foo = Conference(bigten[0]).make_standings_projection_graph(week=9, absolute=False)
-name = "georgia tech"
-conference = acc
-division = "coastal"
+name = "michigan"
+conference = bigten
+division = "east"
+# foo = Conference(conference[0]).make_standings_projection_graph(absolute=False)
 foo = Team(name=name, win_probabilities=conference[0][division][name])
 foo.make_win_probability_graph(absolute=False)
 # foo.write_win_probability_csv()
