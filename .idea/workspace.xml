@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,19 +19,15 @@
       <file leaf-file-name="scratch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="125" column="66" selection-start-line="125" selection-start-column="66" selection-end-line="125" selection-end-column="66" />
+            <state relative-caret-position="341">
+              <caret line="613" column="11" selection-start-line="613" selection-start-column="11" selection-end-line="613" selection-end-column="11" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#161#2740#0" />
-                <element signature="e#1192#2297#0" />
-                <element signature="e#2854#3707#0" />
-                <element signature="e#3751#4380#0" />
-                <element signature="e#8301#10398#0" />
-                <element signature="e#10744#13134#0" />
-                <element signature="e#13890#21034#0" />
-                <element signature="e#21307#27009#0" />
-                <element signature="e#27017#27936#0" />
+                <element signature="e#29352#30179#0" />
+                <element signature="e#29674#30311#0" />
+                <element signature="e#30330#30977#0" />
+                <element signature="e#30995#31624#0" />
+                <element signature="e#31646#32303#0" />
               </folding>
             </state>
           </provider>
@@ -45,9 +44,38 @@
       <find>g&gt;</find>
       <find>toabsolute</find>
       <find>x1=&quot;45&quot; y1=&quot;45&quot; x2=&quot;45&quot; y2=&quot;565&quot;</find>
+      <find>usfsouth</find>
+      <find>usf</find>
+      <find>north</find>
+      <find>title</find>
+      <find>\d{2}</find>
+      <find>\.\d{2}</find>
+      <find>\[\[</find>
+      <find>[^\[][^\[]\[</find>
+      <find>, \[</find>
+      <find>\d\]</find>
+      <find>\d\d]</find>
+      <find>&quot;\],</find>
+      <find>\]\],</find>
+      <find>\]\]</find>
+      <find>\[&quot;</find>
+      <find>&quot;\]</find>
+      <find>{&quot;</find>
+      <find>[^\[]\{&quot;</find>
+      <find>\.\d+</find>
+      <find>massa</find>
     </findStrings>
     <replaceStrings>
       <replace>/&quot;</replace>
+      <replace>[*$0*]</replace>
+      <replace>[$0]</replace>
+      <replace>\[\{</replace>
+      <replace>&quot;},</replace>
+      <replace>\]},</replace>
+      <replace>\]}</replace>
+      <replace>&quot;\}</replace>
+      <replace>\{&quot;team&quot;:&quot;</replace>
+      <replace>&quot;winprob&quot;:\[$0\]</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -78,6 +106,11 @@
             <path>
               <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
               <item name="sp plus visualization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sp plus visualization" type="462c0819:PsiDirectoryNode" />
+              <item name="svg output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -150,19 +183,25 @@
       <option name="project" value="LOCAL" />
       <updated>1531767141316</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added prototype for color changing interaction">
+      <created>1531767488746</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1531767488746</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1272" y="-8" width="1296" height="1040" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24642289" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32893288" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32893288" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32893288" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32893288" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32893288" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -211,25 +250,51 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="12" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5270">
+          <caret line="310" column="18" selection-start-line="310" selection-start-column="18" selection-end-line="310" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#29352#30179#0" />
+            <element signature="e#29674#30311#0" />
+            <element signature="e#30330#30977#0" />
+            <element signature="e#30995#31624#0" />
+            <element signature="e#31646#32303#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2125">
+          <caret line="125" column="66" selection-start-line="125" selection-start-column="66" selection-end-line="125" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#29352#30179#0" />
+            <element signature="e#29674#30311#0" />
+            <element signature="e#30330#30977#0" />
+            <element signature="e#30995#31624#0" />
+            <element signature="e#31646#32303#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8313">
           <caret line="489" lean-forward="true" selection-start-line="489" selection-end-line="489" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#161#2740#0" />
-            <element signature="e#1192#2297#0" />
-            <element signature="e#2854#3707#0" />
-            <element signature="e#3751#4380#0" />
-            <element signature="e#8301#10398#0" />
-            <element signature="e#10744#13134#0" />
-            <element signature="e#13890#21034#0" />
-            <element signature="e#21307#27009#0" />
-            <element signature="e#27017#27936#0" />
+            <element signature="e#29352#30179#0" />
+            <element signature="e#29674#30311#0" />
+            <element signature="e#30330#30977#0" />
+            <element signature="e#30995#31624#0" />
+            <element signature="e#31646#32303#0" />
           </folding>
         </state>
       </provider>
@@ -239,40 +304,32 @@
         <state>
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#161#2740#0" />
-            <element signature="e#1192#2297#0" />
-            <element signature="e#2854#3707#0" />
-            <element signature="e#3751#4380#0" />
-            <element signature="e#8301#10398#0" />
-            <element signature="e#10744#13134#0" />
-            <element signature="e#13890#21034#0" />
-            <element signature="e#21307#27009#0" />
-            <element signature="e#27017#27936#0" />
+            <element signature="e#29352#30179#0" />
+            <element signature="e#29674#30311#0" />
+            <element signature="e#30330#30977#0" />
+            <element signature="e#30995#31624#0" />
+            <element signature="e#31646#32303#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out.svg">
+    <entry file="file://$PROJECT_DIR$/out.svg" />
+    <entry file="file://$PROJECT_DIR$/scratch2.py" />
+    <entry file="file://$PROJECT_DIR$/ohio state.svg" />
+    <entry file="file://$PROJECT_DIR$/svg output/illinois.svg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scratch2.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="125" column="66" selection-start-line="125" selection-start-column="66" selection-end-line="125" selection-end-column="66" />
+        <state relative-caret-position="341">
+          <caret line="613" column="11" selection-start-line="613" selection-start-column="11" selection-end-line="613" selection-end-column="11" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#161#2740#0" />
-            <element signature="e#1192#2297#0" />
-            <element signature="e#2854#3707#0" />
-            <element signature="e#3751#4380#0" />
-            <element signature="e#8301#10398#0" />
-            <element signature="e#10744#13134#0" />
-            <element signature="e#13890#21034#0" />
-            <element signature="e#21307#27009#0" />
-            <element signature="e#27017#27936#0" />
+            <element signature="e#29352#30179#0" />
+            <element signature="e#29674#30311#0" />
+            <element signature="e#30330#30977#0" />
+            <element signature="e#30995#31624#0" />
+            <element signature="e#31646#32303#0" />
           </folding>
         </state>
       </provider>

@@ -44,13 +44,16 @@ class Utils:
         # Quick and dirty method to scrape logos from ESPN; they need minor editorial cleanup afterward
         r = requests.get("http://www.espn.com/college-football/teams")
         results = bs(r.text).findAll('a', href=re.compile('^http://www.espn.com/college-football/team/_/id/'))
+        if not os.path.exists("./Resources/"):
+            os.makedirs("./Resources/")
+
         for link in results:
             id = link['href'][47:link['href'].find('/', 47)]
             name = link['href'][link['href'].find('/', 47) + 1:link['href'].rfind('-')]
             name = name.replace('-', ' ').title()
             pic_url = "http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/{}.png&h={}&w={}".format(id, height,
                                                                                                           width)
-            with open('{}.jpg'.format(name.lower()), 'wb') as handle:
+            with open(os.path.join("./Resources/", '{}.jpg'.format(name.lower())), 'wb') as handle:
                 response = requests.get(pic_url, stream=True)
 
                 if not response.ok:
@@ -99,17 +102,19 @@ class Team:
             assert isinstance(name, str), "Name is not a string!"
             self.division = division.lower()
 
-    def win_totals_by_week(self):
+    def win_totals_by_week(self, projection_week=0):
         # Make a ragged table to store 'games' x 'wins'
         record = [[0 for y in range(0, x + 1)] for x in range(1, len(self.win_probabilities) + 1)]
-
-        record[0][0] = 1 - self.win_probabilities[0][1]  # first game was a loss
-        record[0][1] = self.win_probabilities[0][1]  # first game was a win
+        foo = self.win_probabilities[0]["winprob"][projection_week]
+        record[0][0] = 1 - self.win_probabilities[0]["winprob"][projection_week]  # first game was a loss
+        record[0][1] = self.win_probabilities[0]["winprob"][projection_week]  # first game was a win
 
         for i in range(1, len(record)):
             for j in range(0, i + 1):
-                record[i][j] += record[i - 1][j] * (1 - self.win_probabilities[i][1])  # newest game was a loss
-                record[i][j + 1] += record[i - 1][j] * (self.win_probabilities[i][1])  # newest game was a win
+                record[i][j] += record[i - 1][j] * (
+                        1 - self.win_probabilities[i]["winprob"][projection_week])  # newest game was a loss
+                record[i][j + 1] += record[i - 1][j] * (
+                    self.win_probabilities[i]["winprob"][projection_week])  # newest game was a win
 
         return record
 
@@ -124,11 +129,14 @@ class Team:
             writer.writerows(record)
 
     def make_win_probability_graph(self, file='out', hstep=40, vstep=40, margin=5, logowidth=30, logoheight=30,
-                                   menuheight=40, absolute=False):
+                                   menuheight=40, absolute=False, projectionweek=0):
         record = self.win_totals_by_week()
         logos = Utils.get_logo_URIs()
 
-        with open('{}.svg'.format(file), 'w+') as outfile:
+        if not os.path.exists("./svg output/"):
+            os.makedirs("./svg output/")
+
+        with open(os.path.join("./svg output/", '{}.svg'.format(file)), 'w+') as outfile:
             # The SVG output should generally be divided into 3 leading columns (week, H/A, Opp, Prob) and n=len(self.win_probabilities) + 1 segments
             # and 2 leading rows (Wins and headers) with n=len(self.win_probabilities) vertical segments.
             rows, cols = 2 + len(self.win_probabilities), 4 + len(self.win_probabilities) + 1
@@ -139,11 +147,11 @@ class Team:
                     hstep * cols + 2 * margin, vstep * rows + 3 * margin + menuheight))
 
             # Fill the background with white
-            outfile.write("<rect width=\"100%\" height=\"100%\" style=\"fill:rgb(255,255,255)\" />")
+            outfile.write("<rect width=\"100%\" height=\"100%\" style=\"fill:rgb(255,255,255)\" />\n")
 
             # Add the team logo
             outfile.write(
-                "<image x=\"{}\" y=\"{}\" height=\"{}px\" width=\"{}px\" xlink:href=\"data:image/jpg;base64,{}\"/>".format(
+                "<image x=\"{}\" y=\"{}\" height=\"{}px\" width=\"{}px\" xlink:href=\"data:image/jpg;base64,{}\"/>\n".format(
                     margin + (hstep - logowidth) / 2,
                     margin + (vstep - logoheight) / 2, logowidth, logoheight, logos[self.name]))
 
@@ -204,7 +212,7 @@ class Team:
                     if j < len(record[i]):
                         r_absolute, g_absolute, b_absolute = Utils.gradient_color(0, 1, record[i][j])
                         outfile.write(
-                            "><set attributeName =\"fill\" from=\"rgb({},{},{})\" to=\"rgb({},{},{})\" begin=\"absoluteScale.mouseover\" end=\"absoluteScale.mouseout\"/></rect>\n".format(
+                            ">\n<set attributeName =\"fill\" from=\"rgb({},{},{})\" to=\"rgb({},{},{})\" begin=\"absoluteScale.mouseover\" end=\"absoluteScale.mouseout\"/></rect>\n".format(
                                 r, g, b, r_absolute, g_absolute, b_absolute))
                     else:
                         outfile.write("/>")
@@ -212,33 +220,15 @@ class Team:
             outfile.write("</g>\n")
 
             for i in range(0, rows - 2):
-                # Add the H/A data
-                outfile.write(
-                    "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\" style=\"font-size:12px;font-family:Arial\">{}{}".format(
-                        margin + hstep * 1.5, margin + vstep * (2.5 + i), self.win_probabilities[i][2],
-                        "</text>\n"))
-
-                # Add the opponent logo
-                outfile.write(
-                    "<image x=\"{}\" y=\"{}\" height=\"{}px\" width=\"{}px\" xlink:href=\"data:image/jpg;base64,{}\"/>".format(
-                        2 * hstep + margin + (hstep - logowidth) / 2,
-                        vstep * (2 + i) + margin + (vstep - logoheight) / 2, logowidth, logoheight,
-                        logos[self.win_probabilities[i][0]]))
-
-                # Add the row week label
-                outfile.write(
-                    "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\" style=\"font-size:12px;font-family:Arial\">{}{}".format(
-                        margin + hstep * 0.5, margin + vstep * (2.5 + i), i + 1, "</text>\n"))
-
                 # Add the color-coded box in the prob column with its text
-                r, g, b = Utils.gradient_color(0, 1, self.win_probabilities[i][1])
+                r, g, b = Utils.gradient_color(0, 1, self.win_probabilities[i]["winprob"][projectionweek])
                 outfile.write(
                     "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"fill:rgb({},{},{})\"/>".format(
                         margin + hstep * 3, margin + vstep * (2 + i), hstep, vstep, r, g, b))
                 outfile.write(
                     "<text text-anchor=\"middle\" alignment-baseline=\"central\" x=\"{}\" y=\"{}\" style=\"font-size:11px;font-family:Arial\">{}%{}".format(
                         margin + hstep * 3.5, margin + vstep * (2.5 + i),
-                        round(100 * self.win_probabilities[i][1], 1),
+                        round(100 * self.win_probabilities[i]["winprob"][projectionweek], 1),
                         "</text>\n"))
 
                 for j in range(0, len(record) + 1):
@@ -284,6 +274,25 @@ class Team:
                 "<text text-anchor=\"middle\" alignment-baseline=\"middle\" id=\"absoluteScale\" x=\"{}\" y=\"{}\" font-size=\"30\" fill=\"black\" >Absolute Color Scale</text>\n".format(
                     (hstep * cols + 2 * margin) / 2, vstep * rows + 3 * margin + menuheight / 2))
 
+            for i in range(0, rows - 2):
+                # Add the H/A data
+                outfile.write(
+                    "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\" style=\"font-size:12px;font-family:Arial\">{}{}".format(
+                        margin + hstep * 1.5, margin + vstep * (2.5 + i), self.win_probabilities[i]["HA"],
+                        "</text>\n"))
+
+                # Add the opponent logo
+                outfile.write(
+                    "<image x=\"{}\" y=\"{}\" height=\"{}px\" width=\"{}px\" xlink:href=\"data:image/jpg;base64,{}\">\n<title>{}</title></image>\n".format(
+                        2 * hstep + margin + (hstep - logowidth) / 2,
+                        vstep * (2 + i) + margin + (vstep - logoheight) / 2, logowidth, logoheight,
+                        logos[self.win_probabilities[i]["team"]], self.win_probabilities[i]["team"].title()))
+
+                # Add the row week label
+                outfile.write(
+                    "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\" style=\"font-size:12px;font-family:Arial\">{}{}".format(
+                        margin + hstep * 0.5, margin + vstep * (2.5 + i), i + 1, "</text>\n"))
+
             outfile.write("</svg>")
 
 
@@ -310,8 +319,10 @@ class Conference:
             record.extend(
                 sorted([(x, x.win_totals_by_week()[week]) for x in self.teams if x.division == i],
                        key=lambda team: sum([team[1][x] * x for x in range(len(team[1]))]), reverse=True))
+        if not os.path.exists("./svg output/"):
+            os.makedirs("./svg output/")
 
-        with open('{}.svg'.format(file), 'w+') as outfile:
+        with open(os.path.join("./svg output/", '{}.svg'.format(file)), 'w+') as outfile:
             # The SVG output should generally be divided into 3 leading columns (week, H/A, Opp, Prob) and n=len(self.win_probabilities) + 1 segments
             # and 2 leading rows (Wins and headers) with n=len(self.win_probabilities) vertical segments.
             rows, cols = len(record) + 2, max([len(x[1]) for x in record]) + 1
@@ -409,104 +420,227 @@ class Conference:
 # These effectively constitute a weighted adjacency matrix
 # although it doesn't include win probabilities for every other node in the graph nor are the nodes labeled
 
-bigten = [  # pre-season
-    {"east": {
-        "indiana": [["florida international", .77, "at"], ["virginia", .62, "vs"], ["ball state", .83, "vs"],
-                    ["michigan state", .22, "vs"], ["rutgers", .56, "at"], ["ohio state", .06, "at"],
-                    ["iowa", .44, "vs"], ["penn state", .19, "vs"], ["minnesota", .47, "at"],
-                    ["maryland", .64, "vs"], ["michigan", .14, "at"], ["purdue", .53, "vs"]],
-        "maryland": [["texas", .26, "vs"], ["bowling green", .55, "at"], ["temple", .56, "vs"],
-                     ["minnesota", .50, "vs"], ["michigan", .10, "at"], ["rutgers", .59, "vs"],
-                     ["iowa", .25, "at"], ["illinois", .69, "vs"], ["michigan state", .16, "vs"],
-                     ["indiana", .36, "at"], ["ohio state", .06, "vs"], ["penn state", .08, "at"]],
-        "michigan": [["notre dame", .38, "at"], ["western michigan", .92, "vs"], ["smu", .90, "vs"],
-                     ["nebraska", .86, "vs"], ["northwestern", .71, "vs"], ["maryland", .90, "vs"],
-                     ["wisconsin", .57, "vs"], ["michigan state", .45, "at"], ["penn state", .51, "vs"],
-                     ["rutgers", .86, "at"], ["indiana", .86, "vs"], ["ohio state", .26, "at"]],
-        "michigan state": [["utah state", .89, "vs"], ["arizona state", .78, "at"], ["indiana", .78, "at"],
-                           ["central michigan", .97, "vs"], ["northwestern", .79, "vs"], ["penn state", .39, "at"],
-                           ["michigan", .55, "vs"], ["purdue", .84, "vs"], ["maryland", .84, "at"],
-                           ["ohio state", .35, "vs"], ["nebraska", .78, "at"], ["rutgers", .91, "vs"]],
-        "ohio state": [["oregon state", .99, "vs"], ["rutgers", .97, "vs"], ["tcu", .78, "at"],
-                       ["tulane", .98, "vs"], ["penn state", .60, "at"], ["indiana", .94, "vs"],
-                       ["minnesota", .95, "vs"], ["purdue", .89, "at"], ["nebraska", .94, "vs"],
-                       ["michigan state", .65, "at"], ["maryland", .94, "at"], ["michigan", .74, "vs"]],
-        "penn state": [["appalachian state", .89, "vs"], ["pittsburgh", .77, "at"], ["kent state", .99, "vs"],
-                       ["illinois", .93, "at"], ["ohio state", .40, "vs"], ["michigan state", .61, "vs"],
-                       ["indiana", .81, "at"], ["iowa", .81, "vs"], ["michigan", .49, "at"],
-                       ["wisconsin", .61, "vs"], ["rutgers", .89, "at"], ["maryland", .92, "vs"]],
-        "rutgers": [["texas state", .79, "vs"], ["ohio state", .03, "at"], ["kansas", .56, "at"],
-                    ["buffalo", .61, "vs"], ["indiana", .44, "vs"], ["illinois", .66, "vs"],
-                    ["maryland", .41, "at"], ["northwestern", .34, "vs"], ["wisconsin", .09, "at"],
-                    ["michigan", .14, "vs"], ["penn state", .11, "vs"], ["michigan state", .09, "at"]],
+bigten = {"east": {
+    "indiana": [{"team": "florida international", "winprob": [.77], "HA": "at"},
+                {"team": "virginia", "winprob": [.62], "HA": "vs"},
+                {"team": "ball state", "winprob": [.83], "HA": "vs"},
+                {"team": "michigan state", "winprob": [.22], "HA": "vs"},
+                {"team": "rutgers", "winprob": [.56], "HA": "at"},
+                {"team": "ohio state", "winprob": [.06], "HA": "at"},
+                {"team": "iowa", "winprob": [.44], "HA": "vs"},
+                {"team": "penn state", "winprob": [.19], "HA": "vs"},
+                {"team": "minnesota", "winprob": [.47], "HA": "at"},
+                {"team": "maryland", "winprob": [.64], "HA": "vs"},
+                {"team": "michigan", "winprob": [.14], "HA": "at"},
+                {"team": "purdue", "winprob": [.53], "HA": "vs"}],
+    "maryland": [{"team": "texas", "winprob": [.26], "HA": "vs"},
+                 {"team": "bowling green", "winprob": [.55], "HA": "at"},
+                 {"team": "temple", "winprob": [.56], "HA": "vs"},
+                 {"team": "minnesota", "winprob": [.50], "HA": "vs"},
+                 {"team": "michigan", "winprob": [.10], "HA": "at"},
+                 {"team": "rutgers", "winprob": [.59], "HA": "vs"},
+                 {"team": "iowa", "winprob": [.25], "HA": "at"},
+                 {"team": "illinois", "winprob": [.69], "HA": "vs"},
+                 {"team": "michigan state", "winprob": [.16], "HA": "vs"},
+                 {"team": "indiana", "winprob": [.36], "HA": "at"},
+                 {"team": "ohio state", "winprob": [.06], "HA": "vs"},
+                 {"team": "penn state", "winprob": [.08], "HA": "at"}],
+    "michigan": [{"team": "notre dame", "winprob": [.38], "HA": "at"},
+                 {"team": "western michigan", "winprob": [.92], "HA": "vs"},
+                 {"team": "smu", "winprob": [.90], "HA": "vs"},
+                 {"team": "nebraska", "winprob": [.86], "HA": "vs"},
+                 {"team": "northwestern", "winprob": [.71], "HA": "vs"},
+                 {"team": "maryland", "winprob": [.90], "HA": "vs"},
+                 {"team": "wisconsin", "winprob": [.57], "HA": "vs"},
+                 {"team": "michigan state", "winprob": [.45], "HA": "at"},
+                 {"team": "penn state", "winprob": [.51], "HA": "vs"},
+                 {"team": "rutgers", "winprob": [.86], "HA": "at"},
+                 {"team": "indiana", "winprob": [.86], "HA": "vs"},
+                 {"team": "ohio state", "winprob": [.26], "HA": "at"}],
+    "michigan state": [{"team": "utah state", "winprob": [.89], "HA": "vs"},
+                       {"team": "arizona state", "winprob": [.78], "HA": "at"},
+                       {"team": "indiana", "winprob": [.78], "HA": "at"},
+                       {"team": "central michigan", "winprob": [.97], "HA": "vs"},
+                       {"team": "northwestern", "winprob": [.79], "HA": "vs"},
+                       {"team": "penn state", "winprob": [.39], "HA": "at"},
+                       {"team": "michigan", "winprob": [.55], "HA": "vs"},
+                       {"team": "purdue", "winprob": [.84], "HA": "vs"},
+                       {"team": "maryland", "winprob": [.84], "HA": "at"},
+                       {"team": "ohio state", "winprob": [.35], "HA": "vs"},
+                       {"team": "nebraska", "winprob": [.78], "HA": "at"},
+                       {"team": "rutgers", "winprob": [.91], "HA": "vs"}],
+    "ohio state": [{"team": "oregon state", "winprob": [.99], "HA": "vs"},
+                   {"team": "rutgers", "winprob": [.97], "HA": "vs"},
+                   {"team": "tcu", "winprob": [.78], "HA": "at"},
+                   {"team": "tulane", "winprob": [.98], "HA": "vs"},
+                   {"team": "penn state", "winprob": [.60], "HA": "at"},
+                   {"team": "indiana", "winprob": [.94], "HA": "vs"},
+                   {"team": "minnesota", "winprob": [.95], "HA": "vs"},
+                   {"team": "purdue", "winprob": [.89], "HA": "at"},
+                   {"team": "nebraska", "winprob": [.94], "HA": "vs"},
+                   {"team": "michigan state", "winprob": [.65], "HA": "at"},
+                   {"team": "maryland", "winprob": [.94], "HA": "at"},
+                   {"team": "michigan", "winprob": [.74], "HA": "vs"}],
+    "penn state": [{"team": "appalachian state", "winprob": [.89], "HA": "vs"},
+                   {"team": "pittsburgh", "winprob": [.77], "HA": "at"},
+                   {"team": "kent state", "winprob": [.99], "HA": "vs"},
+                   {"team": "illinois", "winprob": [.93], "HA": "at"},
+                   {"team": "ohio state", "winprob": [.40], "HA": "vs"},
+                   {"team": "michigan state", "winprob": [.61], "HA": "vs"},
+                   {"team": "indiana", "winprob": [.81], "HA": "at"},
+                   {"team": "iowa", "winprob": [.81], "HA": "vs"},
+                   {"team": "michigan", "winprob": [.49], "HA": "at"},
+                   {"team": "wisconsin", "winprob": [.61], "HA": "vs"},
+                   {"team": "rutgers", "winprob": [.89], "HA": "at"},
+                   {"team": "maryland", "winprob": [.92], "HA": "vs"}],
+    "rutgers": [{"team": "texas state", "winprob": [.79], "HA": "vs"},
+                {"team": "ohio state", "winprob": [.03], "HA": "at"},
+                {"team": "kansas", "winprob": [.56], "HA": "at"},
+                {"team": "buffalo", "winprob": [.61], "HA": "vs"},
+                {"team": "indiana", "winprob": [.44], "HA": "vs"},
+                {"team": "illinois", "winprob": [.66], "HA": "vs"},
+                {"team": "maryland", "winprob": [.41], "HA": "at"},
+                {"team": "northwestern", "winprob": [.34], "HA": "vs"},
+                {"team": "wisconsin", "winprob": [.09], "HA": "at"},
+                {"team": "michigan", "winprob": [.14], "HA": "vs"},
+                {"team": "penn state", "winprob": [.11], "HA": "vs"},
+                {"team": "michigan state", "winprob": [.09], "HA": "at"}],
 
-    }, "west": {
-        "illinois": [["kent state", .72, "vs"], ["western illinois", .71, "vs"], ["usf", .28, "vs"],
-                     ["penn state", .07, "vs"], ["rutgers", .34, "at"], ["purdue", .32, "vs"],
-                     ["wisconsin", .05, "at"], ["maryland", .31, "at"], ["minnesota", .37, "vs"],
-                     ["nebraska", .24, "at"], ["iowa", .24, "vs"], ["northwestern", .17, "at"]],
-        "iowa": [["northern illinois", .71, "vs"], ["iowa state", .62, "vs"], ["north iowa", .92, "vs"],
-                 ["wisconsin", .32, "vs"], ["minnesota", .59, "at"], ["indiana", .56, "at"],
-                 ["maryland", .75, "vs"], ["penn state", .19, "at"], ["purdue", .54, "at"],
-                 ["northwestern", .57, "vs"], ["illinois", .76, "at"], ["nebraska", .67, "vs"]],
-        "minnesota": [["new mexico state", .74, "vs"], ["fresno state", .46, "vs"], ["miami (ohio)", .62, "vs"],
-                      ["maryland", .50, "at"], ["iowa", .41, "vs"], ["ohio state", .05, "at"],
-                      ["nebraska", .42, "at"], ["indiana", .53, "vs"], ["illinois", .63, "at"],
-                      ["purdue", .50, "vs"], ["northwestern", .43, "vs"], ["wisconsin", .13, "at"]],
-        "nebraska": [["akron", .84, "vs"], ["colorado", .70, "vs"], ["troy", .63, "vs"],
-                     ["michigan", .14, "at"], ["purdue", .53, "vs"], ["wisconsin", .14, "at"],
-                     ["northwestern", .34, "at"], ["minnesota", .58, "vs"], ["ohio state", .06, "at"],
-                     ["illinois", .76, "vs"], ["michigan state", .22, "vs"], ["iowa", .33, "at"]],
-        "northwestern": [["purdue", .52, "at"], ["duke", .57, "vs"], ["akron", .89, "vs"], ["michigan", .29, "vs"],
-                         ["michigan state", .21, "at"],
-                         ["nebraska", .66, "vs"], ["rutgers", .66, "at"], ["wisconsin", .31, "vs"],
-                         ["notre dame", .24, "vs"], ["iowa", .43, "at"],
-                         ["minnesota", .57, "at"], ["illinois", .83, "vs"]],
-        "purdue": [["northwestern", .48, "vs"], ["eastern michigan", .75, "vs"], ["missouri", .43, "vs"],
-                   ["boston college", .54, "vs"],
-                   ["nebraska", .47, "at"], ["illinois", .68, "at"], ["ohio state", .11, "vs"],
-                   ["michigan state", .16, "at"], ["iowa", .46, "vs"],
-                   ["minnesota", .50, "at"], ["wisconsin", .24, "vs"], ["indiana", .47, "at"]],
-        "wisconsin": [["western kentucky", .92, "vs"], ["new mexico", .96, "vs"], ["byu", .89, "vs"],
-                      ["iowa", .68, "at"], ["nebraska", .86, "vs"],
-                      ["michigan", .43, "at"], ["illinois", .95, "vs"], ["northwestern", .69, "at"],
-                      ["rutgers", .91, "vs"],
-                      ["penn state", .39, "at"], ["purdue", .76, "at"], ["minnesota", .87, "vs"]]
-    }}
-]
+}, "west": {
+    "illinois": [{"team": "kent state", "winprob": [.72], "HA": "vs"},
+                 {"team": "western illinois", "winprob": [.71], "HA": "vs"},
+                 {"team": "south florida", "winprob": [.28], "HA": "vs"},
+                 {"team": "penn state", "winprob": [.07], "HA": "vs"},
+                 {"team": "rutgers", "winprob": [.34], "HA": "at"},
+                 {"team": "purdue", "winprob": [.32], "HA": "vs"},
+                 {"team": "wisconsin", "winprob": [.05], "HA": "at"},
+                 {"team": "maryland", "winprob": [.31], "HA": "at"},
+                 {"team": "minnesota", "winprob": [.37], "HA": "vs"},
+                 {"team": "nebraska", "winprob": [.24], "HA": "at"},
+                 {"team": "iowa", "winprob": [.24], "HA": "vs"},
+                 {"team": "northwestern", "winprob": [.17], "HA": "at"}],
+    "iowa": [{"team": "northern illinois", "winprob": [.71], "HA": "vs"},
+             {"team": "iowa state", "winprob": [.62], "HA": "vs"},
+             {"team": "northern iowa", "winprob": [.92], "HA": "vs"},
+             {"team": "wisconsin", "winprob": [.32], "HA": "vs"},
+             {"team": "minnesota", "winprob": [.59], "HA": "at"},
+             {"team": "indiana", "winprob": [.56], "HA": "at"},
+             {"team": "maryland", "winprob": [.75], "HA": "vs"},
+             {"team": "penn state", "winprob": [.19], "HA": "at"},
+             {"team": "purdue", "winprob": [.54], "HA": "at"},
+             {"team": "northwestern", "winprob": [.57], "HA": "vs"},
+             {"team": "illinois", "winprob": [.76], "HA": "at"},
+             {"team": "nebraska", "winprob": [.67], "HA": "vs"}],
+    "minnesota": [{"team": "new mexico state", "winprob": [.74], "HA": "vs"},
+                  {"team": "fresno state", "winprob": [.46], "HA": "vs"},
+                  {"team": "miami (ohio)", "winprob": [.62], "HA": "vs"},
+                  {"team": "maryland", "winprob": [.50], "HA": "at"},
+                  {"team": "iowa", "winprob": [.41], "HA": "vs"},
+                  {"team": "ohio state", "winprob": [.05], "HA": "at"},
+                  {"team": "nebraska", "winprob": [.42], "HA": "at"},
+                  {"team": "indiana", "winprob": [.53], "HA": "vs"},
+                  {"team": "illinois", "winprob": [.63], "HA": "at"},
+                  {"team": "purdue", "winprob": [.50], "HA": "vs"},
+                  {"team": "northwestern", "winprob": [.43], "HA": "vs"},
+                  {"team": "wisconsin", "winprob": [.13], "HA": "at"}],
+    "nebraska": [{"team": "akron", "winprob": [.84], "HA": "vs"},
+                 {"team": "colorado", "winprob": [.70], "HA": "vs"},
+                 {"team": "troy", "winprob": [.63], "HA": "vs"},
+                 {"team": "michigan", "winprob": [.14], "HA": "at"},
+                 {"team": "purdue", "winprob": [.53], "HA": "vs"},
+                 {"team": "wisconsin", "winprob": [.14], "HA": "at"},
+                 {"team": "northwestern", "winprob": [.34], "HA": "at"},
+                 {"team": "minnesota", "winprob": [.58], "HA": "vs"},
+                 {"team": "ohio state", "winprob": [.06], "HA": "at"},
+                 {"team": "illinois", "winprob": [.76], "HA": "vs"},
+                 {"team": "michigan state", "winprob": [.22], "HA": "vs"},
+                 {"team": "iowa", "winprob": [.33], "HA": "at"}],
+    "northwestern": [{"team": "purdue", "winprob": [.52], "HA": "at"},
+                     {"team": "duke", "winprob": [.57], "HA": "vs"},
+                     {"team": "akron", "winprob": [.89], "HA": "vs"},
+                     {"team": "michigan", "winprob": [.29], "HA": "vs"},
+                     {"team": "michigan state", "winprob": [.21], "HA": "at"},
+                     {"team": "nebraska", "winprob": [.66], "HA": "vs"},
+                     {"team": "rutgers", "winprob": [.66], "HA": "at"},
+                     {"team": "wisconsin", "winprob": [.31], "HA": "vs"},
+                     {"team": "notre dame", "winprob": [.24], "HA": "vs"},
+                     {"team": "iowa", "winprob": [.43], "HA": "at"},
+                     {"team": "minnesota", "winprob": [.57], "HA": "at"},
+                     {"team": "illinois", "winprob": [.83], "HA": "vs"}],
+    "purdue": [{"team": "northwestern", "winprob": [.48], "HA": "vs"},
+               {"team": "eastern michigan", "winprob": [.75], "HA": "vs"},
+               {"team": "missouri", "winprob": [.43], "HA": "vs"},
+               {"team": "boston college", "winprob": [.54], "HA": "vs"},
+               {"team": "nebraska", "winprob": [.47], "HA": "at"},
+               {"team": "illinois", "winprob": [.68], "HA": "at"},
+               {"team": "ohio state", "winprob": [.11], "HA": "vs"},
+               {"team": "michigan state", "winprob": [.16], "HA": "at"},
+               {"team": "iowa", "winprob": [.46], "HA": "vs"},
+               {"team": "minnesota", "winprob": [.50], "HA": "at"},
+               {"team": "wisconsin", "winprob": [.24], "HA": "vs"},
+               {"team": "indiana", "winprob": [.47], "HA": "at"}],
+    "wisconsin": [{"team": "western kentucky", "winprob": [.92], "HA": "vs"},
+                  {"team": "new mexico", "winprob": [.96], "HA": "vs"},
+                  {"team": "byu", "winprob": [.89], "HA": "vs"},
+                  {"team": "iowa", "winprob": [.68], "HA": "at"},
+                  {"team": "nebraska", "winprob": [.86], "HA": "vs"},
+                  {"team": "michigan", "winprob": [.43], "HA": "at"},
+                  {"team": "illinois", "winprob": [.95], "HA": "vs"},
+                  {"team": "northwestern", "winprob": [.69], "HA": "at"},
+                  {"team": "rutgers", "winprob": [.91], "HA": "vs"},
+                  {"team": "penn state", "winprob": [.39], "HA": "at"},
+                  {"team": "purdue", "winprob": [.76], "HA": "at"},
+                  {"team": "minnesota", "winprob": [.87], "HA": "vs"}]
+}
+}
 
-acc = [  # pre-season
-    {
-        "atlantic": {
-            "boston college": [],
-            "clemson": [],
-            "florida state": [],
-            "louisville": [],
-            "north carolina state": [],
-            "syracuse": [],
-            "wake forest": []
-        },
-        "coastal": {
-            "duke": [],
-            "georgia tech": [["alcorn state", .98, "vs"], ["south florida", .47, "at"], ["pittsburgh", .42, "at"],
-                             ["clemson", .13, "vs"], ["bowling green", .76, "vs"], ["louisville", .32, "at"],
-                             ["duke", .51, "vs"], ["virginia tech", .27, "at"], ["north carolina", .44, "at"],
-                             ["miami", .26, "vs"], ["virginia", .65, "vs"], ["georgia", .11, "at"]],
-            "miami": [],
-            "north carolina": [],
-            "pitt": [],
-            "virginia": [],
-            "virginia tech": []
-        }
+acc = {
+    "atlantic": {
+        "boston college": [{"team": "umass", "winprob": [.79], "HA": "vs"},
+                           {"team": "holy cross", "winprob": [.98], "HA": "vs"},
+                           {"team": "wake forest", "winprob": [.37], "HA": "vs"},
+                           {"team": "purdue", "winprob": [.46], "HA": "vs"},
+                           {"team": "temple", "winprob": [.69], "HA": "vs"},
+                           {"team": "nc state", "winprob": [.37], "HA": "vs"},
+                           {"team": "louisville", "winprob": [.44], "HA": "vs"},
+                           {"team": "miami", "winprob": [.26], "HA": "vs"},
+                           {"team": "virginia tech", "winprob": [.28], "HA": "vs"},
+                           {"team": "clemson", "winprob": [.14], "HA": "vs"},
+                           {"team": "florida state", "winprob": [.27], "HA": "vs"},
+                           {"team": "syracuse", "winprob": [.66], "HA": "vs"}],
+        "clemson": [],
+        "florida state": [],
+        "louisville": [],
+        "nc state": [],
+        "syracuse": [],
+        "wake forest": []
+    },
+    "coastal": {
+        "duke": [],
+        "georgia tech": [{"team": "alcorn state", "winprob": [.98], "HA": "vs"},
+                         {"team": "south florida", "winprob": [.47], "HA": "at"},
+                         {"team": "pittsburgh", "winprob": [.42], "HA": "at"},
+                         {"team": "clemson", "winprob": [.13], "HA": "vs"},
+                         {"team": "bowling green", "winprob": [.76], "HA": "vs"},
+                         {"team": "louisville", "winprob": [.32], "HA": "at"},
+                         {"team": "duke", "winprob": [.51], "HA": "vs"},
+                         {"team": "virginia tech", "winprob": [.27], "HA": "at"},
+                         {"team": "north carolina", "winprob": [.44], "HA": "at"},
+                         {"team": "miami", "winprob": [.26], "HA": "vs"},
+                         {"team": "virginia", "winprob": [.65], "HA": "vs"},
+                         {"team": "georgia", "winprob": [.11], "HA": "at"}],
+        "miami": [],
+        "north carolina": [],
+        "pitt": [],
+        "virginia": [],
+        "virginia tech": []
     }
-]
+}
 
-# Utils.download_images()
-# Utils.convert_to_URI(width=30, height=30)
-name = "michigan"
-conference = bigten
-division = "east"
-# foo = Conference(conference[0]).make_standings_projection_graph(absolute=False)
-foo = Team(name=name, win_probabilities=conference[0][division][name])
-foo.make_win_probability_graph(absolute=False)
-# foo.write_win_probability_csv()
+# Conference(bigten).make_standings_projection_graph(absolute=False, file="bigten")
+# for division in bigten:
+#    for team in bigten[division]:
+#        Team(name=team, win_probabilities=bigten[division][team]).make_win_probability_graph(absolute=False, file = team)
+team = "boston college"
+division = "atlantic"
+Team(name=team, win_probabilities=acc[division][team]).make_win_probability_graph(absolute=False, file=team)
