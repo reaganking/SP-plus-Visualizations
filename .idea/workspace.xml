@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logo URIs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logo URIs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Uconn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Uconn.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,37 +19,28 @@
       <file leaf-file-name="scratch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="613" column="11" selection-start-line="613" selection-start-column="11" selection-end-line="613" selection-end-column="11" />
+            <state relative-caret-position="204">
+              <caret line="227" column="80" selection-start-line="227" selection-start-column="80" selection-end-line="227" selection-end-column="80" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#29352#30179#0" />
-                <element signature="e#29674#30311#0" />
-                <element signature="e#30330#30977#0" />
-                <element signature="e#30995#31624#0" />
-                <element signature="e#31646#32303#0" />
+                <element signature="e#16015#23279#0" />
+                <element signature="e#23557#45421#0" />
+                <element signature="e#23568#37833#0" />
+                <element signature="e#37842#45415#0" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="iowa.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/svg output/iowa.svg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>id</find>
-      <find>id=</find>
-      <find>mou</find>
-      <find>&quot;</find>
-      <find>g&gt;</find>
-      <find>toabsolute</find>
-      <find>x1=&quot;45&quot; y1=&quot;45&quot; x2=&quot;45&quot; y2=&quot;565&quot;</find>
-      <find>usfsouth</find>
-      <find>usf</find>
-      <find>north</find>
-      <find>title</find>
-      <find>\d{2}</find>
-      <find>\.\d{2}</find>
       <find>\[\[</find>
       <find>[^\[][^\[]\[</find>
       <find>, \[</find>
@@ -64,6 +55,22 @@
       <find>[^\[]\{&quot;</find>
       <find>\.\d+</find>
       <find>massa</find>
+      <find>&quot;winprob&quot;</find>
+      <find>logo</find>
+      <find>&quot;spplus&quot;:</find>
+      <find>spplus</find>
+      <find>freeze</find>
+      <find>connect</find>
+      <find>NC central</find>
+      <find>nc c</find>
+      <find>request</find>
+      <find>week</find>
+      <find>weekid</find>
+      <find>week{}</find>
+      <find>pointer</find>
+      <find>animate</find>
+      <find>color</find>
+      <find>fill</find>
     </findStrings>
     <replaceStrings>
       <replace>/&quot;</replace>
@@ -76,6 +83,8 @@
       <replace>&quot;\}</replace>
       <replace>\{&quot;team&quot;:&quot;</replace>
       <replace>&quot;winprob&quot;:\[$0\]</replace>
+      <replace>&quot;spplus&quot;</replace>
+      <replace>&quot;fpi&quot;: [], &quot;spplus&quot;:</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -85,21 +94,23 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/out.svg" />
+        <option value="$PROJECT_DIR$/svg output/iowa.svg" />
         <option value="$PROJECT_DIR$/scratch.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1451" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1280" />
-    <option name="height" value="780" />
+    <option name="width" value="683" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -116,7 +127,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -190,18 +200,26 @@
       <option name="project" value="LOCAL" />
       <updated>1531767488746</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Altered team data structure to a hash table for easier lookup, amended code to reflect this.">
+      <created>1531838029009</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1531838029009</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1272" y="-8" width="1296" height="1040" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24642289" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1592262" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32893288" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
-      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32893288" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32893288" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32789558" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3425775" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32893288" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -246,26 +264,47 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added prototype for color changing interaction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added prototype for color changing interaction" />
+    <MESSAGE value="Altered team data structure to a hash table for easier lookup, amended code to reflect this." />
+    <option name="LAST_COMMIT_MESSAGE" value="Altered team data structure to a hash table for easier lookup, amended code to reflect this." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="14" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5270">
-          <caret line="310" column="18" selection-start-line="310" selection-start-column="18" selection-end-line="310" selection-end-column="18" />
+        <state relative-caret-position="12019">
+          <caret line="707" selection-start-line="707" selection-end-line="707" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#29352#30179#0" />
-            <element signature="e#29674#30311#0" />
-            <element signature="e#30330#30977#0" />
-            <element signature="e#30995#31624#0" />
-            <element signature="e#31646#32303#0" />
+            <element signature="e#16015#23279#0" />
+            <element signature="e#23557#45421#0" />
+            <element signature="e#23568#37833#0" />
+            <element signature="e#37842#45415#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10778">
+          <caret line="634" column="49" selection-start-line="634" selection-start-column="49" selection-end-line="634" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7225">
+          <caret line="425" column="11" selection-start-line="425" selection-end-line="425" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5270">
+          <caret line="310" column="18" selection-start-line="310" selection-start-column="18" selection-end-line="310" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -273,14 +312,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2125">
           <caret line="125" column="66" selection-start-line="125" selection-start-column="66" selection-end-line="125" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#29352#30179#0" />
-            <element signature="e#29674#30311#0" />
-            <element signature="e#30330#30977#0" />
-            <element signature="e#30995#31624#0" />
-            <element signature="e#31646#32303#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -288,30 +319,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8313">
           <caret line="489" lean-forward="true" selection-start-line="489" selection-end-line="489" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#29352#30179#0" />
-            <element signature="e#29674#30311#0" />
-            <element signature="e#30330#30977#0" />
-            <element signature="e#30995#31624#0" />
-            <element signature="e#31646#32303#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#29352#30179#0" />
-            <element signature="e#29674#30311#0" />
-            <element signature="e#30330#30977#0" />
-            <element signature="e#30995#31624#0" />
-            <element signature="e#31646#32303#0" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/out.svg" />
     <entry file="file://$PROJECT_DIR$/scratch2.py" />
@@ -319,17 +331,22 @@
     <entry file="file://$PROJECT_DIR$/svg output/illinois.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/svg output/virginia.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg output/iowa.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="613" column="11" selection-start-line="613" selection-start-column="11" selection-end-line="613" selection-end-column="11" />
+        <state relative-caret-position="204">
+          <caret line="227" column="80" selection-start-line="227" selection-start-column="80" selection-end-line="227" selection-end-column="80" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#29352#30179#0" />
-            <element signature="e#29674#30311#0" />
-            <element signature="e#30330#30977#0" />
-            <element signature="e#30995#31624#0" />
-            <element signature="e#31646#32303#0" />
+            <element signature="e#16015#23279#0" />
+            <element signature="e#23557#45421#0" />
+            <element signature="e#23568#37833#0" />
+            <element signature="e#37842#45415#0" />
           </folding>
         </state>
       </provider>
