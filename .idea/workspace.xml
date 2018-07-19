@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logo URIs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logo URIs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Uconn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Uconn.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,40 +17,42 @@
       <file leaf-file-name="scratch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="227" column="80" selection-start-line="227" selection-start-column="80" selection-end-line="227" selection-end-column="80" />
+            <state relative-caret-position="188">
+              <caret line="76" column="74" lean-forward="true" selection-start-line="76" selection-start-column="74" selection-end-line="76" selection-end-column="74" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#16015#23279#0" />
-                <element signature="e#23557#45421#0" />
-                <element signature="e#23568#37833#0" />
-                <element signature="e#37842#45415#0" />
+                <element signature="e#240#485#0" />
+                <element signature="e#573#962#0" />
+                <element signature="e#1000#1118#0" />
+                <element signature="e#1192#2415#0" />
+                <element signature="e#2972#3825#0" />
+                <element signature="e#4787#4912#0" />
+                <element signature="e#4975#5157#0" />
+                <element signature="e#20559#27760#0" />
+                <element signature="e#24855#47707#0" />
+                <element signature="e#24914#25941#0" />
+                <element signature="e#25967#26991#0" />
+                <element signature="e#27017#28054#0" />
+                <element signature="e#28086#29190#0" />
+                <element signature="e#29218#30261#0" />
+                <element signature="e#30289#31346#0" />
+                <element signature="e#31371#32393#0" />
+                <element signature="e#32441#33476#0" />
+                <element signature="e#33498#34494#0" />
+                <element signature="e#34521#35567#0" />
+                <element signature="e#35593#36613#0" />
+                <element signature="e#36643#37702#0" />
+                <element signature="e#37726#38746#0" />
+                <element signature="e#38773#39808#0" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="iowa.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/svg output/iowa.svg">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>\[\[</find>
-      <find>[^\[][^\[]\[</find>
-      <find>, \[</find>
-      <find>\d\]</find>
-      <find>\d\d]</find>
-      <find>&quot;\],</find>
-      <find>\]\],</find>
-      <find>\]\]</find>
-      <find>\[&quot;</find>
-      <find>&quot;\]</find>
-      <find>{&quot;</find>
-      <find>[^\[]\{&quot;</find>
       <find>\.\d+</find>
       <find>massa</find>
       <find>&quot;winprob&quot;</find>
@@ -68,9 +68,21 @@
       <find>weekid</find>
       <find>week{}</find>
       <find>pointer</find>
-      <find>animate</find>
       <find>color</find>
       <find>fill</find>
+      <find>florida</find>
+      <find>b_absolute</find>
+      <find>&quot;fpi&quot;: [],</find>
+      <find>method</find>
+      <find>&quot;spplus&quot;</find>
+      <find>florida state</find>
+      <find>probability</find>
+      <find>probColHitBox</find>
+      <find>script</find>
+      <find>&lt;/rect&gt;</find>
+      <find>animate</find>
+      <find>\&quot;</find>
+      <find>svg_2</find>
     </findStrings>
     <replaceStrings>
       <replace>/&quot;</replace>
@@ -85,6 +97,9 @@
       <replace>&quot;winprob&quot;:\[$0\]</replace>
       <replace>&quot;spplus&quot;</replace>
       <replace>&quot;fpi&quot;: [], &quot;spplus&quot;:</replace>
+      <replace>ba</replace>
+      <replace>&quot;fpi&quot;: [], &quot;bud&quot;:[],</replace>
+      <replace>'</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -95,13 +110,14 @@
       <list>
         <option value="$PROJECT_DIR$/out.svg" />
         <option value="$PROJECT_DIR$/svg output/iowa.svg" />
+        <option value="$PROJECT_DIR$/svg output/florida state.svg" />
+        <option value="$PROJECT_DIR$/svg output/boston college.svg" />
         <option value="$PROJECT_DIR$/scratch.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="683" />
     <option name="width" value="683" />
     <option name="height" value="728" />
   </component>
@@ -110,7 +126,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,6 +142,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -207,23 +223,30 @@
       <option name="project" value="LOCAL" />
       <updated>1531838029009</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added more svg interactivity, including color changing tiles.">
+      <created>1531941241346</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1531941241346</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1592262" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.33110118" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32893288" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32789558" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3425775" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33278957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32893288" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39933994" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3980424" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -265,24 +288,99 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added prototype for color changing interaction" />
     <MESSAGE value="Altered team data structure to a hash table for easier lookup, amended code to reflect this." />
-    <option name="LAST_COMMIT_MESSAGE" value="Altered team data structure to a hash table for easier lookup, amended code to reflect this." />
+    <MESSAGE value="Added more svg interactivity, including color changing tiles." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more svg interactivity, including color changing tiles." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scratch.py</url>
+          <line>142</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scratch.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="28" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3859">
+          <caret line="227" column="80" selection-start-line="227" selection-start-column="80" selection-end-line="227" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#240#485#0" />
+            <element signature="e#573#962#0" />
+            <element signature="e#1000#1118#0" />
+            <element signature="e#1192#2415#0" />
+            <element signature="e#2972#3825#0" />
+            <element signature="e#4787#4912#0" />
+            <element signature="e#4975#5157#0" />
+            <element signature="e#20559#27760#0" />
+            <element signature="e#24855#47707#0" />
+            <element signature="e#24914#25941#0" />
+            <element signature="e#25967#26991#0" />
+            <element signature="e#27017#28054#0" />
+            <element signature="e#28086#29190#0" />
+            <element signature="e#29218#30261#0" />
+            <element signature="e#30289#31346#0" />
+            <element signature="e#31371#32393#0" />
+            <element signature="e#32441#33476#0" />
+            <element signature="e#33498#34494#0" />
+            <element signature="e#34521#35567#0" />
+            <element signature="e#35593#36613#0" />
+            <element signature="e#36643#37702#0" />
+            <element signature="e#37726#38746#0" />
+            <element signature="e#38773#39808#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg output/iowa.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12019">
           <caret line="707" selection-start-line="707" selection-end-line="707" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#16015#23279#0" />
-            <element signature="e#23557#45421#0" />
-            <element signature="e#23568#37833#0" />
-            <element signature="e#37842#45415#0" />
+            <element signature="e#240#485#0" />
+            <element signature="e#573#962#0" />
+            <element signature="e#1000#1118#0" />
+            <element signature="e#1192#2415#0" />
+            <element signature="e#2972#3825#0" />
+            <element signature="e#4787#4912#0" />
+            <element signature="e#4975#5157#0" />
+            <element signature="e#20559#27760#0" />
+            <element signature="e#24855#47707#0" />
+            <element signature="e#24914#25941#0" />
+            <element signature="e#25967#26991#0" />
+            <element signature="e#27017#28054#0" />
+            <element signature="e#28086#29190#0" />
+            <element signature="e#29218#30261#0" />
+            <element signature="e#30289#31346#0" />
+            <element signature="e#31371#32393#0" />
+            <element signature="e#32441#33476#0" />
+            <element signature="e#33498#34494#0" />
+            <element signature="e#34521#35567#0" />
+            <element signature="e#35593#36613#0" />
+            <element signature="e#36643#37702#0" />
+            <element signature="e#37726#38746#0" />
+            <element signature="e#38773#39808#0" />
           </folding>
         </state>
       </provider>
@@ -337,16 +435,69 @@
     <entry file="file://$PROJECT_DIR$/svg output/iowa.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/bs4/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="191" selection-start-line="191" selection-end-line="191" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/pbp/ncaafpbp/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/bs4/element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="1806" selection-start-line="1806" selection-end-line="1806" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg output/florida state.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg output/boston college.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="227" column="80" selection-start-line="227" selection-start-column="80" selection-end-line="227" selection-end-column="80" />
+        <state relative-caret-position="188">
+          <caret line="76" column="74" lean-forward="true" selection-start-line="76" selection-start-column="74" selection-end-line="76" selection-end-column="74" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#16015#23279#0" />
-            <element signature="e#23557#45421#0" />
-            <element signature="e#23568#37833#0" />
-            <element signature="e#37842#45415#0" />
+            <element signature="e#240#485#0" />
+            <element signature="e#573#962#0" />
+            <element signature="e#1000#1118#0" />
+            <element signature="e#1192#2415#0" />
+            <element signature="e#2972#3825#0" />
+            <element signature="e#4787#4912#0" />
+            <element signature="e#4975#5157#0" />
+            <element signature="e#20559#27760#0" />
+            <element signature="e#24855#47707#0" />
+            <element signature="e#24914#25941#0" />
+            <element signature="e#25967#26991#0" />
+            <element signature="e#27017#28054#0" />
+            <element signature="e#28086#29190#0" />
+            <element signature="e#29218#30261#0" />
+            <element signature="e#30289#31346#0" />
+            <element signature="e#31371#32393#0" />
+            <element signature="e#32441#33476#0" />
+            <element signature="e#33498#34494#0" />
+            <element signature="e#34521#35567#0" />
+            <element signature="e#35593#36613#0" />
+            <element signature="e#36643#37702#0" />
+            <element signature="e#37726#38746#0" />
+            <element signature="e#38773#39808#0" />
           </folding>
         </state>
       </provider>

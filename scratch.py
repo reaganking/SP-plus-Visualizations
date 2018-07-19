@@ -30,7 +30,7 @@ class Utils:
         else:
             h = 120 * Utils.interpolate(lower, upper, val, method=method)
 
-        return [255 * x for x in hls_to_rgb(h / 360.0, 0.65, 1)]
+        return [int(round(255 * x, 0)) for x in hls_to_rgb(h / 360.0, 0.65, 1)]
 
     @staticmethod
     def get_logo_URIs():
@@ -64,6 +64,36 @@ class Utils:
                         break
 
                     handle.write(block)
+
+    @staticmethod
+    def download_schedules(conference=None, team=None, division=None, year=2018):
+        # Quick and dirty method to scrape schedule data
+        # get the list of D1 teams; pull the teamids from it
+        schedule = {}
+        teams = bs(requests.get("http://www.espn.com/college-football/teams").text).findAll('a', href=re.compile(
+            '^http://www.espn.com/college-football/team/_/id/'))
+
+        # right now we aren't making any distinctions about which teams we grabbed
+        # TODO: add in filtering options for teams / conference / division
+        for link in teams:
+            id = link['href'][47:link['href'].find('/', 47)]
+            name = link['href'][link['href'].find('/', 47) + 1:link['href'].rfind('-')]
+            r = requests.get("http://www.espn.com/college-football/team/schedule?id={}&year={}".format(id, year))
+            soup = bs(r.text, 'lxml')
+
+            # There's only one table with class tablehead on the schedule page
+            table = soup.find("table", {"class": "tablehead"})
+            rows = table.find_all("tr")  # grab all the rows of the table
+            rows = iter(rows)  # we want to be able to iterate over the rows
+
+            next(rows)  # skip the very first row, which only contains a table title
+            header = [td.text.lower() for td in next(rows).find_all('td') if td.text]
+
+            # TODO: fix the code below so it actually populates a dictionary, then poops it out into a JSON file
+            # each subsequent row represents a game. We need to build the schedule from this data.
+            for row in rows:
+                data = [td.text for td in row.find_all('td') if td.text]
+                print(data)
 
     @staticmethod
     def convert_to_URI():
@@ -105,7 +135,6 @@ class Team:
     def win_totals_by_week(self, projection_week=0, method="spplus"):
         # Make a ragged table to store 'games' x 'wins'
         record = [[0 for y in range(0, x + 1)] for x in range(1, len(self.win_probabilities) + 1)]
-        foo = self.win_probabilities[0][method][projection_week]
         record[0][0] = 1 - self.win_probabilities[0][method][projection_week]  # first game was a loss
         record[0][1] = self.win_probabilities[0][method][projection_week]  # first game was a win
 
@@ -129,7 +158,8 @@ class Team:
             writer.writerows(record)
 
     def make_win_probability_graph(self, file='out', hstep=40, vstep=40, margin=5, logowidth=30, logoheight=30,
-                                   menuheight=40, absolute=False, projectionweek=0, method="spplus"):
+                                   menuheight=40, absolute=False, projectionweek=0, method="spplus",
+                                   colorIndividualGameProbs=False):
         record = self.win_totals_by_week(method=method)
         logos = Utils.get_logo_URIs()
 
@@ -143,16 +173,16 @@ class Team:
 
             # Write the SVG header; remember to write </svg> to close the file
             outfile.write(
-                "<svg version=\"1.1\"\n\tbaseProfile=\"full\"\n\twidth=\"{}\" height=\"{}\"\n\txmlns=\"http://www.w3.org/2000/svg\"\n\txmlns:xlink=\"http://www.w3.org/1999/xlink\"\n\tstyle=\"shape-rendering:crispEdges;\">\n".format(
+                "<svg version='1.1'\n\tbaseProfile='full'\n\twidth='{}' height='{}'\n\txmlns='http://www.w3.org/2000/svg'\n\txmlns:xlink='http://www.w3.org/1999/xlink'\n\tstyle='shape-rendering:crispEdges;'>\n".format(
                     hstep * cols + 2 * margin, vstep * rows + 3 * margin + menuheight))
 
             # Fill the background with white
-            outfile.write("<rect width=\"100%\" height=\"100%\" style=\"fill:rgb(255,255,255)\" />\n")
+            outfile.write("<rect width='100%' height='100%' style='fill:rgb(255,255,255)' />\n")
 
             # Add the team logo
             try:
                 outfile.write(
-                    "<image x=\"{}\" y=\"{}\" height=\"{}px\" width=\"{}px\" xlink:href=\"data:image/jpg;base64,{}\"/>\n".format(
+                    "<image x='{}' y='{}' height='{}px' width='{}px' xlink:href='data:image/jpg;base64,{}'/>\n".format(
                         margin + (hstep - logowidth) / 2,
                         margin + (vstep - logoheight) / 2, logowidth, logoheight, logos[self.name]))
             except IndexError:
@@ -160,29 +190,29 @@ class Team:
 
             # Add the horizontal header label; it is at the very top of the svg and covers the right 16 columns, with centered text
             outfile.write(
-                "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\"  style=\"font-size:12px;font-family:Arial\">Total Wins</text>\n".format(
+                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Total Wins</text>\n".format(
                     margin + hstep * (cols - (cols - 4) / 2), margin + vstep * 0.5))
 
             # Add column labels for the H/A and Opp
             outfile.write(
-                "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\"  style=\"font-size:12px;font-family:Arial\">Week</text>\n".format(
+                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Week</text>\n".format(
                     margin + hstep * 0.5, margin + vstep * 1.5))
             outfile.write(
-                "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\"  style=\"font-size:12px;font-family:Arial\">H/A</text>\n".format(
+                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>H/A</text>\n".format(
                     margin + hstep * 1.5, margin + vstep * 1.5))
             outfile.write(
-                "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\"  style=\"font-size:12px;font-family:Arial\">Opp</text>\n".format(
+                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Opp</text>\n".format(
                     margin + hstep * 2.5, margin + vstep * 1.5))
 
             # writing multiline text is a bit dodgy; this works
             outfile.write(
-                "<text text-anchor=\"middle\" alignment-baseline=\"baseline\" x=\"{}\" y=\"{}\"  style=\"font-size:12px;font-family:Arial\">Win</text>\n".format(
+                "<text text-anchor='middle' alignment-baseline='baseline' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Win</text>\n".format(
                     margin + hstep * 3.5, margin + vstep * 1.5 - 2))
             outfile.write(
-                "<text text-anchor=\"middle\" alignment-baseline=\"hanging\" x=\"{}\" y=\"{}\"  style=\"font-size:12px;font-family:Arial\">Prob</text>\n".format(
+                "<text text-anchor='middle' alignment-baseline='hanging' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Prob</text>\n".format(
                     margin + hstep * 3.5, margin + vstep * 1.5 + 2))
 
-            outfile.write("<g id=\"probBoxes\">\n")
+            outfile.write("<g id='svg_2'>\n")
 
             for i in range(0, rows - 2):
                 # find the max and min in this week to determine color of cell
@@ -194,122 +224,159 @@ class Team:
                     upper, lower = max(record[i]), min(record[i])
 
                 for j in range(0, len(record) + 1):
-                    if i == 0:
-                        # Add the column label
-                        outfile.write(
-                            "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\" style=\"font-size:12px;font-family:Arial\">{}{}".format(
-                                margin + hstep * (4.5 + j), margin + vstep * 1.5, j, "</text>\n"))
 
                     # Draw the color-coded box
                     outfile.write(
-                        "<rect id=\"{},{}\" x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"".format(
+                        "<rect id='{}_{}' x='{}' y='{}' width='{}' height='{}' style='".format(
                             i, j, margin + hstep * (4 + j), margin + vstep * (2 + i), hstep, vstep))
 
                     if j < len(record[i]):
                         # We need to fill the absolute color code in the box initially and store the relative and absolute color codes
                         # so that we can use them later to animate the chart
-                        r, g, b = Utils.gradient_color(lower, upper, record[i][j])
-                        r_absolute, g_absolute, b_absolute = Utils.gradient_color(0, 1, record[i][j])
+                        ra, ga, ba = Utils.gradient_color(lower, upper, record[i][j])
+                        r, g, b = Utils.gradient_color(0, 1, record[i][j])
+
+                        if absolute:
+                            ra, ga, ba, r, g, b = r, g, b, ra, ga, ba
 
                         # Assign the color code.
-                        outfile.write("fill:rgb({},{},{})\">\n".format(r_absolute, g_absolute, b_absolute))
+                        outfile.write("fill:rgb({},{},{})'>\n".format(ra, ga, ba))
 
                         # The first two animate the colors to change when the user mouses over / off the game box
                         outfile.write(
-                            "<animate fill=\"freeze\" dur=\"0.1s\" to=\"rgb({},{},{})\" from=\"rgb({},{},{})\" attributeName=\"fill\" begin=\"mouseover\"/>\n".format(
-                                r, g, b, r_absolute, g_absolute, b_absolute))
+                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='mouseover'/>\n".format(
+                                r, g, b, ra, ga, ba))
                         outfile.write(
-                            "<animate fill=\"freeze\" dur=\"0.1s\" to=\"rgb({},{},{})\" from=\"rgb({},{},{})\" attributeName=\"fill\" begin=\"mouseout\"/>\n".format(
-                                r_absolute, g_absolute, b_absolute, r, g, b))
+                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='mouseout'/>\n".format(
+                                ra, ga, ba, r, g, b))
 
                         # These next two animate the colors to change when the user mouses over / off the week label
                         outfile.write(
-                            "<animate fill=\"freeze\" dur=\"0.1s\" to=\"rgb({},{},{})\" from=\"rgb({},{},{})\" attributeName=\"fill\" begin=\"week{}.mouseover\"/>\n".format(
-                                r, g, b, r_absolute, g_absolute, b_absolute, i))
+                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='week{}.mouseover'/>\n".format(
+                                r, g, b, ra, ga, ba, i))
                         outfile.write(
-                            "<animate fill=\"freeze\" dur=\"0.1s\" to=\"rgb({},{},{})\" from=\"rgb({},{},{})\" attributeName=\"fill\" begin=\"week{}.mouseout\"/></rect>".format(
-                                r_absolute, g_absolute, b_absolute, r, g, b, i))
+                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='week{}.mouseout'/></rect>\n".format(
+                                ra, ga, ba, r, g, b, i))
                     else:
                         # Assign the color code.
                         outfile.write(
-                            "fill:rgb({},{},{})\"/>\n".format(150, 150, 150))
+                            "fill:rgb({},{},{})'/>\n".format(150, 150, 150))
 
             outfile.write("</g>\n")
 
             for i in range(0, rows - 2):
-                # Add the color-coded box in the prob column with its text
-                r, g, b = Utils.gradient_color(0, 1, self.win_probabilities[i]["spplus"][projectionweek])
+                # by default, leave the game win probability cells uncolored. color them by mouseover.
+                r, g, b = Utils.gradient_color(0, 1, self.win_probabilities[i][method][projectionweek])
+
+                if colorIndividualGameProbs:
+                    # Add the color-coded box in the prob column
+                    outfile.write(
+                        "<rect x='{}' y='{}' width='{}' height='{}' style='fill:rgb({},{},{})'/>".format(
+                            margin + hstep * 3, margin + vstep * (2 + i), hstep, vstep, r, g, b))
+                else:
+                    outfile.write(
+                        "<rect x='{}' y='{}' width='{}' height='{}' style='fill:rgb({},{},{})'>\n".format(
+                            margin + hstep * 3, margin + vstep * (2 + i), hstep, vstep, 255, 255, 255))
+                    outfile.write(
+                        "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='probColHitBox.mouseover'/>\n".format(
+                            r, g, b, 255, 255, 255))
+                    outfile.write(
+                        "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='probColHitBox.mouseout'/></rect>\n".format(
+                            255, 255, 255, r, g, b))
+
+                # Add the probability text in the prob column
                 outfile.write(
-                    "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"fill:rgb({},{},{})\"/>".format(
-                        margin + hstep * 3, margin + vstep * (2 + i), hstep, vstep, r, g, b))
-                outfile.write(
-                    "<text text-anchor=\"middle\" alignment-baseline=\"central\" x=\"{}\" y=\"{}\" style=\"font-size:11px;font-family:Arial\">{}%{}".format(
+                    "<text text-anchor='middle' alignment-baseline='central' x='{}' y='{}' style='font-size:11px;font-family:Arial;pointer-events:none'>{}%{}".format(
                         margin + hstep * 3.5, margin + vstep * (2.5 + i),
-                        round(100 * self.win_probabilities[i]["spplus"][projectionweek], 1),
+                        round(100 * self.win_probabilities[i][method][projectionweek], 1),
                         "</text>\n"))
 
+                for j in range(0, len(record) + 1):
+                    if i == 0:
+                        # Add the column label
+                        outfile.write(
+                            "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:12px;font-family:Arial'>{}{}".format(
+                                margin + hstep * (4.5 + j), margin + vstep * 1.5, j, "</text>\n"))
+
+                # Loop over the body of the table and draw the probability text.
                 for j in range(0, len(record) + 1):
                     if j < len(record[i]):
                         # Write the probability in the box
                         outfile.write(
-                            "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\" style=\"font-size:11px;font-family:Arial;pointer-events: none\">{}%{}".format(
+                            "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:11px;font-family:Arial;pointer-events: none'>{}%{}".format(
                                 margin + hstep * (4.5 + j), margin + vstep * (2.5 + i), round(100 * record[i][j], 1),
                                 "</text>\n"))
             for i in range(2, rows):
                 # add the horizontal lines between the rows
                 outfile.write(
-                    "<line x1=\"{}\" y1=\"{}\" x2=\"{}\" y2=\"{}\" style=\"stroke:rgb(0,0,0)\"/>\n".format(
+                    "<line x1='{}' y1='{}' x2='{}' y2='{}' style='stroke:rgb(0,0,0)'/>\n".format(
                         margin, margin + vstep * i, margin + hstep * cols, vstep * i + margin))
                 for j in range(1, cols):
                     # add the vertical lines between the columns
                     outfile.write(
-                        "<line x1=\"{}\" y1=\"{}\" x2=\"{}\" y2=\"{}\" style=\"stroke:rgb(0,0,0)\"/>\n".format(
+                        "<line x1='{}' y1='{}' x2='{}' y2='{}' style='stroke:rgb(0,0,0)'/>\n".format(
                             margin + hstep * j, margin + vstep, margin + hstep * j, vstep * rows + margin))
 
             for i in range(0, rows - 2):
                 # Add the H/A data
                 outfile.write(
-                    "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\" style=\"font-size:12px;font-family:Arial\">{}{}".format(
+                    "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:12px;font-family:Arial'>{}{}".format(
                         margin + hstep * 1.5, margin + vstep * (2.5 + i), self.win_probabilities[i]["HA"],
                         "</text>\n"))
 
                 # Add the opponent logo
                 try:
                     outfile.write(
-                        "<image x=\"{}\" y=\"{}\" height=\"{}px\" width=\"{}px\" xlink:href=\"data:image/jpg;base64,{}\">\n<title>{}</title></image>\n".format(
+                        "<image x='{}' y='{}' height='{}px' width='{}px' xlink:href='data:image/jpg;base64,{}'>\n<title>{}</title></image>\n".format(
                             2 * hstep + margin + (hstep - logowidth) / 2,
                             vstep * (2 + i) + margin + (vstep - logoheight) / 2, logowidth, logoheight,
                             logos[self.win_probabilities[i]["team"]], self.win_probabilities[i]["team"].title()))
                 except KeyError:
                     pass
+
                 # Add the row week label and a hitbox
                 outfile.write(
-                    "<rect id=\"week{}\" x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"stroke:rgb(0,0,0);stroke-width:none;fill:white\"/>\n".format(
+                    "<rect id='week{}' x='{}' y='{}' width='{}' height='{}' style='stroke:rgb(0,0,0);stroke-width:none;fill:white'/>\n".format(
                         i, margin, margin + vstep * (2 + i), hstep, vstep))
                 outfile.write(
-                    "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\" style=\"font-size:12px;font-family:Arial;pointer-events: none\">{}{}".format(
+                    "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:12px;font-family:Arial;pointer-events: none'>{}{}".format(
                         margin + hstep * 0.5, margin + vstep * (2.5 + i), i + 1, "</text>\n"))
 
-                # Draw the outline box for the table
-                outfile.write(
-                    "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"stroke:rgb(0,0,0);stroke-width:2;fill:none\"/>\n".format(
-                        margin, margin + vstep, hstep * cols, vstep * (rows - 1)))
+            # Add the hitbox for the prob column
+            outfile.write(
+                "<rect id='probColHitBox' x='{}' y='{}' width='{}' height='{}' style='fill-opacity:0'/>".format(
+                    margin + hstep * 3, margin + vstep, hstep, vstep * (rows + 1)))
 
-                # Draw the outline box for the win total sub-table
-                outfile.write(
-                    "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"stroke:rgb(0,0,0);stroke-width:2;fill:none\"/>\n".format(
-                        margin + hstep * 4, margin + vstep, hstep * (cols - 4), vstep * (rows - 1)))
+            # Draw the outline box for the table
+            outfile.write(
+                "<rect x='{}' y='{}' width='{}' height='{}' style='stroke:rgb(0,0,0);stroke-width:2;fill:none'/>\n".format(
+                    margin, margin + vstep, hstep * cols, vstep * (rows - 1)))
 
-                # Draw the outline box for the column headers
-                outfile.write(
-                    "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"stroke:rgb(0,0,0);stroke-width:2;fill:none\"/>".format(
-                        margin, margin + vstep, hstep * cols, vstep))
+            # Draw the outline box for the win total sub-table
+            outfile.write(
+                "<rect x='{}' y='{}' width='{}' height='{}' style='stroke:rgb(0,0,0);stroke-width:2;fill:none'/>\n".format(
+                    margin + hstep * 4, margin + vstep, hstep * (cols - 4), vstep * (rows - 1)))
 
-                # Draw the outline box for the win total header label
-                outfile.write(
-                    "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"stroke:rgb(0,0,0);stroke-width:2;fill:none\"/>".format(
-                        margin + hstep * 4, margin, hstep * (cols - 4), vstep))
+            # Draw the outline box for the column headers
+            outfile.write(
+                "<rect x='{}' y='{}' width='{}' height='{}' style='stroke:rgb(0,0,0);stroke-width:2;fill:none'/>".format(
+                    margin, margin + vstep, hstep * cols, vstep))
 
+            # Draw the outline box for the win total header label
+            outfile.write(
+                "<rect x='{}' y='{}' width='{}' height='{}' style='stroke:rgb(0,0,0);stroke-width:2;fill:none'/>\n".format(
+                    margin + hstep * 4, margin, hstep * (cols - 4), vstep))
+
+            # TODO: research and implement a solution so that we can wholesale toggle relative-contrast and absolute-probability color scales
+            """
+            # Add a box to toggle contrast and absolute coloration
+            outfile.write("<script type='text/javascript'><![CDATA[\n\t")
+            outfile.write("function foo() {\n\t")  # user clicks anywhere on the svg
+            outfile.write("}\n")  # if group svg_2 is hidden
+            outfile.write("")  # change to visible; else
+            outfile.write("});\n")  # change it to hidden
+            outfile.write("]]>\n</script>\n")
+            """
             outfile.write("</svg>")
 
 
@@ -323,8 +390,7 @@ class Conference:
                           self.divisions for i in data[x]]
 
     def make_standings_projection_graph(self, file='out', week=None, hstep=40, vstep=40, margin=5, logowidth=30,
-                                        logoheight=30,
-                                        absolute=False):
+                                        logoheight=30, absolute=False):
         logos = Utils.get_logo_URIs()
 
         # get the records for the final week for each team
@@ -346,26 +412,27 @@ class Conference:
 
             # Write the SVG header; remember to write </svg> to close the file
             outfile.write(
-                "<svg version=\"1.1\"\n\tbaseProfile=\"full\"\n\twidth=\"{}\" height=\"{}\"\n\txmlns=\"http://www.w3.org/2000/svg\"\n\txmlns:xlink=\"http://www.w3.org/1999/xlink\"\n\tstyle=\"shape-rendering:crispEdges;\">\n".format(
+                "<svg version='1.1'\n\tbaseProfile='full'\n\twidth='{}' height='{}'\n\txmlns='http://www.w3.org/2000/svg'\n\txmlns:xlink='http://www.w3.org/1999/xlink'\n\tstyle='shape-rendering:crispEdges;'>\n".format(
                     hstep * cols + 2 * margin, vstep * rows + 2 * margin))
 
             # Fill the background with white
-            outfile.write("<rect width=\"100%\" height=\"100%\" style=\"fill:rgb(255,255,255)\" />")
+            outfile.write("<rect width='100%' height='100%' style='fill:rgb(255,255,255)' />")
 
             # Add the horizontal header label; it is at the very top of the svg and covers all but the first column, with centered text
             outfile.write(
-                "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\"  style=\"font-size:12px;font-family:Arial\">Total Wins</text>\n".format(
+                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Total Wins</text>\n".format(
                     margin + hstep * (cols - (cols - 1) / 2), margin + vstep * 0.5))
 
             # Add column labels for the Team Name
             outfile.write(
-                "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\"  style=\"font-size:12px;font-family:Arial\">Team</text>\n".format(
+                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Team</text>\n".format(
                     margin + hstep * 0.5, margin + vstep * 1.5))
 
+            # This set of loops fills in the body of the table
             for i in range(0, rows - 2):
                 # Add the team logo
                 outfile.write(
-                    "<image x=\"{}\" y=\"{}\" height=\"{}px\" width=\"{}px\" xlink:href=\"data:image/jpg;base64,{}\"/>".format(
+                    "<image x='{}' y='{}' height='{}px' width='{}px' xlink:href='data:image/jpg;base64,{}'/>".format(
                         margin + (hstep - logowidth) / 2,
                         vstep * (2 + i) + margin + (vstep - logoheight) / 2, logowidth, logoheight,
                         logos[record[i][0].name]))
@@ -380,54 +447,56 @@ class Conference:
                     if i == 0:
                         # Add the column label
                         outfile.write(
-                            "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\" style=\"font-size:12px;font-family:Arial\">{}{}".format(
+                            "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:12px;font-family:Arial'>{}{}".format(
                                 margin + hstep * (1.5 + j), margin + vstep * 1.5, j, "</text>\n"))
 
                     r, g, b = Utils.gradient_color(lower, upper, record[i][1][j])
                     # Draw the color-coded box
                     outfile.write(
-                        "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"fill:rgb({},{},{})\"/>\n".format(
+                        "<rect x='{}' y='{}' width='{}' height='{}' style='fill:rgb({},{},{})'/>\n".format(
                             margin + hstep * (1 + j), margin + vstep * (2 + i), hstep, vstep, r, g, b))
 
                     if j < len(record[i][1]):
                         # Write the probability in the box
                         outfile.write(
-                            "<text text-anchor=\"middle\" alignment-baseline=\"middle\" x=\"{}\" y=\"{}\"  style=\"font-size:11px;font-family:Arial\">{}%{}".format(
+                            "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:11px;font-family:Arial'>{}%{}".format(
                                 margin + hstep * (1.5 + j), margin + vstep * (2.5 + i), round(100 * record[i][1][j], 1),
                                 "</text>\n"))
+
+            # This set of loops draws the grid over the table.
             for i in range(2, rows):
                 for j in range(1, cols):
                     # add the vertical lines between the columns
                     outfile.write(
-                        "<line x1=\"{}\" y1=\"{}\" x2=\"{}\" y2=\"{}\" style=\"stroke:rgb(0,0,0)\"/>\n".format(
+                        "<line x1='{}' y1='{}' x2='{}' y2='{}' style='stroke:rgb(0,0,0)'/>\n".format(
                             margin + hstep * j, margin + vstep, margin + hstep * j, margin + vstep * rows))
                     # add the horizontal lines between the rows
                     outfile.write(
-                        "<line x1=\"{}\" y1=\"{}\" x2=\"{}\" y2=\"{}\" style=\"stroke:rgb(0,0,0)\"/>\n".format(
+                        "<line x1='{}' y1='{}' x2='{}' y2='{}' style='stroke:rgb(0,0,0)'/>\n".format(
                             margin, margin + vstep * i, margin + hstep * cols, margin + vstep * i))
             # add the horizontal line between the divisions
             outfile.write(
-                "<line x1=\"{}\" y1=\"{}\" x2=\"{}\" y2=\"{}\" style=\"stroke:rgb(0,0,0);stroke-width:3\"/>\n".format(
+                "<line x1='{}' y1='{}' x2='{}' y2='{}' style='stroke:rgb(0,0,0);stroke-width:3'/>\n".format(
                     margin, margin + vstep * (2 + len(self.teams) / len(self.divisions)), margin + hstep * cols,
                             margin + vstep * (2 + len(self.teams) / len(self.divisions))))
             # Draw the outline box for the table
             outfile.write(
-                "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"stroke:rgb(0,0,0);stroke-width:2;fill-opacity:0\"/>\n".format(
+                "<rect x='{}' y='{}' width='{}' height='{}' style='stroke:rgb(0,0,0);stroke-width:2;fill-opacity:0'/>\n".format(
                     margin, margin + vstep, hstep * cols, vstep * (rows - 1)))
 
             # Draw the outline box for the win total sub-table
             outfile.write(
-                "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"stroke:rgb(0,0,0);stroke-width:2;fill-opacity:0\"/>\n".format(
+                "<rect x='{}' y='{}' width='{}' height='{}' style='stroke:rgb(0,0,0);stroke-width:2;fill-opacity:0'/>\n".format(
                     margin + hstep, margin + vstep, hstep * (cols - 1), vstep * (rows - 1)))
 
             # Draw the outline box for the column headers
             outfile.write(
-                "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"stroke:rgb(0,0,0);stroke-width:2;fill-opacity:0\"/>".format(
+                "<rect x='{}' y='{}' width='{}' height='{}' style='stroke:rgb(0,0,0);stroke-width:2;fill-opacity:0'/>".format(
                     margin, margin + vstep, hstep * cols, vstep))
 
             # Draw the outline box for the win total header label
             outfile.write(
-                "<rect x=\"{}\" y=\"{}\" width=\"{}\" height=\"{}\" style=\"stroke:rgb(0,0,0);stroke-width:2;fill-opacity:0\"/>".format(
+                "<rect x='{}' y='{}' width='{}' height='{}' style='stroke:rgb(0,0,0);stroke-width:2;fill-opacity:0'/>".format(
                     margin + hstep, margin, hstep * (cols - 1), vstep))
 
             outfile.write("</svg>")
@@ -627,7 +696,18 @@ conferences = {
                                {"team": "florida state", "fpi": [], "spplus": [.27], "HA": "vs"},
                                {"team": "syracuse", "fpi": [], "spplus": [.66], "HA": "vs"}],
             "clemson": [],
-            "florida state": [],
+            "florida state": [{"team": "virginia tech", "fpi": [], "bud": [.75], "spplus": [.58], "HA": "vs"},
+                              {"team": "samford", "fpi": [], "bud": [1.00], "spplus": [.98], "HA": "vs"},
+                              {"team": "syracuse", "fpi": [], "bud": [.83], "spplus": [.73], "HA": "at"},
+                              {"team": "northern illinois", "fpi": [], "bud": [.98], "spplus": [.80], "HA": "vs"},
+                              {"team": "louisville", "fpi": [], "bud": [.70], "spplus": [.51], "HA": "at"},
+                              {"team": "miami", "fpi": [], "bud": [.40], "spplus": [.33], "HA": "at"},
+                              {"team": "wake forest", "fpi": [], "bud": [.85], "spplus": [.67], "HA": "vs"},
+                              {"team": "clemson", "fpi": [], "bud": [.20], "spplus": [.27], "HA": "vs"},
+                              {"team": "nc state", "fpi": [], "bud": [.50], "spplus": [.56], "HA": "at"},
+                              {"team": "notre dame", "fpi": [], "bud": [.30], "spplus": [.25], "HA": "at"},
+                              {"team": "boston college", "fpi": [], "bud": [.70], "spplus": [.73], "HA": "vs"},
+                              {"team": "florida", "fpi": [], "bud": [.75], "spplus": [.65], "HA": "vs"}],
             "louisville": [],
             "nc state": [],
             "syracuse": [{"team": "western michigan", "fpi": [], "spplus": [.52], "HA": "at"},
@@ -710,7 +790,7 @@ conferences = {
         }
     }}
 
-Utils.convert_to_URI()
+# Utils.download_schedules()
 
 # Conference(bigten).make_standings_projection_graph(absolute=False, file="bigten")
 for conference in conferences:
@@ -718,5 +798,8 @@ for conference in conferences:
         for team in conferences[conference][division]:
             if len(conferences[conference][division][team]) > 0:
                 Team(name=team, win_probabilities=conferences[conference][division][team]).make_win_probability_graph(
-                    absolute=False,
-                    file=team)
+                    absolute=False, file=team)
+'''
+Team(name="florida state",
+     win_probabilities=conferences["acc"]["atlantic"]["florida state"]).make_win_probability_graph(method="bud", absolute=False, file="Bud's Projections for FSU")
+'''
