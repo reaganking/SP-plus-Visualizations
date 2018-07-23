@@ -4,6 +4,7 @@ import json
 import os
 import re
 from colorsys import hls_to_rgb
+from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup as bs
@@ -66,34 +67,28 @@ class Utils:
                     handle.write(block)
 
     @staticmethod
-    def download_schedules(conference=None, team=None, division=None, year=2018):
+    def download_schedules(year=datetime.now().year) -> None:
+        result = []
         # Quick and dirty method to scrape schedule data
-        # get the list of D1 teams; pull the teamids from it
-        schedule = {}
-        teams = bs(requests.get("http://www.espn.com/college-football/teams").text).findAll('a', href=re.compile(
-            '^http://www.espn.com/college-football/team/_/id/'))
+        for week in range(1, 20):
+            # Pull the scoreboard, which contains links to the details for each game
+            url = "http://data.ncaa.com/jsonp/scoreboard/football/fbs/{}/{}/scoreboard.json".format(year, "%02d" % week)
+            response = requests.get(url)
+            if response.status_code == 404:
+                continue
+            else:
+                # look in the scoreboard dictionary, iterate over the days with games that week
+                for day in json.loads(response.text[response.text.index("(") + 1: response.text.rindex(")")])[
+                    'scoreboard']:
+                    # iterate over the games for that day
+                    for game in day['games']:
+                        url = "http://data.ncaa.com/jsonp/{}".format(game)
+                        response = requests.get(url)
+                        if response.status_code == 404:
+                            continue
+                        else:
+                            result += [json.loads(response.text)]
 
-        # right now we aren't making any distinctions about which teams we grabbed
-        # TODO: add in filtering options for teams / conference / division
-        for link in teams:
-            id = link['href'][47:link['href'].find('/', 47)]
-            name = link['href'][link['href'].find('/', 47) + 1:link['href'].rfind('-')]
-            r = requests.get("http://www.espn.com/college-football/team/schedule?id={}&year={}".format(id, year))
-            soup = bs(r.text, 'lxml')
-
-            # There's only one table with class tablehead on the schedule page
-            table = soup.find("table", {"class": "tablehead"})
-            rows = table.find_all("tr")  # grab all the rows of the table
-            rows = iter(rows)  # we want to be able to iterate over the rows
-
-            next(rows)  # skip the very first row, which only contains a table title
-            header = [td.text.lower() for td in next(rows).find_all('td') if td.text]
-
-            # TODO: fix the code below so it actually populates a dictionary, then poops it out into a JSON file
-            # each subsequent row represents a game. We need to build the schedule from this data.
-            for row in rows:
-                data = [td.text for td in row.find_all('td') if td.text]
-                print(data)
 
     @staticmethod
     def convert_to_URI():
@@ -709,7 +704,18 @@ conferences = {
                               {"team": "boston college", "fpi": [], "bud": [.70], "spplus": [.73], "HA": "vs"},
                               {"team": "florida", "fpi": [], "bud": [.75], "spplus": [.65], "HA": "vs"}],
             "louisville": [],
-            "nc state": [],
+            "nc state": [{"team": "james madison", "fpi": [], "spplus": [.92], "HA": "vs"},
+                         {"team": "georgia state", "fpi": [], "spplus": [.89], "HA": "vs"},
+                         {"team": "west virginia", "fpi": [], "spplus": [.61], "HA": "vs"},
+                         {"team": "marshall", "fpi": [], "spplus": [.56], "HA": "at"},
+                         {"team": "virginia", "fpi": [], "spplus": [.73], "HA": "vs"},
+                         {"team": "boston college", "fpi": [], "spplus": [.63], "HA": "vs"},
+                         {"team": "clemson", "fpi": [], "spplus": [.12], "HA": "at"},
+                         {"team": "syracuse", "fpi": [], "spplus": [.62], "HA": "at"},
+                         {"team": "florida state", "fpi": [], "spplus": [.44], "HA": "vs"},
+                         {"team": "wake forest", "fpi": [], "spplus": [.55], "HA": "vs"},
+                         {"team": "louisville", "fpi": [], "spplus": [.40], "HA": "at"},
+                         {"team": "north carolina", "fpi": [], "spplus": [.52], "HA": "at"}],
             "syracuse": [{"team": "western michigan", "fpi": [], "spplus": [.52], "HA": "at"},
                          {"team": "wagner", "fpi": [], "spplus": [.99], "HA": "vs"},
                          {"team": "florida state", "fpi": [], "spplus": [.27], "HA": "vs"},
@@ -722,7 +728,18 @@ conferences = {
                          {"team": "louisville", "fpi": [], "spplus": [.34], "HA": "vs"},
                          {"team": "notre dame", "fpi": [], "spplus": [.10], "HA": "vs"},
                          {"team": "boston college", "fpi": [], "spplus": [.34], "HA": "at"}],
-            "wake forest": []
+            "wake forest": [{"team": "tulane", "fpi": [], "spplus": [.75], "HA": "at"},
+                         {"team": "towson", "fpi": [], "spplus": [.97], "HA": "vs"},
+                         {"team": "boston college", "fpi": [], "spplus": [.63], "HA": "vs"},
+                         {"team": "notre dame", "fpi": [], "spplus": [.25], "HA": "vs"},
+                         {"team": "rice", "fpi": [], "spplus": [.93], "HA": "vs"},
+                         {"team": "clemson", "fpi": [], "spplus": [.18], "HA": "vs"},
+                         {"team": "florida state", "fpi": [], "spplus": [.33], "HA": "at"},
+                         {"team": "louisville", "fpi": [], "spplus": [.40], "HA": "at"},
+                         {"team": "syracuse", "fpi": [], "spplus": [.73], "HA": "vs"},
+                         {"team": "nc state", "fpi": [], "spplus": [.45], "HA": "at"},
+                         {"team": "pittsburgh", "fpi": [], "spplus": [.62], "HA": "vs"},
+                         {"team": "duke", "fpi": [], "spplus": [.48], "HA": "at"}]
         },
         "coastal": {
             "duke": [{"team": "army", "fpi": [], "spplus": [.78], "HA": "vs"},
@@ -792,14 +809,16 @@ conferences = {
 
 # Utils.download_schedules()
 
-# Conference(bigten).make_standings_projection_graph(absolute=False, file="bigten")
+Conference(conferences['bigten']).make_standings_projection_graph(absolute=False, file="bigten")
+
 for conference in conferences:
     for division in conferences[conference]:
         for team in conferences[conference][division]:
             if len(conferences[conference][division][team]) > 0:
                 Team(name=team, win_probabilities=conferences[conference][division][team]).make_win_probability_graph(
                     absolute=False, file=team)
-'''
+
 Team(name="florida state",
      win_probabilities=conferences["acc"]["atlantic"]["florida state"]).make_win_probability_graph(method="bud", absolute=False, file="Bud's Projections for FSU")
-'''
+
+#Utils.download_schedules()
