@@ -89,7 +89,6 @@ class Utils:
                         else:
                             result += [json.loads(response.text)]
 
-
     @staticmethod
     def convert_to_URI():
         imagelist = {}
@@ -729,17 +728,17 @@ conferences = {
                          {"team": "notre dame", "fpi": [], "spplus": [.10], "HA": "vs"},
                          {"team": "boston college", "fpi": [], "spplus": [.34], "HA": "at"}],
             "wake forest": [{"team": "tulane", "fpi": [], "spplus": [.75], "HA": "at"},
-                         {"team": "towson", "fpi": [], "spplus": [.97], "HA": "vs"},
-                         {"team": "boston college", "fpi": [], "spplus": [.63], "HA": "vs"},
-                         {"team": "notre dame", "fpi": [], "spplus": [.25], "HA": "vs"},
-                         {"team": "rice", "fpi": [], "spplus": [.93], "HA": "vs"},
-                         {"team": "clemson", "fpi": [], "spplus": [.18], "HA": "vs"},
-                         {"team": "florida state", "fpi": [], "spplus": [.33], "HA": "at"},
-                         {"team": "louisville", "fpi": [], "spplus": [.40], "HA": "at"},
-                         {"team": "syracuse", "fpi": [], "spplus": [.73], "HA": "vs"},
-                         {"team": "nc state", "fpi": [], "spplus": [.45], "HA": "at"},
-                         {"team": "pittsburgh", "fpi": [], "spplus": [.62], "HA": "vs"},
-                         {"team": "duke", "fpi": [], "spplus": [.48], "HA": "at"}]
+                            {"team": "towson", "fpi": [], "spplus": [.97], "HA": "vs"},
+                            {"team": "boston college", "fpi": [], "spplus": [.63], "HA": "vs"},
+                            {"team": "notre dame", "fpi": [], "spplus": [.25], "HA": "vs"},
+                            {"team": "rice", "fpi": [], "spplus": [.93], "HA": "vs"},
+                            {"team": "clemson", "fpi": [], "spplus": [.18], "HA": "vs"},
+                            {"team": "florida state", "fpi": [], "spplus": [.33], "HA": "at"},
+                            {"team": "louisville", "fpi": [], "spplus": [.40], "HA": "at"},
+                            {"team": "syracuse", "fpi": [], "spplus": [.73], "HA": "vs"},
+                            {"team": "nc state", "fpi": [], "spplus": [.45], "HA": "at"},
+                            {"team": "pittsburgh", "fpi": [], "spplus": [.62], "HA": "vs"},
+                            {"team": "duke", "fpi": [], "spplus": [.48], "HA": "at"}]
         },
         "coastal": {
             "duke": [{"team": "army", "fpi": [], "spplus": [.78], "HA": "vs"},
@@ -805,7 +804,19 @@ conferences = {
                          {"team": "virginia tech", "fpi": [], "spplus": [.20], "HA": "at"}],
             "virginia tech": []
         }
-    }}
+    },
+    "big12": {"all": {"texas": [{"team": "maryland", "fpi": [], "spplus": [.74], "HA": "at"},
+                                {"team": "tulsa", "fpi": [], "spplus": [.89], "HA": "vs"},
+                                {"team": "southern california", "fpi": [], "spplus": [.46], "HA": "vs"},
+                                {"team": "texas christian", "fpi": [], "spplus": [.52], "HA": "vs"},
+                                {"team": "kansas state", "fpi": [], "spplus": [.62], "HA": "at"},
+                                {"team": "oklahoma", "fpi": [], "spplus": [.28], "HA": "vs"},
+                                {"team": "baylor", "fpi": [], "spplus": [.68], "HA": "vs"},
+                                {"team": "oklahoma state", "fpi": [], "spplus": [.39], "HA": "at"},
+                                {"team": "west virginia", "fpi": [], "spplus": [.66], "HA": "vs"},
+                                {"team": "texas tech", "fpi": [], "spplus": [.57], "HA": "at"},
+                                {"team": "iowa state", "fpi": [], "spplus": [.67], "HA": "vs"},
+                                {"team": "kansas", "fpi": [], "spplus": [.81], "HA": "at"}]}}}
 
 # Utils.download_schedules()
 
@@ -819,6 +830,8 @@ for conference in conferences:
                     absolute=False, file=team)
 
 Team(name="florida state",
-     win_probabilities=conferences["acc"]["atlantic"]["florida state"]).make_win_probability_graph(method="bud", absolute=False, file="Bud's Projections for FSU")
+     win_probabilities=conferences["acc"]["atlantic"]["florida state"]).make_win_probability_graph(method="bud",
+                                                                                                   absolute=False,
+                                                                                                   file="Bud's Projections for FSU")
 
-#Utils.download_schedules()
+# Utils.download_schedules()
