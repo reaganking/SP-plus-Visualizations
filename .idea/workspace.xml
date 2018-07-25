@@ -3,7 +3,36 @@
   <component name="ChangeListManager">
     <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logo URIs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logo URIs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/William Mary.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/bigten.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/boston college.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/duke.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/florida state.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/georgia tech.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/illinois.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/indiana.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/iowa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/maryland.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/michigan state.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/michigan.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/minnesota.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/nc state.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/nebraska.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/north carolina.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/northwestern.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/ohio state.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/out.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/penn state.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/pittsburgh.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/purdue.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/rutgers.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/syracuse.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/texas.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/virginia.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/wake forest.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/wisconsin.svg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,12 +46,11 @@
       <file leaf-file-name="scratch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="818" column="94" selection-start-line="818" selection-start-column="94" selection-end-line="818" selection-end-column="94" />
+            <state relative-caret-position="83">
+              <caret line="775" column="79" selection-start-line="775" selection-start-column="79" selection-end-line="775" selection-end-column="79" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#27691#42644#0" />
-                <element signature="e#42657#53862#0" />
+                <element signature="e#27690#42643#0" />
               </folding>
             </state>
           </provider>
@@ -32,8 +60,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;winprob&quot;</find>
-      <find>logo</find>
       <find>&quot;spplus&quot;:</find>
       <find>spplus</find>
       <find>freeze</find>
@@ -62,6 +88,8 @@
       <find>assert</find>
       <find>schedule</find>
       <find>animate</find>
+      <find>, &quot;bud&quot;: [</find>
+      <find>william</find>
     </findStrings>
     <replaceStrings>
       <replace>/&quot;</replace>
@@ -91,22 +119,22 @@
         <option value="$PROJECT_DIR$/svg output/iowa.svg" />
         <option value="$PROJECT_DIR$/svg output/florida state.svg" />
         <option value="$PROJECT_DIR$/svg output/boston college.svg" />
+        <option value="$PROJECT_DIR$/Logo URIs.txt" />
         <option value="$PROJECT_DIR$/scratch.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1272" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="936" />
-    <option name="height" value="728" />
+    <option name="width" value="1040" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -114,10 +142,16 @@
               <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
               <item name="sp plus visualization" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sp plus visualization" type="462c0819:PsiDirectoryNode" />
+              <item name="svg output" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -219,19 +253,32 @@
       <option name="project" value="LOCAL" />
       <updated>1532355401489</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added Texas per request.">
+      <created>1532366835331</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1532366835331</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added Texas per request.">
+      <created>1532366952572</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1532366952572</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1272" y="-8" width="1296" height="1040" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="2" weight="0.33068362" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.3298887" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50074404" side_tool="true" weight="0.39713973" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32789558" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38063806" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.40391254" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32893288" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -299,7 +346,8 @@
     <MESSAGE value="Added more svg interactivity, including color changing tiles." />
     <MESSAGE value="More interactivity updates; color options modified somewhat based on feedback. Working on adding functions to scrape schedules from ESPN; need to finish adding functionality to allow for custom predictive values to be entered." />
     <MESSAGE value="Just more dicking around and working on features. Added early prototype code to pull JSON data from the NCAA website. Eventually this will mature into a full-blown JSON file containing all of the data for a year's game. Will cross-reference that data with S&amp;P+ to add appropriate fields for each game." />
-    <option name="LAST_COMMIT_MESSAGE" value="Just more dicking around and working on features. Added early prototype code to pull JSON data from the NCAA website. Eventually this will mature into a full-blown JSON file containing all of the data for a year's game. Will cross-reference that data with S&amp;P+ to add appropriate fields for each game." />
+    <MESSAGE value="Added Texas per request." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Texas per request." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -316,12 +364,33 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14229">
+          <caret line="837" column="30" lean-forward="true" selection-start-line="837" selection-start-column="30" selection-end-line="837" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#27690#42643#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14110">
+          <caret line="830" selection-start-line="830" selection-end-line="830" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#27690#42643#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12019">
           <caret line="707" column="91" lean-forward="true" selection-start-line="707" selection-start-column="91" selection-end-line="707" selection-end-column="91" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#27691#42644#0" />
-            <element signature="e#42657#53862#0" />
+            <element signature="e#27690#42643#0" />
           </folding>
         </state>
       </provider>
@@ -332,8 +401,7 @@
           <caret line="812" selection-start-line="812" selection-end-line="812" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#27691#42644#0" />
-            <element signature="e#42657#53862#0" />
+            <element signature="e#27690#42643#0" />
           </folding>
         </state>
       </provider>
@@ -344,8 +412,7 @@
           <caret line="812" selection-start-line="812" selection-end-line="812" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#27691#42644#0" />
-            <element signature="e#42657#53862#0" />
+            <element signature="e#27690#42643#0" />
           </folding>
         </state>
       </provider>
@@ -356,8 +423,7 @@
           <caret line="379" column="9" lean-forward="true" selection-start-line="379" selection-start-column="9" selection-end-line="379" selection-end-column="9" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#27691#42644#0" />
-            <element signature="e#42657#53862#0" />
+            <element signature="e#27690#42643#0" />
           </folding>
         </state>
       </provider>
@@ -368,8 +434,7 @@
           <caret line="500" column="23" lean-forward="true" selection-start-line="500" selection-start-column="23" selection-end-line="500" selection-end-column="23" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#27691#42644#0" />
-            <element signature="e#42657#53862#0" />
+            <element signature="e#27690#42643#0" />
           </folding>
         </state>
       </provider>
@@ -380,8 +445,7 @@
           <caret line="227" column="80" selection-start-line="227" selection-start-column="80" selection-end-line="227" selection-end-column="80" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#27691#42644#0" />
-            <element signature="e#42657#53862#0" />
+            <element signature="e#27690#42643#0" />
           </folding>
         </state>
       </provider>
@@ -395,8 +459,7 @@
           <caret line="707" selection-start-line="707" selection-end-line="707" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#27691#42644#0" />
-            <element signature="e#42657#53862#0" />
+            <element signature="e#27690#42643#0" />
           </folding>
         </state>
       </provider>
@@ -531,14 +594,23 @@
     <entry file="file://$PROJECT_DIR$/svg output/nc state.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/svg output/virginia tech.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logo URIs.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret column="585540" selection-start-column="585540" selection-end-column="585540" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="818" column="94" selection-start-line="818" selection-start-column="94" selection-end-line="818" selection-end-column="94" />
+        <state relative-caret-position="83">
+          <caret line="775" column="79" selection-start-line="775" selection-start-column="79" selection-end-line="775" selection-end-column="79" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#27691#42644#0" />
-            <element signature="e#42657#53862#0" />
+            <element signature="e#27690#42643#0" />
           </folding>
         </state>
       </provider>
