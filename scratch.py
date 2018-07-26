@@ -443,8 +443,11 @@ class Conference:
                         outfile.write(
                             "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:12px;font-family:Arial'>{}{}".format(
                                 margin + hstep * (1.5 + j), margin + vstep * 1.5, j, "</text>\n"))
+                    if j < len(record[i][1]):
+                        r, g, b = Utils.gradient_color(lower, upper, record[i][1][j])
+                    else:
+                        r, g, b = 150, 150, 150
 
-                    r, g, b = Utils.gradient_color(lower, upper, record[i][1][j])
                     # Draw the color-coded box
                     outfile.write(
                         "<rect x='{}' y='{}' width='{}' height='{}' style='fill:rgb({},{},{})'/>\n".format(
@@ -499,7 +502,6 @@ class Conference:
 # Conference Win Probabilities. Teams are alphabetical; dimensions are week, team, win total
 # These effectively constitute a weighted adjacency matrix
 # although it doesn't include win probabilities for every other node in the graph nor are the nodes labeled
-
 conferences = {
     "bigten": {
         "east": {
@@ -1204,14 +1206,218 @@ conferences = {
                 {"team": "colorado", "fpi": [], "spplus": [.75], "HA": "at"},
                 {"team": "byu", "fpi": [], "spplus": [.77], "HA": "vs"}]
         }
+    },
+    "cusa": {
+        "east": {
+            "florida atlantic": [
+                {"team": "oklahoma", "fpi": [], "spplus": [.22], "HA": "at"},
+                {"team": "air force", "fpi": [], "spplus": [.89], "HA": "vs"},
+                {"team": "bethune cookman", "fpi": [], "spplus": [.99], "HA": "vs"},
+                {"team": "ucf", "fpi": [], "spplus": [.33], "HA": "at"},
+                {"team": "middle tennessee", "fpi": [], "spplus": [.70], "HA": "at"},
+                {"team": "old dominion", "fpi": [], "spplus": [.91], "HA": "vs"},
+                {"team": "marshall", "fpi": [], "spplus": [.60], "HA": "at"},
+                {"team": "louisiana tech", "fpi": [], "spplus": [.75], "HA": "vs"},
+                {"team": "florida international", "fpi": [], "spplus": [.86], "HA": "at"},
+                {"team": "western kentucky", "fpi": [], "spplus": [.82], "HA": "vs"},
+                {"team": "north texas", "fpi": [], "spplus": [.71], "HA": "at"},
+                {"team": "charlotte", "fpi": [], "spplus": [.94], "HA": "vs"}
+            ],
+            "florida international": [
+                {"team": "indiana", "fpi": [], "spplus": [.23], "HA": "vs"},
+                {"team": "old dominion", "fpi": [], "spplus": [.41], "HA": "at"},
+                {"team": "umass", "fpi": [], "spplus": [.44], "HA": "vs"},
+                {"team": "miami", "fpi": [], "spplus": [.03], "HA": "at"},
+                {"team": "arkansas pine bluff", "fpi": [], "spplus": [.97], "HA": "vs"},
+                {"team": "middle tennessee", "fpi": [], "spplus": [.33], "HA": "vs"},
+                {"team": "rice", "fpi": [], "spplus": [.63], "HA": "vs"},
+                {"team": "western kentucky", "fpi": [], "spplus": [.27], "HA": "at"},
+                {"team": "florida atlantic", "fpi": [], "spplus": [.14], "HA": "vs"},
+                {"team": "ut san antonio", "fpi": [], "spplus": [.34], "HA": "at"},
+                {"team": "charlotte", "fpi": [], "spplus": [.50], "HA": "at"},
+                {"team": "marshall", "fpi": [], "spplus": [.24], "HA": "vs"}
+            ],
+            "marshall": [
+                {"team": "miami (ohio)", "fpi": [], "spplus": [.53], "HA": "at"},
+                {"team": "eastern kentucky", "fpi": [], "spplus": [.98], "HA": "vs"},
+                {"team": "south carolina", "fpi": [], "spplus": [.33], "HA": "at"},
+                {"team": "nc state", "fpi": [], "spplus": [.44], "HA": "vs"},
+                {"team": "western kentucky", "fpi": [], "spplus": [.59], "HA": "at"},
+                {"team": "middle tennessee", "fpi": [], "spplus": [.66], "HA": "vs"},
+                {"team": "old dominion", "fpi": [], "spplus": [.74], "HA": "at"},
+                {"team": "florida atlantic", "fpi": [], "spplus": [.40], "HA": "vs"},
+                {"team": "southern mississippi", "fpi": [], "spplus": [.62], "HA": "at"},
+                {"team": "charlotte", "fpi": [], "spplus": [.87], "HA": "vs"},
+                {"team": "ut san antonio", "fpi": [], "spplus": [.77], "HA": "vs"},
+                {"team": "florida international", "fpi": [], "spplus": [.76], "HA": "at"}
+            ],
+            "western kentucky": [
+                {"team": "wisconsin", "fpi": [], "spplus": [.08], "HA": "at"},
+                {"team": "maine", "fpi": [], "spplus": [.87], "HA": "vs"},
+                {"team": "louisville", "fpi": [], "spplus": [.17], "HA": "at"},
+                {"team": "ball state", "fpi": [], "spplus": [.61], "HA": "at"},
+                {"team": "marshall", "fpi": [], "spplus": [.41], "HA": "vs"},
+                {"team": "charlotte", "fpi": [], "spplus": [.68], "HA": "at"},
+                {"team": "old dominion", "fpi": [], "spplus": [.71], "HA": "vs"},
+                {"team": "florida international", "fpi": [], "spplus": [.73], "HA": "vs"},
+                {"team": "middle tennessee", "fpi": [], "spplus": [.40], "HA": "at"},
+                {"team": "florida atlantic", "fpi": [], "spplus": [.18], "HA": "at"},
+                {"team": "utep", "fpi": [], "spplus": [.85], "HA": "vs"},
+                {"team": "louisiana tech", "fpi": [], "spplus": [.35], "HA": "at"}
+            ],
+            "middle tennessee": [
+                {"team": "vanderbilt", "fpi": [], "spplus": [.40], "HA": "at"},
+                {"team": "ut martin", "fpi": [], "spplus": [.89], "HA": "vs"},
+                {"team": "georgia", "fpi": [], "spplus": [.06], "HA": "at"},
+                {"team": "florida atlantic", "fpi": [], "spplus": [.30], "HA": "vs"},
+                {"team": "marshall", "fpi": [], "spplus": [.34], "HA": "at"},
+                {"team": "florida international", "fpi": [], "spplus": [.67], "HA": "at"},
+                {"team": "charlotte", "fpi": [], "spplus": [.80], "HA": "vs"},
+                {"team": "old dominion", "fpi": [], "spplus": [.64], "HA": "at"},
+                {"team": "western kentucky", "fpi": [], "spplus": [.60], "HA": "vs"},
+                {"team": "utep", "fpi": [], "spplus": [.81], "HA": "at"},
+                {"team": "kentucky", "fpi": [], "spplus": [.34], "HA": "at"},
+                {"team": "uab", "fpi": [], "spplus": [.60], "HA": "vs"}
+            ],
+            "old dominion": [
+                {"team": "liberty", "fpi": [], "spplus": [.45], "HA": "at"},
+                {"team": "florida international", "fpi": [], "spplus": [.59], "HA": "vs"},
+                {"team": "charlotte", "fpi": [], "spplus": [.53], "HA": "at"},
+                {"team": "virginia tech", "fpi": [], "spplus": [.12], "HA": "vs"},
+                {"team": "east carolina", "fpi": [], "spplus": [.52], "HA": "at"},
+                {"team": "florida atlantic", "fpi": [], "spplus": [.09], "HA": "at"},
+                {"team": "marshall", "fpi": [], "spplus": [.26], "HA": "vs"},
+                {"team": "western kentucky", "fpi": [], "spplus": [.29], "HA": "at"},
+                {"team": "middle tennessee", "fpi": [], "spplus": [.36], "HA": "vs"},
+                {"team": "north texas", "fpi": [], "spplus": [.38], "HA": "vs"},
+                {"team": "vmi", "fpi": [], "spplus": [.98], "HA": "vs"},
+                {"team": "rice", "fpi": [], "spplus": [.55], "HA": "at"}
+            ],
+            "charlotte": [
+                {"team": "fordham", "fpi": [], "spplus": [.94], "HA": "vs"},
+                {"team": "appalachian state", "fpi": [], "spplus": [.20], "HA": "vs"},
+                {"team": "old dominion", "fpi": [], "spplus": [.47], "HA": "vs"},
+                {"team": "umass", "fpi": [], "spplus": [.28], "HA": "at"},
+                {"team": "uab", "fpi": [], "spplus": [.23], "HA": "at"},
+                {"team": "western kentucky", "fpi": [], "spplus": [.32], "HA": "vs"},
+                {"team": "middle tennessee", "fpi": [], "spplus": [.20], "HA": "at"},
+                {"team": "southern mississippi", "fpi": [], "spplus": [.35], "HA": "vs"},
+                {"team": "tennessee", "fpi": [], "spplus": [.18], "HA": "at"},
+                {"team": "marshall", "fpi": [], "spplus": [.13], "HA": "at"},
+                {"team": "florida international", "fpi": [], "spplus": [.50], "HA": "vs"},
+                {"team": "florida atlantic", "fpi": [], "spplus": [.06], "HA": "at"}
+            ]
+        },
+        "west": {
+            "north texas": [
+                {"team": "smu", "fpi": [], "spplus": [.50], "HA": "vs"},
+                {"team": "incarnate word", "fpi": [], "spplus": [.99], "HA": "at"},
+                {"team": "arkansas", "fpi": [], "spplus": [.28], "HA": "vs"},
+                {"team": "liberty", "fpi": [], "spplus": [.63], "HA": "at"},
+                {"team": "louisiana tech", "fpi": [], "spplus": [.48], "HA": "vs"},
+                {"team": "utep", "fpi": [], "spplus": [.79], "HA": "vs"},
+                {"team": "south mississippi", "fpi": [], "spplus": [.61], "HA": "at"},
+                {"team": "uab", "fpi": [], "spplus": [.47], "HA": "at"},
+                {"team": "rice", "fpi": [], "spplus": [.81], "HA": "vs"},
+                {"team": "old dominion", "fpi": [], "spplus": [.62], "HA": "vs"},
+                {"team": "florida atlantic", "fpi": [], "spplus": [.29], "HA": "at"},
+                {"team": "ut san antonio", "fpi": [], "spplus": [.55], "HA": "vs"}
+            ],
+            "uab": [
+                {"team": "savannah state", "fpi": [], "spplus": [.98], "HA": "vs"},
+                {"team": "coastal carolina", "fpi": [], "spplus": [.61], "HA": "at"},
+                {"team": "tulane", "fpi": [], "spplus": [.59], "HA": "vs"},
+                {"team": "charlotte", "fpi": [], "spplus": [.77], "HA": "vs"},
+                {"team": "lousiana tech", "fpi": [], "spplus": [.34], "HA": "at"},
+                {"team": "rice", "fpi": [], "spplus": [.69], "HA": "at"},
+                {"team": "north texas", "fpi": [], "spplus": [.53], "HA": "vs"},
+                {"team": "utep", "fpi": [], "spplus": [.77], "HA": "at"},
+                {"team": "ut san antonio", "fpi": [], "spplus": [.63], "HA": "vs"},
+                {"team": "southern mississippi", "fpi": [], "spplus": [.58], "HA": "vs"},
+                {"team": "texas am", "fpi": [], "spplus": [.14], "HA": "at"},
+                {"team": "middle tennessee", "fpi": [], "spplus": [.40], "HA": "at"}
+            ],
+            "southern mississippi": [
+                {"team": "jackson state", "fpi": [], "spplus": [.99], "HA": "vs"},
+                {"team": "ul monroe", "fpi": [], "spplus": [.63], "HA": "vs"},
+                {"team": "appalachian state", "fpi": [], "spplus": [.27], "HA": "at"},
+                {"team": "rice", "fpi": [], "spplus": [.77], "HA": "vs"},
+                {"team": "auburn", "fpi": [], "spplus": [.04], "HA": "at"},
+                {"team": "north texas", "fpi": [], "spplus": [.39], "HA": "at"},
+                {"team": "ut san antonio", "fpi": [], "spplus": [.61], "HA": "vs"},
+                {"team": "charlotte", "fpi": [], "spplus": [.65], "HA": "at"},
+                {"team": "marshall", "fpi": [], "spplus": [.38], "HA": "vs"},
+                {"team": "uab", "fpi": [], "spplus": [.42], "HA": "at"},
+                {"team": "louisiana tech", "fpi": [], "spplus": [.43], "HA": "vs"},
+                {"team": "utep", "fpi": [], "spplus": [.75], "HA": "at"}
+            ],
+            "louisiana tech": [
+                {"team": "south alabama", "fpi": [], "spplus": [.65], "HA": "at"},
+                {"team": "southern", "fpi": [], "spplus": [.97], "HA": "vs"},
+                {"team": "lsu", "fpi": [], "spplus": [.16], "HA": "at"},
+                {"team": "north texas", "fpi": [], "spplus": [.52], "HA": "at"},
+                {"team": "uab", "fpi": [], "spplus": [.66], "HA": "vs"},
+                {"team": "ut san antonio", "fpi": [], "spplus": [.62], "HA": "at"},
+                {"team": "utep", "fpi": [], "spplus": [.90], "HA": "vs"},
+                {"team": "florida atlantic", "fpi": [], "spplus": [.25], "HA": "at"},
+                {"team": "mississippi state", "fpi": [], "spplus": [.14], "HA": "at"},
+                {"team": "rice", "fpi": [], "spplus": [.86], "HA": "vs"},
+                {"team": "southern mississippi", "fpi": [], "spplus": [.57], "HA": "at"},
+                {"team": "western kentucky", "fpi": [], "spplus": [.65], "HA": "vs"}
+            ],
+            "ut san antonio": [
+                {"team": "arizona state", "fpi": [], "spplus": [.22], "HA": "at"},
+                {"team": "baylor", "fpi": [], "spplus": [.29], "HA": "vs"},
+                {"team": "kansas state", "fpi": [], "spplus": [.23], "HA": "at"},
+                {"team": "texas state", "fpi": [], "spplus": [.69], "HA": "vs"},
+                {"team": "utep", "fpi": [], "spplus": [.80], "HA": "vs"},
+                {"team": "rice", "fpi": [], "spplus": [.62], "HA": "at"},
+                {"team": "louisiana tech", "fpi": [], "spplus": [.38], "HA": "vs"},
+                {"team": "southern mississippi", "fpi": [], "spplus": [.39], "HA": "at"},
+                {"team": "uab", "fpi": [], "spplus": [.37], "HA": "at"},
+                {"team": "florida international", "fpi": [], "spplus": [.66], "HA": "vs"},
+                {"team": "marshall", "fpi": [], "spplus": [.23], "HA": "at"},
+                {"team": "north texas", "fpi": [], "spplus": [.45], "HA": "vs"}
+            ],
+            "rice": [
+                {"team": "prairie view", "fpi": [], "spplus": [.82], "HA": "vs"},
+                {"team": "houston", "fpi": [], "spplus": [.18], "HA": "vs"},
+                {"team": "hawaii", "fpi": [], "spplus": [.40], "HA": "at"},
+                {"team": "southern mississippi", "fpi": [], "spplus": [.23], "HA": "at"},
+                {"team": "wake forest", "fpi": [], "spplus": [.07], "HA": "at"},
+                {"team": "ut san antonio", "fpi": [], "spplus": [.38], "HA": "vs"},
+                {"team": "uab", "fpi": [], "spplus": [.31], "HA": "vs"},
+                {"team": "florida international", "fpi": [], "spplus": [.37], "HA": "at"},
+                {"team": "north texas", "fpi": [], "spplus": [.19], "HA": "at"},
+                {"team": "utep", "fpi": [], "spplus": [.65], "HA": "vs"},
+                {"team": "louisiana tech", "fpi": [], "spplus": [.14], "HA": "at"},
+                {"team": "lsu", "fpi": [], "spplus": [.03], "HA": "at"},
+                {"team": "old dominion", "fpi": [], "spplus": [.45], "HA": "vs"}
+            ],
+            "utep": [
+                {"team": "northern arizona", "fpi": [], "spplus": [.54], "HA": "vs"},
+                {"team": "unlv", "fpi": [], "spplus": [.20], "HA": "at"},
+                {"team": "tennessee", "fpi": [], "spplus": [.11], "HA": "at"},
+                {"team": "new mexico state", "fpi": [], "spplus": [.28], "HA": "vs"},
+                {"team": "ut san antonio", "fpi": [], "spplus": [.20], "HA": "at"},
+                {"team": "north texas", "fpi": [], "spplus": [.21], "HA": "vs"},
+                {"team": "louisiana tech", "fpi": [], "spplus": [.10], "HA": "at"},
+                {"team": "uab", "fpi": [], "spplus": [.23], "HA": "vs"},
+                {"team": "rice", "fpi": [], "spplus": [.35], "HA": "at"},
+                {"team": "middle tennessee", "fpi": [], "spplus": [.19], "HA": "vs"},
+                {"team": "western kentucky", "fpi": [], "spplus": [.15], "HA": "at"},
+                {"team": "southern mississippi", "fpi": [], "spplus": [.25], "HA": "vs"}]
+        }
     }
 }
+
 
 # Utils.download_schedules()
 
 Conference(conferences['bigten']).make_standings_projection_graph(absolute=False, file="bigten")
 Conference(conferences['bigxii']).make_standings_projection_graph(absolute=False, file="bigxii")
 Conference(conferences['pac12']).make_standings_projection_graph(absolute=False, file="pac12")
+Conference(conferences['cusa']).make_standings_projection_graph(absolute=False, file="cusa")
 
 for conference in conferences:
     for division in conferences[conference]:
