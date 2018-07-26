@@ -735,7 +735,20 @@ conferences = {
                 {"team": "boston college", "fpi": [], "spplus": [.73], "HA": "vs"},
                 {"team": "florida", "fpi": [], "spplus": [.65], "HA": "vs"}
             ],
-            "louisville": [],
+            "louisville": [
+                {"team": "alabama", "fpi": [], "spplus": [.15], "HA": "vs"},
+                {"team": "indiana state", "fpi": [], "spplus": [1.00], "HA": "vs"},
+                {"team": "western kentucky", "fpi": [], "spplus": [.83], "HA": "vs"},
+                {"team": "virginia", "fpi": [], "spplus": [.67], "HA": "at"},
+                {"team": "florida state", "fpi": [], "spplus": [.49], "HA": "vs"},
+                {"team": "georgia tech", "fpi": [], "spplus": [.68], "HA": "vs"},
+                {"team": "boston college", "fpi": [], "spplus": [.56], "HA": "at"},
+                {"team": "wake forest", "fpi": [], "spplus": [.60], "HA": "vs"},
+                {"team": "clemson", "fpi": [], "spplus": [.14], "HA": "at"},
+                {"team": "syracuse", "fpi": [], "spplus": [.66], "HA": "at"},
+                {"team": "nc state", "fpi": [], "spplus": [.60], "HA": "vs"},
+                {"team": "kentucky", "fpi": [], "spplus": [.72], "HA": "vs"}
+            ],
             "nc state": [
                 {"team": "james madison", "fpi": [], "spplus": [.92], "HA": "vs"},
                 {"team": "georgia state", "fpi": [], "spplus": [.89], "HA": "vs"},
