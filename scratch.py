@@ -827,28 +827,148 @@ conferences = {
                               {"team": "virginia", "fpi": [], "spplus": [.80], "HA": "vs"}]
         }
     },
-    "big12": {
+    "bigxii": {
         "all": {
-            "texas": [{"team": "maryland", "fpi": [], "spplus": [.74], "HA": "at"},
-                      {"team": "tulsa", "fpi": [], "spplus": [.89], "HA": "vs"},
-                      {"team": "usc", "fpi": [], "spplus": [.46], "HA": "vs"},
-                      {"team": "tcu", "fpi": [], "spplus": [.52], "HA": "vs"},
-                      {"team": "kansas state", "fpi": [], "spplus": [.62], "HA": "at"},
-                      {"team": "oklahoma", "fpi": [], "spplus": [.28], "HA": "vs"},
-                      {"team": "baylor", "fpi": [], "spplus": [.68], "HA": "vs"},
-                      {"team": "oklahoma state", "fpi": [], "spplus": [.39], "HA": "at"},
-                      {"team": "west virginia", "fpi": [], "spplus": [.66], "HA": "vs"},
-                      {"team": "texas tech", "fpi": [], "spplus": [.57], "HA": "at"},
-                      {"team": "iowa state", "fpi": [], "spplus": [.67], "HA": "vs"},
-                      {"team": "kansas", "fpi": [], "spplus": [.81], "HA": "at"}]}}}
+            "baylor": [
+                {"team": "abilene christian", "fpi": [], "spplus": [1.00], "HA": "vs"},
+                {"team": "ut san antonio", "fpi": [], "spplus": [.71], "HA": "at"},
+                {"team": "duke", "fpi": [], "spplus": [.51], "HA": "vs"},
+                {"team": "kansas", "fpi": [], "spplus": [.80], "HA": "vs"},
+                {"team": "oklahoma", "fpi": [], "spplus": [.15], "HA": "at"},
+                {"team": "kansas state", "fpi": [], "spplus": [.60], "HA": "vs"},
+                {"team": "texas", "fpi": [], "spplus": [.32], "HA": "at"},
+                {"team": "west virginia", "fpi": [], "spplus": [.42], "HA": "at"},
+                {"team": "oklahoma state", "fpi": [], "spplus": [.37], "HA": "vs"},
+                {"team": "iowa state", "fpi": [], "spplus": [.43], "HA": "at"},
+                {"team": "tcu", "fpi": [], "spplus": [.39], "HA": "vs"},
+                {"team": "texas tech", "fpi": [], "spplus": [.49], "HA": "vs"}],
+            "iowa state": [
+                {"team": "south dakota state", "fpi": [], "spplus": [.90], "HA": "vs"},
+                {"team": "iowa", "fpi": [], "spplus": [.38], "HA": "at"},
+                {"team": "oklahoma", "fpi": [], "spplus": [.24], "HA": "vs"},
+                {"team": "akron", "fpi": [], "spplus": [.87], "HA": "vs"},
+                {"team": "tcu", "fpi": [], "spplus": [.30], "HA": "at"},
+                {"team": "oklahoma state", "fpi": [], "spplus": [.29], "HA": "at"},
+                {"team": "west virginia", "fpi": [], "spplus": [.55], "HA": "vs"},
+                {"team": "texas tech", "fpi": [], "spplus": [.57], "HA": "vs"},
+                {"team": "kansas", "fpi": [], "spplus": [.72], "HA": "at"},
+                {"team": "baylor", "fpi": [], "spplus": [.57], "HA": "vs"},
+                {"team": "texas", "fpi": [], "spplus": [.33], "HA": "at"},
+                {"team": "kansas state", "fpi": [], "spplus": [.62], "HA": "vs"}],
+            "kansas": [
+                {"team": "nicholls state", "fpi": [], "spplus": [.82], "HA": "vs"},
+                {"team": "central michigan", "fpi": [], "spplus": [.89], "HA": "at"},
+                {"team": "rutgers", "fpi": [], "spplus": [.46], "HA": "vs"},
+                {"team": "baylor", "fpi": [], "spplus": [.52], "HA": "at"},
+                {"team": "oklahoma state", "fpi": [], "spplus": [.62], "HA": "vs"},
+                {"team": "west virginia", "fpi": [], "spplus": [.28], "HA": "at"},
+                {"team": "texas tech", "fpi": [], "spplus": [.68], "HA": "at"},
+                {"team": "tcu", "fpi": [], "spplus": [.39], "HA": "vs"},
+                {"team": "iowa state", "fpi": [], "spplus": [.66], "HA": "vs"},
+                {"team": "kansas state", "fpi": [], "spplus": [.57], "HA": "at"},
+                {"team": "oklahoma", "fpi": [], "spplus": [.67], "HA": "at"},
+                {"team": "texas", "fpi": [], "spplus": [.81], "HA": "vs"}],
+            "kansas state": [
+                {"team": "south dakota", "fpi": [], "spplus": [.86], "HA": "vs"},
+                {"team": "mississippi state", "fpi": [], "spplus": [.26], "HA": "vs"},
+                {"team": "ut san antonio", "fpi": [], "spplus": [.77], "HA": "vs"},
+                {"team": "west virginia", "fpi": [], "spplus": [.37], "HA": "at"},
+                {"team": "texas", "fpi": [], "spplus": [.38], "HA": "vs"},
+                {"team": "baylor", "fpi": [], "spplus": [.40], "HA": "at"},
+                {"team": "oklahoma state", "fpi": [], "spplus": [.33], "HA": "vs"},
+                {"team": "oklahoma", "fpi": [], "spplus": [.12], "HA": "at"},
+                {"team": "tcu", "fpi": [], "spplus": [.24], "HA": "at"},
+                {"team": "kansas", "fpi": [], "spplus": [.77], "HA": "vs"},
+                {"team": "texas tech", "fpi": [], "spplus": [.51], "HA": "vs"},
+                {"team": "iowa state", "fpi": [], "spplus": [.38], "HA": "at"}],
+            "oklahoma": [
+                {"team": "florida atlantic", "fpi": [], "spplus": [.78], "HA": "vs"},
+                {"team": "ucla", "fpi": [], "spplus": [.82], "HA": "vs"},
+                {"team": "iowa state", "fpi": [], "spplus": [.76], "HA": "at"},
+                {"team": "army", "fpi": [], "spplus": [.94], "HA": "vs"},
+                {"team": "baylor", "fpi": [], "spplus": [.85], "HA": "vs"},
+                {"team": "texas", "fpi": [], "spplus": [.72], "HA": "vs"},
+                {"team": "tcu", "fpi": [], "spplus": [.63], "HA": "at"},
+                {"team": "kansas state", "fpi": [], "spplus": [.88], "HA": "vs"},
+                {"team": "texas tech", "fpi": [], "spplus": [.77], "HA": "at"},
+                {"team": "oklahoma state", "fpi": [], "spplus": [.72], "HA": "vs"},
+                {"team": "kansas", "fpi": [], "spplus": [.96], "HA": "vs"},
+                {"team": "west virginia", "fpi": [], "spplus": [.76], "HA": "at"}],
+            "oklahoma state": [
+                {"team": "missouri state", "fpi": [], "spplus": [.98], "HA": "vs"},
+                {"team": "south alabama", "fpi": [], "spplus": [.92], "HA": "vs"},
+                {"team": "boise state", "fpi": [], "spplus": [.60], "HA": "vs"},
+                {"team": "texas tech", "fpi": [], "spplus": [.72], "HA": "vs"},
+                {"team": "kansas", "fpi": [], "spplus": [.84], "HA": "at"},
+                {"team": "iowa state", "fpi": [], "spplus": [.71], "HA": "vs"},
+                {"team": "kansas state", "fpi": [], "spplus": [.67], "HA": "at"},
+                {"team": "texas", "fpi": [], "spplus": [.61], "HA": "vs"},
+                {"team": "baylor", "fpi": [], "spplus": [.63], "HA": "at"},
+                {"team": "oklahoma", "fpi": [], "spplus": [.28], "HA": "at"},
+                {"team": "west virginia", "fpi": [], "spplus": [.71], "HA": "vs"},
+                {"team": "tcu", "fpi": [], "spplus": [.46], "HA": "at"}],
+            "tcu": [
+                {"team": "southern", "fpi": [], "spplus": [.99], "HA": "vs"},
+                {"team": "smu", "fpi": [], "spplus": [.71], "HA": "at"},
+                {"team": "ohio state", "fpi": [], "spplus": [.22], "HA": "vs"},
+                {"team": "texas", "fpi": [], "spplus": [.48], "HA": "at"},
+                {"team": "iowa state", "fpi": [], "spplus": [.70], "HA": "vs"},
+                {"team": "texas tech", "fpi": [], "spplus": [.71], "HA": "vs"},
+                {"team": "oklahoma", "fpi": [], "spplus": [.37], "HA": "vs"},
+                {"team": "kansas", "fpi": [], "spplus": [.84], "HA": "at"},
+                {"team": "kansas state", "fpi": [], "spplus": [.76], "HA": "vs"},
+                {"team": "west virginia", "fpi": [], "spplus": [.59], "HA": "at"},
+                {"team": "baylor", "fpi": [], "spplus": [.61], "HA": "at"},
+                {"team": "oklahoma state", "fpi": [], "spplus": [.54], "HA": "vs"}],
+            "texas": [
+                {"team": "maryland", "fpi": [], "spplus": [.74], "HA": "at"},
+                {"team": "tulsa", "fpi": [], "spplus": [.89], "HA": "vs"},
+                {"team": "usc", "fpi": [], "spplus": [.46], "HA": "vs"},
+                {"team": "tcu", "fpi": [], "spplus": [.52], "HA": "vs"},
+                {"team": "kansas state", "fpi": [], "spplus": [.62], "HA": "at"},
+                {"team": "oklahoma", "fpi": [], "spplus": [.28], "HA": "vs"},
+                {"team": "baylor", "fpi": [], "spplus": [.68], "HA": "vs"},
+                {"team": "oklahoma state", "fpi": [], "spplus": [.39], "HA": "at"},
+                {"team": "west virginia", "fpi": [], "spplus": [.66], "HA": "vs"},
+                {"team": "texas tech", "fpi": [], "spplus": [.57], "HA": "at"},
+                {"team": "iowa state", "fpi": [], "spplus": [.67], "HA": "vs"},
+                {"team": "kansas", "fpi": [], "spplus": [.81], "HA": "at"}],
+            "texas tech": [
+                {"team": "ole miss", "fpi": [], "spplus": [.74], "HA": "vs"},
+                {"team": "lamar", "fpi": [], "spplus": [.89], "HA": "vs"},
+                {"team": "houston", "fpi": [], "spplus": [.46], "HA": "vs"},
+                {"team": "oklahoma state", "fpi": [], "spplus": [.52], "HA": "at"},
+                {"team": "west virginia", "fpi": [], "spplus": [.62], "HA": "vs"},
+                {"team": "tcu", "fpi": [], "spplus": [.28], "HA": "at"},
+                {"team": "kansas", "fpi": [], "spplus": [.68], "HA": "vs"},
+                {"team": "iowa state", "fpi": [], "spplus": [.39], "HA": "at"},
+                {"team": "oklahoma", "fpi": [], "spplus": [.66], "HA": "vs"},
+                {"team": "texas", "fpi": [], "spplus": [.57], "HA": "vs"},
+                {"team": "kansas state", "fpi": [], "spplus": [.67], "HA": "at"},
+                {"team": "baylor", "fpi": [], "spplus": [.81], "HA": "vs"}],
+            "west virginia": [
+                {"team": "tennessee", "fpi": [], "spplus": [.65], "HA": "vs"},
+                {"team": "youngstown state", "fpi": [], "spplus": [.90], "HA": "vs"},
+                {"team": "nc state", "fpi": [], "spplus": [.39], "HA": "at"},
+                {"team": "kansas state", "fpi": [], "spplus": [.63], "HA": "vs"},
+                {"team": "texas tech", "fpi": [], "spplus": [.46], "HA": "at"},
+                {"team": "kansas", "fpi": [], "spplus": [.82], "HA": "vs"},
+                {"team": "iowa state", "fpi": [], "spplus": [.45], "HA": "at"},
+                {"team": "baylor", "fpi": [], "spplus": [.58], "HA": "vs"},
+                {"team": "texas", "fpi": [], "spplus": [.34], "HA": "at"},
+                {"team": "tcu", "fpi": [], "spplus": [.41], "HA": "vs"},
+                {"team": "oklahoma state", "fpi": [], "spplus": [.29], "HA": "at"},
+                {"team": "oklahoma", "fpi": [], "spplus": [.24], "HA": "vs"}]}}}
 
 # Utils.download_schedules()
 
 Conference(conferences['bigten']).make_standings_projection_graph(absolute=False, file="bigten")
+Conference(conferences['bigxii']).make_standings_projection_graph(absolute=False, file="bigxii")
 
 for conference in conferences:
     for division in conferences[conference]:
         for team in conferences[conference][division]:
-            if len(conferences[conference][division][team]) > 0:
-                Team(name=team, win_probabilities=conferences[conference][division][team]).make_win_probability_graph(
-                    absolute=False, file=team)
+            if len(conferences[conference][division][team]) > 0: \
+                    Team(name=team,
+                         win_probabilities=conferences[conference][division][team]).make_win_probability_graph(
+                        absolute=False, file=team)

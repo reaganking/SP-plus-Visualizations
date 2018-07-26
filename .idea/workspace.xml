@@ -3,36 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logo URIs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logo URIs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/William Mary.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/bigten.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/boston college.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/duke.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/florida state.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/georgia tech.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/illinois.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/indiana.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/iowa.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/maryland.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/michigan state.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/michigan.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/minnesota.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/nc state.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/nebraska.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/north carolina.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/northwestern.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/ohio state.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/out.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/penn state.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/pittsburgh.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/purdue.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/rutgers.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/syracuse.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/texas.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/virginia.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/wake forest.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/wisconsin.svg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,11 +17,14 @@
       <file leaf-file-name="scratch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="775" column="79" selection-start-line="775" selection-start-column="79" selection-end-line="775" selection-end-column="79" />
+            <state relative-caret-position="51">
+              <caret line="965" column="94" selection-start-line="965" selection-start-column="94" selection-end-line="965" selection-end-column="94" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#27690#42643#0" />
+                <element signature="e#42656#55854#0" />
+                <element signature="e#55868#65641#0" />
+                <element signature="e#55885#65640#0" />
               </folding>
             </state>
           </provider>
@@ -127,8 +101,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1040" />
-    <option name="height" value="784" />
+    <option name="width" value="640" />
+    <option name="height" value="680" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -267,18 +241,25 @@
       <option name="project" value="LOCAL" />
       <updated>1532366952572</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Daily update; added Miami.">
+      <created>1532536165984</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1532536165984</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.3298887" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.3282989" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50074404" side_tool="true" weight="0.39713973" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32789558" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.40391254" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40353984" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32893288" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -347,7 +328,8 @@
     <MESSAGE value="More interactivity updates; color options modified somewhat based on feedback. Working on adding functions to scrape schedules from ESPN; need to finish adding functionality to allow for custom predictive values to be entered." />
     <MESSAGE value="Just more dicking around and working on features. Added early prototype code to pull JSON data from the NCAA website. Eventually this will mature into a full-blown JSON file containing all of the data for a year's game. Will cross-reference that data with S&amp;P+ to add appropriate fields for each game." />
     <MESSAGE value="Added Texas per request." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Texas per request." />
+    <MESSAGE value="Daily update; added Miami." />
+    <option name="LAST_COMMIT_MESSAGE" value="Daily update; added Miami." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -369,6 +351,9 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#27690#42643#0" />
+            <element signature="e#42656#55854#0" />
+            <element signature="e#55868#65641#0" />
+            <element signature="e#55885#65640#0" />
           </folding>
         </state>
       </provider>
@@ -380,6 +365,9 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#27690#42643#0" />
+            <element signature="e#42656#55854#0" />
+            <element signature="e#55868#65641#0" />
+            <element signature="e#55885#65640#0" />
           </folding>
         </state>
       </provider>
@@ -391,6 +379,9 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#27690#42643#0" />
+            <element signature="e#42656#55854#0" />
+            <element signature="e#55868#65641#0" />
+            <element signature="e#55885#65640#0" />
           </folding>
         </state>
       </provider>
@@ -402,6 +393,9 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#27690#42643#0" />
+            <element signature="e#42656#55854#0" />
+            <element signature="e#55868#65641#0" />
+            <element signature="e#55885#65640#0" />
           </folding>
         </state>
       </provider>
@@ -413,6 +407,9 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#27690#42643#0" />
+            <element signature="e#42656#55854#0" />
+            <element signature="e#55868#65641#0" />
+            <element signature="e#55885#65640#0" />
           </folding>
         </state>
       </provider>
@@ -424,6 +421,9 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#27690#42643#0" />
+            <element signature="e#42656#55854#0" />
+            <element signature="e#55868#65641#0" />
+            <element signature="e#55885#65640#0" />
           </folding>
         </state>
       </provider>
@@ -435,6 +435,9 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#27690#42643#0" />
+            <element signature="e#42656#55854#0" />
+            <element signature="e#55868#65641#0" />
+            <element signature="e#55885#65640#0" />
           </folding>
         </state>
       </provider>
@@ -446,6 +449,9 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#27690#42643#0" />
+            <element signature="e#42656#55854#0" />
+            <element signature="e#55868#65641#0" />
+            <element signature="e#55885#65640#0" />
           </folding>
         </state>
       </provider>
@@ -460,6 +466,9 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#27690#42643#0" />
+            <element signature="e#42656#55854#0" />
+            <element signature="e#55868#65641#0" />
+            <element signature="e#55885#65640#0" />
           </folding>
         </state>
       </provider>
@@ -606,11 +615,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="775" column="79" selection-start-line="775" selection-start-column="79" selection-end-line="775" selection-end-column="79" />
+        <state relative-caret-position="51">
+          <caret line="965" column="94" selection-start-line="965" selection-start-column="94" selection-end-line="965" selection-end-column="94" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#27690#42643#0" />
+            <element signature="e#42656#55854#0" />
+            <element signature="e#55868#65641#0" />
+            <element signature="e#55885#65640#0" />
           </folding>
         </state>
       </provider>
