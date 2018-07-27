@@ -3,6 +3,7 @@ import csv
 import json
 import os
 import re
+from difflib import get_close_matches
 from colorsys import hls_to_rgb
 from datetime import datetime
 
@@ -67,6 +68,26 @@ class Utils:
                     handle.write(block)
 
     @staticmethod
+    def clean_team_name(name, aliases):
+        # various data sources uses different aliases for the same team (much to my irritation) or special characters
+        # this method will try to enforce some kind of sensible naming standard
+
+        # trim out any weird special characters and convert to lower case
+        name = re.sub(r'[^\w\s-]', '', name).lower()
+
+        # take the dictionary of aliases and attempt to find the best match
+        for team, alts in enumerate(aliases):
+            try:
+                if len(get_close_matches(name, alts, n=1, cutoff=1)) > 0:
+                    return team
+                else:
+                    raise Exception("No matches found for {}.".format(name))
+            except Exception as error:
+                print("An error occured: ".format(error))
+                return None
+
+
+    @staticmethod
     def scrape_fpi(data):
         # Quick and dirty method to scrape fpi from ESPN
         r = requests.get('http://www.espn.com/college-football/teams')
@@ -129,6 +150,30 @@ class Utils:
                             result += [json.loads(response.text)]
         with open('new schedule.json', 'w+') as file:
             json.dump(result, file)
+
+    @staticmethod
+    def schedule_to_csv(schedule_file, csv_file):
+        with open(schedule_file, 'r') as infile:
+            data = json.load(infile)
+        with open(csv_file, 'w+', newline='') as outfile:
+            csvwriter = csv.writer(outfile)
+            count = 0
+            for elem in data:
+                if count == 0:
+                    csvwriter.writerow(['home', 'away', 'startDate', 'startTime', 'location', 'conference', 'url', ])
+                    count += 1
+                else:
+                    row = []
+                    for val in ['home', 'away', 'startDate', 'startTime', 'location', 'conference', 'url', ]:
+                        if val == 'home' or val == 'away':
+                            row.append(elem[val]['nameRaw'])
+                        elif val == 'conference':
+                            row.append(' vs. '.join(elem[val].split(' ')[1:]))
+                        elif val == 'url':
+                            row.append('www.ncaa.com' + elem[val])
+                        else:
+                            row.append(elem[val])
+                    csvwriter.writerow(row)
 
     @staticmethod
     def convert_to_URI():

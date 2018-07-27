@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="Added CUSA.">
+    <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule.json" beforeDir="false" afterPath="$PROJECT_DIR$/schedule.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,17 +15,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="scratch.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scratch.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="542" column="1" selection-start-line="542" selection-start-column="1" selection-end-line="542" selection-end-column="1" />
+            <state relative-caret-position="104">
+              <caret line="590" selection-start-line="590" selection-end-line="590" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#270#515#0" />
                 <element signature="e#603#992#0" />
                 <element signature="e#1045#1163#0" />
                 <element signature="e#1237#2460#0" />
+                <element signature="e#2566#3353#0" />
+                <element signature="e#2514#4481#0" />
+                <element signature="e#4571#5741#0" />
+                <element signature="e#6710#7775#0" />
+                <element signature="e#5724#6113#0" />
                 <element signature="e#6132#22191#0" />
                 <element signature="e#8638#22191#0" />
                 <element signature="e#22216#29541#0" />
@@ -34,11 +40,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new schedule.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/new schedule.json">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/json/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+            <state relative-caret-position="302">
+              <caret line="353" selection-start-line="353" selection-end-line="353" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schedule.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/schedule.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="96" column="12" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="decoder.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/json/decoder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="338" selection-start-line="338" selection-end-line="338" />
             </state>
           </provider>
         </entry>
@@ -49,14 +73,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>color</find>
-      <find>fill</find>
-      <find>florida</find>
       <find>b_absolute</find>
       <find>&quot;fpi&quot;: [],</find>
       <find>method</find>
@@ -84,6 +106,9 @@
       <find>cincinnati</find>
       <find>fpi&quot;: [</find>
       <find>clemson</find>
+      <find>att</find>
+      <find>dallas</find>
+      <find>big-ten big-12</find>
     </findStrings>
     <replaceStrings>
       <replace>/&quot;</replace>
@@ -117,17 +142,18 @@
         <option value="$PROJECT_DIR$/asdasd.html" />
         <option value="$PROJECT_DIR$/new_new_schedule.json" />
         <option value="$PROJECT_DIR$/new_schedule.json" />
-        <option value="$PROJECT_DIR$/schedule.json" />
         <option value="$PROJECT_DIR$/new schedule.json" />
+        <option value="$PROJECT_DIR$/tocsv.py" />
+        <option value="$PROJECT_DIR$/mapper.py" />
         <option value="$PROJECT_DIR$/scratch.py" />
+        <option value="$PROJECT_DIR$/schedule.json" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="160" />
-    <option name="y" value="85" />
-    <option name="width" value="960" />
-    <option name="height" value="510" />
+    <option name="x" value="640" />
+    <option name="width" value="640" />
+    <option name="height" value="680" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -141,6 +167,11 @@
             <path>
               <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
               <item name="sp plus visualization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sp plus visualization" type="462c0819:PsiDirectoryNode" />
+              <item name="svg output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -170,7 +201,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.scratch">
     <configuration name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="sp plus visualization" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -189,9 +220,32 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="tocsv" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sp plus visualization" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tocsv.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.scratch" />
+      <item itemvalue="Python.tocsv" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.scratch" />
+        <item itemvalue="Python.tocsv" />
       </list>
     </recent_temporary>
   </component>
@@ -318,23 +372,36 @@
       <option name="project" value="LOCAL" />
       <updated>1532628436674</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added Clemson, finished ACC output. Included a few prototypes of how to organize the schedule and S&amp;P+ data in a separate file, because it is becoming burdensome to read through. More changes on that front to come.">
+      <created>1532698955231</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1532698955231</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added Clemson, finished ACC output. Included a few prototypes of how to organize the schedule and S&amp;P+ data in a separate file, because it is becoming burdensome to read through. More changes on that front to come.">
+      <created>1532699007017</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1532699007017</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="2" weight="0.32670906" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.32670906" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50074404" side_tool="true" weight="0.39713973" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32789558" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3557522" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3557522" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32893288" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49925596" weight="0.4741474" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49925596" weight="0.47256637" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -404,7 +471,8 @@
     <MESSAGE value="Added Pac 12 conference values." />
     <MESSAGE value="Added Louisville." />
     <MESSAGE value="Added CUSA." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CUSA." />
+    <MESSAGE value="Added Clemson, finished ACC output. Included a few prototypes of how to organize the schedule and S&amp;P+ data in a separate file, because it is becoming burdensome to read through. More changes on that front to come." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Clemson, finished ACC output. Included a few prototypes of how to organize the schedule and S&amp;P+ data in a separate file, because it is becoming burdensome to read through. More changes on that front to come." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -415,66 +483,12 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="51" />
+      <option name="time" value="55" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14229">
-          <caret line="837" column="30" lean-forward="true" selection-start-line="837" selection-start-column="30" selection-end-line="837" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#270#515#0" />
-            <element signature="e#603#992#0" />
-            <element signature="e#1045#1163#0" />
-            <element signature="e#1237#2460#0" />
-            <element signature="e#6132#22191#0" />
-            <element signature="e#8638#22191#0" />
-            <element signature="e#22216#29541#0" />
-            <element signature="e#22727#29541#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14110">
-          <caret line="830" selection-start-line="830" selection-end-line="830" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#270#515#0" />
-            <element signature="e#603#992#0" />
-            <element signature="e#1045#1163#0" />
-            <element signature="e#1237#2460#0" />
-            <element signature="e#6132#22191#0" />
-            <element signature="e#8638#22191#0" />
-            <element signature="e#22216#29541#0" />
-            <element signature="e#22727#29541#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12019">
-          <caret line="707" column="91" lean-forward="true" selection-start-line="707" selection-start-column="91" selection-end-line="707" selection-end-column="91" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#270#515#0" />
-            <element signature="e#603#992#0" />
-            <element signature="e#1045#1163#0" />
-            <element signature="e#1237#2460#0" />
-            <element signature="e#6132#22191#0" />
-            <element signature="e#8638#22191#0" />
-            <element signature="e#22216#29541#0" />
-            <element signature="e#22727#29541#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13804">
           <caret line="812" selection-start-line="812" selection-end-line="812" />
           <folding>
@@ -483,24 +497,11 @@
             <element signature="e#603#992#0" />
             <element signature="e#1045#1163#0" />
             <element signature="e#1237#2460#0" />
-            <element signature="e#6132#22191#0" />
-            <element signature="e#8638#22191#0" />
-            <element signature="e#22216#29541#0" />
-            <element signature="e#22727#29541#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13804">
-          <caret line="812" selection-start-line="812" selection-end-line="812" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#270#515#0" />
-            <element signature="e#603#992#0" />
-            <element signature="e#1045#1163#0" />
-            <element signature="e#1237#2460#0" />
+            <element signature="e#2566#3353#0" />
+            <element signature="e#2514#4481#0" />
+            <element signature="e#4571#5741#0" />
+            <element signature="e#6710#7775#0" />
+            <element signature="e#5724#6113#0" />
             <element signature="e#6132#22191#0" />
             <element signature="e#8638#22191#0" />
             <element signature="e#22216#29541#0" />
@@ -519,6 +520,11 @@
             <element signature="e#603#992#0" />
             <element signature="e#1045#1163#0" />
             <element signature="e#1237#2460#0" />
+            <element signature="e#2566#3353#0" />
+            <element signature="e#2514#4481#0" />
+            <element signature="e#4571#5741#0" />
+            <element signature="e#6710#7775#0" />
+            <element signature="e#5724#6113#0" />
             <element signature="e#6132#22191#0" />
             <element signature="e#8638#22191#0" />
             <element signature="e#22216#29541#0" />
@@ -537,6 +543,11 @@
             <element signature="e#603#992#0" />
             <element signature="e#1045#1163#0" />
             <element signature="e#1237#2460#0" />
+            <element signature="e#2566#3353#0" />
+            <element signature="e#2514#4481#0" />
+            <element signature="e#4571#5741#0" />
+            <element signature="e#6710#7775#0" />
+            <element signature="e#5724#6113#0" />
             <element signature="e#6132#22191#0" />
             <element signature="e#8638#22191#0" />
             <element signature="e#22216#29541#0" />
@@ -555,6 +566,11 @@
             <element signature="e#603#992#0" />
             <element signature="e#1045#1163#0" />
             <element signature="e#1237#2460#0" />
+            <element signature="e#2566#3353#0" />
+            <element signature="e#2514#4481#0" />
+            <element signature="e#4571#5741#0" />
+            <element signature="e#6710#7775#0" />
+            <element signature="e#5724#6113#0" />
             <element signature="e#6132#22191#0" />
             <element signature="e#8638#22191#0" />
             <element signature="e#22216#29541#0" />
@@ -576,6 +592,11 @@
             <element signature="e#603#992#0" />
             <element signature="e#1045#1163#0" />
             <element signature="e#1237#2460#0" />
+            <element signature="e#2566#3353#0" />
+            <element signature="e#2514#4481#0" />
+            <element signature="e#4571#5741#0" />
+            <element signature="e#6710#7775#0" />
+            <element signature="e#5724#6113#0" />
             <element signature="e#6132#22191#0" />
             <element signature="e#8638#22191#0" />
             <element signature="e#22216#29541#0" />
@@ -725,13 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/json/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3009">
-          <caret line="179" selection-start-line="179" selection-end-line="179" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/new_new_schedule.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24259">
@@ -766,35 +780,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schedule.json">
+    <entry file="file://$PROJECT_DIR$/parsed.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapper.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tocsv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="1574" column="17" selection-start-line="1574" selection-start-column="17" selection-end-line="1574" selection-end-column="17" />
+        <state relative-caret-position="374">
+          <caret line="22" column="41" lean-forward="true" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/new schedule.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+        <state relative-caret-position="161">
+          <caret line="1941" column="42" selection-start-line="1941" selection-start-column="28" selection-end-line="1941" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/json/decoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="338" selection-start-line="338" selection-end-line="338" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="353" selection-start-line="353" selection-end-line="353" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="542" column="1" selection-start-line="542" selection-start-column="1" selection-end-line="542" selection-end-column="1" />
+        <state relative-caret-position="104">
+          <caret line="590" selection-start-line="590" selection-end-line="590" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#270#515#0" />
             <element signature="e#603#992#0" />
             <element signature="e#1045#1163#0" />
             <element signature="e#1237#2460#0" />
+            <element signature="e#2566#3353#0" />
+            <element signature="e#2514#4481#0" />
+            <element signature="e#4571#5741#0" />
+            <element signature="e#6710#7775#0" />
+            <element signature="e#5724#6113#0" />
             <element signature="e#6132#22191#0" />
             <element signature="e#8638#22191#0" />
             <element signature="e#22216#29541#0" />
             <element signature="e#22727#29541#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schedule.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="96" column="12" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
         </state>
       </provider>
     </entry>
