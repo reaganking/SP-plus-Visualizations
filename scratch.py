@@ -550,7 +550,7 @@ Conference(conferences['bigten']).make_standings_projection_graph(absolute=False
 Conference(conferences['bigxii']).make_standings_projection_graph(absolute=False, file="bigxii")
 Conference(conferences['pac12']).make_standings_projection_graph(absolute=False, file="pac12")
 Conference(conferences['cusa']).make_standings_projection_graph(absolute=False, file="cusa")
-Conference(conferences['cusa']).make_standings_projection_graph(absolute=False, file="acc")
+Conference(conferences['acc']).make_standings_projection_graph(absolute=False, file="acc")
 
 for conference in conferences:
     for division in conferences[conference]:
