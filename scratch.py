@@ -3,9 +3,9 @@ import csv
 import json
 import os
 import re
-from difflib import get_close_matches
 from colorsys import hls_to_rgb
 from datetime import datetime
+from difflib import get_close_matches
 
 import requests
 from bs4 import BeautifulSoup as bs
@@ -23,16 +23,25 @@ class Utils:
             return (val - lower) / (upper - lower)
 
     @staticmethod
-    def gradient_color(lower, upper, val, method='linear'):
+    def gradient_color(lower, upper, val, method='linear', scale='red-green'):
         # Perform linear interpolation on the hue between 0.33 and 0, then convert back to RGB
         # HLS 0.33, 0.65, 1.0 will give green
         # HLS 0, 0.65, 1.0 will give red
-        if upper == lower:
-            h = 120
-        else:
-            h = 120 * Utils.interpolate(lower, upper, val, method=method)
+        if scale == 'red-green':
+            if upper == lower:
+                h = 120
+            else:
+                h = 120 * Utils.interpolate(lower, upper, val, method=method)
 
-        return [int(round(255 * x, 0)) for x in hls_to_rgb(h / 360.0, 0.65, 1)]
+            return [int(round(255 * x, 0)) for x in hls_to_rgb(h / 360.0, 0.65, 1)]
+
+        elif scale == 'red-blue':
+            # interpolate 0-0.5 as red-white, 0.5-1 as white-blue
+            inter = Utils.interpolate(lower, upper, val, method=method)
+            if inter > 0.5:
+                return [int(round(255 * x, 0)) for x in hls_to_rgb(0.66, 1.5 - inter, 0.4)]
+            else:
+                return [int(round(255 * x, 0)) for x in hls_to_rgb(0, 0.5 + inter, 0.75)]
 
     @staticmethod
     def get_logo_URIs():
@@ -85,7 +94,6 @@ class Utils:
             except Exception as error:
                 print("An error occured: ".format(error))
                 return None
-
 
     @staticmethod
     def scrape_fpi(data):
@@ -239,7 +247,7 @@ class Team:
 
     def make_win_probability_graph(self, file='out', hstep=40, vstep=40, margin=5, logowidth=30, logoheight=30,
                                    menuheight=40, absolute=False, projectionweek=0, method="spplus",
-                                   colorIndividualGameProbs=False):
+                                   colorIndividualGameProbs=False, scale='red-green'):
         record = self.win_totals_by_week(method=method)
         logos = Utils.get_logo_URIs()
 
@@ -313,8 +321,8 @@ class Team:
                     if j < len(record[i]):
                         # We need to fill the absolute color code in the box initially and store the relative and absolute color codes
                         # so that we can use them later to animate the chart
-                        ra, ga, ba = Utils.gradient_color(lower, upper, record[i][j])
-                        r, g, b = Utils.gradient_color(0, 1, record[i][j])
+                        ra, ga, ba = Utils.gradient_color(lower, upper, record[i][j], scale=scale)
+                        r, g, b = Utils.gradient_color(0, 1, record[i][j], scale=scale)
 
                         if absolute:
                             ra, ga, ba, r, g, b = r, g, b, ra, ga, ba
@@ -346,7 +354,7 @@ class Team:
 
             for i in range(0, rows - 2):
                 # by default, leave the game win probability cells uncolored. color them by mouseover.
-                r, g, b = Utils.gradient_color(0, 1, self.win_probabilities[i][method][projectionweek])
+                r, g, b = Utils.gradient_color(0, 1, self.win_probabilities[i][method][projectionweek], scale=scale)
 
                 if colorIndividualGameProbs:
                     # Add the color-coded box in the prob column
@@ -401,7 +409,7 @@ class Team:
                 # Add the H/A data
                 outfile.write(
                     "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:12px;font-family:Arial'>{}{}".format(
-                        margin + hstep * 1.5, margin + vstep * (2.5 + i), self.win_probabilities[i]["HA"],
+                        margin + hstep * 1.5, margin + vstep * (2.5 + i), self.win_probabilities[i]["ha"],
                         "</text>\n"))
 
                 # Add the opponent logo
@@ -470,7 +478,7 @@ class Conference:
                           self.divisions for i in data[x]]
 
     def make_standings_projection_graph(self, file='out', week=None, hstep=40, vstep=40, margin=5, logowidth=30,
-                                        logoheight=30, absolute=False):
+                                        logoheight=30, absolute=False, scale='red-green'):
         logos = Utils.get_logo_URIs()
 
         # get the records for the final week for each team
@@ -530,7 +538,7 @@ class Conference:
                             "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:12px;font-family:Arial'>{}{}".format(
                                 margin + hstep * (1.5 + j), margin + vstep * 1.5, j, "</text>\n"))
                     if j < len(record[i][1]):
-                        r, g, b = Utils.gradient_color(lower, upper, record[i][1][j])
+                        r, g, b = Utils.gradient_color(lower, upper, record[i][1][j], scale=scale)
                     else:
                         r, g, b = 150, 150, 150
 
@@ -585,17 +593,20 @@ class Conference:
             outfile.write("</svg>")
 
 
-#Utils.download_schedules()
+# Utils.download_schedules()
 
 with open("schedule.json", "r") as file:
     conferences = json.load(file)
 
+Utils.convert_to_URI()
 
-Conference(conferences['bigten']).make_standings_projection_graph(absolute=False, file="bigten")
-Conference(conferences['bigxii']).make_standings_projection_graph(absolute=False, file="bigxii")
-Conference(conferences['pac12']).make_standings_projection_graph(absolute=False, file="pac12")
-Conference(conferences['cusa']).make_standings_projection_graph(absolute=False, file="cusa")
-Conference(conferences['acc']).make_standings_projection_graph(absolute=False, file="acc")
+scale = 'red-blue'
+
+Conference(conferences['bigten']).make_standings_projection_graph(absolute=False, file="bigten", scale=scale)
+Conference(conferences['bigxii']).make_standings_projection_graph(absolute=False, file="bigxii", scale=scale)
+Conference(conferences['pac12']).make_standings_projection_graph(absolute=False, file="pac12", scale=scale)
+Conference(conferences['cusa']).make_standings_projection_graph(absolute=False, file="cusa", scale=scale)
+Conference(conferences['acc']).make_standings_projection_graph(absolute=False, file="acc", scale=scale)
 
 for conference in conferences:
     for division in conferences[conference]:
@@ -603,4 +614,4 @@ for conference in conferences:
             if len(conferences[conference][division][team]) > 0: \
                     Team(name=team,
                          win_probabilities=conferences[conference][division][team]).make_win_probability_graph(
-                        absolute=False, file=team)
+                        absolute=False, file=team, scale='red-blue')
