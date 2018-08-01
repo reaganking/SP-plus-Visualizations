@@ -5,7 +5,6 @@ import os
 import re
 from colorsys import hls_to_rgb
 from datetime import datetime
-from difflib import get_close_matches
 
 import requests
 from bs4 import BeautifulSoup as bs
@@ -13,45 +12,120 @@ from bs4 import BeautifulSoup as bs
 
 class Utils:
     @staticmethod
-    def interpolate(lower, upper, val, method='linear'):
-        if upper == lower:
-            return 1
-        elif method.lower() == 'cubic':
-            x = (val - lower) / (upper - lower)
-            return x ** 3 * (10 + x * (-15 + 6 * x))
-        else:
-            return (val - lower) / (upper - lower)
+    def clean_team_name(name, aliases):
+        # various data sources uses different aliases for the same team (much to my irritation) or special characters
+        # this method will try to enforce some kind of sensible naming standard
+
+        result = name.lower()
+
+        # a dictionary of states or other abbreviations
+        abbrv = {
+            '&': '',
+            'ak': 'alaska',
+            'al': 'alabama',
+            'ar': 'arkansas',
+            'as': 'american samoa',
+            'az': 'arizona',
+            'ca': 'california',
+            'caro': 'carolina',
+            'co': 'colorado',
+            'ct': 'connecticut',
+            'conn': 'connecticut',
+            'dc': 'district of columbia',
+            'de': 'delaware',
+            'fl': 'florida',
+            '(fla.)': '',
+            'ga': 'georgia',
+            'gu': 'guam',
+            'hi': 'hawaii',
+            'ia': 'iowa',
+            'id': 'idaho',
+            'il': 'illinois',
+            'ill': 'illinois',
+            'in': 'indiana',
+            'ks': 'kansas',
+            'ky': 'kentucky',
+            'la': 'louisiana',
+            'ma': 'massachusetts',
+            'md': 'maryland',
+            'me': 'maine',
+            'mi': 'michigan',
+            'miss': 'mississippi',
+            'mn': 'minnesota',
+            'mo': 'missouri',
+            'mp': 'northern mariana islands',
+            'ms': 'mississippi',
+            'mt': 'montana',
+            'na': 'national',
+            'nc': 'north caroli;na',
+            'nd': 'north dakota',
+            'ne': 'nebraska',
+            'nh': 'new hampshire',
+            'nj': 'new jersey',
+            'nm': 'new mexico',
+            'n.m.': 'new mexico',
+            'nv': 'nevada',
+            'ny': 'new york',
+            'oh': 'ohio',
+            'ok': 'oklahoma',
+            'or': 'oregon',
+            'pa': 'pennsylvania',
+            'pr': 'puerto rico',
+            'ri': 'rhode island',
+            'sc': 'south carolina',
+            'sd': 'south dakota',
+            'st': 'state',
+            'tn': 'tennessee',
+            'tenn': 'tennessee',
+            'tx': 'texas',
+            'univ': '',
+            'ut': 'utah',
+            'va': 'virginia',
+            'vi': 'virgin islands',
+            'vt': 'vermont',
+            'wa': 'washington',
+            'wi': 'wisconsin',
+            'wv': 'west virginia',
+            'wy': 'wyoming',
+            's': 'south',
+            'se': 'southeastern'
+        }
+
+        for x in abbrv:
+            result = re.sub(r'\b%s\b' % x, abbrv[x], result)
+
+        # trim out any weird special characters (most likely periods) and convert to lower case
+        result = re.sub(r'[^\w\s]', ' ', result).lower().strip()
+
+        # remove any leading, trailing, or consecutive whitespaces
+        result = re.sub(' +', ' ', result).strip()
+
+        # TODO: build a structure of aliases so we can reference them
+        '''
+        # take the dictionary of aliases and attempt to find the best match
+        for team, alts in enumerate(aliases):
+            try:
+                if len(get_close_matches(name, alts, n=1, cutoff=1)) > 0:
+                    return team
+                else:
+                    raise Exception("No matches found for {}.".format(name))
+            except Exception as error:
+                print("An error occured: ".format(error))
+                return None
+        '''
+        return result
 
     @staticmethod
-    def gradient_color(lower, upper, val, method='linear', scale='red-green'):
-        # Perform linear interpolation on the hue between 0.33 and 0, then convert back to RGB
-        # HLS 0.33, 0.65, 1.0 will give green
-        # HLS 0, 0.65, 1.0 will give red
-        if scale == 'red-green':
-            if upper == lower:
-                h = 120
-            else:
-                h = 120 * Utils.interpolate(lower, upper, val, method=method)
-
-            return [int(round(255 * x, 0)) for x in hls_to_rgb(h / 360.0, 0.65, 1)]
-
-        elif scale == 'red-blue':
-            # interpolate 0-0.5 as red-white, 0.5-1 as white-blue
-            inter = Utils.interpolate(lower, upper, val, method=method)
-            if inter > 0.5:
-                return [int(round(255 * x, 0)) for x in hls_to_rgb(0.66, 1.5 - inter, 0.4)]
-            else:
-                return [int(round(255 * x, 0)) for x in hls_to_rgb(0, 0.5 + inter, 0.75)]
+    def convert_to_URI():
+        imagelist = {}
+        for file in os.listdir("./Resources"):
+            if file.endswith(".jpg"):
+                with open(os.path.join("./Resources/", file), "rb") as imageFile:
+                    imagelist[file[:-4].lower()] = base64.b64encode(imageFile.read()).decode()
+        return imagelist
 
     @staticmethod
-    def get_logo_URIs():
-        with open('Logo URIs.txt', 'r') as infile:
-            json_data = infile.read()
-
-        return json.loads(json_data)
-
-    @staticmethod
-    def download_images(width=40, height=40):
+    def download_logos(width=40, height=40):
         # Quick and dirty method to scrape logos from ESPN; they need minor editorial cleanup afterward
         r = requests.get('http://www.espn.com/college-football/teams')
         results = bs(r.text).findAll('a', href=re.compile('^http://www.espn.com/college-football/team/_/id/'))
@@ -77,23 +151,99 @@ class Utils:
                     handle.write(block)
 
     @staticmethod
-    def clean_team_name(name, aliases):
-        # various data sources uses different aliases for the same team (much to my irritation) or special characters
-        # this method will try to enforce some kind of sensible naming standard
+    def download_schedules(year=datetime.now().year) -> None:
+        result = []
+        # Quick and dirty method to scrape schedule data
+        for week in range(1, 20):
+            # Pull the scoreboard, which contains links to the details for each game
+            url = "http://data.ncaa.com/jsonp/scoreboard/football/fbs/{}/{}/scoreboard.json".format(year, "%02d" % week)
+            response = requests.get(url)
+            if response.status_code == 404:
+                continue
+            else:
+                # look in the scoreboard dictionary, iterate over the days with games that week
+                for day in json.loads(response.text[response.text.index("(") + 1: response.text.rindex(")")])[
+                    'scoreboard']:
+                    # iterate over the games for that day
+                    for game in day['games']:
+                        url = "http://data.ncaa.com/jsonp/{}".format(game)
+                        response = requests.get(url)
+                        if response.status_code == 404:
+                            continue
+                        else:
+                            result += [json.loads(response.text)]
+        with open('new schedule.json', 'w+') as file:
+            json.dump(result, file)
 
-        # trim out any weird special characters and convert to lower case
-        name = re.sub(r'[^\w\s-]', '', name).lower()
+    @staticmethod
+    def get_logo_URIs():
+        result = {}
+        with open('Schedule.json', 'r') as infile:
+            teams = json.load(infile)
 
-        # take the dictionary of aliases and attempt to find the best match
-        for team, alts in enumerate(aliases):
-            try:
-                if len(get_close_matches(name, alts, n=1, cutoff=1)) > 0:
-                    return team
+        for team in teams:
+            if 'logoURI' in teams[team].keys():
+                result[team] = teams[team]['logoURI']
+        return result
+
+    @staticmethod
+    def gradient_color(lower, upper, val, method='linear', scale='red-green'):
+        # Perform linear interpolation on the hue between 0.33 and 0, then convert back to RGB
+        # HLS 0.33, 0.65, 1.0 will give green
+        # HLS 0, 0.65, 1.0 will give red
+        inter = Utils.interpolate(lower, upper, val, method=method)
+
+        if scale == 'red-green':
+            if upper == lower:
+                h = 120
+            else:
+                h = 120 * inter
+
+            return [int(round(255 * x, 0)) for x in hls_to_rgb(h / 360.0, 0.65, 1)]
+
+        elif scale == 'red-blue':
+            # interpolate 0-0.5 as red-white, 0.5-1 as white-blue
+            if inter > 0.5:
+                return [int(round(255 * x, 0)) for x in hls_to_rgb(0.66, 1.5 - inter, 0.4)]
+            else:
+                return [int(round(255 * x, 0)) for x in hls_to_rgb(0, 0.5 + inter, 0.75)]
+
+        elif scale == 'black-red':
+            return [int(round(255 * x, 0)) for x in hls_to_rgb(0.33, 0.5 * inter, 1)]
+
+    @staticmethod
+    def interpolate(lower, upper, val, method='linear'):
+        if upper == lower:
+            return 1
+        elif method.lower() == 'cubic':
+            x = (val - lower) / (upper - lower)
+            return x ** 3 * (10 + x * (-15 + 6 * x))
+        else:
+            return (val - lower) / (upper - lower)
+
+    @staticmethod
+    def schedule_to_csv(schedule_file, csv_file):
+        with open(schedule_file, 'r') as infile:
+            data = json.load(infile)
+        with open(csv_file, 'w+', newline='') as outfile:
+            csvwriter = csv.writer(outfile)
+            count = 0
+            for elem in data:
+                if count == 0:
+                    csvwriter.writerow(['home', 'away', 'startDate', 'startTime', 'location', 'conference', 'url', ])
+                    count += 1
                 else:
-                    raise Exception("No matches found for {}.".format(name))
-            except Exception as error:
-                print("An error occured: ".format(error))
-                return None
+                    row = []
+                    for val in ['home', 'away', 'startDate', 'startTime', 'location', 'conference', 'url', ]:
+                        if val == 'home' or val == 'away':
+                            row.append(elem[val]['nameRaw'])
+                        elif val == 'conference':
+                            row.append(' vs. '.join(elem[val].split(' ')[1:]))
+                        elif val == 'url':
+                            row.append('www.ncaa.com' + elem[val])
+                        else:
+                            row.append(elem[val])
+                    csvwriter.writerow(row)
 
     @staticmethod
     def scrape_fpi(data):
@@ -134,110 +284,43 @@ class Utils:
                 pass
         return data
 
-    @staticmethod
-    def download_schedules(year=datetime.now().year) -> None:
-        result = []
-        # Quick and dirty method to scrape schedule data
-        for week in range(1, 20):
-            # Pull the scoreboard, which contains links to the details for each game
-            url = "http://data.ncaa.com/jsonp/scoreboard/football/fbs/{}/{}/scoreboard.json".format(year, "%02d" % week)
-            response = requests.get(url)
-            if response.status_code == 404:
-                continue
-            else:
-                # look in the scoreboard dictionary, iterate over the days with games that week
-                for day in json.loads(response.text[response.text.index("(") + 1: response.text.rindex(")")])[
-                    'scoreboard']:
-                    # iterate over the games for that day
-                    for game in day['games']:
-                        url = "http://data.ncaa.com/jsonp/{}".format(game)
-                        response = requests.get(url)
-                        if response.status_code == 404:
-                            continue
-                        else:
-                            result += [json.loads(response.text)]
-        with open('new schedule.json', 'w+') as file:
-            json.dump(result, file)
-
-    @staticmethod
-    def schedule_to_csv(schedule_file, csv_file):
-        with open(schedule_file, 'r') as infile:
-            data = json.load(infile)
-        with open(csv_file, 'w+', newline='') as outfile:
-            csvwriter = csv.writer(outfile)
-            count = 0
-            for elem in data:
-                if count == 0:
-                    csvwriter.writerow(['home', 'away', 'startDate', 'startTime', 'location', 'conference', 'url', ])
-                    count += 1
-                else:
-                    row = []
-                    for val in ['home', 'away', 'startDate', 'startTime', 'location', 'conference', 'url', ]:
-                        if val == 'home' or val == 'away':
-                            row.append(elem[val]['nameRaw'])
-                        elif val == 'conference':
-                            row.append(' vs. '.join(elem[val].split(' ')[1:]))
-                        elif val == 'url':
-                            row.append('www.ncaa.com' + elem[val])
-                        else:
-                            row.append(elem[val])
-                    csvwriter.writerow(row)
-
-    @staticmethod
-    def convert_to_URI():
-        imagelist = {}
-        for file in os.listdir("./Resources"):
-            if file.endswith(".jpg"):
-                with open(os.path.join("./Resources/", file), "rb") as imageFile:
-                    imagelist[file[:-4].lower()] = base64.b64encode(imageFile.read()).decode()
-        with open("Logo URIs.txt", 'w', newline='') as outfile:
-            outfile.write(json.dumps(imagelist))
-
 
 class Team:
-    def __init__(self, name=None, win_probabilities=None, conference=None, division=None):
-        if not win_probabilities:
-            self.win_probabilities = []  # format for this vector is a [team name::str, win_probability::float]
-        else:
-            assert isinstance(win_probabilities, (list, set, tuple)), "Vector is not a list, set, or tuple!"
-            self.win_probabilities = win_probabilities
-
+    def __init__(self, name=None, schedule=None):
+        self.schedule = schedule
         if not name:
             self.name = ""
         else:
             assert isinstance(name, str), "Name is not a string!"
             self.name = name.lower()
-
-        if not conference:
-            self.conference = ""
-        else:
-            assert isinstance(name, str), "Name is not a string!"
-            self.conference = conference.lower()
-
-        if not division:
-            self.division = ""
-        else:
-            assert isinstance(name, str), "Name is not a string!"
-            self.division = division.lower()
+            self.conference = self.schedule[self.name]['conference']
+            try:
+                self.division = self.schedule[self.name]['division']
+            except KeyError:
+                pass
+            self.win_probabilities = [x['spplus'] for x in self.schedule[self.name]['schedule']]
 
     def win_totals_by_week(self, projection_week=0, method="spplus"):
+        # first check to make sure the projection week has all the games projected
+        try:
+            win_probs = [x[projection_week] for x in self.win_probabilities]
+        except IndexError:
+            win_probs = [0 for x in range(12)]
+
         # Make a ragged table to store 'games' x 'wins'
         record = [[0 for y in range(0, x + 1)] for x in range(1, len(self.win_probabilities) + 1)]
-        record[0][0] = 1 - self.win_probabilities[0][method][projection_week]  # first game was a loss
-        record[0][1] = self.win_probabilities[0][method][projection_week]  # first game was a win
+        record[0][0] = 1 - win_probs[0]  # first game was a loss
+        record[0][1] = win_probs[0]  # first game was a win
 
         for i in range(1, len(record)):
             for j in range(0, i + 1):
-                record[i][j] += record[i - 1][j] * (
-                        1 - self.win_probabilities[i][method][projection_week])  # newest game was a loss
-                record[i][j + 1] += record[i - 1][j] * (
-                    self.win_probabilities[i][method][projection_week])  # newest game was a win
+                record[i][j] += record[i - 1][j] * (1 - win_probs[i])  # newest game was a loss
+                record[i][j + 1] += record[i - 1][j] * (win_probs[i])  # newest game was a win
 
-        return record
+        return win_probs, record
 
-    def set_win_probabilities(self, vector):
-        assert isinstance(vector, (list, set, tuple)), "Vector is not a list, set, or tuple!"
-        self.win_probabilities = vector
+    def set_win_probabilities(self, schedule):
+        self.win_probabilities = schedule[self.name]['schedule']
 
     def write_win_probability_csv(self, file='out'):
         record = self.win_totals_by_week()
@@ -248,7 +331,7 @@ class Team:
     def make_win_probability_graph(self, file='out', hstep=40, vstep=40, margin=5, logowidth=30, logoheight=30,
                                    menuheight=40, absolute=False, projectionweek=0, method="spplus",
                                    colorIndividualGameProbs=False, scale='red-green'):
-        record = self.win_totals_by_week(method=method)
+        win_probs, record = self.win_totals_by_week(method=method)
         logos = Utils.get_logo_URIs()
 
         if not os.path.exists("./svg output/"):
@@ -354,7 +437,7 @@ class Team:
 
             for i in range(0, rows - 2):
                 # by default, leave the game win probability cells uncolored. color them by mouseover.
-                r, g, b = Utils.gradient_color(0, 1, self.win_probabilities[i][method][projectionweek], scale=scale)
+                r, g, b = Utils.gradient_color(0, 1, win_probs[i], scale=scale)
 
                 if colorIndividualGameProbs:
                     # Add the color-coded box in the prob column
@@ -376,7 +459,7 @@ class Team:
                 outfile.write(
                     "<text text-anchor='middle' alignment-baseline='central' x='{}' y='{}' style='font-size:11px;font-family:Arial;pointer-events:none'>{}%{}".format(
                         margin + hstep * 3.5, margin + vstep * (2.5 + i),
-                        round(100 * self.win_probabilities[i][method][projectionweek], 1),
+                        round(100 * win_probs[i], 1),
                         "</text>\n"))
 
                 for j in range(0, len(record) + 1):
@@ -409,16 +492,18 @@ class Team:
                 # Add the H/A data
                 outfile.write(
                     "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:12px;font-family:Arial'>{}{}".format(
-                        margin + hstep * 1.5, margin + vstep * (2.5 + i), self.win_probabilities[i]["ha"],
+                        margin + hstep * 1.5, margin + vstep * (2.5 + i),
+                        self.schedule[self.name]['schedule'][i]['home-away'],
                         "</text>\n"))
 
                 # Add the opponent logo
                 try:
+                    opponent = self.schedule[self.name]['schedule'][i]['opponent']
                     outfile.write(
                         "<image x='{}' y='{}' height='{}px' width='{}px' xlink:href='data:image/jpg;base64,{}'>\n<title>{}</title></image>\n".format(
                             2 * hstep + margin + (hstep - logowidth) / 2,
                             vstep * (2 + i) + margin + (vstep - logoheight) / 2, logowidth, logoheight,
-                            logos[self.win_probabilities[i]["team"]], self.win_probabilities[i]["team"].title()))
+                            self.schedule[opponent]['logoURI'], opponent.title()))
                 except KeyError:
                     pass
 
@@ -594,24 +679,19 @@ class Conference:
 
 
 # Utils.download_schedules()
+# Utils.convert_to_URI()
 
 with open("schedule.json", "r") as file:
-    conferences = json.load(file)
+    schedule = json.load(file)
 
-Utils.convert_to_URI()
-
-scale = 'red-blue'
-
-Conference(conferences['bigten']).make_standings_projection_graph(absolute=False, file="bigten", scale=scale)
-Conference(conferences['bigxii']).make_standings_projection_graph(absolute=False, file="bigxii", scale=scale)
-Conference(conferences['pac12']).make_standings_projection_graph(absolute=False, file="pac12", scale=scale)
-Conference(conferences['cusa']).make_standings_projection_graph(absolute=False, file="cusa", scale=scale)
-Conference(conferences['acc']).make_standings_projection_graph(absolute=False, file="acc", scale=scale)
-
-for conference in conferences:
-    for division in conferences[conference]:
-        for team in conferences[conference][division]:
-            if len(conferences[conference][division][team]) > 0: \
-                    Team(name=team,
-                         win_probabilities=conferences[conference][division][team]).make_win_probability_graph(
-                        absolute=False, file=team, scale='red-blue')
+scale = 'red-green'
+'''
+Conference(conferences['big ten']).make_standings_projection_graph(absolute=False, file="bigten", scale=scale)
+Conference(conferences['big 12']).make_standings_projection_graph(absolute=False, file="bigxii", scale=scale)
+Conference(conferences['pac 12']).make_standings_projection_graph(absolute=False, file="pac12", scale=scale)
+Conference(conferences['conference usa']).make_standings_projection_graph(absolute=False, file="cusa", scale=scale)
+Conference(conferences['atlantic coast']).make_standings_projection_graph(absolute=False, file="acc", scale=scale)
+'''
+for team in schedule:
+    if schedule[team]['conference'] in ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']:
+        Team(name=team, schedule=schedule).make_win_probability_graph(absolute=False, file=team, scale=scale)
