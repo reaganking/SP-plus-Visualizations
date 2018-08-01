@@ -3,7 +3,7 @@ import csv
 import json
 import os
 import re
-from colorsys import hls_to_rgb
+from colorsys import hls_to_rgb, rgb_to_hls
 from datetime import datetime
 
 import requests
@@ -176,6 +176,19 @@ class Utils:
             json.dump(result, file)
 
     @staticmethod
+    def get_color_brightness(red, green, blue):
+        """Return (float) representing the color brightness as calculated using the standard W3C formula."""
+        return (red * 299 + green * 587 + blue * 114) / 1000
+
+    @staticmethod
+    def get_text_contrast_color(red, green, blue):
+        # Should the text be white or black?
+        if Utils.get_color_brightness(red, green, blue) > 123:
+            return 0, 0, 0
+        else:
+            return 255, 255, 255
+
+    @staticmethod
     def get_logo_URIs():
         result = {}
         with open('Schedule.json', 'r') as infile:
@@ -187,11 +200,23 @@ class Utils:
         return result
 
     @staticmethod
-    def gradient_color(lower, upper, val, method='linear', scale='red-green'):
+    def gradient_color(lower, upper, val, method='linear', scale='red-green', primaryColor=None, secondaryColor=None):
+        """ Return (red, green, blue) interpolated along the color scale specified."""
         # Perform linear interpolation on the hue between 0.33 and 0, then convert back to RGB
         # HLS 0.33, 0.65, 1.0 will give green
         # HLS 0, 0.65, 1.0 will give red
         inter = Utils.interpolate(lower, upper, val, method=method)
+
+        if scale == 'team':
+            if not (primaryColor and secondaryColor):
+                pass
+            else:
+                colors = [rgb_to_hls(*(x / 255 for x in primaryColor)), rgb_to_hls(
+                    *(x / 255 for x in secondaryColor))]
+                # brighter colors should mean higher probabilities, as a general rule
+                # order the colors by brightness
+
+                # TODO: sort the colors by brightness and implement interpolation
 
         if scale == 'red-green':
             if upper == lower:
@@ -201,15 +226,22 @@ class Utils:
 
             return [int(round(255 * x, 0)) for x in hls_to_rgb(h / 360.0, 0.65, 1)]
 
-        elif scale == 'red-blue':
+        if scale == 'red-blue':
             # interpolate 0-0.5 as red-white, 0.5-1 as white-blue
             if inter > 0.5:
                 return [int(round(255 * x, 0)) for x in hls_to_rgb(0.66, 1.5 - inter, 0.4)]
             else:
                 return [int(round(255 * x, 0)) for x in hls_to_rgb(0, 0.5 + inter, 0.75)]
 
-        elif scale == 'black-red':
-            return [int(round(255 * x, 0)) for x in hls_to_rgb(0.33, 0.5 * inter, 1)]
+        if scale == 'black-red':
+            return [int(round(255 * x, 0)) for x in hls_to_rgb(0, 0.5 * inter, 1)]
+
+    @staticmethod
+    def hex_to_rgb(value):
+        """Return (red, green, blue) for the color given as #rrggbb."""
+        value = value.lstrip('#')
+        lv = len(value)
+        return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
 
     @staticmethod
     def interpolate(lower, upper, val, method='linear'):
@@ -294,11 +326,18 @@ class Team:
             assert isinstance(name, str), "Name is not a string!"
             self.name = name.lower()
             self.conference = self.schedule[self.name]['conference']
+            self.win_probabilities = [x['spplus'] for x in self.schedule[self.name]['schedule']]
+            try:
+                self.primary_color = Utils.hex_to_rgb(self.schedule[self.name]['primaryColor'])
+                self.secondary_color = Utils.hex_to_rgb(self.schedule[self.name]['secondaryColor'])
+            except KeyError:
+                self.primary_color = Utils.hex_to_rgb(self.schedule[self.name]['color'])
+                self.secondary_color = Utils.hex_to_rgb(self.schedule[self.name]['color'])
+            # Not all teams have a conference, not all conferences have divisions
             try:
                 self.division = self.schedule[self.name]['division']
             except KeyError:
                 pass
-            self.win_probabilities = [x['spplus'] for x in self.schedule[self.name]['schedule']]
 
     def win_totals_by_week(self, projection_week=0, method="spplus"):
         # first check to make sure the projection week has all the games projected
@@ -318,9 +357,6 @@ class Team:
                 record[i][j + 1] += record[i - 1][j] * (win_probs[i])  # newest game was a win
 
         return win_probs, record
-
-    def set_win_probabilities(self, schedule):
-        self.win_probabilities = schedule[self.name]['schedule']
 
     def write_win_probability_csv(self, file='out'):
         record = self.win_totals_by_week()
@@ -404,23 +440,35 @@ class Team:
                     if j < len(record[i]):
                         # We need to fill the absolute color code in the box initially and store the relative and absolute color codes
                         # so that we can use them later to animate the chart
-                        ra, ga, ba = Utils.gradient_color(lower, upper, record[i][j], scale=scale)
-                        r, g, b = Utils.gradient_color(0, 1, record[i][j], scale=scale)
+                        ra, ga, ba = Utils.gradient_color(lower, upper, record[i][j], scale=scale,
+                                                          primaryColor=self.primary_color,
+                                                          secondaryColor=self.secondary_color)
+                        r, g, b = Utils.gradient_color(0, 1, record[i][j], scale=scale, primaryColor=self.primary_color,
+                                                       secondaryColor=self.secondary_color)
 
                         if absolute:
                             ra, ga, ba, r, g, b = r, g, b, ra, ga, ba
 
                         # Assign the color code.
                         outfile.write("fill:rgb({},{},{})'>\n".format(ra, ga, ba))
-
                         # The first two animate the colors to change when the user mouses over / off the game box
                         outfile.write(
                             "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='mouseover'/>\n".format(
                                 r, g, b, ra, ga, ba))
                         outfile.write(
-                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='mouseout'/>\n".format(
+                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='mouseout'/>\n</rect>".format(
                                 ra, ga, ba, r, g, b))
+                        # Should the text be white or black?
+                        text_color = Utils.get_text_contrast_color(ra, ga, ba)
 
+                        # Write the probability in the box
+                        outfile.write(
+                            "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:11px;fill:rgb({},{},{});font-family:Arial;pointer-events: none'>{}%{}".format(
+                                margin + hstep * (4.5 + j), margin + vstep * (2.5 + i), *text_color,
+                                round(100 * record[i][j], 1),
+                                "</text>\n"))
+                        # TODO: fix the text so the colors change as appropriate when the cell is animated.
+                        """
                         # These next two animate the colors to change when the user mouses over / off the week label
                         outfile.write(
                             "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='week{}.mouseover'/>\n".format(
@@ -428,6 +476,7 @@ class Team:
                         outfile.write(
                             "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='week{}.mouseout'/></rect>\n".format(
                                 ra, ga, ba, r, g, b, i))
+                        """
                     else:
                         # Assign the color code.
                         outfile.write(
@@ -437,7 +486,8 @@ class Team:
 
             for i in range(0, rows - 2):
                 # by default, leave the game win probability cells uncolored. color them by mouseover.
-                r, g, b = Utils.gradient_color(0, 1, win_probs[i], scale=scale)
+                r, g, b = Utils.gradient_color(0, 1, win_probs[i], scale=scale, primaryColor=self.primary_color,
+                                               secondaryColor=self.secondary_color)
 
                 if colorIndividualGameProbs:
                     # Add the color-coded box in the prob column
@@ -455,10 +505,13 @@ class Team:
                         "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='probColHitBox.mouseout'/></rect>\n".format(
                             255, 255, 255, r, g, b))
 
+                # Should the text be white or black?
+                text_color = Utils.get_text_contrast_color(r, g, b)
+
                 # Add the probability text in the prob column
                 outfile.write(
-                    "<text text-anchor='middle' alignment-baseline='central' x='{}' y='{}' style='font-size:11px;font-family:Arial;pointer-events:none'>{}%{}".format(
-                        margin + hstep * 3.5, margin + vstep * (2.5 + i),
+                    "<text text-anchor='middle' alignment-baseline='central' x='{}' y='{}' style='font-size:11px;fill:rgb({},{},{});font-family:Arial;pointer-events:none'>{}%{}".format(
+                        margin + hstep * 3.5, margin + vstep * (2.5 + i), *text_color,
                         round(100 * win_probs[i], 1),
                         "</text>\n"))
 
@@ -469,14 +522,6 @@ class Team:
                             "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:12px;font-family:Arial'>{}{}".format(
                                 margin + hstep * (4.5 + j), margin + vstep * 1.5, j, "</text>\n"))
 
-                # Loop over the body of the table and draw the probability text.
-                for j in range(0, len(record) + 1):
-                    if j < len(record[i]):
-                        # Write the probability in the box
-                        outfile.write(
-                            "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:11px;font-family:Arial;pointer-events: none'>{}%{}".format(
-                                margin + hstep * (4.5 + j), margin + vstep * (2.5 + i), round(100 * record[i][j], 1),
-                                "</text>\n"))
             for i in range(2, rows):
                 # add the horizontal lines between the rows
                 outfile.write(
@@ -554,27 +599,38 @@ class Team:
 
 
 class Conference:
-    def __init__(self, data=None):
-        if not data:
-            self.teams = []
-        else:
-            self.divisions = [x for x in data]
-            self.teams = [Team(name=i, win_probabilities=data[x][i], conference=self.__str__(), division=x) for x in
-                          self.divisions for i in data[x]]
+    def __init__(self, name, schedule):
+        self.name = name
+        self.teams = {Team(name=x, schedule=schedule) for x in schedule if schedule[x]['conference'] == name}
+        self.divisions = {}
+        for team in self.teams:
+            # not all conferences have divisions
+            try:
+                if team.division not in self.divisions:
+                    self.divisions[team.division] = []
+                self.divisions[team.division].append(team)
+            except AttributeError:
+                pass
+        if len(self.divisions) == 0:
+            self.divisions['all'] = self.teams
 
     def make_standings_projection_graph(self, file='out', week=None, hstep=40, vstep=40, margin=5, logowidth=30,
                                         logoheight=30, absolute=False, scale='red-green'):
-        logos = Utils.get_logo_URIs()
-
         # get the records for the final week for each team
         record = []
-        # sort teams by their weighted average number of wins and division
+
+        # make sure the week is valid
         if (not week) or (week < 1) or (week > max([len(x.win_probabilities) for x in self.teams])):
             week = -1
-        for i in self.divisions:
+
+        # sort teams by their weighted average number of wins and division
+
+        for division in sorted(self.divisions.keys()):
+            # record will be a list of tuples (team, list) where list is the win total probability by week
             record.extend(
-                sorted([(x, x.win_totals_by_week()[week]) for x in self.teams if x.division == i],
-                       key=lambda team: sum([team[1][x] * x for x in range(len(team[1]))]), reverse=True))
+                sorted([(x, x.win_totals_by_week()[1][week]) for x in self.divisions[division]],
+                       key=lambda y: sum([y[1][z] * z for z in range(len(y[1]))]), reverse=True))
+
         if not os.path.exists("./svg output/"):
             os.makedirs("./svg output/")
 
@@ -608,7 +664,7 @@ class Conference:
                     "<image x='{}' y='{}' height='{}px' width='{}px' xlink:href='data:image/jpg;base64,{}'/>".format(
                         margin + (hstep - logowidth) / 2,
                         vstep * (2 + i) + margin + (vstep - logoheight) / 2, logowidth, logoheight,
-                        logos[record[i][0].name]))
+                        schedule[record[i][0].name]['logoURI']))
 
                 # find the max and min in this week to determine color of cell
                 if absolute:
@@ -623,7 +679,9 @@ class Conference:
                             "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:12px;font-family:Arial'>{}{}".format(
                                 margin + hstep * (1.5 + j), margin + vstep * 1.5, j, "</text>\n"))
                     if j < len(record[i][1]):
-                        r, g, b = Utils.gradient_color(lower, upper, record[i][1][j], scale=scale)
+                        r, g, b = Utils.gradient_color(lower, upper, record[i][1][j], scale=scale,
+                                                       primaryColor=record[i][0].primary_color,
+                                                       secondaryColor=record[i][0].secondary_color)
                     else:
                         r, g, b = 150, 150, 150
 
@@ -684,14 +742,22 @@ class Conference:
 with open("schedule.json", "r") as file:
     schedule = json.load(file)
 
+'''
+win_prob = [.98,.66,.72,.11,.34,.12,.39,.81,.66,.33,.2,.33]
+
+for i in range(len(schedule['arkansas']['schedule'])):
+    schedule['arkansas']['schedule'][i]['spplus'] = [win_prob[i]]
+
+with open('schedule.json', 'w') as file:
+    json.dump(schedule, file, indent=4, sort_keys=True)
+'''
 scale = 'red-green'
-'''
-Conference(conferences['big ten']).make_standings_projection_graph(absolute=False, file="bigten", scale=scale)
-Conference(conferences['big 12']).make_standings_projection_graph(absolute=False, file="bigxii", scale=scale)
-Conference(conferences['pac 12']).make_standings_projection_graph(absolute=False, file="pac12", scale=scale)
-Conference(conferences['conference usa']).make_standings_projection_graph(absolute=False, file="cusa", scale=scale)
-Conference(conferences['atlantic coast']).make_standings_projection_graph(absolute=False, file="acc", scale=scale)
-'''
+
+conferences = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
+for conference in conferences:
+    Conference(name=conference, schedule=schedule).make_standings_projection_graph(absolute=False, file=conference,
+                                                                                   scale=scale)
+
 for team in schedule:
     if schedule[team]['conference'] in ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']:
         Team(name=team, schedule=schedule).make_win_probability_graph(absolute=False, file=team, scale=scale)
