@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="Fixed conference objects so they render standings graphs correctly post code refactor.">
+    <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schedule.json" beforeDir="false" afterPath="$PROJECT_DIR$/schedule.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/acc.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/alabama.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/alabama.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/arizona state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/arizona state.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/arizona.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/arizona.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/arkansas.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/arkansas.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/auburn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/auburn.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/baylor.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/baylor.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/bigten.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/bigxii.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/boston college.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/boston college.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/california.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/california.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/clemson.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/clemson.svg" afterDir="false" />
@@ -22,7 +17,6 @@
       <change beforePath="$PROJECT_DIR$/svg output/florida state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/florida state.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/florida.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/florida.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/georgia tech.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/georgia tech.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/georgia.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/georgia.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/illinois.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/illinois.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/indiana.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/indiana.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/iowa state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/iowa state.svg" afterDir="false" />
@@ -31,14 +25,11 @@
       <change beforePath="$PROJECT_DIR$/svg output/kansas.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/kansas.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/kentucky.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/kentucky.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/louisville.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/louisville.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/lsu.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/lsu.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/maryland.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/maryland.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/miami.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/miami.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/michigan state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/michigan state.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/michigan.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/michigan.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/minnesota.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/minnesota.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/mississippi state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/mississippi state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/missouri.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/missouri.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/nebraska.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/nebraska.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/north carolina state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/north carolina state.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/north carolina.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/north carolina.svg" afterDir="false" />
@@ -46,26 +37,22 @@
       <change beforePath="$PROJECT_DIR$/svg output/ohio state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/ohio state.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/oklahoma state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/oklahoma state.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/oklahoma.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/oklahoma.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/ole miss.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/ole miss.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/oregon state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/oregon state.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/oregon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/oregon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/pac12.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/penn state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/penn state.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/pittsburgh.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/pittsburgh.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/purdue.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/purdue.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/rutgers.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/rutgers.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/south carolina.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/south carolina.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/southeastern.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/southeastern.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/stanford.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/stanford.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/syracuse.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/syracuse.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/tcu.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/tcu.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/tennessee.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/tennessee.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/texas am.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/texas am.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/texas tech.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/texas tech.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/texas.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/texas.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/ucla.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/ucla.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/usc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/usc.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/utah.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/utah.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/vanderbilt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/vanderbilt.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/virginia tech.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/virginia tech.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/virginia.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/virginia.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svg output/wake forest.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/wake forest.svg" afterDir="false" />
@@ -86,11 +73,108 @@
       <file leaf-file-name="scratch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="750" column="31" lean-forward="true" selection-start-line="750" selection-start-column="31" selection-end-line="750" selection-end-column="31" />
+            <state relative-caret-position="297">
+              <caret line="741" column="4" selection-start-line="741" selection-start-column="4" selection-end-line="741" selection-end-column="4" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#203#12743#0" />
+                <element signature="e#265#3652#0" />
+                <element signature="e#265#374#0" />
+                <element signature="e#559#2699#0" />
+                <element signature="e#3146#3630#1" />
+                <element signature="e#3706#4007#0" />
+                <element signature="e#3780#3982#0" />
+                <element signature="e#3822#3982#0" />
+                <element signature="e#4080#5303#0" />
+                <element signature="e#4487#5303#0" />
+                <element signature="e#5021#5303#0" />
+                <element signature="e#5219#5303#0" />
+                <element signature="e#5393#6582#0" />
+                <element signature="e#5508#6492#0" />
+                <element signature="e#5846#6492#0" />
+                <element signature="e#6092#6492#0" />
+                <element signature="e#6200#6492#0" />
+                <element signature="e#6658#6819#0" />
+                <element signature="e#6898#7071#0" />
+                <element signature="e#7124#7376#0" />
+                <element signature="e#7265#7354#0" />
+                <element signature="e#7523#9000#0" />
+                <element signature="e#7610#7696#0" />
+                <element signature="e#7893#8332#0" />
+                <element signature="e#7990#8332#0" />
+                <element signature="e#7999#8114#0" />
+                <element signature="e#8131#8200#0" />
+                <element signature="e#8379#8556#0" />
+                <element signature="e#8602#8883#0" />
+                <element signature="e#9055#9259#0" />
+                <element signature="e#9344#9589#0" />
+                <element signature="e#9436#9524#0" />
+                <element signature="e#9667#10722#0" />
+                <element signature="e#9815#10722#0" />
+                <element signature="e#9915#10722#0" />
+                <element signature="e#9950#10078#0" />
+                <element signature="e#10121#10722#0" />
+                <element signature="e#10264#10678#0" />
+                <element signature="e#10776#12743#0" />
+                <element signature="e#11136#12723#0" />
+                <element signature="e#11463#12654#0" />
+                <element signature="e#11641#12654#0" />
+                <element signature="e#11641#11733#0" />
+                <element signature="e#12324#12497#0" />
+                <element signature="e#12401#12463#0" />
+                <element signature="e#12762#29675#0" />
+                <element signature="e#12816#13811#0" />
+                <element signature="e#12915#13811#0" />
+                <element signature="e#13205#13384#0" />
+                <element signature="e#13430#13593#0" />
+                <element signature="e#13891#14714#0" />
+                <element signature="e#14464#14680#0" />
+                <element signature="e#14506#14680#0" />
+                <element signature="e#14777#14959#0" />
+                <element signature="e#14894#14959#0" />
                 <element signature="e#15269#29675#0" />
+                <element signature="e#15559#29675#0" />
+                <element signature="e#15559#15696#0" />
+                <element signature="e#16520#16813#0" />
+                <element signature="e#18714#22706#0" />
+                <element signature="e#18714#18776#0" />
+                <element signature="e#19201#22706#0" />
+                <element signature="e#19528#22515#0" />
+                <element signature="e#19528#19638#0" />
+                <element signature="e#21845#22515#1" />
+                <element signature="e#22566#22706#0" />
+                <element signature="e#22802#25218#0" />
+                <element signature="e#23152#23435#0" />
+                <element signature="e#23478#24215#0" />
+                <element signature="e#24870#25218#0" />
+                <element signature="e#24905#25218#0" />
+                <element signature="e#25273#25892#0" />
+                <element signature="e#25603#25892#0" />
+                <element signature="e#25951#27582#0" />
+                <element signature="e#26418#26926#0" />
+                <element signature="e#29172#29639#1" />
+                <element signature="e#29744#29822#0" />
+                <element signature="e#30132#37063#0" />
+                <element signature="e#30931#31068#0" />
+                <element signature="e#33579#35104#0" />
+                <element signature="e#33614#33927#0" />
+                <element signature="e#33737#34007#0" />
+                <element signature="e#34665#35001#0" />
+                <element signature="e#35222#35857#0" />
+                <element signature="e#35267#35857#0" />
+                <element signature="e#29943#30222#0" />
+                <element signature="e#30013#30166#0" />
+                <element signature="e#30897#31213#0" />
+                <element signature="e#31407#37678#0" />
+                <element signature="e#31407#31544#0" />
+                <element signature="e#33093#35319#0" />
+                <element signature="e#33794#35319#0" />
+                <element signature="e#33829#34142#0" />
+                <element signature="e#34213#34483#0" />
+                <element signature="e#34924#35319#0" />
+                <element signature="e#35437#36072#0" />
+                <element signature="e#35482#36072#0" />
+                <element signature="e#37681#37709#0" />
               </folding>
             </state>
           </provider>
@@ -472,46 +556,54 @@
       <option name="project" value="LOCAL" />
       <updated>1533047027798</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fixed conference objects so they render standings graphs correctly post code refactor.">
+      <created>1533153998156</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1533153998156</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1272" y="-8" width="1296" height="1040" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.2400636" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.2400636" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50074404" side_tool="true" weight="0.39713973" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32743362" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35533553" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35533553" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32743362" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49925596" weight="0.4719472" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32893288" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32893288" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35533553" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.2400636" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35533553" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32743362" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49925596" weight="0.4719472" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32743362" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50074404" side_tool="true" weight="0.39713973" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32893288" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32893288" />
@@ -565,7 +657,8 @@
     <MESSAGE value="Began adding SEC. Added prototype for red-blue scale to make graphs red-green color blindness friendly." />
     <MESSAGE value="Massive schedule data structure overhaul. Now includes much more data.&#10;Team objects refactored to use new structure.&#10;Conference objects still broken, they're up next." />
     <MESSAGE value="Minor tweaks. Added primary and secondary color data to the json structure." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor tweaks. Added primary and secondary color data to the json structure." />
+    <MESSAGE value="Fixed conference objects so they render standings graphs correctly post code refactor." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed conference objects so they render standings graphs correctly post code refactor." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -576,7 +669,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="95" />
+      <option name="time" value="96" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -737,9 +830,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/svg output/bigten.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/svg output/bigten.svg" />
     <entry file="file://$PROJECT_DIR$/svg output/southeastern.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -752,11 +843,108 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="750" column="31" lean-forward="true" selection-start-line="750" selection-start-column="31" selection-end-line="750" selection-end-column="31" />
+        <state relative-caret-position="297">
+          <caret line="741" column="4" selection-start-line="741" selection-start-column="4" selection-end-line="741" selection-end-column="4" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#203#12743#0" />
+            <element signature="e#265#3652#0" />
+            <element signature="e#265#374#0" />
+            <element signature="e#559#2699#0" />
+            <element signature="e#3146#3630#1" />
+            <element signature="e#3706#4007#0" />
+            <element signature="e#3780#3982#0" />
+            <element signature="e#3822#3982#0" />
+            <element signature="e#4080#5303#0" />
+            <element signature="e#4487#5303#0" />
+            <element signature="e#5021#5303#0" />
+            <element signature="e#5219#5303#0" />
+            <element signature="e#5393#6582#0" />
+            <element signature="e#5508#6492#0" />
+            <element signature="e#5846#6492#0" />
+            <element signature="e#6092#6492#0" />
+            <element signature="e#6200#6492#0" />
+            <element signature="e#6658#6819#0" />
+            <element signature="e#6898#7071#0" />
+            <element signature="e#7124#7376#0" />
+            <element signature="e#7265#7354#0" />
+            <element signature="e#7523#9000#0" />
+            <element signature="e#7610#7696#0" />
+            <element signature="e#7893#8332#0" />
+            <element signature="e#7990#8332#0" />
+            <element signature="e#7999#8114#0" />
+            <element signature="e#8131#8200#0" />
+            <element signature="e#8379#8556#0" />
+            <element signature="e#8602#8883#0" />
+            <element signature="e#9055#9259#0" />
+            <element signature="e#9344#9589#0" />
+            <element signature="e#9436#9524#0" />
+            <element signature="e#9667#10722#0" />
+            <element signature="e#9815#10722#0" />
+            <element signature="e#9915#10722#0" />
+            <element signature="e#9950#10078#0" />
+            <element signature="e#10121#10722#0" />
+            <element signature="e#10264#10678#0" />
+            <element signature="e#10776#12743#0" />
+            <element signature="e#11136#12723#0" />
+            <element signature="e#11463#12654#0" />
+            <element signature="e#11641#12654#0" />
+            <element signature="e#11641#11733#0" />
+            <element signature="e#12324#12497#0" />
+            <element signature="e#12401#12463#0" />
+            <element signature="e#12762#29675#0" />
+            <element signature="e#12816#13811#0" />
+            <element signature="e#12915#13811#0" />
+            <element signature="e#13205#13384#0" />
+            <element signature="e#13430#13593#0" />
+            <element signature="e#13891#14714#0" />
+            <element signature="e#14464#14680#0" />
+            <element signature="e#14506#14680#0" />
+            <element signature="e#14777#14959#0" />
+            <element signature="e#14894#14959#0" />
             <element signature="e#15269#29675#0" />
+            <element signature="e#15559#29675#0" />
+            <element signature="e#15559#15696#0" />
+            <element signature="e#16520#16813#0" />
+            <element signature="e#18714#22706#0" />
+            <element signature="e#18714#18776#0" />
+            <element signature="e#19201#22706#0" />
+            <element signature="e#19528#22515#0" />
+            <element signature="e#19528#19638#0" />
+            <element signature="e#21845#22515#1" />
+            <element signature="e#22566#22706#0" />
+            <element signature="e#22802#25218#0" />
+            <element signature="e#23152#23435#0" />
+            <element signature="e#23478#24215#0" />
+            <element signature="e#24870#25218#0" />
+            <element signature="e#24905#25218#0" />
+            <element signature="e#25273#25892#0" />
+            <element signature="e#25603#25892#0" />
+            <element signature="e#25951#27582#0" />
+            <element signature="e#26418#26926#0" />
+            <element signature="e#29172#29639#1" />
+            <element signature="e#29744#29822#0" />
+            <element signature="e#30132#37063#0" />
+            <element signature="e#30931#31068#0" />
+            <element signature="e#33579#35104#0" />
+            <element signature="e#33614#33927#0" />
+            <element signature="e#33737#34007#0" />
+            <element signature="e#34665#35001#0" />
+            <element signature="e#35222#35857#0" />
+            <element signature="e#35267#35857#0" />
+            <element signature="e#29943#30222#0" />
+            <element signature="e#30013#30166#0" />
+            <element signature="e#30897#31213#0" />
+            <element signature="e#31407#37678#0" />
+            <element signature="e#31407#31544#0" />
+            <element signature="e#33093#35319#0" />
+            <element signature="e#33794#35319#0" />
+            <element signature="e#33829#34142#0" />
+            <element signature="e#34213#34483#0" />
+            <element signature="e#34924#35319#0" />
+            <element signature="e#35437#36072#0" />
+            <element signature="e#35482#36072#0" />
+            <element signature="e#37681#37709#0" />
           </folding>
         </state>
       </provider>
