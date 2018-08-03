@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule.json" beforeDir="false" afterPath="$PROJECT_DIR$/schedule.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/texas am.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/texas am.svg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,8 +18,8 @@
       <file leaf-file-name="scratch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="28" column="72" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="72" />
+            <state relative-caret-position="153">
+              <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -28,8 +30,8 @@
       <file leaf-file-name="schedule.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schedule.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1114">
-              <caret line="15921" column="40" selection-start-line="15921" selection-start-column="23" selection-end-line="15921" selection-end-column="40" />
+            <state relative-caret-position="-2248">
+              <caret line="18033" column="13" selection-start-line="18033" selection-start-column="5" selection-end-line="18033" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -93,9 +95,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>uconn</find>
       <find>lafayette</find>
-      <find>middle tennessee</find>
+      <find />
       <find>dakota</find>
       <find>university</find>
       <find>primary</find>
@@ -118,42 +119,43 @@
       <find>self.sched</find>
       <find>schedule</find>
       <find>mississippi</find>
-      <find>&quot;mississippi state&quot;:</find>
-      <find>mountain west</find>
-      <find>mid a</find>
-      <find>american athletic</find>
+      <find />
+      <find />
+      <find />
+      <find />
       <find>multiline</find>
+      <find />
     </findStrings>
     <replaceStrings>
       <replace>&quot;\}</replace>
       <replace>\{&quot;team&quot;:&quot;</replace>
       <replace>&quot;winprob&quot;:\[$0\]</replace>
       <replace>&quot;spplus&quot;</replace>
-      <replace>&quot;fpi&quot;: [], &quot;spplus&quot;:</replace>
+      <replace />
       <replace>ba</replace>
-      <replace>&quot;fpi&quot;: [], &quot;bud&quot;:[],</replace>
+      <replace />
       <replace>'</replace>
       <replace>ha</replace>
       <replace>scale</replace>
       <replace />
       <replace>state&quot;</replace>
       <replace>michigan</replace>
-      <replace>florida international&quot;</replace>
+      <replace />
       <replace>&quot;michigan</replace>
-      <replace>north carolina</replace>
-      <replace>north carolina state</replace>
+      <replace />
+      <replace />
       <replace>umass</replace>
-      <replace>&quot;nameClean&quot;: &quot;umass&quot;</replace>
-      <replace>&quot;nameClean&quot;: &quot;prairie view&quot;</replace>
-      <replace>&quot;nameClean&quot;: &quot;central</replace>
+      <replace />
+      <replace />
+      <replace />
       <replace>michigan&quot;</replace>
       <replace>carolin</replace>
-      <replace>&quot;nameClean&quot;: &quot;florida international&quot;</replace>
+      <replace />
       <replace>arkansas&quot;</replace>
       <replace>southern&quot;</replace>
-      <replace>william and mary</replace>
+      <replace />
       <replace>arkansas</replace>
-      <replace>louisiana lafayette</replace>
+      <replace />
     </replaceStrings>
   </component>
   <component name="Git.Rebase.Settings">
@@ -199,6 +201,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="640" />
     <option name="width" value="640" />
     <option name="height" value="680" />
   </component>
@@ -541,18 +544,26 @@
       <option name="project" value="LOCAL" />
       <updated>1533314471515</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Updated folder structure for easier use.">
+      <created>1533314558649</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1533314558649</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
+    <frame x="640" y="0" width="640" height="680" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.20349762" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.42524916" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50074404" side_tool="true" weight="0.39646018" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32743362" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33451328" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3442623" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32743362" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -641,7 +652,8 @@
     <MESSAGE value="Segmented class code into separate files to simpilify maintenance." />
     <MESSAGE value="Added remaining P5 teams." />
     <MESSAGE value="Converted power five conferences to png for mass consumption." />
-    <option name="LAST_COMMIT_MESSAGE" value="Converted power five conferences to png for mass consumption." />
+    <MESSAGE value="Updated folder structure for easier use." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated folder structure for easier use." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -834,13 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schedule.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1114">
-          <caret line="15921" column="40" selection-start-line="15921" selection-start-column="23" selection-end-line="15921" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/team.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-412">
@@ -851,10 +856,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/schedule.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2248">
+          <caret line="18033" column="13" selection-start-line="18033" selection-start-column="5" selection-end-line="18033" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="28" column="72" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="72" />
+        <state relative-caret-position="153">
+          <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

@@ -6,14 +6,14 @@ from team import Team
 
 with open("schedule.json", "r") as file:
     schedule = json.load(file)
-'''
-win_prob = [1.00, .76, .94, .73, .94, .93, .63, .79, .85, .55, .87, .89]
 
-for i in range(len(schedule['georgia']['schedule'])):
-    schedule['georgia']['schedule'][i]['spplus'] = [win_prob[i]]
+win_prob = [.99, .25, .90, .14, .66, .75, .53, .34, .21, .56, .86, .49]
+
+for i in range(len(schedule['texas am']['schedule'])):
+    schedule['texas am']['schedule'][i]['spplus'] = [win_prob[i]]
 with open('schedule.json', 'w') as file:
     json.dump(schedule, file, indent=4, sort_keys=True)
-'''
+
 
 scale = 'red-green'
 
