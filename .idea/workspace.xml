@@ -117,12 +117,12 @@
       <find>&amp;</find>
       <find>'team'</find>
       <find>team_color</find>
-      <find>arizona state</find>
-      <find>&quot;arizona state&quot;:</find>
+      <find />
+      <find />
       <find>connecticut</find>
       <find>uconn</find>
       <find>lafayette</find>
-      <find>middle tennessee</find>
+      <find />
       <find>dakota</find>
       <find>university</find>
       <find>primary</find>
@@ -147,31 +147,31 @@
       <replace>\{&quot;team&quot;:&quot;</replace>
       <replace>&quot;winprob&quot;:\[$0\]</replace>
       <replace>&quot;spplus&quot;</replace>
-      <replace>&quot;fpi&quot;: [], &quot;spplus&quot;:</replace>
+      <replace />
       <replace>ba</replace>
-      <replace>&quot;fpi&quot;: [], &quot;bud&quot;:[],</replace>
+      <replace />
       <replace>'</replace>
       <replace>ha</replace>
       <replace>scale</replace>
       <replace />
       <replace>state&quot;</replace>
       <replace>michigan</replace>
-      <replace>florida international&quot;</replace>
+      <replace />
       <replace>&quot;michigan</replace>
-      <replace>north carolina</replace>
-      <replace>north carolina state</replace>
+      <replace />
+      <replace />
       <replace>umass</replace>
-      <replace>&quot;nameClean&quot;: &quot;umass&quot;</replace>
-      <replace>&quot;nameClean&quot;: &quot;prairie view&quot;</replace>
-      <replace>&quot;nameClean&quot;: &quot;central</replace>
+      <replace />
+      <replace />
+      <replace />
       <replace>michigan&quot;</replace>
       <replace>carolin</replace>
-      <replace>&quot;nameClean&quot;: &quot;florida international&quot;</replace>
+      <replace />
       <replace>arkansas&quot;</replace>
       <replace>southern&quot;</replace>
-      <replace>william and mary</replace>
+      <replace />
       <replace>arkansas</replace>
-      <replace>louisiana lafayette</replace>
+      <replace />
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -610,7 +610,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scratch.py</url>
+          <url />
           <line>217</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
