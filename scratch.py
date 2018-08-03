@@ -15,7 +15,7 @@ with open('schedule.json', 'w') as file:
     json.dump(schedule, file, indent=4, sort_keys=True)
 
 
-scale = 'red-green'
+scale = 'team'
 
 pfive = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
 gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sunbelt']
