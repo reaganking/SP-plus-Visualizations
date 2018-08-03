@@ -158,9 +158,30 @@ class Team:
 
                         # Write the probability in the box
                         outfile.write(
-                            "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:11px;fill:rgb({},{},{});font-family:Arial;pointer-events: none'>{}%".format(
+                            "<text text-anchor='middle' alignment-baseline='bottom' x='{}' y='{}' style='font-size:11px;fill:rgb({},{},{});font-family:Arial;pointer-events: none'>{}%".format(
                                 margin + hstep * (4.5 + j), margin + vstep * (2.5 + i), *text_color,
                                 round(100 * record[i][j], 1)))
+
+                        # These next two animate the colors to change when the user mouses over / off the week label
+                        outfile.write(
+                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='{}_{}.mouseover'/>\n".format(
+                                *alt_color, *text_color, i, j))
+                        outfile.write(
+                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='{}_{}.mouseout'/></text>\n".format(
+                                *text_color, *alt_color, i, j))
+
+                        # Add text for the cumulative probability
+                        # Should the text be white or black?
+                        text_color = Utils.get_text_contrast_color(ra, ga, ba)
+
+                        # set the alt color to the opposite of the text color
+                        alt_color = Utils.get_text_contrast_color(r, g, b)
+
+                        # Write the probability in the box
+                        outfile.write(
+                            "<text text-anchor='right' alignment-baseline='middle' x='{}' y='{}' style='font-size:8px;fill:rgb({},{},{});font-family:Arial;pointer-events: none'>{}%".format(
+                                margin * 1.5 + hstep * (4 + j), vstep * (3 + i), *text_color,
+                                round(abs(100 * (1 - sum(record[i][x] for x in range(0, j)))), 1)))
 
                         # These next two animate the colors to change when the user mouses over / off the week label
                         outfile.write(
