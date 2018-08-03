@@ -16,15 +16,19 @@ with open('schedule.json', 'w') as file:
 '''
 
 scale = 'red-green'
-conferences = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
 
-for conference in conferences:
+pfive = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
+gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sunbelt']
+fcs = pfive + gfive
+
+for conference in pfive:
     Conference(name=conference, schedule=schedule).make_standings_projection_graph(absolute=False, file=conference,
                                                                                    scale=scale)
 
 Cluster(schedule=schedule,
-        teams=[x for x in schedule if schedule[x]['conference'] in conferences]).make_standings_projection_graph(
+        teams=[x for x in schedule if schedule[x]['conference'] in pfive]).make_standings_projection_graph(
     absolute=False, file='p5', scale=scale)
+
 for team in schedule:
     if schedule[team]['conference'] in ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']:
         Team(name=team, schedule=schedule).make_win_probability_graph(absolute=False, file=team, scale=scale)

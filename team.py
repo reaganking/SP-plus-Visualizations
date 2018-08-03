@@ -102,10 +102,10 @@ class Team:
             # writing multiline text is a bit dodgy; this works
             outfile.write(
                 "<text text-anchor='middle' alignment-baseline='baseline' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Win</text>\n".format(
-                    margin + hstep * 3.5, margin + vstep * 1.5 - 2))
+                    margin + hstep * 3.5, margin + vstep * 1.5 - 3))
             outfile.write(
                 "<text text-anchor='middle' alignment-baseline='hanging' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Prob</text>\n".format(
-                    margin + hstep * 3.5, margin + vstep * 1.5 + 2))
+                    margin + hstep * 3.5, margin + vstep * 1.5 + 9))
 
             outfile.write("<g id='svg_2'>\n")
 

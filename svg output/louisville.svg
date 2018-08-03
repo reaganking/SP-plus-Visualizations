@@ -10,8 +10,8 @@
 <text text-anchor='middle' alignment-baseline='middle' x='25.0' y='65.0'  style='font-size:12px;font-family:Arial'>Week</text>
 <text text-anchor='middle' alignment-baseline='middle' x='65.0' y='65.0'  style='font-size:12px;font-family:Arial'>H/A</text>
 <text text-anchor='middle' alignment-baseline='middle' x='105.0' y='65.0'  style='font-size:12px;font-family:Arial'>Opp</text>
-<text text-anchor='middle' alignment-baseline='baseline' x='145.0' y='63.0'  style='font-size:12px;font-family:Arial'>Win</text>
-<text text-anchor='middle' alignment-baseline='hanging' x='145.0' y='67.0'  style='font-size:12px;font-family:Arial'>Prob</text>
+<text text-anchor='middle' alignment-baseline='baseline' x='145.0' y='62.0'  style='font-size:12px;font-family:Arial'>Win</text>
+<text text-anchor='middle' alignment-baseline='hanging' x='145.0' y='74.0'  style='font-size:12px;font-family:Arial'>Prob</text>
 <g id='svg_2'>
 <rect id='0_0' x='165' y='85' width='40' height='40' style='fill:rgb(77,255,77)'>
 <animate fill='freeze' dur='0.1s' to='rgb(130,255,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
