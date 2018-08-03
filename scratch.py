@@ -7,14 +7,15 @@ from team import Team
 with open("schedule.json", "r") as file:
     schedule = json.load(file)
 '''
-win_prob = [.60, .70, .08, .37, .91, .07, .35, .38, .34, .24, .29, .57]
+win_prob = [1.00, .76, .94, .73, .94, .93, .63, .79, .85, .55, .87, .89]
 
-for i in range(len(schedule['vanderbilt']['schedule'])):
-    schedule['vanderbilt']['schedule'][i]['spplus'] = [win_prob[i]]
+for i in range(len(schedule['georgia']['schedule'])):
+    schedule['georgia']['schedule'][i]['spplus'] = [win_prob[i]]
 with open('schedule.json', 'w') as file:
     json.dump(schedule, file, indent=4, sort_keys=True)
 '''
-scale = 'team'
+
+scale = 'red-green'
 conferences = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
 
 for conference in conferences:

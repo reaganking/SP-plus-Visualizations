@@ -13,16 +13,16 @@
 <text text-anchor='middle' alignment-baseline='baseline' x='145.0' y='63.0'  style='font-size:12px;font-family:Arial'>Win</text>
 <text text-anchor='middle' alignment-baseline='hanging' x='145.0' y='67.0'  style='font-size:12px;font-family:Arial'>Prob</text>
 <g id='svg_2'>
-<rect id='0_0' x='165' y='85' width='40' height='40' style='fill:rgb(0.0,0.0,0.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(97.28999999999999,86.47999999999999,58.279999999999994)' from='rgb(0.0,0.0,0.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0,0.0,0.0)' from='rgb(97.28999999999999,86.47999999999999,58.279999999999994)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='105.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>47.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='0_0.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='0_0.mouseout'/></text>
-<rect id='0_1' x='205' y='85' width='40' height='40' style='fill:rgb(207.0,184.0,124.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(109.71000000000001,97.52000000000001,65.72)' from='rgb(207.0,184.0,124.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(207.0,184.0,124.0)' from='rgb(109.71000000000001,97.52000000000001,65.72)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='105.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>53.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='0_1.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='0_1.mouseout'/></text>
+<rect id='0_0' x='165' y='85' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,244,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,244,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='105.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>47.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='0_0.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='0_0.mouseout'/></text>
+<rect id='0_1' x='205' y='85' width='40' height='40' style='fill:rgb(77,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(244,255,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(77,255,77)' from='rgb(244,255,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='105.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>53.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='0_1.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='0_1.mouseout'/></text>
 <rect id='0_2' x='245' y='85' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='0_3' x='285' y='85' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='0_4' x='325' y='85' width='40' height='40' style='fill:rgb(150,150,150)'/>
@@ -34,21 +34,21 @@
 <rect id='0_10' x='565' y='85' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='0_11' x='605' y='85' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='0_12' x='645' y='85' width='40' height='40' style='fill:rgb(150,150,150)'/>
-<rect id='1_0' x='165' y='125' width='40' height='40' style='fill:rgb(99.6883852691218,88.61189801699715,59.716713881019814)'>
-<animate fill='freeze' dur='0.1s' to='rgb(68.103,60.535999999999994,40.79599999999999)' from='rgb(99.6883852691218,88.61189801699715,59.716713881019814)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(99.6883852691218,88.61189801699715,59.716713881019814)' from='rgb(68.103,60.535999999999994,40.79599999999999)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='145.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>32.9%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='1_0.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='1_0.mouseout'/></text>
-<rect id='1_1' x='205' y='125' width='40' height='40' style='fill:rgb(207.0,184.0,124.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(105.98400000000001,94.208,63.488)' from='rgb(207.0,184.0,124.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(207.0,184.0,124.0)' from='rgb(105.98400000000001,94.208,63.488)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='145.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>51.2%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='1_1.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='1_1.mouseout'/></text>
-<rect id='1_2' x='245' y='125' width='40' height='40' style='fill:rgb(0.0,0.0,0.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(32.913000000000004,29.256,19.716)' from='rgb(0.0,0.0,0.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0,0.0,0.0)' from='rgb(32.913000000000004,29.256,19.716)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='145.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>15.9%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='1_2.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='1_2.mouseout'/></text>
+<rect id='1_0' x='165' y='125' width='40' height='40' style='fill:rgb(255,248,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,194,77)' from='rgb(255,248,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,248,77)' from='rgb(255,194,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='145.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>32.9%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='1_0.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='1_0.mouseout'/></text>
+<rect id='1_1' x='205' y='125' width='40' height='40' style='fill:rgb(77,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(251,255,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(77,255,77)' from='rgb(251,255,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='145.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>51.2%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='1_1.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='1_1.mouseout'/></text>
+<rect id='1_2' x='245' y='125' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,133,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,133,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='145.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>15.9%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='1_2.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='1_2.mouseout'/></text>
 <rect id='1_3' x='285' y='125' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='1_4' x='325' y='125' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='1_5' x='365' y='125' width='40' height='40' style='fill:rgb(150,150,150)'/>
@@ -59,26 +59,26 @@
 <rect id='1_10' x='565' y='125' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='1_11' x='605' y='125' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='1_12' x='645' y='125' width='40' height='40' style='fill:rgb(150,150,150)'/>
-<rect id='2_0' x='165' y='165' width='40' height='40' style='fill:rgb(0.0,0.0,0.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(10.896480000000002,9.685760000000002,6.527360000000001)' from='rgb(0.0,0.0,0.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0,0.0,0.0)' from='rgb(10.896480000000002,9.685760000000002,6.527360000000001)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='185.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>5.3%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='2_0.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='2_0.mouseout'/></text>
-<rect id='2_1' x='205' y='165' width='40' height='40' style='fill:rgb(157.03802621127875,139.58935663224779,94.07108816521045)'>
-<animate fill='freeze' dur='0.1s' to='rgb(74.16395999999999,65.92351999999998,44.42671999999999)' from='rgb(157.03802621127875,139.58935663224779,94.07108816521045)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(157.03802621127875,139.58935663224779,94.07108816521045)' from='rgb(74.16395999999999,65.92351999999998,44.42671999999999)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='185.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>35.8%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='2_1.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='2_1.mouseout'/></text>
-<rect id='2_2' x='245' y='165' width='40' height='40' style='fill:rgb(207.0,184.0,124.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(94.29264,83.81568,56.484480000000005)' from='rgb(207.0,184.0,124.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(207.0,184.0,124.0)' from='rgb(94.29264,83.81568,56.484480000000005)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='185.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>45.6%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='2_2.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='2_2.mouseout'/></text>
-<rect id='2_3' x='285' y='165' width='40' height='40' style='fill:rgb(41.576747418586166,36.957108816521036,24.90587768069896)'>
-<animate fill='freeze' dur='0.1s' to='rgb(27.646919999999998,24.575039999999998,16.561439999999997)' from='rgb(41.576747418586166,36.957108816521036,24.90587768069896)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(41.576747418586166,36.957108816521036,24.90587768069896)' from='rgb(27.646919999999998,24.575039999999998,16.561439999999997)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='185.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>13.4%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='2_3.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='2_3.mouseout'/></text>
+<rect id='2_0' x='165' y='165' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,95,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,95,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='185.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>5.3%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='2_0.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='2_0.mouseout'/></text>
+<rect id='2_1' x='205' y='165' width='40' height='40' style='fill:rgb(163,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,204,77)' from='rgb(163,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(163,255,77)' from='rgb(255,204,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='185.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>35.8%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='2_1.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='2_1.mouseout'/></text>
+<rect id='2_2' x='245' y='165' width='40' height='40' style='fill:rgb(77,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,239,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(77,255,77)' from='rgb(255,239,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='185.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>45.6%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='2_2.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='2_2.mouseout'/></text>
+<rect id='2_3' x='285' y='165' width='40' height='40' style='fill:rgb(255,148,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,124,77)' from='rgb(255,148,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,148,77)' from='rgb(255,124,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='185.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>13.4%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='2_3.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='2_3.mouseout'/></text>
 <rect id='2_4' x='325' y='165' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='2_5' x='365' y='165' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='2_6' x='405' y='165' width='40' height='40' style='fill:rgb(150,150,150)'/>
@@ -88,31 +88,31 @@
 <rect id='2_10' x='565' y='165' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='2_11' x='605' y='165' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='2_12' x='645' y='165' width='40' height='40' style='fill:rgb(150,150,150)'/>
-<rect id='3_0' x='165' y='205' width='40' height='40' style='fill:rgb(0.0,0.0,0.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(7.4096063999999995,6.5863168,4.4386048)' from='rgb(0.0,0.0,0.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0,0.0,0.0)' from='rgb(7.4096063999999995,6.5863168,4.4386048)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='225.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>3.6%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='3_0.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='3_0.mouseout'/></text>
-<rect id='3_1' x='205' y='205' width='40' height='40' style='fill:rgb(119.68039772727272,106.38257575757575,71.69260540184453)'>
-<animate fill='freeze' dur='0.1s' to='rgb(53.91836639999999,47.927436799999995,32.298924799999995)' from='rgb(119.68039772727272,106.38257575757575,71.69260540184453)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(119.68039772727272,106.38257575757575,71.69260540184453)' from='rgb(53.91836639999999,47.927436799999995,32.298924799999995)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='225.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>26.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='3_1.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='3_1.mouseout'/></text>
-<rect id='3_2' x='245' y='205' width='40' height='40' style='fill:rgb(207.0,184.0,124.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(87.8514624,78.09018879999999,52.625996799999996)' from='rgb(207.0,184.0,124.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(207.0,184.0,124.0)' from='rgb(87.8514624,78.09018879999999,52.625996799999996)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='225.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>42.4%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='3_2.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='3_2.mouseout'/></text>
-<rect id='3_3' x='285' y='205' width='40' height='40' style='fill:rgb(106.95596590909092,95.0719696969697,64.07024044795784)'>
-<animate fill='freeze' dur='0.1s' to='rgb(48.9735504,43.5320448,29.3368128)' from='rgb(106.95596590909092,95.0719696969697,64.07024044795784)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(106.95596590909092,95.0719696969697,64.07024044795784)' from='rgb(48.9735504,43.5320448,29.3368128)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='225.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>23.7%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='3_3.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='3_3.mouseout'/></text>
-<rect id='3_4' x='325' y='205' width='40' height='40' style='fill:rgb(3.6988636363636362,3.2878787878787876,2.215744400527009)'>
-<animate fill='freeze' dur='0.1s' to='rgb(8.847014399999999,7.864012799999999,5.2996608)' from='rgb(3.6988636363636362,3.2878787878787876,2.215744400527009)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(3.6988636363636362,3.2878787878787876,2.215744400527009)' from='rgb(8.847014399999999,7.864012799999999,5.2996608)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='225.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>4.3%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='3_4.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='3_4.mouseout'/></text>
+<rect id='3_0' x='165' y='205' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,89,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,89,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='225.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>3.6%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='3_0.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='3_0.mouseout'/></text>
+<rect id='3_1' x='205' y='205' width='40' height='40' style='fill:rgb(227,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,169,77)' from='rgb(227,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(227,255,77)' from='rgb(255,169,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='225.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>26.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='3_1.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='3_1.mouseout'/></text>
+<rect id='3_2' x='245' y='205' width='40' height='40' style='fill:rgb(77,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,228,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(77,255,77)' from='rgb(255,228,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='225.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>42.4%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='3_2.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='3_2.mouseout'/></text>
+<rect id='3_3' x='285' y='205' width='40' height='40' style='fill:rgb(249,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,161,77)' from='rgb(249,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(249,255,77)' from='rgb(255,161,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='225.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>23.7%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='3_3.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='3_3.mouseout'/></text>
+<rect id='3_4' x='325' y='205' width='40' height='40' style='fill:rgb(255,83,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,92,77)' from='rgb(255,83,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,83,77)' from='rgb(255,92,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='225.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>4.3%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='3_4.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='3_4.mouseout'/></text>
 <rect id='3_5' x='365' y='205' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='3_6' x='405' y='205' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='3_7' x='445' y='205' width='40' height='40' style='fill:rgb(150,150,150)'/>
@@ -121,36 +121,36 @@
 <rect id='3_10' x='565' y='205' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='3_11' x='605' y='205' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='3_12' x='645' y='205' width='40' height='40' style='fill:rgb(150,150,150)'/>
-<rect id='4_0' x='165' y='245' width='40' height='40' style='fill:rgb(2.6539704061891936,2.3590848055015052,1.5898180210988406)'>
-<animate fill='freeze' dur='0.1s' to='rgb(4.44576384,3.95179008,2.66316288)' from='rgb(2.6539704061891936,2.3590848055015052,1.5898180210988406)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(2.6539704061891936,2.3590848055015052,1.5898180210988406)' from='rgb(4.44576384,3.95179008,2.66316288)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='265.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>2.1%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='4_0.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='4_0.mouseout'/></text>
-<rect id='4_1' x='205' y='245' width='40' height='40' style='fill:rgb(92.98413654129594,82.65256581448527,55.70064217932703)'>
-<animate fill='freeze' dur='0.1s' to='rgb(35.314862399999996,31.390988799999995,21.154796799999996)' from='rgb(92.98413654129594,82.65256581448527,55.70064217932703)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(92.98413654129594,82.65256581448527,55.70064217932703)' from='rgb(35.314862399999996,31.390988799999995,21.154796799999996)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='265.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>17.1%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='4_1.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='4_1.mouseout'/></text>
-<rect id='4_2' x='245' y='245' width='40' height='40' style='fill:rgb(207.0,184.0,124.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(74.27822399999998,66.02508799999998,44.49516799999999)' from='rgb(207.0,184.0,124.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(207.0,184.0,124.0)' from='rgb(74.27822399999998,66.02508799999998,44.49516799999999)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='265.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>35.9%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='4_2.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='4_2.mouseout'/></text>
-<rect id='4_3' x='285' y='245' width='40' height='40' style='fill:rgb(178.45896344877835,158.63018973224743,106.90295394999282)'>
-<animate fill='freeze' dur='0.1s' to='rgb(64.5247152,57.35530240000001,38.6524864)' from='rgb(178.45896344877835,158.63018973224743,106.90295394999282)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(178.45896344877835,158.63018973224743,106.90295394999282)' from='rgb(64.5247152,57.35530240000001,38.6524864)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='265.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>31.2%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='4_3.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='4_3.mouseout'/></text>
-<rect id='4_4' x='325' y='245' width='40' height='40' style='fill:rgb(62.50088676556242,55.55634379161104,37.44014472912918)'>
-<animate fill='freeze' dur='0.1s' to='rgb(24.897628800000003,22.1312256,14.9145216)' from='rgb(62.50088676556242,55.55634379161104,37.44014472912918)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(62.50088676556242,55.55634379161104,37.44014472912918)' from='rgb(24.897628800000003,22.1312256,14.9145216)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='265.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>12.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='4_4.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='4_4.mouseout'/></text>
-<rect id='4_5' x='365' y='245' width='40' height='40' style='fill:rgb(0.0,0.0,0.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(3.53880576,3.14560512,2.11986432)' from='rgb(0.0,0.0,0.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0,0.0,0.0)' from='rgb(3.53880576,3.14560512,2.11986432)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='265.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>1.7%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='4_5.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='4_5.mouseout'/></text>
+<rect id='4_0' x='165' y='245' width='40' height='40' style='fill:rgb(255,81,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,84,77)' from='rgb(255,81,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,81,77)' from='rgb(255,84,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='265.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>2.1%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='4_0.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='4_0.mouseout'/></text>
+<rect id='4_1' x='205' y='245' width='40' height='40' style='fill:rgb(255,237,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,137,77)' from='rgb(255,237,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,237,77)' from='rgb(255,137,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='265.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>17.1%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='4_1.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='4_1.mouseout'/></text>
+<rect id='4_2' x='245' y='245' width='40' height='40' style='fill:rgb(77,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,205,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(77,255,77)' from='rgb(255,205,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='265.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>35.9%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='4_2.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='4_2.mouseout'/></text>
+<rect id='4_3' x='285' y='245' width='40' height='40' style='fill:rgb(126,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,188,77)' from='rgb(126,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(126,255,77)' from='rgb(255,188,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='265.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>31.2%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='4_3.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='4_3.mouseout'/></text>
+<rect id='4_4' x='325' y='245' width='40' height='40' style='fill:rgb(255,184,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,119,77)' from='rgb(255,184,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,184,77)' from='rgb(255,119,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='265.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>12.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='4_4.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='4_4.mouseout'/></text>
+<rect id='4_5' x='365' y='245' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,83,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,83,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='265.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>1.7%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='4_5.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='4_5.mouseout'/></text>
 <rect id='4_6' x='405' y='245' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='4_7' x='445' y='245' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='4_8' x='485' y='245' width='40' height='40' style='fill:rgb(150,150,150)'/>
@@ -158,383 +158,383 @@
 <rect id='4_10' x='565' y='245' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='4_11' x='605' y='245' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='4_12' x='645' y='245' width='40' height='40' style='fill:rgb(150,150,150)'/>
-<rect id='5_0' x='165' y='285' width='40' height='40' style='fill:rgb(10.609666508182846,9.430814673940308,6.355549019394555)'>
-<animate fill='freeze' dur='0.1s' to='rgb(3.9567298175999994,3.5170931711999995,2.3702149631999996)' from='rgb(10.609666508182846,9.430814673940308,6.355549019394555)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(10.609666508182846,9.430814673940308,6.355549019394555)' from='rgb(3.9567298175999994,3.5170931711999995,2.3702149631999996)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='305.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>1.9%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='5_0.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='5_0.mouseout'/></text>
-<rect id='5_1' x='205' y='285' width='40' height='40' style='fill:rgb(93.77052550363297,83.35157822545152,56.17171576063037)'>
-<animate fill='freeze' dur='0.1s' to='rgb(31.919261558399995,28.372676940799998,19.120717068799998)' from='rgb(93.77052550363297,83.35157822545152,56.17171576063037)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(93.77052550363297,83.35157822545152,56.17171576063037)' from='rgb(31.919261558399995,28.372676940799998,19.120717068799998)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='305.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>15.4%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='5_1.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='5_1.mouseout'/></text>
-<rect id='5_2' x='245' y='285' width='40' height='40' style='fill:rgb(207.0,184.0,124.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(69.99225422399999,62.215337087999984,41.92772716799999)' from='rgb(207.0,184.0,124.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(207.0,184.0,124.0)' from='rgb(69.99225422399999,62.215337087999984,41.92772716799999)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='305.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>33.8%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='5_2.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='5_2.mouseout'/></text>
-<rect id='5_3' x='285' y='285' width='40' height='40' style='fill:rgb(193.93025629754786,172.38245004226476,116.1707815502219)'>
-<animate fill='freeze' dur='0.1s' to='rgb(65.597601168,58.308978816,39.295181376)' from='rgb(193.93025629754786,172.38245004226476,116.1707815502219)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(193.93025629754786,172.38245004226476,116.1707815502219)' from='rgb(65.597601168,58.308978816,39.295181376)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='305.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>31.7%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='5_3.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='5_3.mouseout'/></text>
-<rect id='5_4' x='325' y='285' width='40' height='40' style='fill:rgb(85.85176714886464,76.3126819101019,51.42811172202519)'>
-<animate fill='freeze' dur='0.1s' to='rgb(29.256608304000004,26.005874048000003,17.525697728)' from='rgb(85.85176714886464,76.3126819101019,51.42811172202519)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(85.85176714886464,76.3126819101019,51.42811172202519)' from='rgb(29.256608304000004,26.005874048000003,17.525697728)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='305.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>14.1%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='5_4.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='5_4.mouseout'/></text>
-<rect id='5_5' x='365' y='285' width='40' height='40' style='fill:rgb(16.354105734547684,14.536982875153495,9.79666237238605)'>
-<animate fill='freeze' dur='0.1s' to='rgb(5.8882762944,5.2340233728,3.5272766208)' from='rgb(16.354105734547684,14.536982875153495,9.79666237238605)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(16.354105734547684,14.536982875153495,9.79666237238605)' from='rgb(5.8882762944,5.2340233728,3.5272766208)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='305.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>2.8%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='5_5.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='5_5.mouseout'/></text>
-<rect id='5_6' x='405' y='285' width='40' height='40' style='fill:rgb(0.0,0.0,0.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.38926863359999997,0.34601656319999996,0.23318507519999998)' from='rgb(0.0,0.0,0.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0,0.0,0.0)' from='rgb(0.38926863359999997,0.34601656319999996,0.23318507519999998)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='305.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.2%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='5_6.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='5_6.mouseout'/></text>
+<rect id='5_0' x='165' y='285' width='40' height='40' style='fill:rgb(255,95,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,83,77)' from='rgb(255,95,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,95,77)' from='rgb(255,83,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='305.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>1.9%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_0.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_0.mouseout'/></text>
+<rect id='5_1' x='205' y='285' width='40' height='40' style='fill:rgb(255,238,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,132,77)' from='rgb(255,238,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,238,77)' from='rgb(255,132,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='305.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>15.4%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_1.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_1.mouseout'/></text>
+<rect id='5_2' x='245' y='285' width='40' height='40' style='fill:rgb(77,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,197,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(77,255,77)' from='rgb(255,197,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='305.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>33.8%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_2.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_2.mouseout'/></text>
+<rect id='5_3' x='285' y='285' width='40' height='40' style='fill:rgb(99,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,190,77)' from='rgb(99,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(99,255,77)' from='rgb(255,190,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='305.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>31.7%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_3.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_3.mouseout'/></text>
+<rect id='5_4' x='325' y='285' width='40' height='40' style='fill:rgb(255,225,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,127,77)' from='rgb(255,225,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,225,77)' from='rgb(255,127,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='305.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>14.1%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_4.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_4.mouseout'/></text>
+<rect id='5_5' x='365' y='285' width='40' height='40' style='fill:rgb(255,105,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,87,77)' from='rgb(255,105,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,105,77)' from='rgb(255,87,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='305.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>2.8%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_5.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_5.mouseout'/></text>
+<rect id='5_6' x='405' y='285' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='305.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.2%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_6.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='5_6.mouseout'/></text>
 <rect id='5_7' x='445' y='285' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='5_8' x='485' y='285' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='5_9' x='525' y='285' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='5_10' x='565' y='285' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='5_11' x='605' y='285' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='5_12' x='645' y='285' width='40' height='40' style='fill:rgb(150,150,150)'/>
-<rect id='6_0' x='165' y='325' width='40' height='40' style='fill:rgb(11.439227909732503,10.168202586428892,6.8524843517238185)'>
-<animate fill='freeze' dur='0.1s' to='rgb(3.7984606248959993,3.3764094443519994,2.2754063646719995)' from='rgb(11.439227909732503,10.168202586428892,6.8524843517238185)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(11.439227909732503,10.168202586428892,6.8524843517238185)' from='rgb(3.7984606248959993,3.3764094443519994,2.2754063646719995)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='345.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>1.8%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='6_0.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='6_0.mouseout'/></text>
-<rect id='6_1' x='205' y='325' width='40' height='40' style='fill:rgb(93.09253259924303,82.7489178659938,55.76557508360452)'>
-<animate fill='freeze' dur='0.1s' to='rgb(30.800760288767997,27.378453590015997,18.450696984576)' from='rgb(93.09253259924303,82.7489178659938,55.76557508360452)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(93.09253259924303,82.7489178659938,55.76557508360452)' from='rgb(30.800760288767997,27.378453590015997,18.450696984576)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='345.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>14.9%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='6_1.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='6_1.mouseout'/></text>
-<rect id='6_2' x='245' y='325' width='40' height='40' style='fill:rgb(207.0,184.0,124.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(68.46933451737598,60.861630682111986,41.01544676403199)' from='rgb(207.0,184.0,124.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(207.0,184.0,124.0)' from='rgb(68.46933451737598,60.861630682111986,41.01544676403199)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='345.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>33.1%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='6_2.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='6_2.mouseout'/></text>
-<rect id='6_3' x='285' y='325' width='40' height='40' style='fill:rgb(198.84762027292425,176.75344024259934,119.11644885914302)'>
-<animate fill='freeze' dur='0.1s' to='rgb(65.77338729024001,58.46523314688,39.400483207680004)' from='rgb(198.84762027292425,176.75344024259934,119.11644885914302)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(198.84762027292425,176.75344024259934,119.11644885914302)' from='rgb(65.77338729024001,58.46523314688,39.400483207680004)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='345.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>31.8%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='6_3.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='6_3.mouseout'/></text>
-<rect id='6_4' x='325' y='325' width='40' height='40' style='fill:rgb(92.81882902327239,82.50562579846434,55.60161738592162)'>
-<animate fill='freeze' dur='0.1s' to='rgb(30.710248018560005,27.297998238720005,18.396477073920003)' from='rgb(92.81882902327239,82.50562579846434,55.60161738592162)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(92.81882902327239,82.50562579846434,55.60161738592162)' from='rgb(30.710248018560005,27.297998238720005,18.396477073920003)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='345.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>14.8%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='6_4.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='6_4.mouseout'/></text>
-<rect id='6_5' x='365' y='325' width='40' height='40' style='fill:rgb(20.585279173061476,18.2980259316102,12.331278345215571)'>
-<animate fill='freeze' dur='0.1s' to='rgb(6.823009574784,6.064897399808,4.087213465088)' from='rgb(20.585279173061476,18.2980259316102,12.331278345215571)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(20.585279173061476,18.2980259316102,12.331278345215571)' from='rgb(6.823009574784,6.064897399808,4.087213465088)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='345.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>3.3%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='6_5.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='6_5.mouseout'/></text>
-<rect id='6_6' x='405' y='325' width='40' height='40' style='fill:rgb(1.7951861158381448,1.5957209918561286,1.0753771901639129)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.6092289400319999,0.5415368355839999,0.36494873702399994)' from='rgb(1.7951861158381448,1.5957209918561286,1.0753771901639129)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(1.7951861158381448,1.5957209918561286,1.0753771901639129)' from='rgb(0.6092289400319999,0.5415368355839999,0.36494873702399994)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='345.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.3%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='6_6.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='6_6.mouseout'/></text>
-<rect id='6_7' x='445' y='325' width='40' height='40' style='fill:rgb(0.0,0.0,0.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.015570745343999999,0.013840662528,0.009327403008)' from='rgb(0.0,0.0,0.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0,0.0,0.0)' from='rgb(0.015570745343999999,0.013840662528,0.009327403008)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='465.0' y='345.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='6_7.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='6_7.mouseout'/></text>
+<rect id='6_0' x='165' y='325' width='40' height='40' style='fill:rgb(255,96,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,83,77)' from='rgb(255,96,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,96,77)' from='rgb(255,83,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='345.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>1.8%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_0.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_0.mouseout'/></text>
+<rect id='6_1' x='205' y='325' width='40' height='40' style='fill:rgb(255,237,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,130,77)' from='rgb(255,237,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,237,77)' from='rgb(255,130,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='345.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>14.9%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_1.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_1.mouseout'/></text>
+<rect id='6_2' x='245' y='325' width='40' height='40' style='fill:rgb(77,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,195,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(77,255,77)' from='rgb(255,195,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='345.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>33.1%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_2.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_2.mouseout'/></text>
+<rect id='6_3' x='285' y='325' width='40' height='40' style='fill:rgb(91,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,190,77)' from='rgb(91,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(91,255,77)' from='rgb(255,190,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='345.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>31.8%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_3.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_3.mouseout'/></text>
+<rect id='6_4' x='325' y='325' width='40' height='40' style='fill:rgb(255,237,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,129,77)' from='rgb(255,237,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,237,77)' from='rgb(255,129,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='345.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>14.8%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_4.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_4.mouseout'/></text>
+<rect id='6_5' x='365' y='325' width='40' height='40' style='fill:rgb(255,112,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,88,77)' from='rgb(255,112,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,112,77)' from='rgb(255,88,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='345.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>3.3%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_5.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_5.mouseout'/></text>
+<rect id='6_6' x='405' y='325' width='40' height='40' style='fill:rgb(255,80,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,78,77)' from='rgb(255,80,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,80,77)' from='rgb(255,78,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='345.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.3%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_6.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_6.mouseout'/></text>
+<rect id='6_7' x='445' y='325' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='465.0' y='345.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_7.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='6_7.mouseout'/></text>
 <rect id='6_8' x='485' y='325' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='6_9' x='525' y='325' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='6_10' x='565' y='325' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='6_11' x='605' y='325' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='6_12' x='645' y='325' width='40' height='40' style='fill:rgb(150,150,150)'/>
-<rect id='7_0' x='165' y='365' width='40' height='40' style='fill:rgb(3.8081431786584323,3.3850161588074954,2.281206541805051)'>
-<animate fill='freeze' dur='0.1s' to='rgb(1.2534920062156796,1.1142151166361596,0.7508841003417598)' from='rgb(3.8081431786584323,3.3850161588074954,2.281206541805051)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(3.8081431786584323,3.3850161588074954,2.281206541805051)' from='rgb(1.2534920062156796,1.1142151166361596,0.7508841003417598)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='385.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.6%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_0.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_0.mouseout'/></text>
-<rect id='7_1' x='205' y='365' width='40' height='40' style='fill:rgb(38.90304154504251,34.58048137337112,23.304237447271845)'>
-<animate fill='freeze' dur='0.1s' to='rgb(12.709219513973759,11.297084012421118,7.613252269240319)' from='rgb(38.90304154504251,34.58048137337112,23.304237447271845)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(38.90304154504251,34.58048137337112,23.304237447271845)' from='rgb(12.709219513973759,11.297084012421118,7.613252269240319)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='385.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>6.1%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_1.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_1.mouseout'/></text>
-<rect id='7_2' x='245' y='365' width='40' height='40' style='fill:rgb(132.40844858531477,117.69639874250203,79.3171382829905)'>
-<animate fill='freeze' dur='0.1s' to='rgb(43.23138978420863,38.42790203040767,25.897064411796475)' from='rgb(132.40844858531477,117.69639874250203,79.3171382829905)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(132.40844858531477,117.69639874250203,79.3171382829905)' from='rgb(43.23138978420863,38.42790203040767,25.897064411796475)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='385.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>20.9%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_2.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_2.mouseout'/></text>
-<rect id='7_3' x='285' y='365' width='40' height='40' style='fill:rgb(207.0,184.0,124.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(67.5796719324211,60.07081949548543,40.48250879043583)' from='rgb(207.0,184.0,124.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(207.0,184.0,124.0)' from='rgb(67.5796719324211,60.07081949548543,40.48250879043583)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='385.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>32.6%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='7_3.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='7_3.mouseout'/></text>
-<rect id='7_4' x='325' y='365' width='40' height='40' style='fill:rgb(166.01886740599016,147.57232658310238,99.45091574078639)'>
-<animate fill='freeze' dur='0.1s' to='rgb(54.20255133058561,48.180045627187205,32.4691611835392)' from='rgb(166.01886740599016,147.57232658310238,99.45091574078639)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(166.01886740599016,147.57232658310238,99.45091574078639)' from='rgb(54.20255133058561,48.180045627187205,32.4691611835392)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='385.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>26.2%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='7_4.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='7_4.mouseout'/></text>
-<rect id='7_5' x='365' y='365' width='40' height='40' style='fill:rgb(69.9005140166816,62.13379023705031,41.87277168149043)'>
-<animate fill='freeze' dur='0.1s' to='rgb(22.827459332113925,20.291074961879044,13.674420083005442)' from='rgb(69.9005140166816,62.13379023705031,41.87277168149043)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(69.9005140166816,62.13379023705031,41.87277168149043)' from='rgb(22.827459332113925,20.291074961879044,13.674420083005442)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='385.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>11.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_5.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_5.mouseout'/></text>
-<rect id='7_6' x='405' y='365' width='40' height='40' style='fill:rgb(14.588592782172773,12.96763802859802,8.739060410576927)'>
-<animate fill='freeze' dur='0.1s' to='rgb(4.77246196531584,4.24218841361408,2.85886610482688)' from='rgb(14.588592782172773,12.96763802859802,8.739060410576927)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(14.588592782172773,12.96763802859802,8.739060410576927)' from='rgb(4.77246196531584,4.24218841361408,2.85886610482688)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='385.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>2.3%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_6.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_6.mouseout'/></text>
-<rect id='7_7' x='445' y='365' width='40' height='40' style='fill:rgb(1.2342612291047996,1.0971210925375996,0.7393642145362085)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.4133217357849599,0.36739709847551993,0.24759369679871995)' from='rgb(1.2342612291047996,1.0971210925375996,0.7393642145362085)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(1.2342612291047996,1.0971210925375996,0.7393642145362085)' from='rgb(0.4133217357849599,0.36739709847551993,0.24759369679871995)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='465.0' y='385.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.2%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_7.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_7.mouseout'/></text>
-<rect id='7_8' x='485' y='365' width='40' height='40' style='fill:rgb(0.0,0.0,0.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.01043239938048,0.00927324389376,0.0062493600153599995)' from='rgb(0.0,0.0,0.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0,0.0,0.0)' from='rgb(0.01043239938048,0.00927324389376,0.0062493600153599995)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='505.0' y='385.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_8.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='7_8.mouseout'/></text>
+<rect id='7_0' x='165' y='365' width='40' height='40' style='fill:rgb(255,83,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,79,77)' from='rgb(255,83,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,83,77)' from='rgb(255,79,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='385.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.6%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_0.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_0.mouseout'/></text>
+<rect id='7_1' x='205' y='365' width='40' height='40' style='fill:rgb(255,144,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,98,77)' from='rgb(255,144,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,144,77)' from='rgb(255,98,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='385.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>6.1%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_1.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_1.mouseout'/></text>
+<rect id='7_2' x='245' y='365' width='40' height='40' style='fill:rgb(205,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,151,77)' from='rgb(205,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(205,255,77)' from='rgb(255,151,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='385.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>20.9%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_2.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_2.mouseout'/></text>
+<rect id='7_3' x='285' y='365' width='40' height='40' style='fill:rgb(77,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,193,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(77,255,77)' from='rgb(255,193,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='385.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>32.6%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_3.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_3.mouseout'/></text>
+<rect id='7_4' x='325' y='365' width='40' height='40' style='fill:rgb(147,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,170,77)' from='rgb(147,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(147,255,77)' from='rgb(255,170,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='385.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>26.2%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_4.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_4.mouseout'/></text>
+<rect id='7_5' x='365' y='365' width='40' height='40' style='fill:rgb(255,197,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,116,77)' from='rgb(255,197,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,197,77)' from='rgb(255,116,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='385.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>11.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_5.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_5.mouseout'/></text>
+<rect id='7_6' x='405' y='365' width='40' height='40' style='fill:rgb(255,102,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,85,77)' from='rgb(255,102,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,102,77)' from='rgb(255,85,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='385.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>2.3%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_6.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_6.mouseout'/></text>
+<rect id='7_7' x='445' y='365' width='40' height='40' style='fill:rgb(255,79,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,79,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,79,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='465.0' y='385.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.2%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_7.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_7.mouseout'/></text>
+<rect id='7_8' x='485' y='365' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='505.0' y='385.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_8.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='7_8.mouseout'/></text>
 <rect id='7_9' x='525' y='365' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='7_10' x='565' y='365' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='7_11' x='605' y='365' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='7_12' x='645' y='365' width='40' height='40' style='fill:rgb(150,150,150)'/>
-<rect id='8_0' x='165' y='405' width='40' height='40' style='fill:rgb(3.3033521936166887,2.9363130609926125,1.9788196715384996)'>
-<animate fill='freeze' dur='0.1s' to='rgb(1.0027936049725437,0.8913720933089277,0.6007072802734078)' from='rgb(3.3033521936166887,2.9363130609926125,1.9788196715384996)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(3.3033521936166887,2.9363130609926125,1.9788196715384996)' from='rgb(1.0027936049725437,0.8913720933089277,0.6007072802734078)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='425.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.5%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_0.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_0.mouseout'/></text>
-<rect id='8_1' x='205' y='405' width='40' height='40' style='fill:rgb(34.3833619262018,30.562988378846043,20.596796516178856)'>
-<animate fill='freeze' dur='0.1s' to='rgb(10.418074012422142,9.260510233264126,6.240778635460607)' from='rgb(34.3833619262018,30.562988378846043,20.596796516178856)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(34.3833619262018,30.562988378846043,20.596796516178856)' from='rgb(10.418074012422142,9.260510233264126,6.240778635460607)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='425.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>5.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_1.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_1.mouseout'/></text>
-<rect id='8_2' x='245' y='405' width='40' height='40' style='fill:rgb(122.54986019395427,108.93320906129269,73.41151045434941)'>
-<animate fill='freeze' dur='0.1s' to='rgb(37.12695573016166,33.00173842681036,22.240301983285246)' from='rgb(122.54986019395427,108.93320906129269,73.41151045434941)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(122.54986019395427,108.93320906129269,73.41151045434941)' from='rgb(37.12695573016166,33.00173842681036,22.240301983285246)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='425.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>17.9%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_2.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_2.mouseout'/></text>
-<rect id='8_3' x='285' y='405' width='40' height='40' style='fill:rgb(207.0,184.0,124.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(62.71001550277862,55.74223600246988,37.56541991470797)' from='rgb(207.0,184.0,124.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(207.0,184.0,124.0)' from='rgb(62.71001550277862,55.74223600246988,37.56541991470797)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>30.3%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='8_3.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='8_3.mouseout'/></text>
-<rect id='8_4' x='325' y='405' width='40' height='40' style='fill:rgb(187.74833103981075,166.88740536872066,112.4675992702248)'>
-<animate fill='freeze' dur='0.1s' to='rgb(56.877975450952704,50.55820040084685,34.071830704918526)' from='rgb(187.74833103981075,166.88740536872066,112.4675992702248)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(187.74833103981075,166.88740536872066,112.4675992702248)' from='rgb(56.877975450952704,50.55820040084685,34.071830704918526)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>27.5%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='8_4.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='8_4.mouseout'/></text>
-<rect id='8_5' x='365' y='405' width='40' height='40' style='fill:rgb(96.06091419395976,85.38747928351978,57.54373603889377)'>
-<animate fill='freeze' dur='0.1s' to='rgb(29.10247773180826,25.868869094940678,17.433368303112196)' from='rgb(96.06091419395976,85.38747928351978,57.54373603889377)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(96.06091419395976,85.38747928351978,57.54373603889377)' from='rgb(29.10247773180826,25.868869094940678,17.433368303112196)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='425.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>14.1%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_5.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_5.mouseout'/></text>
-<rect id='8_6' x='405' y='405' width='40' height='40' style='fill:rgb(27.667069276643183,24.59295046812727,16.57351009808577)'>
-<animate fill='freeze' dur='0.1s' to='rgb(8.383461438675457,7.451965723267073,5.021976900462593)' from='rgb(27.667069276643183,24.59295046812727,16.57351009808577)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(27.667069276643183,24.59295046812727,16.57351009808577)' from='rgb(8.383461438675457,7.451965723267073,5.021976900462593)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='425.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>4.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_6.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_6.mouseout'/></text>
-<rect id='8_7' x='445' y='405' width='40' height='40' style='fill:rgb(4.235415004356332,3.7648133372056285,2.5371568142037932)'>
-<animate fill='freeze' dur='0.1s' to='rgb(1.285149781691136,1.1423553615032318,0.7698481784043519)' from='rgb(4.235415004356332,3.7648133372056285,2.5371568142037932)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(4.235415004356332,3.7648133372056285,2.5371568142037932)' from='rgb(1.285149781691136,1.1423553615032318,0.7698481784043519)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='465.0' y='425.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.6%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_7.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_7.mouseout'/></text>
-<rect id='8_8' x='485' y='405' width='40' height='40' style='fill:rgb(0.29353901733591253,0.2609235709652556,0.1758397978244114)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.09101026666137599,0.080898014810112,0.05451822737203199)' from='rgb(0.29353901733591253,0.2609235709652556,0.1758397978244114)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.29353901733591253,0.2609235709652556,0.1758397978244114)' from='rgb(0.09101026666137599,0.080898014810112,0.05451822737203199)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='505.0' y='425.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_8.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_8.mouseout'/></text>
-<rect id='8_9' x='525' y='405' width='40' height='40' style='fill:rgb(0.0,0.0,0.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.002086479876096,0.0018546487787520001,0.001249872003072)' from='rgb(0.0,0.0,0.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0,0.0,0.0)' from='rgb(0.002086479876096,0.0018546487787520001,0.001249872003072)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='545.0' y='425.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_9.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='8_9.mouseout'/></text>
+<rect id='8_0' x='165' y='405' width='40' height='40' style='fill:rgb(255,82,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,78,77)' from='rgb(255,82,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,82,77)' from='rgb(255,78,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.5%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_0.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_0.mouseout'/></text>
+<rect id='8_1' x='205' y='405' width='40' height='40' style='fill:rgb(255,136,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,94,77)' from='rgb(255,136,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,136,77)' from='rgb(255,94,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>5.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_1.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_1.mouseout'/></text>
+<rect id='8_2' x='245' y='405' width='40' height='40' style='fill:rgb(222,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,141,77)' from='rgb(222,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(222,255,77)' from='rgb(255,141,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>17.9%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_2.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_2.mouseout'/></text>
+<rect id='8_3' x='285' y='405' width='40' height='40' style='fill:rgb(77,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,185,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(77,255,77)' from='rgb(255,185,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>30.3%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_3.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_3.mouseout'/></text>
+<rect id='8_4' x='325' y='405' width='40' height='40' style='fill:rgb(110,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,175,77)' from='rgb(110,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(110,255,77)' from='rgb(255,175,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>27.5%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_4.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_4.mouseout'/></text>
+<rect id='8_5' x='365' y='405' width='40' height='40' style='fill:rgb(255,242,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,127,77)' from='rgb(255,242,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,242,77)' from='rgb(255,127,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>14.1%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_5.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_5.mouseout'/></text>
+<rect id='8_6' x='405' y='405' width='40' height='40' style='fill:rgb(255,124,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,91,77)' from='rgb(255,124,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,124,77)' from='rgb(255,91,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>4.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_6.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_6.mouseout'/></text>
+<rect id='8_7' x='445' y='405' width='40' height='40' style='fill:rgb(255,84,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,79,77)' from='rgb(255,84,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,84,77)' from='rgb(255,79,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='465.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.6%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_7.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_7.mouseout'/></text>
+<rect id='8_8' x='485' y='405' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='505.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_8.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_8.mouseout'/></text>
+<rect id='8_9' x='525' y='405' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='545.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_9.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='8_9.mouseout'/></text>
 <rect id='8_10' x='565' y='405' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='8_11' x='605' y='405' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='8_12' x='645' y='405' width='40' height='40' style='fill:rgb(150,150,150)'/>
-<rect id='9_0' x='165' y='445' width='40' height='40' style='fill:rgb(2.362763989555171,2.1002346573823742,1.415375529975078)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.6718717153316043,0.5972193025169815,0.4024738777831832)' from='rgb(2.362763989555171,2.1002346573823742,1.415375529975078)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(2.362763989555171,2.1002346573823742,1.415375529975078)' from='rgb(0.6718717153316043,0.5972193025169815,0.4024738777831832)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='465.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.3%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_0.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_0.mouseout'/></text>
-<rect id='9_1' x='205' y='445' width='40' height='40' style='fill:rgb(25.734576851148756,22.87517942324334,15.415881785229207)'>
-<animate fill='freeze' dur='0.1s' to='rgb(7.311031477963774,6.498694647078911,4.379555088248831)' from='rgb(25.734576851148756,22.87517942324334,15.415881785229207)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(25.734576851148756,22.87517942324334,15.415881785229207)' from='rgb(7.311031477963774,6.498694647078911,4.379555088248831)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='465.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>3.5%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_1.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_1.mouseout'/></text>
-<rect id='9_2' x='245' y='445' width='40' height='40' style='fill:rgb(99.6678265898019,88.59362363537947,59.70439853688617)'>
-<animate fill='freeze' dur='0.1s' to='rgb(28.31302476330762,25.167133122940108,16.960459278503116)' from='rgb(99.6678265898019,88.59362363537947,59.70439853688617)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(99.6678265898019,88.59362363537947,59.70439853688617)' from='rgb(28.31302476330762,25.167133122940108,16.960459278503116)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='465.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>13.7%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_2.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_2.mouseout'/></text>
-<rect id='9_3' x='285' y='445' width='40' height='40' style='fill:rgb(191.03565505905402,169.80947116360358,114.43681752329806)'>
-<animate fill='freeze' dur='0.1s' to='rgb(54.267605777815014,48.237871802502234,32.50813099733846)' from='rgb(191.03565505905402,169.80947116360358,114.43681752329806)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(191.03565505905402,169.80947116360358,114.43681752329806)' from='rgb(54.267605777815014,48.237871802502234,32.50813099733846)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>26.2%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='9_3.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='9_3.mouseout'/></text>
-<rect id='9_4' x='325' y='445' width='40' height='40' style='fill:rgb(207.0,184.0,124.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(58.802548668055245,52.26893214938244,35.22471514414904)' from='rgb(207.0,184.0,124.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(207.0,184.0,124.0)' from='rgb(58.802548668055245,52.26893214938244,35.22471514414904)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>28.4%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='9_4.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='9_4.mouseout'/></text>
-<rect id='9_5' x='365' y='445' width='40' height='40' style='fill:rgb(134.713673934241,119.74548794154757,80.69804622147771)'>
-<animate fill='freeze' dur='0.1s' to='rgb(38.26839197912593,34.01634842588972,22.924060895708287)' from='rgb(134.713673934241,119.74548794154757,80.69804622147771)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(134.713673934241,119.74548794154757,80.69804622147771)' from='rgb(38.26839197912593,34.01634842588972,22.924060895708287)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='465.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>18.5%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_5.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_5.mouseout'/></text>
-<rect id='9_6' x='405' y='445' width='40' height='40' style='fill:rgb(53.57908723296143,47.62585531818794,32.09568510573535)'>
-<animate fill='freeze' dur='0.1s' to='rgb(15.220736815409284,13.529543835919362,9.117736063336961)' from='rgb(53.57908723296143,47.62585531818794,32.09568510573535)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(53.57908723296143,47.62585531818794,32.09568510573535)' from='rgb(15.220736815409284,13.529543835919362,9.117736063336961)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='465.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>7.4%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_6.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_6.mouseout'/></text>
-<rect id='9_7' x='445' y='445' width='40' height='40' style='fill:rgb(12.767778859416973,11.349136763926198,7.648331297428524)'>
-<animate fill='freeze' dur='0.1s' to='rgb(3.6275926284959623,3.2245267808852995,2.1730506566835714)' from='rgb(12.767778859416973,11.349136763926198,7.648331297428524)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(12.767778859416973,11.349136763926198,7.648331297428524)' from='rgb(3.6275926284959623,3.2245267808852995,2.1730506566835714)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='465.0' y='465.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>1.8%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_7.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_7.mouseout'/></text>
-<rect id='9_8' x='485' y='445' width='40' height='40' style='fill:rgb(1.7051887101716716,1.5157232979303747,1.0214657007791657)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.4850763066211967,0.4311789392188415,0.2905771112126975)' from='rgb(1.7051887101716716,1.5157232979303747,1.0214657007791657)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(1.7051887101716716,1.5157232979303747,1.0214657007791657)' from='rgb(0.4850763066211967,0.4311789392188415,0.2905771112126975)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='505.0' y='465.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.2%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_8.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_8.mouseout'/></text>
-<rect id='9_9' x='525' y='445' width='40' height='40' style='fill:rgb(0.10822374930456333,0.09619888827072295,0.06482968557374807)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0314313295152384,0.0279389595691008,0.0188284292748288)' from='rgb(0.10822374930456333,0.09619888827072295,0.06482968557374807)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.10822374930456333,0.09619888827072295,0.06482968557374807)' from='rgb(0.0314313295152384,0.0279389595691008,0.0188284292748288)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='545.0' y='465.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_9.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_9.mouseout'/></text>
-<rect id='9_10' x='565' y='445' width='40' height='40' style='fill:rgb(0.0,0.0,0.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.00068853835911168,0.00061203409698816,0.00041245776101376)' from='rgb(0.0,0.0,0.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0,0.0,0.0)' from='rgb(0.00068853835911168,0.00061203409698816,0.00041245776101376)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='585.0' y='465.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_10.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='9_10.mouseout'/></text>
+<rect id='9_0' x='165' y='445' width='40' height='40' style='fill:rgb(255,81,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,78,77)' from='rgb(255,81,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,81,77)' from='rgb(255,78,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.3%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_0.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_0.mouseout'/></text>
+<rect id='9_1' x='205' y='445' width='40' height='40' style='fill:rgb(255,121,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,89,77)' from='rgb(255,121,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,121,77)' from='rgb(255,89,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>3.5%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_1.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_1.mouseout'/></text>
+<rect id='9_2' x='245' y='445' width='40' height='40' style='fill:rgb(255,248,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,125,77)' from='rgb(255,248,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,248,77)' from='rgb(255,125,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>13.7%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_2.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_2.mouseout'/></text>
+<rect id='9_3' x='285' y='445' width='40' height='40' style='fill:rgb(104,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,170,77)' from='rgb(104,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(104,255,77)' from='rgb(255,170,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>26.2%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_3.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_3.mouseout'/></text>
+<rect id='9_4' x='325' y='445' width='40' height='40' style='fill:rgb(77,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,178,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(77,255,77)' from='rgb(255,178,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>28.4%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_4.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_4.mouseout'/></text>
+<rect id='9_5' x='365' y='445' width='40' height='40' style='fill:rgb(201,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,142,77)' from='rgb(201,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(201,255,77)' from='rgb(255,142,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>18.5%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_5.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_5.mouseout'/></text>
+<rect id='9_6' x='405' y='445' width='40' height='40' style='fill:rgb(255,169,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,103,77)' from='rgb(255,169,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,169,77)' from='rgb(255,103,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>7.4%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_6.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_6.mouseout'/></text>
+<rect id='9_7' x='445' y='445' width='40' height='40' style='fill:rgb(255,99,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,83,77)' from='rgb(255,99,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,99,77)' from='rgb(255,83,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='465.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>1.8%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_7.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_7.mouseout'/></text>
+<rect id='9_8' x='485' y='445' width='40' height='40' style='fill:rgb(255,79,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,79,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,79,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='505.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.2%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_8.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_8.mouseout'/></text>
+<rect id='9_9' x='525' y='445' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='545.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_9.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_9.mouseout'/></text>
+<rect id='9_10' x='565' y='445' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='585.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_10.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='9_10.mouseout'/></text>
 <rect id='9_11' x='605' y='445' width='40' height='40' style='fill:rgb(150,150,150)'/>
 <rect id='9_12' x='645' y='445' width='40' height='40' style='fill:rgb(150,150,150)'/>
-<rect id='10_0' x='165' y='485' width='40' height='40' style='fill:rgb(1.808130909258904,1.6072274748968036,1.083131559169585)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.5039037864987032,0.44791447688773617,0.3018554083373874)' from='rgb(1.808130909258904,1.6072274748968036,1.083131559169585)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(1.808130909258904,1.6072274748968036,1.083131559169585)' from='rgb(0.5039037864987032,0.44791447688773617,0.3018554083373874)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='505.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.2%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_0.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_0.mouseout'/></text>
-<rect id='10_1' x='205' y='485' width='40' height='40' style='fill:rgb(20.28435818693673,18.030540610610426,12.151016498454851)'>
-<animate fill='freeze' dur='0.1s' to='rgb(5.651241537305732,5.023325810938428,3.385284785632419)' from='rgb(20.28435818693673,18.030540610610426,12.151016498454851)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(20.28435818693673,18.030540610610426,12.151016498454851)' from='rgb(5.651241537305732,5.023325810938428,3.385284785632419)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='505.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>2.7%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_1.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_1.mouseout'/></text>
-<rect id='10_2' x='245' y='485' width='40' height='40' style='fill:rgb(82.78168645038157,73.58372128922805,49.58902956447978)'>
-<animate fill='freeze' dur='0.1s' to='rgb(23.06252644197166,20.500023503974806,13.815233230939544)' from='rgb(82.78168645038157,73.58372128922805,49.58902956447978)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(82.78168645038157,73.58372128922805,49.58902956447978)' from='rgb(23.06252644197166,20.500023503974806,13.815233230939544)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='505.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>11.1%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_2.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_2.mouseout'/></text>
-<rect id='10_3' x='285' y='485' width='40' height='40' style='fill:rgb(171.5006467566439,152.44501933923902,102.7346869460089)'>
-<animate fill='freeze' dur='0.1s' to='rgb(47.778960524188165,42.470187132611706,28.621213067629625)' from='rgb(171.5006467566439,152.44501933923902,102.7346869460089)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(171.5006467566439,152.44501933923902,102.7346869460089)' from='rgb(47.778960524188165,42.470187132611706,28.621213067629625)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>23.1%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='10_3.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='10_3.mouseout'/></text>
-<rect id='10_4' x='325' y='485' width='40' height='40' style='fill:rgb(207.0,184.0,124.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(57.66881294549518,51.26116706266239,34.54556910744639)' from='rgb(207.0,184.0,124.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(207.0,184.0,124.0)' from='rgb(57.66881294549518,51.26116706266239,34.54556910744639)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>27.9%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='10_4.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='10_4.mouseout'/></text>
-<rect id='10_5' x='365' y='485' width='40' height='40' style='fill:rgb(155.78942021418558,138.47948463483164,93.32313094956045)'>
-<animate fill='freeze' dur='0.1s' to='rgb(43.401931151358255,38.57949435676289,25.99922445781847)' from='rgb(155.78942021418558,138.47948463483164,93.32313094956045)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(155.78942021418558,138.47948463483164,93.32313094956045)' from='rgb(43.401931151358255,38.57949435676289,25.99922445781847)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>21.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='10_5.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='10_5.mouseout'/></text>
-<rect id='10_6' x='405' y='485' width='40' height='40' style='fill:rgb(75.31602934589404,66.94758164079471,45.1168484970573)'>
-<animate fill='freeze' dur='0.1s' to='rgb(20.982650606338446,18.65124498341195,12.569317271429792)' from='rgb(75.31602934589404,66.94758164079471,45.1168484970573)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(75.31602934589404,66.94758164079471,45.1168484970573)' from='rgb(20.982650606338446,18.65124498341195,12.569317271429792)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='505.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>10.1%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_6.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_6.mouseout'/></text>
-<rect id='10_7' x='445' y='485' width='40' height='40' style='fill:rgb(23.423844136376765,20.82119478789046,14.031674748360961)'>
-<animate fill='freeze' dur='0.1s' to='rgb(6.525878675224292,5.8007810446438155,3.909222008346919)' from='rgb(23.423844136376765,20.82119478789046,14.031674748360961)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(23.423844136376765,20.82119478789046,14.031674748360961)' from='rgb(6.525878675224292,5.8007810446438155,3.909222008346919)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='465.0' y='505.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>3.2%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_7.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_7.mouseout'/></text>
-<rect id='10_8' x='485' y='485' width='40' height='40' style='fill:rgb(4.56054416350642,4.053817034227929,2.731920175240561)'>
-<animate fill='freeze' dur='0.1s' to='rgb(1.2707053870898881,1.1295158996354562,0.761195497580416)' from='rgb(4.56054416350642,4.053817034227929,2.731920175240561)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(4.56054416350642,4.053817034227929,2.731920175240561)' from='rgb(1.2707053870898881,1.1295158996354562,0.761195497580416)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='505.0' y='505.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.6%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_8.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_8.mouseout'/></text>
-<rect id='10_9' x='525' y='485' width='40' height='40' style='fill:rgb(0.5192905623178931,0.4615916109492383,0.31107260737883446)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.144842573791728,0.12874895448153598,0.08676559975929599)' from='rgb(0.5192905623178931,0.4615916109492383,0.31107260737883446)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.5192905623178931,0.4615916109492383,0.31107260737883446)' from='rgb(0.144842573791728,0.12874895448153598,0.08676559975929599)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='545.0' y='505.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.1%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_9.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_9.mouseout'/></text>
-<rect id='10_10' x='565' y='485' width='40' height='40' style='fill:rgb(0.02944121794284733,0.026169971504753184,0.01763628514450758)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.00837423614814336,0.00744376546501632,0.00501645063946752)' from='rgb(0.02944121794284733,0.026169971504753184,0.01763628514450758)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.02944121794284733,0.026169971504753184,0.01763628514450758)' from='rgb(0.00837423614814336,0.00744376546501632,0.00501645063946752)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='585.0' y='505.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_10.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_10.mouseout'/></text>
-<rect id='10_11' x='605' y='485' width='40' height='40' style='fill:rgb(0.0,0.0,0.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.00017213458977792,0.00015300852424704,0.00010311444025344)' from='rgb(0.0,0.0,0.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0,0.0,0.0)' from='rgb(0.00017213458977792,0.00015300852424704,0.00010311444025344)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='625.0' y='505.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_11.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='10_11.mouseout'/></text>
+<rect id='10_0' x='165' y='485' width='40' height='40' style='fill:rgb(255,80,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,80,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,80,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.2%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_0.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_0.mouseout'/></text>
+<rect id='10_1' x='205' y='485' width='40' height='40' style='fill:rgb(255,111,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,86,77)' from='rgb(255,111,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,111,77)' from='rgb(255,86,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>2.7%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_1.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_1.mouseout'/></text>
+<rect id='10_2' x='245' y='485' width='40' height='40' style='fill:rgb(255,219,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,116,77)' from='rgb(255,219,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,219,77)' from='rgb(255,116,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>11.1%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_2.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_2.mouseout'/></text>
+<rect id='10_3' x='285' y='485' width='40' height='40' style='fill:rgb(138,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,159,77)' from='rgb(138,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(138,255,77)' from='rgb(255,159,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>23.1%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_3.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_3.mouseout'/></text>
+<rect id='10_4' x='325' y='485' width='40' height='40' style='fill:rgb(77,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,176,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(77,255,77)' from='rgb(255,176,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>27.9%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_4.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_4.mouseout'/></text>
+<rect id='10_5' x='365' y='485' width='40' height='40' style='fill:rgb(165,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,151,77)' from='rgb(165,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(165,255,77)' from='rgb(255,151,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>21.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_5.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_5.mouseout'/></text>
+<rect id='10_6' x='405' y='485' width='40' height='40' style='fill:rgb(255,206,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,113,77)' from='rgb(255,206,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,206,77)' from='rgb(255,113,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>10.1%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_6.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_6.mouseout'/></text>
+<rect id='10_7' x='445' y='485' width='40' height='40' style='fill:rgb(255,117,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,88,77)' from='rgb(255,117,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,117,77)' from='rgb(255,88,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='465.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>3.2%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_7.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_7.mouseout'/></text>
+<rect id='10_8' x='485' y='485' width='40' height='40' style='fill:rgb(255,84,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,79,77)' from='rgb(255,84,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,84,77)' from='rgb(255,79,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='505.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.6%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_8.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_8.mouseout'/></text>
+<rect id='10_9' x='525' y='485' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='545.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.1%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_9.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_9.mouseout'/></text>
+<rect id='10_10' x='565' y='485' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='585.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_10.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_10.mouseout'/></text>
+<rect id='10_11' x='605' y='485' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='625.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_11.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='10_11.mouseout'/></text>
 <rect id='10_12' x='645' y='485' width='40' height='40' style='fill:rgb(150,150,150)'/>
-<rect id='11_0' x='165' y='525' width='40' height='40' style='fill:rgb(1.3179066481884156,1.1714725761674805,0.7894706491563456)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.3476936126841052,0.3090609890525379,0.2082802317527973)' from='rgb(1.3179066481884156,1.1714725761674805,0.7894706491563456)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(1.3179066481884156,1.1714725761674805,0.7894706491563456)' from='rgb(0.3476936126841052,0.3090609890525379,0.2082802317527973)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='545.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.2%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_0.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_0.mouseout'/></text>
-<rect id='11_1' x='205' y='525' width='40' height='40' style='fill:rgb(15.374480236062553,13.666204654277825,9.209833571361143)'>
-<animate fill='freeze' dur='0.1s' to='rgb(4.0555668345555524,3.6049482973827134,2.429421678670959)' from='rgb(15.374480236062553,13.666204654277825,9.209833571361143)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(15.374480236062553,13.666204654277825,9.209833571361143)' from='rgb(4.0555668345555524,3.6049482973827134,2.429421678670959)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='545.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>2.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_1.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_1.mouseout'/></text>
-<rect id='11_2' x='245' y='525' width='40' height='40' style='fill:rgb(66.96804415383284,59.52715035896252,40.11612306799648)'>
-<animate fill='freeze' dur='0.1s' to='rgb(17.66502812152522,15.702247219133529,10.581949212894335)' from='rgb(66.96804415383284,59.52715035896252,40.11612306799648)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(66.96804415383284,59.52715035896252,40.11612306799648)' from='rgb(17.66502812152522,15.702247219133529,10.581949212894335)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='545.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>8.5%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_2.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_2.mouseout'/></text>
-<rect id='11_3' x='285' y='525' width='40' height='40' style='fill:rgb(152.083120063033,135.18499561158487,91.10293182519851)'>
-<animate fill='freeze' dur='0.1s' to='rgb(40.11686595870104,35.659436407734255,24.031359318255696)' from='rgb(152.083120063033,135.18499561158487,91.10293182519851)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(152.083120063033,135.18499561158487,91.10293182519851)' from='rgb(40.11686595870104,35.659436407734255,24.031359318255696)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>19.4%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='11_3.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='11_3.mouseout'/></text>
-<rect id='11_4' x='325' y='525' width='40' height='40' style='fill:rgb(207.0,184.0,124.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(54.60295869489001,48.53596328434668,32.7090187351032)' from='rgb(207.0,184.0,124.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(207.0,184.0,124.0)' from='rgb(54.60295869489001,48.53596328434668,32.7090187351032)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>26.4%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='11_4.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='11_4.mouseout'/></text>
-<rect id='11_5' x='365' y='525' width='40' height='40' style='fill:rgb(181.3034388331526,161.15861229613566,108.60689089522185)'>
-<animate fill='freeze' dur='0.1s' to='rgb(47.8246645075407,42.510812895591734,28.648591299203126)' from='rgb(181.3034388331526,161.15861229613566,108.60689089522185)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(181.3034388331526,161.15861229613566,108.60689089522185)' from='rgb(47.8246645075407,42.510812895591734,28.648591299203126)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>23.1%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='11_5.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='11_5.mouseout'/></text>
-<rect id='11_6' x='405' y='525' width='40' height='40' style='fill:rgb(105.89258624480546,94.12674332871596,63.43324006935206)'>
-<animate fill='freeze' dur='0.1s' to='rgb(27.932627575294585,24.829002289150743,16.732588499210284)' from='rgb(105.89258624480546,94.12674332871596,63.43324006935206)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(105.89258624480546,94.12674332871596,63.43324006935206)' from='rgb(27.932627575294585,24.829002289150743,16.732588499210284)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='545.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>13.5%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_6.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_6.mouseout'/></text>
-<rect id='11_7' x='445' y='525' width='40' height='40' style='fill:rgb(41.72922449476982,37.09264399535095,24.997216605562596)'>
-<animate fill='freeze' dur='0.1s' to='rgb(11.007477973869678,9.784424865661936,6.593851539902609)' from='rgb(41.72922449476982,37.09264399535095,24.997216605562596)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(41.72922449476982,37.09264399535095,24.997216605562596)' from='rgb(11.007477973869678,9.784424865661936,6.593851539902609)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='465.0' y='545.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>5.3%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_7.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_7.mouseout'/></text>
-<rect id='11_8' x='485' y='525' width='40' height='40' style='fill:rgb(10.99299452086039,9.771550685209236,6.585175461771442)'>
-<animate fill='freeze' dur='0.1s' to='rgb(2.899809106411553,2.5776080945880473,1.737083715918032)' from='rgb(10.99299452086039,9.771550685209236,6.585175461771442)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(10.99299452086039,9.771550685209236,6.585175461771442)' from='rgb(2.899809106411553,2.5776080945880473,1.737083715918032)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='505.0' y='545.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>1.4%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_8.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_8.mouseout'/></text>
-<rect id='11_9' x='525' y='525' width='40' height='40' style='fill:rgb(1.872024629530378,1.6640218929158914,1.1214060582694052)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.4938600459141576,0.4389867074792512,0.2958388680838432)' from='rgb(1.872024629530378,1.6640218929158914,1.1214060582694052)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(1.872024629530378,1.6640218929158914,1.1214060582694052)' from='rgb(0.4938600459141576,0.4389867074792512,0.2958388680838432)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='545.0' y='545.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.2%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_9.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_9.mouseout'/></text>
-<rect id='11_10' x='565' y='525' width='40' height='40' style='fill:rgb(0.19192374780583116,0.1705988869385166,0.11496881511073945)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0506794208176546,0.04504837406013742,0.03035868686661435)' from='rgb(0.19192374780583116,0.1705988869385166,0.11496881511073945)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.19192374780583116,0.1705988869385166,0.11496881511073945)' from='rgb(0.0506794208176546,0.04504837406013742,0.03035868686661435)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='585.0' y='545.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_10.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_10.mouseout'/></text>
-<rect id='11_11' x='605' y='525' width='40' height='40' style='fill:rgb(0.010089478519445208,0.008968425350617964,0.0060439388232425405)'>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0027147860728712063,0.0024131431758855166,0.0016262486620098047)' from='rgb(0.010089478519445208,0.008968425350617964,0.0060439388232425405)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.010089478519445208,0.008968425350617964,0.0060439388232425405)' from='rgb(0.0027147860728712063,0.0024131431758855166,0.0016262486620098047)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='625.0' y='545.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_11.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_11.mouseout'/></text>
-<rect id='11_12' x='645' y='525' width='40' height='40' style='fill:rgb(0.0,0.0,0.0)'>
-<animate fill='freeze' dur='0.1s' to='rgb(5.336172283115521e-05,4.743264251658241e-05,3.1965476478566404e-05)' from='rgb(0.0,0.0,0.0)' attributeName='fill' begin='mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0.0,0.0,0.0)' from='rgb(5.336172283115521e-05,4.743264251658241e-05,3.1965476478566404e-05)' attributeName='fill' begin='mouseout'/>
-</rect><text text-anchor='middle' alignment-baseline='middle' x='665.0' y='545.0' style='font-size:11px;fill:rgb(255,255,255);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_12.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,255,255)' attributeName='fill' begin='11_12.mouseout'/></text>
+<rect id='11_0' x='165' y='525' width='40' height='40' style='fill:rgb(255,79,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,79,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,79,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='185.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.2%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_0.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_0.mouseout'/></text>
+<rect id='11_1' x='205' y='525' width='40' height='40' style='fill:rgb(255,103,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,83,77)' from='rgb(255,103,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,103,77)' from='rgb(255,83,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='225.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>2.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_1.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_1.mouseout'/></text>
+<rect id='11_2' x='245' y='525' width='40' height='40' style='fill:rgb(255,192,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,107,77)' from='rgb(255,192,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,192,77)' from='rgb(255,107,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='265.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>8.5%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_2.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_2.mouseout'/></text>
+<rect id='11_3' x='285' y='525' width='40' height='40' style='fill:rgb(171,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,146,77)' from='rgb(171,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(171,255,77)' from='rgb(255,146,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='305.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>19.4%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_3.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_3.mouseout'/></text>
+<rect id='11_4' x='325' y='525' width='40' height='40' style='fill:rgb(77,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,171,77)' from='rgb(77,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(77,255,77)' from='rgb(255,171,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='345.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>26.4%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_4.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_4.mouseout'/></text>
+<rect id='11_5' x='365' y='525' width='40' height='40' style='fill:rgb(121,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,159,77)' from='rgb(121,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(121,255,77)' from='rgb(255,159,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='385.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>23.1%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_5.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_5.mouseout'/></text>
+<rect id='11_6' x='405' y='525' width='40' height='40' style='fill:rgb(251,255,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,125,77)' from='rgb(251,255,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(251,255,77)' from='rgb(255,125,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='425.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>13.5%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_6.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_6.mouseout'/></text>
+<rect id='11_7' x='445' y='525' width='40' height='40' style='fill:rgb(255,148,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,95,77)' from='rgb(255,148,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,148,77)' from='rgb(255,95,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='465.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>5.3%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_7.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_7.mouseout'/></text>
+<rect id='11_8' x='485' y='525' width='40' height='40' style='fill:rgb(255,95,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,82,77)' from='rgb(255,95,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,95,77)' from='rgb(255,82,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='505.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>1.4%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_8.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_8.mouseout'/></text>
+<rect id='11_9' x='525' y='525' width='40' height='40' style='fill:rgb(255,80,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,80,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,80,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='545.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.2%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_9.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_9.mouseout'/></text>
+<rect id='11_10' x='565' y='525' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='585.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_10.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_10.mouseout'/></text>
+<rect id='11_11' x='605' y='525' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='625.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_11.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_11.mouseout'/></text>
+<rect id='11_12' x='645' y='525' width='40' height='40' style='fill:rgb(255,77,77)'>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,77,77)' from='rgb(255,77,77)' attributeName='fill' begin='mouseout'/>
+</rect><text text-anchor='middle' alignment-baseline='middle' x='665.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>0.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_12.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='11_12.mouseout'/></text>
 </g>
 <rect x='125' y='85' width='40' height='40' style='fill:rgb(255,255,255)'>
-<animate fill='freeze' dur='0.1s' to='rgb(109.71000000000001,97.52000000000001,65.72)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(109.71000000000001,97.52000000000001,65.72)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
-<text text-anchor='middle' alignment-baseline='central' x='145.0' y='105.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>53.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
+<animate fill='freeze' dur='0.1s' to='rgb(244,255,77)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(244,255,77)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
+<text text-anchor='middle' alignment-baseline='central' x='145.0' y='105.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>53.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
 <text text-anchor='middle' alignment-baseline='middle' x='185.0' y='65.0' style='font-size:12px;font-family:Arial'>0</text>
 <text text-anchor='middle' alignment-baseline='middle' x='225.0' y='65.0' style='font-size:12px;font-family:Arial'>1</text>
 <text text-anchor='middle' alignment-baseline='middle' x='265.0' y='65.0' style='font-size:12px;font-family:Arial'>2</text>
@@ -549,60 +549,60 @@
 <text text-anchor='middle' alignment-baseline='middle' x='625.0' y='65.0' style='font-size:12px;font-family:Arial'>11</text>
 <text text-anchor='middle' alignment-baseline='middle' x='665.0' y='65.0' style='font-size:12px;font-family:Arial'>12</text>
 <rect x='125' y='125' width='40' height='40' style='fill:rgb(255,255,255)'>
-<animate fill='freeze' dur='0.1s' to='rgb(62.099999999999994,55.199999999999996,37.199999999999996)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(62.099999999999994,55.199999999999996,37.199999999999996)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
-<text text-anchor='middle' alignment-baseline='central' x='145.0' y='145.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>30.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
+<animate fill='freeze' dur='0.1s' to='rgb(255,184,77)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,184,77)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
+<text text-anchor='middle' alignment-baseline='central' x='145.0' y='145.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>30.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
 <rect x='125' y='165' width='40' height='40' style='fill:rgb(255,255,255)'>
-<animate fill='freeze' dur='0.1s' to='rgb(173.88,154.56,104.16)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(173.88,154.56,104.16)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
+<animate fill='freeze' dur='0.1s' to='rgb(134,255,77)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(134,255,77)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
 <text text-anchor='middle' alignment-baseline='central' x='145.0' y='185.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>84.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
 <animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
 <rect x='125' y='205' width='40' height='40' style='fill:rgb(255,255,255)'>
-<animate fill='freeze' dur='0.1s' to='rgb(66.24,58.88,39.68)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(66.24,58.88,39.68)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
-<text text-anchor='middle' alignment-baseline='central' x='145.0' y='225.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>32.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
+<animate fill='freeze' dur='0.1s' to='rgb(255,191,77)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,191,77)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
+<text text-anchor='middle' alignment-baseline='central' x='145.0' y='225.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>32.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
 <rect x='125' y='245' width='40' height='40' style='fill:rgb(255,255,255)'>
-<animate fill='freeze' dur='0.1s' to='rgb(82.80000000000001,73.60000000000001,49.6)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(82.80000000000001,73.60000000000001,49.6)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
-<text text-anchor='middle' alignment-baseline='central' x='145.0' y='265.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>40.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
+<animate fill='freeze' dur='0.1s' to='rgb(255,219,77)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,219,77)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
+<text text-anchor='middle' alignment-baseline='central' x='145.0' y='265.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>40.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
 <rect x='125' y='285' width='40' height='40' style='fill:rgb(255,255,255)'>
-<animate fill='freeze' dur='0.1s' to='rgb(22.77,20.24,13.64)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(22.77,20.24,13.64)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
-<text text-anchor='middle' alignment-baseline='central' x='145.0' y='305.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>11.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
+<animate fill='freeze' dur='0.1s' to='rgb(255,116,77)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,116,77)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
+<text text-anchor='middle' alignment-baseline='central' x='145.0' y='305.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>11.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
 <rect x='125' y='325' width='40' height='40' style='fill:rgb(255,255,255)'>
-<animate fill='freeze' dur='0.1s' to='rgb(8.28,7.36,4.96)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(8.28,7.36,4.96)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
-<text text-anchor='middle' alignment-baseline='central' x='145.0' y='345.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>4.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
+<animate fill='freeze' dur='0.1s' to='rgb(255,91,77)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,91,77)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
+<text text-anchor='middle' alignment-baseline='central' x='145.0' y='345.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>4.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
 <rect x='125' y='365' width='40' height='40' style='fill:rgb(255,255,255)'>
-<animate fill='freeze' dur='0.1s' to='rgb(138.69,123.28,83.08)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(138.69,123.28,83.08)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
+<animate fill='freeze' dur='0.1s' to='rgb(194,255,77)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(194,255,77)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
 <text text-anchor='middle' alignment-baseline='central' x='145.0' y='385.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>67.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
 <animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
 <rect x='125' y='405' width='40' height='40' style='fill:rgb(255,255,255)'>
-<animate fill='freeze' dur='0.1s' to='rgb(41.400000000000006,36.800000000000004,24.8)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(41.400000000000006,36.800000000000004,24.8)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
-<text text-anchor='middle' alignment-baseline='central' x='145.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>20.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
+<animate fill='freeze' dur='0.1s' to='rgb(255,148,77)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,148,77)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
+<text text-anchor='middle' alignment-baseline='central' x='145.0' y='425.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>20.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
 <rect x='125' y='445' width='40' height='40' style='fill:rgb(255,255,255)'>
-<animate fill='freeze' dur='0.1s' to='rgb(68.31,60.720000000000006,40.92)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(68.31,60.720000000000006,40.92)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
-<text text-anchor='middle' alignment-baseline='central' x='145.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>33.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
+<animate fill='freeze' dur='0.1s' to='rgb(255,194,77)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,194,77)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
+<text text-anchor='middle' alignment-baseline='central' x='145.0' y='465.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>33.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
 <rect x='125' y='485' width='40' height='40' style='fill:rgb(255,255,255)'>
-<animate fill='freeze' dur='0.1s' to='rgb(51.75,46.0,31.0)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(51.75,46.0,31.0)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
-<text text-anchor='middle' alignment-baseline='central' x='145.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>25.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
+<animate fill='freeze' dur='0.1s' to='rgb(255,166,77)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,166,77)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
+<text text-anchor='middle' alignment-baseline='central' x='145.0' y='505.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>25.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
 <rect x='125' y='525' width='40' height='40' style='fill:rgb(255,255,255)'>
-<animate fill='freeze' dur='0.1s' to='rgb(64.17,57.04,38.44)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(64.17,57.04,38.44)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
-<text text-anchor='middle' alignment-baseline='central' x='145.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>31.0%<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
-<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
+<animate fill='freeze' dur='0.1s' to='rgb(255,187,77)' from='rgb(255,255,255)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(255,255,255)' from='rgb(255,187,77)' attributeName='fill' begin='probColHitBox.mouseout'/></rect>
+<text text-anchor='middle' alignment-baseline='central' x='145.0' y='545.0' style='font-size:11px;fill:rgb(0,0,0);font-family:Arial;pointer-events:none'>31.0%<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseover'/>
+<animate fill='freeze' dur='0.1s' to='rgb(0,0,0)' from='rgb(0,0,0)' attributeName='fill' begin='probColHitBox.mouseout'/></text>
 <line x1='5' y1='85' x2='685' y2='85' style='stroke:rgb(0,0,0)'/>
 <line x1='45' y1='45' x2='45' y2='565' style='stroke:rgb(0,0,0)'/>
 <line x1='85' y1='45' x2='85' y2='565' style='stroke:rgb(0,0,0)'/>

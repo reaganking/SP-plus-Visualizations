@@ -1,80 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="Fixed Cluster, Conference, and Team so that text correctly animates to change color on mouseover.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/schedule.json" beforeDir="false" afterPath="$PROJECT_DIR$/schedule.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/alabama.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/alabama.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/arizona state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/arizona state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/arizona.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/arizona.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/arkansas.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/arkansas.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/atlantic coast.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/atlantic coast.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/auburn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/auburn.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/baylor.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/baylor.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/big 12.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/big 12.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/big ten.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/big ten.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/boston college.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/boston college.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/california.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/california.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/clemson.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/clemson.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/colorado.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/colorado.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/duke.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/duke.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/florida state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/florida state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/florida.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/florida.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/georgia tech.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/georgia tech.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/georgia.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/georgia.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/illinois.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/illinois.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/indiana.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/indiana.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/iowa state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/iowa state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/iowa.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/iowa.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/kansas state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/kansas state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/kansas.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/kansas.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/kentucky.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/kentucky.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/louisville.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/louisville.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/lsu.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/lsu.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/maryland.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/maryland.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/miami.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/miami.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/michigan state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/michigan state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/michigan.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/michigan.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/minnesota.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/minnesota.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/mississippi state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/mississippi state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/missouri.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/missouri.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/nebraska.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/nebraska.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/north carolina state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/north carolina state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/north carolina.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/north carolina.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/northwestern.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/northwestern.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/ohio state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/ohio state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/oklahoma state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/oklahoma state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/oklahoma.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/oklahoma.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/ole miss.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/ole miss.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/oregon state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/oregon state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/oregon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/oregon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/p5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/p5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/pac 12.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/pac 12.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/penn state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/penn state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/pittsburgh.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/pittsburgh.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/purdue.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/purdue.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/rutgers.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/rutgers.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/south carolina.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/south carolina.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/southeastern.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/southeastern.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/stanford.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/stanford.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/syracuse.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/syracuse.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/tcu.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/tcu.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/tennessee.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/tennessee.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/texas am.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/texas am.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/texas tech.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/texas tech.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/texas.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/texas.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/ucla.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/ucla.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/usc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/usc.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/utah.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/utah.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/vanderbilt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/vanderbilt.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/virginia tech.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/virginia tech.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/virginia.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/virginia.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/wake forest.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/wake forest.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/washington state.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/washington state.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/washington.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/washington.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/west virginia.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/west virginia.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/wisconsin.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/wisconsin.svg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="scratch.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="scratch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+            <state relative-caret-position="204">
+              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -100,7 +29,7 @@
       <file leaf-file-name="conference.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conference.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
+            <state relative-caret-position="1173">
               <caret line="72" column="45" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -112,7 +41,7 @@
       <file leaf-file-name="team.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/team.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
+            <state relative-caret-position="221">
               <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -132,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cluster.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cluster.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cluster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="17">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -156,15 +85,13 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&amp;</find>
-      <find>'team'</find>
       <find>team_color</find>
-      <find>arizona state</find>
-      <find>&quot;arizona state&quot;:</find>
+      <find />
+      <find />
       <find>connecticut</find>
       <find>uconn</find>
       <find>lafayette</find>
-      <find>middle tennessee</find>
+      <find />
       <find>dakota</find>
       <find>university</find>
       <find>primary</find>
@@ -186,37 +113,39 @@
       <find>utils</find>
       <find>self.sched</find>
       <find>schedule</find>
+      <find>mississippi</find>
+      <find />
     </findStrings>
     <replaceStrings>
       <replace>&quot;\}</replace>
       <replace>\{&quot;team&quot;:&quot;</replace>
       <replace>&quot;winprob&quot;:\[$0\]</replace>
       <replace>&quot;spplus&quot;</replace>
-      <replace>&quot;fpi&quot;: [], &quot;spplus&quot;:</replace>
+      <replace />
       <replace>ba</replace>
-      <replace>&quot;fpi&quot;: [], &quot;bud&quot;:[],</replace>
+      <replace />
       <replace>'</replace>
       <replace>ha</replace>
       <replace>scale</replace>
       <replace />
       <replace>state&quot;</replace>
       <replace>michigan</replace>
-      <replace>florida international&quot;</replace>
+      <replace />
       <replace>&quot;michigan</replace>
-      <replace>north carolina</replace>
-      <replace>north carolina state</replace>
+      <replace />
+      <replace />
       <replace>umass</replace>
-      <replace>&quot;nameClean&quot;: &quot;umass&quot;</replace>
-      <replace>&quot;nameClean&quot;: &quot;prairie view&quot;</replace>
-      <replace>&quot;nameClean&quot;: &quot;central</replace>
+      <replace />
+      <replace />
+      <replace />
       <replace>michigan&quot;</replace>
       <replace>carolin</replace>
-      <replace>&quot;nameClean&quot;: &quot;florida international&quot;</replace>
+      <replace />
       <replace>arkansas&quot;</replace>
       <replace>southern&quot;</replace>
-      <replace>william and mary</replace>
+      <replace />
       <replace>arkansas</replace>
-      <replace>louisiana lafayette</replace>
+      <replace />
     </replaceStrings>
   </component>
   <component name="Git.Rebase.Settings">
@@ -253,11 +182,11 @@
         <option value="$PROJECT_DIR$/color bank.json" />
         <option value="$PROJECT_DIR$/Schedule.json" />
         <option value="$PROJECT_DIR$/Utils.py" />
-        <option value="$PROJECT_DIR$/scratch.py" />
         <option value="$PROJECT_DIR$/conference.py" />
         <option value="$PROJECT_DIR$/team.py" />
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/cluster.py" />
+        <option value="$PROJECT_DIR$/scratch.py" />
       </list>
     </option>
   </component>
@@ -276,11 +205,6 @@
             <path>
               <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
               <item name="sp plus visualization" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sp plus visualization" type="462c0819:PsiDirectoryNode" />
-              <item name="svg output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -588,18 +512,26 @@
       <option name="project" value="LOCAL" />
       <updated>1533308002158</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Segmented class code into separate files to simpilify maintenance.">
+      <created>1533312446240</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1533312446240</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
+    <frame x="640" y="0" width="640" height="680" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.19475357" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.19435216" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50074404" side_tool="true" weight="0.39646018" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32743362" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34513274" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3442623" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32743362" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -616,22 +548,22 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.2400636" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32893288" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35533553" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32743362" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49925596" weight="0.4719472" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32743362" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50074404" side_tool="true" weight="0.39713973" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32893288" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32893288" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32893288" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32743362" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -685,7 +617,8 @@
     <MESSAGE value="Added cluster functionality." />
     <MESSAGE value="Added viz for p5 rankings." />
     <MESSAGE value="Fixed Cluster, Conference, and Team so that text correctly animates to change color on mouseover." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Cluster, Conference, and Team so that text correctly animates to change color on mouseover." />
+    <MESSAGE value="Segmented class code into separate files to simpilify maintenance." />
+    <option name="LAST_COMMIT_MESSAGE" value="Segmented class code into separate files to simpilify maintenance." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -846,19 +779,9 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conference.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
+        <state relative-caret-position="1173">
           <caret line="72" column="45" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -868,7 +791,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/team.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
+        <state relative-caret-position="221">
           <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
@@ -888,19 +811,29 @@
     <entry file="file://$PROJECT_DIR$/svg output/pac 12.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/schedule.json">
+    <entry file="file://$PROJECT_DIR$/cluster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="17810" column="10" selection-start-line="17810" selection-start-column="10" selection-end-line="17810" selection-end-column="10" />
+        <state relative-caret-position="17">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cluster.py">
+    <entry file="file://$PROJECT_DIR$/schedule.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="93">
+          <caret line="10806" column="24" selection-start-line="10806" selection-start-column="4" selection-end-line="10806" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
