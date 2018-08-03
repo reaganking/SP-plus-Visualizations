@@ -88,8 +88,21 @@
       <file leaf-file-name="scratch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4866">
-              <caret line="691" selection-start-line="691" selection-end-line="691" />
+            <state relative-caret-position="248">
+              <caret line="913" selection-start-line="913" selection-end-line="913" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#203#12743#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schedule.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schedule.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="17810" column="10" selection-start-line="17810" selection-start-column="10" selection-end-line="17810" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -117,12 +130,12 @@
       <find>&amp;</find>
       <find>'team'</find>
       <find>team_color</find>
-      <find />
-      <find />
+      <find>arizona state</find>
+      <find>&quot;arizona state&quot;:</find>
       <find>connecticut</find>
       <find>uconn</find>
       <find>lafayette</find>
-      <find />
+      <find>middle tennessee</find>
       <find>dakota</find>
       <find>university</find>
       <find>primary</find>
@@ -147,38 +160,41 @@
       <replace>\{&quot;team&quot;:&quot;</replace>
       <replace>&quot;winprob&quot;:\[$0\]</replace>
       <replace>&quot;spplus&quot;</replace>
-      <replace />
+      <replace>&quot;fpi&quot;: [], &quot;spplus&quot;:</replace>
       <replace>ba</replace>
-      <replace />
+      <replace>&quot;fpi&quot;: [], &quot;bud&quot;:[],</replace>
       <replace>'</replace>
       <replace>ha</replace>
       <replace>scale</replace>
       <replace />
       <replace>state&quot;</replace>
       <replace>michigan</replace>
-      <replace />
+      <replace>florida international&quot;</replace>
       <replace>&quot;michigan</replace>
-      <replace />
-      <replace />
+      <replace>north carolina</replace>
+      <replace>north carolina state</replace>
       <replace>umass</replace>
-      <replace />
-      <replace />
-      <replace />
+      <replace>&quot;nameClean&quot;: &quot;umass&quot;</replace>
+      <replace>&quot;nameClean&quot;: &quot;prairie view&quot;</replace>
+      <replace>&quot;nameClean&quot;: &quot;central</replace>
       <replace>michigan&quot;</replace>
       <replace>carolin</replace>
-      <replace />
+      <replace>&quot;nameClean&quot;: &quot;florida international&quot;</replace>
       <replace>arkansas&quot;</replace>
       <replace>southern&quot;</replace>
-      <replace />
+      <replace>william and mary</replace>
       <replace>arkansas</replace>
-      <replace />
+      <replace>louisiana lafayette</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="ONTO" value="refs/heads/master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="FirstRefactor" />
       </map>
     </option>
   </component>
@@ -223,6 +239,11 @@
             <path>
               <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
               <item name="sp plus visualization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sp plus visualization" type="462c0819:PsiDirectoryNode" />
+              <item name="svg output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -502,19 +523,32 @@
       <option name="project" value="LOCAL" />
       <updated>1533306811721</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Fixed Cluster, Conference, and Team so that text correctly animates to change color on mouseover.">
+      <created>1533307213354</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1533307213354</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Fixed Cluster, Conference, and Team so that text correctly animates to change color on mouseover.">
+      <created>1533307257962</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1533307257962</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="2" weight="0.19475357" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.19475357" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50074404" side_tool="true" weight="0.39713973" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50074404" side_tool="true" weight="0.39646018" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32743362" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34513274" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34513274" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32743362" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -579,8 +613,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Added prototype for color changing interaction" />
     <MESSAGE value="Altered team data structure to a hash table for easier lookup, amended code to reflect this." />
     <MESSAGE value="Added more svg interactivity, including color changing tiles." />
@@ -602,19 +635,9 @@
     <MESSAGE value="Added viz for p5 rankings." />
     <MESSAGE value="Fixed Cluster, Conference, and Team so that text correctly animates to change color on mouseover." />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed Cluster, Conference, and Team so that text correctly animates to change color on mouseover." />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
-          <line>217</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -626,9 +649,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/svg output/florida state.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/svg output/boston college.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -784,20 +804,27 @@
     <entry file="file://$PROJECT_DIR$/svg output/southeastern.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Schedule.json">
+    <entry file="file://$PROJECT_DIR$/svg output/pac 12.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schedule.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="17810" column="10" selection-start-line="17810" selection-start-column="10" selection-end-line="17810" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/svg output/pac 12.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4866">
-          <caret line="691" selection-start-line="691" selection-end-line="691" />
+        <state relative-caret-position="248">
+          <caret line="913" selection-start-line="913" selection-end-line="913" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#203#12743#0" />
+          </folding>
         </state>
       </provider>
     </entry>
