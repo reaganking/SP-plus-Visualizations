@@ -22,13 +22,13 @@ pfive = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
 gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sun belt']
 fcs = pfive + gfive
 
-for conference in gfive:
+for conference in pfive:
     Conference(name=conference, schedule=schedule).make_standings_projection_graph(absolute=False, file=conference,
                                                                                    scale=scale)
 
 Cluster(schedule=schedule,
         teams=[x for x in schedule if schedule[x]['conference'] in fcs]).make_standings_projection_graph(
-    absolute=False, file='fcs', scale=scale)
+    absolute=False, file='fbs', scale=scale)
 
 for team in schedule:
     if schedule[team]['conference'] in ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']:
