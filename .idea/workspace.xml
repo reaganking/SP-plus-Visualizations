@@ -1,105 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="Remainder of pre season data added.">
+    <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/alabama.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/american athletic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/arizona state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/arizona.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/arkansas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/atlantic coast.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/atlantic coast.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/atlantic coast.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/auburn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/baylor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/big 12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/big 12.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/big 12.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/big ten.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/big ten.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/big ten.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/boston college.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/california.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/charlotte.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/clemson.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/colorado.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/conference usa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/duke.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/fbs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/florida atlantic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/florida international.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/florida state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/florida.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/georgia tech.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/georgia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/illinois.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/indiana.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/iowa state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/iowa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/kansas state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/kansas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/kentucky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/louisiana tech.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/louisville.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/lsu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/marshall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/maryland.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/miami.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/michigan state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/michigan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/mid american.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/middle tennessee.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/minnesota.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/mississippi state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/missouri.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/mountain west.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/nc state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/nebraska.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/north carolina state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/north carolina.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/north texas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/northwestern.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/notre dame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/ohio state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/oklahoma state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/oklahoma.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/old dominion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/ole miss.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/oregon state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/oregon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/p5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/pac 12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/pac 12.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/pac 12.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/penn state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/pittsburgh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/purdue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/rice.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/rutgers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/south carolina.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/southeastern.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/southeastern.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/southeastern.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/southern mississippi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/stanford.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sun belt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/syracuse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/tcu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/tennessee.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/texas am.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/texas tech.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/texas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/uab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/ucla.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/usc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/ut san antonio.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/utah.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/utep.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/vanderbilt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/virginia tech.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/virginia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/wake forest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/washington state.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/washington.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/west virginia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/western kentucky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/wisconsin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/charlotte.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/charlotte.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/fbs.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/fbs.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/florida atlantic.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/florida atlantic.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/florida international.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/florida international.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/louisiana tech.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/louisiana tech.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/marshall.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/marshall.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/middle tennessee.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/middle tennessee.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/north texas.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/north texas.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/notre dame.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/notre dame.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/old dominion.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/old dominion.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/rice.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/rice.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/southern mississippi.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/southern mississippi.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/uab.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/uab.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/ut san antonio.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/ut san antonio.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/utep.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/utep.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/western kentucky.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/western kentucky.svg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -113,8 +33,8 @@
       <file leaf-file-name="scratch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="21" column="82" selection-start-line="21" selection-start-column="82" selection-end-line="21" selection-end-column="82" />
+            <state relative-caret-position="240">
+              <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -125,8 +45,8 @@
       <file leaf-file-name="schedule.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schedule.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="21080" column="23" selection-start-line="21080" selection-start-column="23" selection-end-line="21080" selection-end-column="23" />
+            <state relative-caret-position="-157">
+              <caret line="13969" column="30" selection-start-line="13969" selection-start-column="23" selection-end-line="13969" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -152,68 +72,68 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>schedule</find>
       <find>mississippi</find>
-      <find>&quot;mississippi state&quot;:</find>
-      <find>mountain west</find>
-      <find>mid a</find>
-      <find>american athletic</find>
-      <find>texas am</find>
+      <find />
+      <find />
+      <find />
+      <find />
+      <find />
       <find>multiline</find>
-      <find>Liberty,Opponent,Win Probability</find>
+      <find />
       <find>liberty</find>
       <find>liberty&quot;:</find>
       <find>niu</find>
       <find>ul-monroe</find>
       <find>monroe</find>
-      <find>north illinois</find>
-      <find>south dakota state</find>
-      <find>middle t</find>
-      <find>middle tennessee state</find>
-      <find>south dakota</find>
-      <find>south dakota state&quot;:</find>
-      <find>san diego state&quot;:</find>
-      <find>sun belt</find>
-      <find>louisiana tech</find>
+      <find />
+      <find />
+      <find />
+      <find />
+      <find />
+      <find />
+      <find />
+      <find />
+      <find />
       <find>&quot;idaho&quot;:</find>
       <find>idaho</find>
-      <find>appalachian state&quot;:</find>
+      <find />
       <find>arka&quot;:</find>
-      <find>texas state&quot;:</find>
+      <find />
       <find>ohio&quot;:</find>
       <find>unlv&quot;:</find>
+      <find>indepen</find>
     </findStrings>
     <replaceStrings>
-      <replace>&quot;fpi&quot;: [], &quot;bud&quot;:[],</replace>
+      <replace />
       <replace>'</replace>
       <replace>ha</replace>
       <replace>scale</replace>
       <replace />
       <replace>state&quot;</replace>
       <replace>michigan</replace>
-      <replace>florida international&quot;</replace>
+      <replace />
       <replace>&quot;michigan</replace>
-      <replace>north carolina</replace>
-      <replace>north carolina state</replace>
+      <replace />
+      <replace />
       <replace>umass</replace>
-      <replace>&quot;nameClean&quot;: &quot;umass&quot;</replace>
-      <replace>&quot;nameClean&quot;: &quot;prairie view&quot;</replace>
-      <replace>&quot;nameClean&quot;: &quot;central</replace>
+      <replace />
+      <replace />
+      <replace />
       <replace>michigan&quot;</replace>
       <replace>carolin</replace>
-      <replace>&quot;nameClean&quot;: &quot;florida international&quot;</replace>
+      <replace />
       <replace>arkansas&quot;</replace>
       <replace>southern&quot;</replace>
-      <replace>william and mary</replace>
+      <replace />
       <replace>arkansas</replace>
-      <replace>louisiana lafayette</replace>
-      <replace>north illinois</replace>
-      <replace>louisiana monroe</replace>
-      <replace>northern illinois</replace>
-      <replace>south dakota</replace>
-      <replace>middle tennessee</replace>
+      <replace />
+      <replace />
+      <replace />
+      <replace />
+      <replace />
+      <replace />
       <replace>ul</replace>
-      <replace>san diego state</replace>
+      <replace />
     </replaceStrings>
   </component>
   <component name="Git.Rebase.Settings">
@@ -275,6 +195,11 @@
             <path>
               <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
               <item name="sp plus visualization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sp plus visualization" type="462c0819:PsiDirectoryNode" />
+              <item name="svg output" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sp plus visualization" type="b2602c69:ProjectViewProjectNode" />
@@ -656,7 +581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1533581153237</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Remainder of pre season data added.">
+      <created>1533581436522</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1533581436522</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -667,7 +599,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007949" side_tool="true" weight="0.33451328" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32743362" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920508" weight="0.33451328" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920508" visible="true" weight="0.33451328" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32743362" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -764,7 +696,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/conference.py</url>
+          <url />
           <line>45</line>
           <option name="timeStamp" value="105" />
         </line-breakpoint>
@@ -978,15 +910,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schedule.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="21080" column="23" selection-start-line="21080" selection-start-column="23" selection-end-line="21080" selection-end-column="23" />
+        <state relative-caret-position="-157">
+          <caret line="13969" column="30" selection-start-line="13969" selection-start-column="23" selection-end-line="13969" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="21" column="82" selection-start-line="21" selection-start-column="82" selection-end-line="21" selection-end-column="82" />
+        <state relative-caret-position="240">
+          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
