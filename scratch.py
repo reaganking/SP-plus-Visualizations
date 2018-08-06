@@ -16,13 +16,13 @@ for i in range(len(win_prob)):
 with open('schedule.json', 'w') as file:
     json.dump(schedule, file, indent=4, sort_keys=True)
 '''
-scale = 'red-green'
+scale = 'team'
 
 pfive = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
 gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sun belt']
-fbs = pfive + gfive + ['fbs independent']
+fbs = pfive + gfive + ['fbs independent'] # don't forget the independents
 
-for conference in pfive:
+for conference in pfive+gfive:
     Conference(name=conference, schedule=schedule).make_standings_projection_graph(absolute=False, file=conference,
                                                                                    scale=scale)
 
