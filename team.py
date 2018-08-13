@@ -5,7 +5,7 @@ from utils import Utils
 
 
 class Team:
-    def __init__(self, name=None, schedule=None):
+    def __init__(self, name=None, schedule=None, method=('spplus', 'fpi')):
         self.schedule = schedule
         if not name:
             self.name = ""
@@ -13,7 +13,7 @@ class Team:
             assert isinstance(name, str), "Name is not a string!"
             self.name = name.lower()
             self.conference = self.schedule[self.name]['conference']
-            self.win_probabilities = [x['spplus'] for x in self.schedule[self.name]['schedule']]
+            self.win_probabilities = {y: [x[y] for x in self.schedule[self.name]['schedule']] for y in method}
             self.logo_URI = self.schedule[self.name]['logoURI']
             try:
                 self.primary_color = Utils.hex_to_rgb(self.schedule[self.name]['primaryColor'])
@@ -27,15 +27,15 @@ class Team:
             except KeyError:
                 pass
 
-    def win_totals_by_week(self, projection_week=0, method="spplus"):
+    def win_totals_by_week(self, projectionweek=0, method='spplus'):
         # first check to make sure the projection week has all the games projected
         try:
-            win_probs = [x[projection_week] for x in self.win_probabilities]
+            win_probs = [x[projectionweek] for x in self.win_probabilities[method]]
         except IndexError:
             win_probs = [0 for x in range(12)]
 
         # Make a ragged table to store 'games' x 'wins'
-        record = [[0 for y in range(0, x + 1)] for x in range(1, len(self.win_probabilities) + 1)]
+        record = [[0 for y in range(0, x + 1)] for x in range(1, len(self.win_probabilities[method]) + 1)]
         record[0][0] = 1 - win_probs[0]  # first game was a loss
         record[0][1] = win_probs[0]  # first game was a win
 
@@ -55,16 +55,18 @@ class Team:
     def make_win_probability_graph(self, file='out', hstep=40, vstep=40, margin=5, logowidth=30, logoheight=30,
                                    menuheight=40, absolute=False, projectionweek=0, method="spplus",
                                    colorIndividualGameProbs=False, scale='red-green'):
-        win_probs, record = self.win_totals_by_week(method=method)
+        win_probs, record = self.win_totals_by_week(projectionweek=projectionweek, method=method)
         logos = Utils.get_logo_URIs()
 
-        if not os.path.exists("./svg output/"):
-            os.makedirs("./svg output/")
+        if not os.path.exists(".\svg output\{} - {}".format(method, scale)):
+            os.makedirs(".\svg output\{} - {}".format(method, scale))
+        path = os.path.join(".\svg output\{} - {}".format(method, scale),
+                            '{} - {} - {}.svg'.format(file, method, scale))
 
-        with open(os.path.join("./svg output/", '{}.svg'.format(file)), 'w+') as outfile:
+        with open(path, 'w+') as outfile:
             # The SVG output should generally be divided into 3 leading columns (week, H/A, Opp, Prob) and n=len(self.win_probabilities) + 1 segments
             # and 2 leading rows (Wins and headers) with n=len(self.win_probabilities) vertical segments.
-            rows, cols = 2 + len(self.win_probabilities), 4 + len(self.win_probabilities) + 1
+            rows, cols = 2 + len(self.win_probabilities[method]), 4 + len(self.win_probabilities[method]) + 1
 
             # Write the SVG header; remember to write </svg> to close the file
             outfile.write(
@@ -308,3 +310,4 @@ class Team:
                     margin + hstep * 4, margin, hstep * (cols - 4), vstep))
 
             outfile.write("</svg>")
+        #Utils.convert_to_png(path, method, scale)

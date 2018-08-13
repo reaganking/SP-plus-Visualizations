@@ -10,7 +10,7 @@ class Cluster:
         self.teams = {Team(name=x, schedule=schedule) for x in schedule if x in teams}
 
     def make_standings_projection_graph(self, file='out', week=None, hstep=40, vstep=40, margin=5, logowidth=30,
-                                        logoheight=30, absolute=False, scale='red-green'):
+                                        method='spplus', logoheight=30, absolute=False, scale='red-green'):
         # get the records for the final week for each team
         record = []
 
@@ -21,13 +21,15 @@ class Cluster:
         # sort teams by their weighted average number of wins and division
 
         record.extend(
-            sorted([(x, x.win_totals_by_week()[1][week]) for x in self.teams],
+            sorted([(x, x.win_totals_by_week(method=method)[1][week]) for x in self.teams],
                    key=lambda y: sum([y[1][z] * z for z in range(len(y[1]))]), reverse=True))
 
-        if not os.path.exists("./svg output/"):
-            os.makedirs("./svg output/")
+        if not os.path.exists(".\svg output\{} - {}".format(method, scale)):
+            os.makedirs(".\svg output\{} - {}".format(method, scale))
+        path = os.path.join(".\svg output\{} - {}".format(method, scale),
+                            '{} - {} - {}.svg'.format(file, method, scale))
 
-        with open(os.path.join("./svg output/", '{}.svg'.format(file)), 'w+') as outfile:
+        with open(path, 'w+') as outfile:
             # The SVG output should generally be divided into 3 leading columns (week, H/A, Opp, Prob) and n=len(self.win_probabilities) + 1 segments
             # and 2 leading rows (Wins and headers) with n=len(self.win_probabilities) vertical segments.
             rows, cols = len(record) + 2, max([len(x[1]) for x in record]) + 1
@@ -182,3 +184,4 @@ class Cluster:
                     margin + hstep, margin, hstep * (cols - 1), vstep))
 
             outfile.write("</svg>")
+        # Utils.convert_to_png(path, method, scale)

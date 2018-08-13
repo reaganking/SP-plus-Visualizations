@@ -3,6 +3,7 @@ import csv
 import json
 import os
 import re
+import subprocess
 from colorsys import hls_to_rgb
 from datetime import datetime
 
@@ -124,6 +125,16 @@ class Utils:
                     imagelist[file[:-4].lower()] = base64.b64encode(imageFile.read()).decode()
         return imagelist
 
+
+    # TODO: get this stupid shell script to work correctly.
+    @staticmethod
+    def convert_to_png(file, method, scale):
+        path = os.path.abspath(file)
+        name = file.split('\\')[-1].split('.')[0]
+
+        cmd = ["C:\Program Files\Inkscape\inkscape.exe", '-f {}'.format(path), '-e"{}.png"'.format(name)]
+        subprocess.Popen(cmd, stdout=subprocess.PIPE)
+
     @staticmethod
     def download_logos(width=40, height=40):
         # Quick and dirty method to scrape logos from ESPN; they need minor editorial cleanup afterward
@@ -136,7 +147,8 @@ class Utils:
             id = link['href'][47:link['href'].find('/', 47)]
             name = link['href'][link['href'].find('/', 47) + 1:link['href'].rfind('-')]
             name = name.replace('-', ' ').title()
-            pic_url = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/{}.png&h={}&w={}'.format(id, height,
+            pic_url = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/{}.png&h={}&w={}'.format(id,
+                                                                                                          height,
                                                                                                           width)
             with open(os.path.join('./Resources/', '{}.jpg'.format(name.lower())), 'wb') as handle:
                 response = requests.get(pic_url, stream=True)
@@ -156,7 +168,8 @@ class Utils:
         # Quick and dirty method to scrape schedule data
         for week in range(1, 20):
             # Pull the scoreboard, which contains links to the details for each game
-            url = "http://data.ncaa.com/jsonp/scoreboard/football/fbs/{}/{}/scoreboard.json".format(year, "%02d" % week)
+            url = "http://data.ncaa.com/jsonp/scoreboard/football/fbs/{}/{}/scoreboard.json".format(year,
+                                                                                                    "%02d" % week)
             response = requests.get(url)
             if response.status_code == 404:
                 continue
@@ -200,7 +213,8 @@ class Utils:
         return result
 
     @staticmethod
-    def gradient_color(lower, upper, val, method='linear', scale='red-green', primaryColor=None, secondaryColor=None):
+    def gradient_color(lower, upper, val, method='linear', scale='red-green', primaryColor=None,
+                       secondaryColor=None):
         """ Return (red, green, blue) interpolated along the color scale specified."""
         # Perform linear interpolation on the hue between 0.33 and 0, then convert back to RGB
         # HLS 0.33, 0.65, 1.0 will give green
@@ -243,6 +257,48 @@ class Utils:
         return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
 
     @staticmethod
+    def normalize_schedule(data, method='spplus', week=-1):
+        # A method to ensure that all games have a total win probability equal to one
+
+        # local helper function to locate the opponent within the schedule
+        def find(lst, team, opp):
+            try:
+                for i, dict in enumerate(lst[team]['schedule']):
+                    if dict['opponent'] == opp:
+                        return i
+            except KeyError:
+                return -2
+            return -1
+
+        for team in data:
+            for i in range(len(data[team]['schedule'])):
+                try:
+                    win_prob = data[team]['schedule'][i][method]
+                except KeyError:
+                    continue
+                if len(win_prob) > 0:
+                    opponent = data[team]['schedule'][i]['opponent']
+                    # Is this a opponent even in our json file?
+                    if opponent not in data:
+                        continue
+                    opp_win_prob = round(1 - win_prob[week], 3)
+                    # We have to find the correct index for the opponent
+                    # because they may not play in the same order due to byes
+                    j = find(data, opponent, team)
+
+                    try:
+                        if data[opponent]['schedule'][j][method][week] != opp_win_prob:
+                            data[opponent]['schedule'][j][method][week] = opp_win_prob
+                    except IndexError:
+                        data[opponent]['schedule'][j][method].append(opp_win_prob)
+                    except KeyError:
+                        data[opponent]['schedule'][j][method] = [opp_win_prob]
+                    except TypeError:
+                        print('problem with {}, {}'.format(team, opponent))
+
+        return data
+
+    @staticmethod
     def interpolate(lower, upper, val, method='linear'):
         if upper == lower:
             return 1
@@ -261,7 +317,8 @@ class Utils:
             count = 0
             for elem in data:
                 if count == 0:
-                    csvwriter.writerow(['home', 'away', 'startDate', 'startTime', 'location', 'conference', 'url', ])
+                    csvwriter.writerow(
+                        ['home', 'away', 'startDate', 'startTime', 'location', 'conference', 'url', ])
                     count += 1
                 else:
                     row = []
@@ -278,39 +335,72 @@ class Utils:
 
     @staticmethod
     def scrape_fpi(data):
-        # Quick and dirty method to scrape fpi from ESPN
-        r = requests.get('http://www.espn.com/college-football/teams')
-        results = bs(r.text).findAll('a', href=re.compile('^http://www.espn.com/college-football/team/_/id/'))
-        if not os.path.exists('./Resources/'):
-            os.makedirs('./Resources/')
+        headers = {'User-Agent': 'Mozilla/5.0'}
 
-        for link in results:
-            url = 'http://www.espn.com/college-football/team/fpi?id={}&year=2018'.format(
-                link['href'][47:link['href'].find('/', 47)])
-            soup = bs(requests.get(url).text, 'html.parser')
-            # Get the team name
-            name = soup.find('title').text.split()[0].lower()
-            try:
-                # The table we want is the 5th table in the document
-                table = soup.findAll('table')[4]
-                for i in range(2, len(table.contents)):
-                    # We want the contents of the 2nd and 3rd columns (the opponent and the FPI win probability)
-                    # The opponent will include either "@ " or "vs " at the beginning. Throw out everything up to and including the first space.
-                    opponent = " ".join(table.contents[i].contents[1].text.split()[1:])
-                    # trim out any weird special characters
-                    opponent = re.sub(r'[^\w\s-]', '', opponent).lower()
-                    fpi = table.contents[i].contents[2].text[:-1]
+        def scrape_team_links(headers=headers):
+            # Quick and dirty method to scrape fpi from ESPN
+            r = requests.get('http://www.espn.com/college-football/teams', headers=headers)
+            return bs(r.text).findAll('a', href=re.compile('^http://www.espn.com/college-football/team/_/id/'))
 
-                    # local helper function to locate the opponent within the schedule
-                    def find(lst, team, opp):
-                        for i, dict in enumerate(lst[name]['schedule']):
-                            if dict[team] == opp:
-                                return i
-                        return -1
+        def scrape_values(links, headers=headers):
+            result = {}
+            for link in links:
+                url = 'http://www.espn.com/college-football/team/fpi?id={}&year=2018'.format(
+                    link['href'][47:link['href'].find('/', 47)])
+                try:
+                    soup = bs(requests.get(url, headers=headers).text, 'html.parser')
 
-                    index = find(data, name, opponent)
-                    if index > 0:
-                        data[name]['schedule'][index]['fpi'] = fpi
-            except (KeyError, IndexError) as e:
-                pass
-        return data
+                    # Get the team name
+                    name = link.contents[0].lower()
+
+                    # The table we want is the 5th table in the document
+                    try:
+                        table = soup.findAll('table')[4]
+                    except IndexError:
+                        # This is mostly an issue with the lower division schools on that page.
+                        continue
+
+                    for i in range(2, len(table.contents)):
+                        # We want the contents of the 2nd and 3rd columns (the opponent and the FPI win probability)
+                        # The opponent will include either "@ " or "vs " at the beginning. Throw out everything up to and including the first space.
+                        if len(table.contents[i].contents) > 1:
+                            opponent = " ".join(table.contents[i].contents[1].text.split()[1:])
+                            # trim out any weird special characters
+                            opponent = re.sub(r'[^\w\s-]', '', opponent).lower()
+                            fpi = table.contents[i].contents[2].text[:-1]
+                            try:
+                                result[name].append([opponent, round(float(fpi) / 100, 3)])
+                            except KeyError:
+                                result[name] = [[opponent, round(float(fpi) / 100, 3)]]
+                except ConnectionError as e:
+                    print(str(e) + "\n for {}".format(url))
+
+            return result
+
+        def insert_fpi_field(data, values):
+            problems = {}
+            result = data
+
+            # local helper function to locate the opponent within the schedule
+            def find(lst, team, opp):
+                try:
+                    for i, dict in enumerate(lst[team]['schedule']):
+                        if dict['opponent'] == opp:
+                            return i
+                except KeyError:
+                    return -2
+                return -1
+
+            for team in values:
+                for i in values[team]:
+                    index = find(data, team, i[0])
+                    if index >= 0:
+                        try:
+                            result[team]['schedule'][index]['fpi'].append(float(i[1]))
+                        except KeyError:
+                            result[team]['schedule'][index]['fpi'] = [float(i[1])]
+                    elif index == -2:
+                        problems[team] = values[team]
+            return {'result': result, 'problems': problems}
+
+        return insert_fpi_field(data, scrape_values(scrape_team_links()))

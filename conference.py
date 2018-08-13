@@ -21,7 +21,8 @@ class Conference:
             self.divisions['all'] = self.teams
 
     def make_standings_projection_graph(self, file='out', week=None, hstep=40, vstep=40, margin=5, logowidth=30,
-                                        logoheight=30, absolute=False, scale='red-green'):
+                                        method='spplus', projectionweek=0, logoheight=30, absolute=False,
+                                        scale='red-green'):
         # get the records for the final week for each team
         record = []
 
@@ -34,13 +35,15 @@ class Conference:
         for division in sorted(self.divisions.keys()):
             # record will be a list of tuples (team, list) where list is the win total probability by week
             record.extend(
-                sorted([(x, x.win_totals_by_week()[1][week]) for x in self.divisions[division]],
+                sorted([(x, x.win_totals_by_week(method=method, projectionweek=projectionweek)[1][week]) for x in
+                        self.divisions[division]],
                        key=lambda y: sum([y[1][z] * z for z in range(len(y[1]))]), reverse=True))
 
-        if not os.path.exists("./svg output/"):
-            os.makedirs("./svg output/")
-
-        with open(os.path.join("./svg output/", '{}.svg'.format(file)), 'w+') as outfile:
+        if not os.path.exists(".\svg output\{} - {}".format(method, scale)):
+            os.makedirs(".\svg output\{} - {}".format(method, scale))
+        path = os.path.join(".\svg output\{} - {}".format(method, scale),
+                            '{} - {} - {}.svg'.format(file, method, scale))
+        with open(path, 'w+') as outfile:
             # The SVG output should generally be divided into 3 leading columns (week, H/A, Opp, Prob) and n=len(self.win_probabilities) + 1 segments
             # and 2 leading rows (Wins and headers) with n=len(self.win_probabilities) vertical segments.
             rows, cols = len(record) + 2, max([len(x[1]) for x in record]) + 1
@@ -197,3 +200,5 @@ class Conference:
                     margin + hstep, margin, hstep * (cols - 1), vstep))
 
             outfile.write("</svg>")
+
+        # Utils.convert_to_png(path, method, scale)
