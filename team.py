@@ -5,7 +5,7 @@ from utils import Utils
 
 
 class Team:
-    def __init__(self, name=None, schedule=None, method=('spplus', 'fpi')):
+    def __init__(self, name=None, schedule=None, method=('s&p+', 'fpi')):
         self.schedule = schedule
         if not name:
             self.name = ""
@@ -27,7 +27,7 @@ class Team:
             except KeyError:
                 pass
 
-    def win_totals_by_week(self, projectionweek=0, method='spplus'):
+    def win_totals_by_week(self, projectionweek=0, method='s&p+'):
         # first check to make sure the projection week has all the games projected
         try:
             win_probs = [x[projectionweek] for x in self.win_probabilities[method]]
@@ -53,7 +53,7 @@ class Team:
             writer.writerows(record)
 
     def make_win_probability_graph(self, file='out', hstep=40, vstep=40, margin=5, logowidth=30, logoheight=30,
-                                   menuheight=40, absolute=False, projectionweek=0, method="spplus",
+                                   menuheight=40, absolute=False, projectionweek=0, method="s&p+",
                                    colorIndividualGameProbs=False, scale='red-green'):
         win_probs, record = self.win_totals_by_week(projectionweek=projectionweek, method=method)
         logos = Utils.get_logo_URIs()
@@ -87,8 +87,8 @@ class Team:
 
             # Add the horizontal header label; it is at the very top of the svg and covers the right 16 columns, with centered text
             outfile.write(
-                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Total Wins</text>\n".format(
-                    margin + hstep * (cols - (cols - 4) / 2), margin + vstep * 0.5))
+                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Total Wins as projected by {}</text>\n".format(
+                    margin + hstep * (cols - (cols - 4) / 2), margin + vstep * 0.5, method.upper()))
 
             # Add column labels for the H/A and Opp
             outfile.write(

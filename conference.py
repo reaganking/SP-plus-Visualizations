@@ -21,7 +21,7 @@ class Conference:
             self.divisions['all'] = self.teams
 
     def make_standings_projection_graph(self, file='out', week=None, hstep=40, vstep=40, margin=5, logowidth=30,
-                                        method='spplus', projectionweek=0, logoheight=30, absolute=False,
+                                        method='s&p+', projectionweek=0, logoheight=30, absolute=False,
                                         scale='red-green'):
         # get the records for the final week for each team
         record = []
@@ -58,8 +58,8 @@ class Conference:
 
             # Add the horizontal header label; it is at the very top of the svg and covers all but the first column, with centered text
             outfile.write(
-                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Total Wins</text>\n".format(
-                    margin + hstep * (cols - (cols - 1) / 2), margin + vstep * 0.5))
+                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Total Wins as projected by {}</text>\n".format(
+                    margin + hstep * (cols - (cols - 1) / 2), margin + vstep * 0.5, method.upper()))
 
             # Add column labels for the Team Name
             outfile.write(
