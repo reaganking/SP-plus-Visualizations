@@ -10,7 +10,7 @@ class Cluster:
         self.teams = {Team(name=x, schedule=schedule) for x in schedule if x in teams}
 
     def make_standings_projection_graph(self, file='out', week=None, hstep=40, vstep=40, margin=5, logowidth=30,
-                                        method='s&p+', logoheight=30, absolute=False, scale='red-green'):
+                                        method='sp+', logoheight=30, absolute=False, scale='red-green'):
         # get the records for the final week for each team
         record = []
 

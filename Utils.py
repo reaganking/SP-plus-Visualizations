@@ -3,7 +3,7 @@ import csv
 import json
 import os
 import re
-import subprocess
+from subprocess import Popen
 from colorsys import hls_to_rgb
 from datetime import datetime
 
@@ -126,14 +126,10 @@ class Utils:
         return imagelist
 
 
-    # TODO: get this stupid shell script to work correctly.
     @staticmethod
-    def convert_to_png(file, method, scale):
-        path = os.path.abspath(file)
-        name = file.split('\\')[-1].split('.')[0]
-
-        cmd = ["C:\Program Files\Inkscape\inkscape.exe", '-f {}'.format(path), '-e"{}.png"'.format(name)]
-        subprocess.Popen(cmd, stdout=subprocess.PIPE)
+    def convert_to_png(path):
+        path = os.path.abspath(path)
+        Popen("svg2png convert.bat", cwd=path)
 
     @staticmethod
     def download_logos(width=40, height=40):

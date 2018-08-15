@@ -5,7 +5,7 @@ from utils import Utils
 
 
 class Team:
-    def __init__(self, name=None, schedule=None, method=('s&p+', 'fpi')):
+    def __init__(self, name=None, schedule=None, method=('sp+', 'fpi')):
         self.schedule = schedule
         if not name:
             self.name = ""
@@ -27,7 +27,7 @@ class Team:
             except KeyError:
                 pass
 
-    def win_totals_by_week(self, projectionweek=0, method='s&p+'):
+    def win_totals_by_week(self, projectionweek=0, method='sp+'):
         # first check to make sure the projection week has all the games projected
         try:
             win_probs = [x[projectionweek] for x in self.win_probabilities[method]]
@@ -53,7 +53,7 @@ class Team:
             writer.writerows(record)
 
     def make_win_probability_graph(self, file='out', hstep=40, vstep=40, margin=5, logowidth=30, logoheight=30,
-                                   menuheight=40, absolute=False, projectionweek=0, method="s&p+",
+                                   menuheight=40, absolute=False, projectionweek=0, method="sp+",
                                    colorIndividualGameProbs=False, scale='red-green'):
         win_probs, record = self.win_totals_by_week(projectionweek=projectionweek, method=method)
         logos = Utils.get_logo_URIs()
