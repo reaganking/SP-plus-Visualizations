@@ -3,6 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="Fixed stupid damned ampersand that broke S&amp;P+ graphs.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule.json" beforeDir="false" afterPath="$PROJECT_DIR$/schedule.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-blue/fbs - sp+ - red-blue.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-blue/fbs - sp+ - red-blue.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-blue/georgia - sp+ - red-blue.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-blue/georgia - sp+ - red-blue.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-blue/p5 - sp+ - red-blue.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-blue/p5 - sp+ - red-blue.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-blue/southeastern - sp+ - red-blue.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-blue/southeastern - sp+ - red-blue.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-green/fbs - sp+ - red-green.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-green/fbs - sp+ - red-green.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-green/georgia - sp+ - red-green.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-green/georgia - sp+ - red-green.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-green/p5 - sp+ - red-green.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-green/p5 - sp+ - red-green.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-green/southeastern - sp+ - red-green.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-green/southeastern - sp+ - red-green.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/sp+ - team/fbs - sp+ - team.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - team/fbs - sp+ - team.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/sp+ - team/georgia - sp+ - team.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - team/georgia - sp+ - team.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/sp+ - team/p5 - sp+ - team.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - team/p5 - sp+ - team.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svg output/sp+ - team/southeastern - sp+ - team.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - team/southeastern - sp+ - team.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,33 +29,41 @@
     <session id="-2052528850">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.17" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="112" />
+          <entry key="json" value="2" />
+          <entry key="py" value="3382" />
           <entry key="txt" value="112" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="112" />
-          <entry key="Python" value="112" />
+          <entry key="Python" value="3382" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="11" />
+          <entry key="json" value="2" />
+          <entry key="py" value="13" />
+          <entry key="txt" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="11" />
+          <entry key="JSON" value="2" />
+          <entry key="PLAIN_TEXT" value="24" />
+          <entry key="Python" value="13" />
         </counts>
       </usages-collector>
     </session>
@@ -48,34 +71,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scratch.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cluster.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="23" column="14" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="14" />
+            <state relative-caret-position="257">
+              <caret line="412" column="29" selection-start-line="412" selection-start-column="29" selection-end-line="412" selection-end-column="29" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -95,8 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>kansas state&quot;:</find>
-      <find>south dakota</find>
       <find>&quot;spplus&quot;: 0</find>
       <find>&quot;spplus&quot;: 1</find>
       <find>&quot;fpi&quot;: 0</find>
@@ -125,6 +122,8 @@
       <find>spplus</find>
       <find>s&amp;p+</find>
       <find>&amp;</find>
+      <find>re.</find>
+      <find>re.sub</find>
     </findStrings>
     <replaceStrings>
       <replace>florida international&quot;</replace>
@@ -199,17 +198,17 @@
         <option value="$PROJECT_DIR$/new_schedule.json" />
         <option value="$PROJECT_DIR$/conference.py" />
         <option value="$PROJECT_DIR$/cluster.py" />
-        <option value="$PROJECT_DIR$/schedule.json" />
         <option value="$PROJECT_DIR$/team.py" />
-        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/schedule.json" />
         <option value="$PROJECT_DIR$/scratch.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1158" />
-    <option name="y" value="-16" />
-    <option name="width" value="1296" />
+    <option name="x" value="1254" />
+    <option name="y" value="-8" />
+    <option name="width" value="1294" />
     <option name="height" value="696" />
   </component>
   <component name="ProjectView">
@@ -217,6 +216,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,7 +228,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -297,13 +296,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sp plus visualization" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.scratch" />
       <item itemvalue="Python.tocsv" />
+      <item itemvalue="Python.utils" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.scratch" />
+        <item itemvalue="Python.utils" />
         <item itemvalue="Python.tocsv" />
       </list>
     </recent_temporary>
@@ -655,20 +677,26 @@
       <option name="project" value="LOCAL" />
       <updated>1534339601441</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Fixed stupid damned ampersand that broke S&amp;P+ graphs.">
+      <created>1534339845193</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1534339845193</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1272" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.23926868" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.23926868" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920508" weight="0.33102652" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49925596" weight="0.4059977" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49925596" weight="0.40589198" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -762,13 +790,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils.py</url>
-          <line>399</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -782,37 +803,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/asdasd.html" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="308" selection-start-line="308" selection-end-line="308" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parsed.csv" />
-    <entry file="file://$PROJECT_DIR$/mapper.py" />
-    <entry file="file://$PROJECT_DIR$/tocsv.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/json/decoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5712">
-          <caret line="338" selection-start-line="338" selection-end-line="338" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/json/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5967">
-          <caret line="353" selection-start-line="353" selection-end-line="353" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new new schedule.json" />
-    <entry file="file://$PROJECT_DIR$/Logo URIs.txt" />
-    <entry file="file://$PROJECT_DIR$/new schedule.json" />
-    <entry file="file://$PROJECT_DIR$/new team data.json" />
-    <entry file="file://$PROJECT_DIR$/team data.json" />
-    <entry file="file://$PROJECT_DIR$/svg output/alabama.svg" />
     <entry file="file://$PROJECT_DIR$/Resources/Alabama.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -872,13 +862,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/new_schedule.json" />
-    <entry file="file://$PROJECT_DIR$/pfive-teams.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -889,13 +872,6 @@
     <entry file="file://$PROJECT_DIR$/svg output/spplus - red-green/air force - red-green.svg" />
     <entry file="file://$PROJECT_DIR$/svg output/svg2png convert.bat" />
     <entry file="file://$PROJECT_DIR$/svg output/spplus - team/fbs - team.svg" />
-    <entry file="file://$PROJECT_DIR$/schedule.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499171">
-          <caret line="29406" column="21" selection-start-line="29406" selection-start-column="21" selection-end-line="29406" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/ntpath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8755">
@@ -910,23 +886,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conference.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -934,28 +897,137 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="43" column="44" lean-forward="true" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schedule.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="7691" column="23" selection-start-line="7691" selection-start-column="23" selection-end-line="7691" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cluster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="425">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../rcfb season simulation/venv/Lib/site-packages/requests/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="847" selection-start-line="847" selection-end-line="847" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reddit table.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="27" selection-end-line="144" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="138">
+          <caret line="20" column="4" lean-forward="true" selection-start-line="13" selection-end-line="20" selection-end-column="4" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pfive-teams.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/american athletic reddit table.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atlantic coast reddit table.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="61" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big 12 reddit table.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="21" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conference usa reddit table.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="50" lean-forward="true" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fbs independent reddit table.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mid american reddit table.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="34" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mountain west reddit table.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pac 12 reddit table.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="33" lean-forward="true" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/southeastern reddit table.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big ten reddit table.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="34" lean-forward="true" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sun belt reddit table.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="412" column="29" selection-start-line="412" selection-start-column="29" selection-end-line="412" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

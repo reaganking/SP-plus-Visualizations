@@ -3,9 +3,10 @@ import csv
 import json
 import os
 import re
-from subprocess import Popen
+import urllib.parse
 from colorsys import hls_to_rgb
 from datetime import datetime
+from subprocess import Popen
 
 import requests
 from bs4 import BeautifulSoup as bs
@@ -124,7 +125,6 @@ class Utils:
                 with open(os.path.join("./Resources/", file), "rb") as imageFile:
                     imagelist[file[:-4].lower()] = base64.b64encode(imageFile.read()).decode()
         return imagelist
-
 
     @staticmethod
     def convert_to_png(path):
@@ -400,3 +400,65 @@ class Utils:
             return {'result': result, 'problems': problems}
 
         return insert_fpi_field(data, scrape_values(scrape_team_links()))
+
+    @staticmethod
+    def scrape_png_links(format='reddit', headers={'User-Agent': 'Mozilla/5.0'}):
+        with open("schedule.json", "r") as file:
+            schedule = json.load(file)
+
+        pfive = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
+        gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sun belt']
+        fbs = pfive + gfive + ['fbs independent']
+
+        method = ['sp+', 'fpi']
+        scale = ['red-green', 'red-blue', 'team']
+        result = {}
+
+        if format == 'reddit':
+            header = '|' + 'Name'
+
+        for i in method:
+            for j in scale:
+                if format == 'reddit':
+                    header += '|{} in {}'.format(i.upper(), j.title())
+
+                # Quick and dirty method to scrape fpi from ESPN
+                url = 'https://github.com/EvRoHa/SP-plus-Visualizations/tree/master/png output/{} - {}/'.format(i, j)
+                r = requests.get(url, headers=headers)
+
+                # Example png link:
+                # /EvRoHa/SP-plus-Visualizations/blob/master/png%20output/sp+%20-%20red-green/air%20force%20-%20fpi%20-%20red-blue.png
+
+                search_url = urllib.parse.quote(
+                    '/EvRoHa/SP-plus-Visualizations/blob/master/png output/{} - {}/'.format(i, j))
+                links = bs(r.text).findAll('a', href=re.compile(search_url + '*'))
+
+                for x in links:
+                    name = x.text.split('-')[0].strip().title()
+                    url = re.sub('/blob', '', 'https://raw.githubusercontent.com' + x.attrs['href'])
+                    try:
+                        result[name].extend([{'method': i.upper(), 'scale': j.title(), 'url': url}])
+                    except KeyError:
+                        result[name] = [{'method': i.upper(), 'scale': j.title(), 'url': url}]
+
+        header += '\n' + ':--|:-:|:-:|:-:|:-:|:-:|:-:\n'
+        for conf in fbs:
+            out = header
+            with open('{} reddit table.txt'.format(conf), 'w+') as outfile:
+                for team in result:
+                    try:
+                        if team.lower() == conf:
+                            out += '|' + team + '|' + '|'.join(
+                                ['[{} in {}]({})'.format(x['method'], x['scale'], x['url']) for x in result[team]]) + '\n'
+                        elif schedule[team.lower()]['conference'] == conf:
+                            out += '|' + team + '|' + '|'.join(
+                                ['[{} in {}]({})'.format(x['method'], x['scale'], x['url']) for x in result[team]])
+                            out += '\n'
+                    except KeyError:
+                        pass
+                outfile.write(out)
+
+        return out
+
+
+print(Utils.scrape_png_links())
