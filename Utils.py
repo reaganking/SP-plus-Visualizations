@@ -410,7 +410,7 @@ class Utils:
         gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sun belt']
         fbs = pfive + gfive + ['fbs independent']
 
-        method = ['fpi']
+        method = ['sp+']
         scale = ['red-green', 'red-blue', 'team']
         result = {}
 
@@ -457,6 +457,15 @@ class Utils:
                     except KeyError:
                         pass
                 outfile.write(out)
+
+        with open('Aggregate reddit table.txt', 'w+') as outfile:
+            out = header
+            for val in ['p5', 'g5', 'fbs']:
+                    for team in result:
+                        if team.lower() == val:
+                            out += '|' + team + '|' + '|'.join(
+                                ['[{} in {}]({})'.format(x['method'], x['scale'], x['url']) for x in result[team]]) + '\n'
+            outfile.write(out)
 
         return out
 
