@@ -410,7 +410,7 @@ class Utils:
         gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sun belt']
         fbs = pfive + gfive + ['fbs independent']
 
-        method = ['sp+', 'fpi']
+        method = ['fpi']
         scale = ['red-green', 'red-blue', 'team']
         result = {}
 
