@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="Minor graph fixes.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule.json" beforeDir="false" afterPath="$PROJECT_DIR$/schedule.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-blue/conference usa - sp+ - red-blue.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-blue/conference usa - sp+ - red-blue.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-blue/fbs - sp+ - red-blue.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-blue/fbs - sp+ - red-blue.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-blue/g5 - sp+ - red-blue.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-blue/g5 - sp+ - red-blue.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-blue/north texas - sp+ - red-blue.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-blue/north texas - sp+ - red-blue.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-green/conference usa - sp+ - red-green.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-green/conference usa - sp+ - red-green.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-green/fbs - sp+ - red-green.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-green/fbs - sp+ - red-green.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-green/g5 - sp+ - red-green.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-green/g5 - sp+ - red-green.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sp+ - red-green/north texas - sp+ - red-green.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - red-green/north texas - sp+ - red-green.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sp+ - team/conference usa - sp+ - team.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - team/conference usa - sp+ - team.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sp+ - team/fbs - sp+ - team.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - team/fbs - sp+ - team.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sp+ - team/g5 - sp+ - team.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - team/g5 - sp+ - team.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svg output/sp+ - team/north texas - sp+ - team.svg" beforeDir="false" afterPath="$PROJECT_DIR$/svg output/sp+ - team/north texas - sp+ - team.svg" afterDir="false" />
-    </list>
+    <list default="true" id="a9a1ca11-1f42-4190-bfb2-7e384c2adc43" name="Default" comment="Minor graph fixes." />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,19 +77,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schedule.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="25632" column="29" lean-forward="true" selection-start-line="25632" selection-start-column="29" selection-end-line="25632" selection-end-column="29" />
+            <state relative-caret-position="501">
+              <caret line="16326" column="32" lean-forward="true" selection-start-line="16326" selection-start-column="32" selection-end-line="16326" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="136">
               <caret line="8" column="74" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -126,7 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;fpi&quot;: 0</find>
       <find>baylor&quot;:</find>
       <find>;</find>
       <find>appalach</find>
@@ -156,6 +139,7 @@
       <find>re.sub</find>
       <find>pitt</find>
       <find>umass</find>
+      <find>north texas&quot;:</find>
     </findStrings>
     <replaceStrings>
       <replace>florida international&quot;</replace>
@@ -377,20 +361,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1531750812156</updated>
-    </task>
-    <task id="LOCAL-00005" summary="More interactivity updates; color options modified somewhat based on feedback. Working on adding functions to scrape schedules from ESPN; need to finish adding functionality to allow for custom predictive values to be entered.">
-      <created>1532028959769</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1532028959769</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Just more dicking around and working on features. Added early prototype code to pull JSON data from the NCAA website. Eventually this will mature into a full-blown JSON file containing all of the data for a year's game. Will cross-reference that data with S&amp;P+ to add appropriate fields for each game.">
-      <created>1532355401489</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1532355401489</updated>
     </task>
     <task id="LOCAL-00007" summary="Added Texas per request.">
       <created>1532366835331</created>
@@ -721,24 +691,37 @@
       <option name="project" value="LOCAL" />
       <updated>1534433390160</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Minor graph fixes.">
+      <created>1534448227567</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1534448227567</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Minor graph fixes.">
+      <created>1534448301041</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1534448301043</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1272" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.23926868" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.23926868" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49920508" visible="true" weight="0.33102652" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920508" weight="0.33102652" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49925596" weight="0.40589198" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32718894" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32641292" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32603687" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.328341" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007949" side_tool="true" weight="0.33451328" />
@@ -1044,16 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="74" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Aggregate reddit table.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1063,8 +1036,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schedule.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="25632" column="29" lean-forward="true" selection-start-line="25632" selection-start-column="29" selection-end-line="25632" selection-end-column="29" />
+        <state relative-caret-position="501">
+          <caret line="16326" column="32" lean-forward="true" selection-start-line="16326" selection-start-column="32" selection-end-line="16326" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="74" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
