@@ -1,15 +1,12 @@
 import json
-import os
 
 from cluster import Cluster
 from conference import Conference
 from team import Team
-from utils import Utils
 
 pfive = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
 gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sun belt']
 fbs = pfive + gfive + ['fbs independent']  # don't forget the independents
-
 with open("schedule.json", "r") as file:
     schedule = json.load(file)
 
@@ -18,7 +15,7 @@ for conference in pfive + gfive:
     for method in ['sp+', 'fpi']:
         for color in ['team', 'red-green', 'red-blue']:
             try:
-                conf.make_standings_projection_graph(absolute=False, file=conference, scale=color)
+                conf.make_standings_projection_graph(absolute=False, method=method, file=conference, scale=color)
             except KeyError:
                 print('problem with {}'.format(conf))
 
