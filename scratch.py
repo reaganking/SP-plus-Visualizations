@@ -29,10 +29,10 @@ def make_graphs():
                     val.make_win_probability_graph(absolute=False, file=team, scale=color, method='sp+')
                 except KeyError:
                     print('problem with {}'.format(team))
-
-    for cluster in {'fbs': fbs, 'pfive': pfive, 'gfive': gfive}:
-        current = Cluster(schedule=schedule, teams=[x for x in schedule if schedule[x]['conference'] in cluster])
+    confs = {'fbs': fbs, 'pfive': pfive, 'gfive': gfive, 'independent': ['fbs independent']}
+    for cluster in confs:
+        current = Cluster(schedule=schedule, teams=[x for x in schedule if schedule[x]['conference'] in confs[cluster]])
         for color in ['team', 'red-green', 'red-blue']:
-            current.make_standings_projection_graph(method='sp+', absolute=False, file=cluster.__str__(), scale=color)
+            current.make_standings_projection_graph(method='sp+', absolute=False, file=cluster, scale=color)
 
 make_graphs()

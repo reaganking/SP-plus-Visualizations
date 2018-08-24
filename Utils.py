@@ -243,60 +243,37 @@ class Utils:
         pfive = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
         gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sun belt']
         fbs = pfive + gfive + ['fbs independent']
-        method = ['sp+']
-
         scale = ['red-green', 'red-blue', 'team']
         result = {}
+        out = ''
+        for j in scale:
+            header = '|S&P+ in {}|\n|:-:|\n'.format(j.title())
 
-        if format == 'reddit':
-            header = '|' + 'Name'
+            url = 'https://github.com/EvRoHa/SP-plus-Visualizations/tree/master/png output/sp+ - {}/'.format(j)
+            r = requests.get(url, headers=Utils.headers)
 
-        for i in method:
-            for j in scale:
-                if format == 'reddit':
-                    header += '|{} in {}'.format(i.upper(), j.title())
+            search_url = urllib.parse.quote(
+                '/EvRoHa/SP-plus-Visualizations/blob/master/png output/sp+ - {}/'.format(j))
+            links = bs(r.text).findAll('a', href=re.compile(search_url + '*'))
 
-                url = 'https://github.com/EvRoHa/SP-plus-Visualizations/tree/master/png output/{} - {}/'.format(i, j)
-                r = requests.get(url, headers=Utils.headers)
+            for x in links:
+                name = x.text.split('-')[0].strip().title()
+                url = re.sub('/blob', '', 'https://raw.githubusercontent.com' + x.attrs['href'])
+                try:
+                    result[name] = {'scale': j.title(), 'url': url}
+                except KeyError:
+                    result[name] = [{'scale': j.title(), 'url': url}]
 
-                search_url = urllib.parse.quote(
-                    '/EvRoHa/SP-plus-Visualizations/blob/master/png output/{} - {}/'.format(i, j))
-                links = bs(r.text).findAll('a', href=re.compile(search_url + '*'))
-
-                for x in links:
-                    name = x.text.split('-')[0].strip().title()
-                    url = re.sub('/blob', '', 'https://raw.githubusercontent.com' + x.attrs['href'])
-                    try:
-                        result[name].extend([{'method': i.upper(), 'scale': j.title(), 'url': url}])
-                    except KeyError:
-                        result[name] = [{'method': i.upper(), 'scale': j.title(), 'url': url}]
-
-        header += '\n' + ':--|:-:|:-:|:-:|:-:|:-:|:-:\n'
-        for conf in fbs:
-            out = header
-            with open('{} reddit table.txt'.format(conf), 'w+') as outfile:
-                for team in result:
-                    try:
-                        if team.lower() == conf:
-                            out += '|' + team + '|' + '|'.join(
-                                ['[{} in {}]({})'.format(x['method'], x['scale'], x['url']) for x in
-                                 result[team]]) + '\n'
-                        elif schedule[team.lower()]['conference'] == conf:
-                            out += '|' + team + '|' + '|'.join(
-                                ['[{} in {}]({})'.format(x['method'], x['scale'], x['url']) for x in result[team]])
-                            out += '\n'
-                    except KeyError:
-                        pass
-                outfile.write(out)
-
-        with open('Aggregate reddit table.txt', 'w+') as outfile:
-            out = header
-            for val in ['p5', 'g5', 'fbs']:
-                for team in result:
-                    if team.lower() == val:
-                        out += '|' + team + '|' + '|'.join(
-                            ['[{} in {}]({})'.format(x['method'], x['scale'], x['url']) for x in result[team]]) + '\n'
-            outfile.write(out)
+            with open('{} reddit table.txt'.format(j), 'w+') as outfile:
+                outfile.write(header)
+                for conf in fbs:
+                    outfile.write('|[{} in {}]({})|\n'.format(conf, result[conf.title()]['scale'], result[conf.title()]['url']))
+                    for team in result:
+                        try:
+                            if schedule[team.lower()]['conference'] == conf:
+                                outfile.write('|[{} in {}]({})|\n'.format(team, result[team]['scale'], result[team]['url']))
+                        except KeyError:
+                            pass
 
         return out
 
@@ -346,3 +323,5 @@ def temp():
         result[cells[1].text.lower()] = float(cells[6].text)
 
     return result
+
+#Utils.scrape_png_links()
