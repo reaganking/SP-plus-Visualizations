@@ -4,7 +4,6 @@ import os
 from team import Team
 from utils import Utils
 
-
 class Cluster:
     # A cluster is just a group of teams, not necessarily any particular conference or division
     def __init__(self, schedule, teams):

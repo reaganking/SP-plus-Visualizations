@@ -242,12 +242,12 @@ class Utils:
 
         pfive = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
         gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sun belt']
-        fbs = pfive + gfive + ['fbs independent']
+        fbs = pfive + gfive + ['independent']
         scale = ['red-green', 'red-blue', 'team']
         result = {}
         out = ''
         for j in scale:
-            header = '|S&P+ in {}|\n|:-:|\n'.format(j.title())
+
 
             url = 'https://github.com/EvRoHa/SP-plus-Visualizations/tree/master/png output/sp+ - {}/'.format(j)
             r = requests.get(url, headers=Utils.headers)
@@ -265,15 +265,16 @@ class Utils:
                     result[name] = [{'scale': j.title(), 'url': url}]
 
             with open('{} reddit table.txt'.format(j), 'w+') as outfile:
-                outfile.write(header)
                 for conf in fbs:
-                    outfile.write('|[{} in {}]({})|\n'.format(conf, result[conf.title()]['scale'], result[conf.title()]['url']))
+                    outfile.write('{}\n\n|S&P+ in {}|\n|:-:|\n'.format(conf.title(), j.title()))
+                    outfile.write('|[{} in {}]({})|\n'.format(conf.title(), result[conf.title()]['scale'], result[conf.title()]['url']))
                     for team in result:
                         try:
                             if schedule[team.lower()]['conference'] == conf:
                                 outfile.write('|[{} in {}]({})|\n'.format(team, result[team]['scale'], result[team]['url']))
                         except KeyError:
                             pass
+                    outfile.write('\n\n')
 
         return out
 
@@ -323,5 +324,18 @@ def temp():
         result[cells[1].text.lower()] = float(cells[6].text)
 
     return result
+'''
+with open("schedule.json", "r") as file:
+    schedule = json.load(file)
 
-#Utils.scrape_png_links()
+new = Utils.scrape_spplus()
+
+for team in new:
+    try:
+        schedule[team['name'].lower()]['sp+'] = [team['sp+']]
+    except KeyError:
+        print(team)
+
+with open("schedule.json", "w") as file:
+    json.dump(schedule, file, indent=4, sort_keys=True)
+'''

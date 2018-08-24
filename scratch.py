@@ -9,7 +9,7 @@ from utils import Utils
 def make_graphs():
     pfive = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
     gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sun belt']
-    fbs = pfive + gfive + ['fbs independent']  # don't forget the independents
+    fbs = pfive + gfive + ['independent']  # don't forget the independents
     with open("schedule.json", "r") as file:
         schedule = json.load(file)
 
@@ -29,7 +29,7 @@ def make_graphs():
                     val.make_win_probability_graph(absolute=False, file=team, scale=color, method='sp+')
                 except KeyError:
                     print('problem with {}'.format(team))
-    confs = {'fbs': fbs, 'pfive': pfive, 'gfive': gfive, 'independent': ['fbs independent']}
+    confs = {'fbs': fbs, 'pfive': pfive, 'gfive': gfive, 'independent': ['independent']}
     for cluster in confs:
         current = Cluster(schedule=schedule, teams=[x for x in schedule if schedule[x]['conference'] in confs[cluster]])
         for color in ['team', 'red-green', 'red-blue']:
