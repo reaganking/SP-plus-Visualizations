@@ -5,16 +5,21 @@ from utils import Utils
 
 
 class Team:
-    def __init__(self, name=None, schedule=None, method=('sp+', 'fpi')):
+    def __init__(self, name=None, schedule=None, method=('sp+')):
         self.schedule = schedule
+
         if not name:
             self.name = ""
         else:
             assert isinstance(name, str), "Name is not a string!"
             self.name = name.lower()
             self.conference = self.schedule[self.name]['conference']
-            self.win_probabilities = {y: [x[y] for x in self.schedule[self.name]['schedule']] for y in method}
             self.logo_URI = self.schedule[self.name]['logoURI']
+            self.spplus = self.schedule[self.name]['sp+']
+            self.win_probabilities = [[Utils.calculate_win_prob_from_spplus(self.spplus[y], self.schedule[
+                self.schedule[self.name]['schedule'][x]['opponent']]['sp+'][y], self.schedule[self.name]['schedule'][x][
+                                                                                       'home-away']) for x in
+                                              range(len(self.schedule[self.name]['schedule']))] for y in range(len(self.spplus))]
             try:
                 self.primary_color = Utils.hex_to_rgb(self.schedule[self.name]['primaryColor'])
                 self.secondary_color = Utils.hex_to_rgb(self.schedule[self.name]['secondaryColor'])
@@ -30,12 +35,12 @@ class Team:
     def win_totals_by_week(self, projectionweek=0, method='sp+'):
         # first check to make sure the projection week has all the games projected
         try:
-            win_probs = [x[projectionweek] for x in self.win_probabilities[method]]
+            win_probs = [x for x in self.win_probabilities[projectionweek]]
         except IndexError:
             win_probs = [0 for x in range(12)]
 
         # Make a ragged table to store 'games' x 'wins'
-        record = [[0 for y in range(0, x + 1)] for x in range(1, len(self.win_probabilities[method]) + 1)]
+        record = [[0 for y in range(0, x + 1)] for x in range(1, len(win_probs) + 1)]
         record[0][0] = 1 - win_probs[0]  # first game was a loss
         record[0][1] = win_probs[0]  # first game was a win
 
@@ -66,7 +71,7 @@ class Team:
         with open(path, 'w+') as outfile:
             # The SVG output should generally be divided into 3 leading columns (week, H/A, Opp, Prob) and n=len(self.win_probabilities) + 1 segments
             # and 2 leading rows (Wins and headers) with n=len(self.win_probabilities) vertical segments.
-            rows, cols = 2 + len(self.win_probabilities[method]), 4 + len(self.win_probabilities[method]) + 1
+            rows, cols = 2 + len(self.win_probabilities[projectionweek]), 4 + len(self.win_probabilities[projectionweek]) + 1
 
             # Write the SVG header; remember to write </svg> to close the file
             outfile.write(
@@ -310,4 +315,4 @@ class Team:
                     margin + hstep * 4, margin, hstep * (cols - 4), vstep))
 
             outfile.write("</svg>")
-        #Utils.convert_to_png(path, method, scale)
+        # Utils.convert_to_png(path, method, scale)

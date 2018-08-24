@@ -1,3 +1,4 @@
+import csv
 import os
 
 from team import Team
@@ -9,8 +10,7 @@ class Cluster:
     def __init__(self, schedule, teams):
         self.teams = {Team(name=x, schedule=schedule) for x in schedule if x in teams}
 
-    def make_standings_projection_graph(self, file='out', week=None, hstep=40, vstep=40, margin=5, logowidth=30,
-                                        method='sp+', logoheight=30, absolute=False, scale='red-green'):
+    def get_record_array(self, week=None, method='sp+'):
         # get the records for the final week for each team
         record = []
 
@@ -23,6 +23,14 @@ class Cluster:
         record.extend(
             sorted([(x, x.win_totals_by_week(method=method)[1][week]) for x in self.teams],
                    key=lambda y: sum([y[1][z] * z for z in range(len(y[1]))]), reverse=True))
+
+        return record
+
+    def make_standings_projection_graph(self, file='out', week=None, hstep=40, vstep=40, margin=5, logowidth=30,
+                                        method='sp+', logoheight=30, absolute=False, scale='red-green', record=None):
+        if not record:
+            # get the records for the final week for each team
+            record = self.get_record_array(week, method)
 
         if not os.path.exists(".\svg output\{} - {}".format(method, scale)):
             os.makedirs(".\svg output\{} - {}".format(method, scale))
@@ -185,3 +193,62 @@ class Cluster:
 
             outfile.write("</svg>")
         # Utils.convert_to_png(path, method, scale)
+
+    def rank_schedules(self, file='out', week=None, hstep=40, vstep=40, margin=5, logowidth=30,
+                       method='sp+', logoheight=30, absolute=False, scale='red-green', spplus=0.0):
+        record = []
+
+        # make sure the week is valid
+        if (not week) or (week < 1) or (week > max([len(x.win_probabilities) for x in self.teams])):
+            week = -1
+
+        # recalculate the win probabilities as though the team were average (S&P+ = 0.0)
+        modified_teams = self.teams
+        for team in modified_teams:
+            team.win_probabilities = {'sp+': [Utils.calculate_win_prob_from_spplus(spplus, team.schedule[
+                team.schedule[team.name]['schedule'][x]['opponent']]['sp+'], team.schedule[team.name]['schedule'][x][
+                                                                                       'home-away']) for x in
+                                              range(len(team.schedule[team.name]['schedule']))]}
+
+        # sort teams by their weighted average number of wins and division
+        ordered_teams = sorted([[x, x.win_totals_by_week(method=method)[1][week]] for x in modified_teams],
+                               key=lambda y: 12 * sum([y[1][z] * z for z in range(len(y[1]))]) / len(y[1]))
+        record.extend(ordered_teams)
+
+        with open(file + '.csv', 'w+', newline='') as outfile:
+            csvwriter = csv.writer(outfile)
+
+            base = 12 * sum(ordered_teams[0][1][i] * i for i in range(len(ordered_teams[0][1]))) / len(
+                ordered_teams[0][1])
+
+            conferences = {}
+            rank = 1
+            for x in ordered_teams:
+                x.append(12 * sum(x[1][i] * i for i in range(len(x[1]))) / len(ordered_teams[0][1]))
+                if x[0].conference not in conferences.keys():
+                    conferences[x[0].conference] = {'count': 1, 'positions': rank, 'xw': x[2]}
+                else:
+                    conferences[x[0].conference]['count'] += 1
+                    conferences[x[0].conference]['positions'] += rank
+                    conferences[x[0].conference]['xw'] += x[2]
+                rank += 1
+
+            csvwriter.writerow(['Name', 'Mean Rank', 'Mean Expected Wins', 'Mean Advantage'])
+            rank = 1
+            for c in sorted(conferences.items(), key=lambda y: y[1]['positions'] / y[1]['count']):
+                csvwriter.writerow([rank.__str__() + ". " + c[0].title(),
+                                    c[1]['positions'] / c[1]['count'],
+                                    c[1]['xw'] / c[1]['count'],
+                                    c[1]['xw'] / c[1]['count'] - base])
+                rank += 1
+            csvwriter.writerow([])
+
+            csvwriter.writerow(['Name', 'Conference', 'Expected Wins', 'Advantage'])
+            rank = 1
+            for x in ordered_teams:
+                csvwriter.writerow(
+                    [x[0].name.title(), x[0].conference.title(), x[2], x[2] - base])
+                rank += 1
+
+        self.make_standings_projection_graph(file, week, hstep, vstep, margin, logowidth, method, logoheight, absolute,
+                                             scale, record=record)

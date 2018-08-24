@@ -10,112 +10,18 @@ from subprocess import Popen
 
 import requests
 from bs4 import BeautifulSoup as bs
+from scipy.stats import norm
 
 
 class Utils:
+    headers = {'User-Agent': 'Mozilla/5.0'}
+
     @staticmethod
-    def clean_team_name(name, aliases):
-        # various data sources uses different aliases for the same team (much to my irritation) or special characters
-        # this method will try to enforce some kind of sensible naming standard
-
-        result = name.lower()
-
-        # a dictionary of states or other abbreviations
-        abbrv = {
-            '&': '',
-            'ak': 'alaska',
-            'al': 'alabama',
-            'ar': 'arkansas',
-            'as': 'american samoa',
-            'az': 'arizona',
-            'ca': 'california',
-            'caro': 'carolina',
-            'co': 'colorado',
-            'ct': 'connecticut',
-            'conn': 'connecticut',
-            'dc': 'district of columbia',
-            'de': 'delaware',
-            'fl': 'florida',
-            '(fla.)': '',
-            'ga': 'georgia',
-            'gu': 'guam',
-            'hi': 'hawaii',
-            'ia': 'iowa',
-            'id': 'idaho',
-            'il': 'illinois',
-            'ill': 'illinois',
-            'in': 'indiana',
-            'ks': 'kansas',
-            'ky': 'kentucky',
-            'la': 'louisiana',
-            'ma': 'massachusetts',
-            'md': 'maryland',
-            'me': 'maine',
-            'mi': 'michigan',
-            'miss': 'mississippi',
-            'mn': 'minnesota',
-            'mo': 'missouri',
-            'mp': 'northern mariana islands',
-            'ms': 'mississippi',
-            'mt': 'montana',
-            'na': 'national',
-            'nc': 'north caroli;na',
-            'nd': 'north dakota',
-            'ne': 'nebraska',
-            'nh': 'new hampshire',
-            'nj': 'new jersey',
-            'nm': 'new mexico',
-            'n.m.': 'new mexico',
-            'nv': 'nevada',
-            'ny': 'new york',
-            'oh': 'ohio',
-            'ok': 'oklahoma',
-            'or': 'oregon',
-            'pa': 'pennsylvania',
-            'pr': 'puerto rico',
-            'ri': 'rhode island',
-            'sc': 'south carolina',
-            'sd': 'south dakota',
-            'st': 'state',
-            'tn': 'tennessee',
-            'tenn': 'tennessee',
-            'tx': 'texas',
-            'univ': '',
-            'ut': 'utah',
-            'va': 'virginia',
-            'vi': 'virgin islands',
-            'vt': 'vermont',
-            'wa': 'washington',
-            'wi': 'wisconsin',
-            'wv': 'west virginia',
-            'wy': 'wyoming',
-            's': 'south',
-            'se': 'southeastern'
-        }
-
-        for x in abbrv:
-            result = re.sub(r'\b%s\b' % x, abbrv[x], result)
-
-        # trim out any weird special characters (most likely periods) and convert to lower case
-        result = re.sub(r'[^\w\s]', ' ', result).lower().strip()
-
-        # remove any leading, trailing, or consecutive whitespaces
-        result = re.sub(' +', ' ', result).strip()
-
-        # TODO: build a structure of aliases so we can reference them
-        '''
-        # take the dictionary of aliases and attempt to find the best match
-        for team, alts in enumerate(aliases):
-            try:
-                if len(get_close_matches(name, alts, n=1, cutoff=1)) > 0:
-                    return team
-                else:
-                    raise Exception("No matches found for {}.".format(name))
-            except Exception as error:
-                print("An error occured: ".format(error))
-                return None
-        '''
-        return result
+    def calculate_win_prob_from_spplus(a, b, loc):
+        if loc == 'home':
+            return norm.cdf((a - b + 2.5) / 17)
+        else:
+            return norm.cdf((a - b - 2.5) / 17)
 
     @staticmethod
     def convert_to_URI():
@@ -330,87 +236,15 @@ class Utils:
                     csvwriter.writerow(row)
 
     @staticmethod
-    def scrape_fpi(data):
-        headers = {'User-Agent': 'Mozilla/5.0'}
-
-        def scrape_team_links(headers=headers):
-            # Quick and dirty method to scrape fpi from ESPN
-            r = requests.get('http://www.espn.com/college-football/teams', headers=headers)
-            return bs(r.text).findAll('a', href=re.compile('^http://www.espn.com/college-football/team/_/id/'))
-
-        def scrape_values(links, headers=headers):
-            result = {}
-            for link in links:
-                url = 'http://www.espn.com/college-football/team/fpi?id={}&year=2018'.format(
-                    link['href'][47:link['href'].find('/', 47)])
-                try:
-                    soup = bs(requests.get(url, headers=headers).text, 'html.parser')
-
-                    # Get the team name
-                    name = link.contents[0].lower()
-
-                    # The table we want is the 5th table in the document
-                    try:
-                        table = soup.findAll('table')[4]
-                    except IndexError:
-                        # This is mostly an issue with the lower division schools on that page.
-                        continue
-
-                    for i in range(2, len(table.contents)):
-                        # We want the contents of the 2nd and 3rd columns (the opponent and the FPI win probability)
-                        # The opponent will include either "@ " or "vs " at the beginning. Throw out everything up to and including the first space.
-                        if len(table.contents[i].contents) > 1:
-                            opponent = " ".join(table.contents[i].contents[1].text.split()[1:])
-                            # trim out any weird special characters
-                            opponent = re.sub(r'[^\w\s-]', '', opponent).lower()
-                            fpi = table.contents[i].contents[2].text[:-1]
-                            try:
-                                result[name].append([opponent, round(float(fpi) / 100, 3)])
-                            except KeyError:
-                                result[name] = [[opponent, round(float(fpi) / 100, 3)]]
-                except ConnectionError as e:
-                    print(str(e) + "\n for {}".format(url))
-
-            return result
-
-        def insert_fpi_field(data, values):
-            problems = {}
-            result = data
-
-            # local helper function to locate the opponent within the schedule
-            def find(lst, team, opp):
-                try:
-                    for i, dict in enumerate(lst[team]['schedule']):
-                        if dict['opponent'] == opp:
-                            return i
-                except KeyError:
-                    return -2
-                return -1
-
-            for team in values:
-                for i in values[team]:
-                    index = find(data, team, i[0])
-                    if index >= 0:
-                        try:
-                            result[team]['schedule'][index]['fpi'].append(float(i[1]))
-                        except KeyError:
-                            result[team]['schedule'][index]['fpi'] = [float(i[1])]
-                    elif index == -2:
-                        problems[team] = values[team]
-            return {'result': result, 'problems': problems}
-
-        return insert_fpi_field(data, scrape_values(scrape_team_links()))
-
-    @staticmethod
-    def scrape_png_links(format='reddit', headers={'User-Agent': 'Mozilla/5.0'}):
+    def scrape_png_links(format='reddit'):
         with open("schedule.json", "r") as file:
             schedule = json.load(file)
 
         pfive = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
         gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sun belt']
         fbs = pfive + gfive + ['fbs independent']
-
         method = ['sp+']
+
         scale = ['red-green', 'red-blue', 'team']
         result = {}
 
@@ -422,12 +256,8 @@ class Utils:
                 if format == 'reddit':
                     header += '|{} in {}'.format(i.upper(), j.title())
 
-                # Quick and dirty method to scrape fpi from ESPN
                 url = 'https://github.com/EvRoHa/SP-plus-Visualizations/tree/master/png output/{} - {}/'.format(i, j)
-                r = requests.get(url, headers=headers)
-
-                # Example png link:
-                # /EvRoHa/SP-plus-Visualizations/blob/master/png%20output/sp+%20-%20red-green/air%20force%20-%20fpi%20-%20red-blue.png
+                r = requests.get(url, headers=Utils.headers)
 
                 search_url = urllib.parse.quote(
                     '/EvRoHa/SP-plus-Visualizations/blob/master/png output/{} - {}/'.format(i, j))
@@ -449,7 +279,8 @@ class Utils:
                     try:
                         if team.lower() == conf:
                             out += '|' + team + '|' + '|'.join(
-                                ['[{} in {}]({})'.format(x['method'], x['scale'], x['url']) for x in result[team]]) + '\n'
+                                ['[{} in {}]({})'.format(x['method'], x['scale'], x['url']) for x in
+                                 result[team]]) + '\n'
                         elif schedule[team.lower()]['conference'] == conf:
                             out += '|' + team + '|' + '|'.join(
                                 ['[{} in {}]({})'.format(x['method'], x['scale'], x['url']) for x in result[team]])
@@ -461,13 +292,57 @@ class Utils:
         with open('Aggregate reddit table.txt', 'w+') as outfile:
             out = header
             for val in ['p5', 'g5', 'fbs']:
-                    for team in result:
-                        if team.lower() == val:
-                            out += '|' + team + '|' + '|'.join(
-                                ['[{} in {}]({})'.format(x['method'], x['scale'], x['url']) for x in result[team]]) + '\n'
+                for team in result:
+                    if team.lower() == val:
+                        out += '|' + team + '|' + '|'.join(
+                            ['[{} in {}]({})'.format(x['method'], x['scale'], x['url']) for x in result[team]]) + '\n'
             outfile.write(out)
 
         return out
 
+    @staticmethod
+    def scrape_spplus(
+            url='https://www.sbnation.com/college-football/2018/8/24/17768218/2018-college-football-rankings-projections-strength-schedule'):
+        result = []
 
-print(Utils.scrape_png_links())
+        r = requests.get(url, headers=Utils.headers)
+
+        table = bs(r.text).find('table', {'class': 'p-data-table'})
+
+        for row in table.findAll('tr')[2:]:
+            cells = row.findAll('td')
+            result.append({'name': cells[0].text, 'sp+': float(cells[1].text)})
+
+        return result
+
+    @staticmethod
+    def get_spplus_stdv(
+            url='https://www.sbnation.com/college-football/2018/2/9/16994486/2018-college-football-rankings-projections',
+            schedule=None):
+        '''
+        The STDEV is needed for win probability calculations.
+        :param url: the url to pull S&P+ from
+        :param schedule: if specified, the local file that holds the S&P+ values
+        :return: a float that represents the stdev of the S&P+ values.
+        '''
+        if schedule:
+            # TODO: if the schedule file is specified, use those values
+            pass
+        else:
+            spplus = [x['s&p+'] for x in Utils.scrape_spplus(url)]
+        return (sum([(x - sum(spplus) / len(spplus)) ** 2 for x in spplus]) / len(spplus)) ** 0.5
+
+
+def temp():
+    url = 'https://www.sbnation.com/college-football/2018/2/9/16994486/2018-college-football-rankings-projections'
+    result = {}
+
+    r = requests.get(url, headers=Utils.headers)
+
+    table = bs(r.text).find('table')
+
+    for row in table.findAll('tr')[2:]:
+        cells = row.findAll('td')
+        result[cells[1].text.lower()] = float(cells[6].text)
+
+    return result
