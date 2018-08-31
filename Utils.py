@@ -1,11 +1,10 @@
 import base64
-import csv
 import json
 import os
 import re
 import urllib.parse
 from colorsys import hls_to_rgb
-from datetime import datetime
+
 from subprocess import Popen
 
 import requests
@@ -24,20 +23,6 @@ class Utils:
             return norm.cdf((a - b - 2.5) / 17)
 
     @staticmethod
-    def convert_to_URI():
-        imagelist = {}
-        for file in os.listdir("./Resources"):
-            if file.endswith(".jpg"):
-                with open(os.path.join("./Resources/", file), "rb") as imageFile:
-                    imagelist[file[:-4].lower()] = base64.b64encode(imageFile.read()).decode()
-        return imagelist
-
-    @staticmethod
-    def convert_to_png(path):
-        path = os.path.abspath(path)
-        Popen("svg2png convert.bat", cwd=path)
-
-    @staticmethod
     def download_logos(width=40, height=40):
         # Quick and dirty method to scrape logos from ESPN; they need minor editorial cleanup afterward
         r = requests.get('http://www.espn.com/college-football/teams')
@@ -52,7 +37,7 @@ class Utils:
             pic_url = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/{}.png&h={}&w={}'.format(id,
                                                                                                           height,
                                                                                                           width)
-            with open(os.path.join('./Resources/', '{}.jpg'.format(name.lower())), 'wb') as handle:
+            with open(os.path.join('./Resources/', '{}.png'.format(name.lower())), 'wb') as handle:
                 response = requests.get(pic_url, stream=True)
 
                 if not response.ok:
@@ -64,31 +49,6 @@ class Utils:
 
                     handle.write(block)
 
-    @staticmethod
-    def download_schedules(year=datetime.now().year) -> None:
-        result = []
-        # Quick and dirty method to scrape schedule data
-        for week in range(1, 20):
-            # Pull the scoreboard, which contains links to the details for each game
-            url = "http://data.ncaa.com/jsonp/scoreboard/football/fbs/{}/{}/scoreboard.json".format(year,
-                                                                                                    "%02d" % week)
-            response = requests.get(url)
-            if response.status_code == 404:
-                continue
-            else:
-                # look in the scoreboard dictionary, iterate over the days with games that week
-                for day in json.loads(response.text[response.text.index("(") + 1: response.text.rindex(")")])[
-                    'scoreboard']:
-                    # iterate over the games for that day
-                    for game in day['games']:
-                        url = "http://data.ncaa.com/jsonp/{}".format(game)
-                        response = requests.get(url)
-                        if response.status_code == 404:
-                            continue
-                        else:
-                            result += [json.loads(response.text)]
-        with open('new schedule.json', 'w+') as file:
-            json.dump(result, file)
 
     @staticmethod
     def get_color_brightness(red, green, blue):
@@ -102,17 +62,6 @@ class Utils:
             return 0, 0, 0
         else:
             return 255, 255, 255
-
-    @staticmethod
-    def get_logo_URIs():
-        result = {}
-        with open('Schedule.json', 'r') as infile:
-            teams = json.load(infile)
-
-        for team in teams:
-            if 'logoURI' in teams[team].keys():
-                result[team] = teams[team]['logoURI']
-        return result
 
     @staticmethod
     def gradient_color(lower, upper, val, method='linear', scale='red-green', primaryColor=None,
@@ -159,48 +108,6 @@ class Utils:
         return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
 
     @staticmethod
-    def normalize_schedule(data, method='spplus', week=-1):
-        # A method to ensure that all games have a total win probability equal to one
-
-        # local helper function to locate the opponent within the schedule
-        def find(lst, team, opp):
-            try:
-                for i, dict in enumerate(lst[team]['schedule']):
-                    if dict['opponent'] == opp:
-                        return i
-            except KeyError:
-                return -2
-            return -1
-
-        for team in data:
-            for i in range(len(data[team]['schedule'])):
-                try:
-                    win_prob = data[team]['schedule'][i][method]
-                except KeyError:
-                    continue
-                if len(win_prob) > 0:
-                    opponent = data[team]['schedule'][i]['opponent']
-                    # Is this a opponent even in our json file?
-                    if opponent not in data:
-                        continue
-                    opp_win_prob = round(1 - win_prob[week], 3)
-                    # We have to find the correct index for the opponent
-                    # because they may not play in the same order due to byes
-                    j = find(data, opponent, team)
-
-                    try:
-                        if data[opponent]['schedule'][j][method][week] != opp_win_prob:
-                            data[opponent]['schedule'][j][method][week] = opp_win_prob
-                    except IndexError:
-                        data[opponent]['schedule'][j][method].append(opp_win_prob)
-                    except KeyError:
-                        data[opponent]['schedule'][j][method] = [opp_win_prob]
-                    except TypeError:
-                        print('problem with {}, {}'.format(team, opponent))
-
-        return data
-
-    @staticmethod
     def interpolate(lower, upper, val, method='linear'):
         if upper == lower:
             return 1
@@ -209,31 +116,6 @@ class Utils:
             return x ** 3 * (10 + x * (-15 + 6 * x))
         else:
             return (val - lower) / (upper - lower)
-
-    @staticmethod
-    def schedule_to_csv(schedule_file, csv_file):
-        with open(schedule_file, 'r') as infile:
-            data = json.load(infile)
-        with open(csv_file, 'w+', newline='') as outfile:
-            csvwriter = csv.writer(outfile)
-            count = 0
-            for elem in data:
-                if count == 0:
-                    csvwriter.writerow(
-                        ['home', 'away', 'startDate', 'startTime', 'location', 'conference', 'url', ])
-                    count += 1
-                else:
-                    row = []
-                    for val in ['home', 'away', 'startDate', 'startTime', 'location', 'conference', 'url', ]:
-                        if val == 'home' or val == 'away':
-                            row.append(elem[val]['nameRaw'])
-                        elif val == 'conference':
-                            row.append(' vs. '.join(elem[val].split(' ')[1:]))
-                        elif val == 'url':
-                            row.append('www.ncaa.com' + elem[val])
-                        else:
-                            row.append(elem[val])
-                    csvwriter.writerow(row)
 
     @staticmethod
     def scrape_png_links(format='reddit'):
@@ -311,19 +193,6 @@ class Utils:
         return (sum([(x - sum(spplus) / len(spplus)) ** 2 for x in spplus]) / len(spplus)) ** 0.5
 
 
-def temp():
-    url = 'https://www.sbnation.com/college-football/2018/2/9/16994486/2018-college-football-rankings-projections'
-    result = {}
-
-    r = requests.get(url, headers=Utils.headers)
-
-    table = bs(r.text).find('table')
-
-    for row in table.findAll('tr')[2:]:
-        cells = row.findAll('td')
-        result[cells[1].text.lower()] = float(cells[6].text)
-
-    return result
 '''
 with open("schedule.json", "r") as file:
     schedule = json.load(file)

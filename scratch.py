@@ -2,37 +2,60 @@ import json
 
 from cluster import Cluster
 from conference import Conference
+from defs import FBS, PFIVE, GFIVE
 from team import Team
-from utils import Utils
 
 
-def make_graphs():
-    pfive = ['atlantic coast', 'big ten', 'big 12', 'pac 12', 'southeastern']
-    gfive = ['american athletic', 'conference usa', 'mid american', 'mountain west', 'sun belt']
-    fbs = pfive + gfive + ['independent']  # don't forget the independents
+def load_schedule():
     with open("schedule.json", "r") as file:
+        global schedule
         schedule = json.load(file)
 
-    for conference in pfive + gfive:
+
+def make_cluster_graphs(absolute=False, old=None, scale=None):
+    groups = {'fbs': FBS, 'pfive': PFIVE, 'gfive': GFIVE, 'independent': ['independent']}
+    for cluster in groups:
+        current = Cluster(schedule=schedule,
+                          teams=[x for x in schedule if schedule[x]['conference'] in groups[cluster]])
+        if not scale:
+            for color in ['team', 'red-green', 'red-blue']:
+                current.make_standings_projection_graph(method='sp+', absolute=absolute, old=old, file=cluster,
+                                                        scale=color)
+        else:
+            current.make_standings_projection_graph(method='sp+', absolute=absolute, old=old, file=cluster, scale=scale)
+
+
+def make_conf_graphs(absolute=False, old=None, scale=None):
+    for conference in PFIVE + GFIVE:
         conf = Conference(name=conference, schedule=schedule)
-        for color in ['team', 'red-green', 'red-blue']:
+        if not scale:
+            for color in ['team', 'red-green', 'red-blue']:
+                try:
+                    conf.make_standings_projection_graph(absolute=absolute, method='sp+', file=conference, old=old,
+                                                         scale=color)
+                except KeyError:
+                    print('problem with {}'.format(conf))
+        else:
             try:
-                conf.make_standings_projection_graph(absolute=False, method='sp+', file=conference, scale=color)
+                conf.make_standings_projection_graph(absolute=absolute, method='sp+', file=conference, old=old,
+                                                     scale=scale)
             except KeyError:
                 print('problem with {}'.format(conf))
 
-    for team in schedule:
-        if schedule[team]['conference'] in fbs:
-            val = Team(name=team, schedule=schedule)
-            for color in ['team', 'red-green', 'red-blue']:
-                try:
-                    val.make_win_probability_graph(absolute=False, file=team, scale=color, method='sp+')
-                except KeyError:
-                    print('problem with {}'.format(team))
-    confs = {'fbs': fbs, 'pfive': pfive, 'gfive': gfive, 'independent': ['independent']}
-    for cluster in confs:
-        current = Cluster(schedule=schedule, teams=[x for x in schedule if schedule[x]['conference'] in confs[cluster]])
-        for color in ['team', 'red-green', 'red-blue']:
-            current.make_standings_projection_graph(method='sp+', absolute=False, file=cluster, scale=color)
 
-make_graphs()
+def make_team_graphs(old=True, scale=None, week=-1):
+    for team in schedule:
+        if schedule[team]['conference'] in FBS:
+            val = Team(name=team, schedule=schedule)
+            if not scale:
+                for color in ['team', 'red-green', 'red-blue']:
+                    val.make_win_probability_graph(absolute=False, file=team, old=old, scale=color, method='sp+',
+                                                   week=week)
+            else:
+                val.make_win_probability_graph(absolute=False, file=team, old=old, scale=scale, method='sp+')
+
+
+load_schedule()
+make_conf_graphs(old=True)
+make_cluster_graphs(old=True)
+make_team_graphs(old=True, week=1)

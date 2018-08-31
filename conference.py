@@ -10,47 +10,51 @@ class Conference:
         self.teams = {Team(name=x, schedule=schedule) for x in schedule if schedule[x]['conference'] == name}
         self.divisions = {}
         for team in self.teams:
-            # not all conferences have divisions
-            try:
-                if team.division not in self.divisions:
-                    self.divisions[team.division] = []
-                self.divisions[team.division].append(team)
-            except AttributeError:
-                pass
+            if team.division not in self.divisions:
+                self.divisions[team.division] = []
+            self.divisions[team.division].append(team)
+
         if len(self.divisions) == 0:
             self.divisions['all'] = self.teams
 
-    def make_standings_projection_graph(self, file='out', week=None, hstep=40, vstep=40, margin=5, logowidth=30,
-                                        method='sp+', projectionweek=0, logoheight=30, absolute=False,
-                                        scale='red-green'):
+    def get_record_array(self, week=None):
         # get the records for the final week for each team
         record = []
 
         # make sure the week is valid
-        if (not week) or (week < 1) or (week > max([len(x.win_probabilities) for x in self.teams])):
+        if (not week) or (week < 1) or (week > max([len(x.win_probabilities[week]) for x in self.teams])):
             week = -1
+            prior_week = week
+        else:
+            prior_week = week - 1
+
+        for t in self.teams:
+            record.append([t, t.project_win_totals(week=week)[-1], t.project_win_totals(week=prior_week)[-1]])
 
         # sort teams by their weighted average number of wins and division
+        record.sort(key=lambda x: (x[0].division, sum([x[1][z] * z for z in range(len(x[1]))])), reverse=True)
 
-        for division in sorted(self.divisions.keys()):
-            # record will be a list of tuples (team, list) where list is the win total probability by week
-            record.extend(
-                sorted([(x, x.win_totals_by_week(method=method, projectionweek=projectionweek)[1][week]) for x in
-                        self.divisions[division]],
-                       key=lambda y: sum([y[1][z] * z for z in range(len(y[1]))]), reverse=True))
+        return record
 
+    def make_standings_projection_graph(self, file='out', week=None, hstep=50, vstep=50, margin=5, logowidth=40,
+                                        method='sp+', logoheight=40, absolute=False,
+                                        scale='red-green', old=None):
+
+        # get the records for the final week for each team
+        record = self.get_record_array(week=week)
         if not os.path.exists(".\svg output\{} - {}".format(method, scale)):
             os.makedirs(".\svg output\{} - {}".format(method, scale))
         path = os.path.join(".\svg output\{} - {}".format(method, scale),
                             '{} - {} - {}.svg'.format(file, method, scale))
-        with open(path, 'w+') as outfile:
-            # The SVG output should generally be divided into 3 leading columns (week, H/A, Opp, Prob) and n=len(self.win_probabilities) + 1 segments
-            # and 2 leading rows (Wins and headers) with n=len(self.win_probabilities) vertical segments.
-            rows, cols = len(record) + 2, max([len(x[1]) for x in record]) + 1
+        with open(path, 'w+', encoding='utf-8') as outfile:
+            if not old:
+                rows, cols = len(record) + 2, max([len(x[1]) for x in record]) + 1
+            else:
+                rows, cols = len(record) + 2, max([len(x[1]) for x in record]) + 2
 
             # Write the SVG header; remember to write </svg> to close the file
             outfile.write(
-                "<svg version='1.1'\n\tbaseProfile='full'\n\twidth='{}' height='{}'\n\txmlns='http://www.w3.org/2000/svg'\n\txmlns:xlink='http://www.w3.org/1999/xlink'\n\tstyle='shape-rendering:crispEdges;'>\n".format(
+                "<svg version='1.1'\n\tbaseProfile='full'\n\tencoding='UTF-8'\n\twidth='{}' height='{}'\n\txmlns='http://www.w3.org/2000/svg'\n\txmlns:xlink='http://www.w3.org/1999/xlink'\n\tstyle='shape-rendering:crispEdges;'>\n".format(
                     hstep * cols + 2 * margin, vstep * rows + 2 * margin))
 
             # Fill the background with white
@@ -58,12 +62,21 @@ class Conference:
 
             # Add the horizontal header label; it is at the very top of the svg and covers all but the first column, with centered text
             outfile.write(
-                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Total Wins as projected by {}</text>\n".format(
-                    margin + hstep * (cols - (cols - 1) / 2), margin + vstep * 0.5, method.upper()))
+                "<text text-anchor='middle' alignment-baseline='baseline' x='{}' y='{}'  style='font-size:13px;font-family:Arial'>Total Wins as projected by {}</text>\n".format(
+                    margin + hstep * (cols - (cols - 1) / 2), margin + vstep * 0.5 - 3, method.upper()))
+            if not week or week == 0:
+                first_week, second_week = 0, 0
+            else:
+                first_week = week - 1
+                second_week = week
+
+            outfile.write(
+                "<text text-anchor='middle' alignment-baseline='hanging' x='{}' y='{}'  style='font-size:13px;font-family:Arial'>(change from week {} to week {})</text>\n".format(
+                    margin + hstep * (cols - (cols - 1) / 2), margin + vstep * 0.5 + 3, first_week, second_week))
 
             # Add column labels for the Team Name
             outfile.write(
-                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:12px;font-family:Arial'>Team</text>\n".format(
+                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}'  style='font-size:13px;font-family:Arial'>Team</text>\n".format(
                     margin + hstep * 0.5, margin + vstep * 1.5))
 
             # This set of loops fills in the body of the table
@@ -83,84 +96,111 @@ class Conference:
 
                 for j in range(0, cols - 1):
                     if i == 0:
-                        # Add the column label
-                        outfile.write(
-                            "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:12px;font-family:Arial'>{}{}".format(
-                                margin + hstep * (1.5 + j), margin + vstep * 1.5, j, "</text>\n"))
-
-                    # Draw the color-coded box
-                    outfile.write(
-                        "<rect id='{}_{}' x='{}' y='{}' width='{}' height='{}' style='".format(
-                            i, j, margin + hstep * (1 + j), margin + vstep * (2 + i), hstep, vstep, ))
-
+                        if not old:
+                            if j != 1:
+                                txt = 'Wins'
+                            else:
+                                txt = 'Win'
+                            # Add the column label
+                            outfile.write(
+                                "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:13px;font-family:Arial'>{} {}</text>\n".format(
+                                    margin + hstep * (1.5 + j), margin + vstep * 1.5, j, txt))
+                        else:
+                            if j == cols - 2:
+                                if old:
+                                    # Add the column label
+                                    outfile.write(
+                                        "<text text-anchor='middle' alignment-baseline='baseline' x='{}' y='{}' style='font-size:10px;font-family:Arial'>Expected</text>\n".format(
+                                            margin + hstep * (1.5 + j), margin + vstep * 1.5 - 8))
+                                    outfile.write(
+                                        "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:10px;font-family:Arial'>Wins</text>\n".format(
+                                            margin + hstep * (1.5 + j), margin + vstep * 1.5))
+                                    outfile.write(
+                                        "<text text-anchor='middle' alignment-baseline='hanging' x='{}' y='{}' style='font-size:10px;font-family:Arial'>(Change)</text>\n".format(
+                                            margin + hstep * (1.5 + j), margin + vstep * 1.5 + 6))
+                            else:
+                                if j != 1:
+                                    txt = 'Wins'
+                                else:
+                                    txt = 'Win'
+                                # Add the column label
+                                outfile.write(
+                                    "<text text-anchor='middle' alignment-baseline='middle' x='{}' y='{}' style='font-size:13px;font-family:Arial'>{} {}</text>\n".format(
+                                        margin + hstep * (1.5 + j), margin + vstep * 1.5, j, txt))
                     if j < len(record[i][1]):
-                        # We need to fill the absolute color code in the box initially and store the relative and absolute color codes
-                        # so that we can use them later to animate the chart
-                        ra, ga, ba = Utils.gradient_color(lower, upper, record[i][1][j], scale=scale,
-                                                          primaryColor=record[i][0].primary_color,
-                                                          secondaryColor=record[i][0].secondary_color)
-                        r, g, b = Utils.gradient_color(0, 1, record[i][1][j], scale=scale,
-                                                       primaryColor=record[i][0].primary_color,
-                                                       secondaryColor=record[i][0].secondary_color)
-
                         if absolute:
-                            ra, ga, ba, r, g, b = r, g, b, ra, ga, ba
+                            r, g, b = Utils.gradient_color(0, 1, record[i][1][j], scale=scale,
+                                                           primaryColor=record[i][0].primary_color,
+                                                           secondaryColor=record[i][0].secondary_color)
+                        else:
+                            r, g, b = Utils.gradient_color(lower, upper, record[i][1][j], scale=scale,
+                                                           primaryColor=record[i][0].primary_color,
+                                                           secondaryColor=record[i][0].secondary_color)
 
-                        # Assign the color code.
-                        outfile.write("fill:rgb({},{},{})'>\n".format(ra, ga, ba))
-
-                        # The first two animate the colors to change when the user mouses over / off the game box
+                        # Draw the color-coded box
                         outfile.write(
-                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='mouseover'/>\n".format(
-                                r, g, b, ra, ga, ba))
-                        outfile.write(
-                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='mouseout'/>\n</rect>".format(
-                                ra, ga, ba, r, g, b))
+                            "<rect id='{}_{}' x='{}' y='{}' width='{}' height='{}' style='fill:rgb({},{},{})'/>\n".format(
+                                i, j, margin + hstep * (1 + j), margin + vstep * (2 + i), hstep, vstep, r, g, b))
 
                         # Should the text be white or black?
-                        text_color = Utils.get_text_contrast_color(ra, ga, ba)
-
-                        # set the alt color to the opposite of the text color
-                        alt_color = Utils.get_text_contrast_color(r, g, b)
+                        text_color = Utils.get_text_contrast_color(r, g, b)
 
                         # Write the probability in the box
                         outfile.write(
-                            "<text text-anchor='middle' alignment-baseline='bottom ' x='{}' y='{}' style='font-size:11px;fill:rgb({},{},{});font-family:Arial;pointer-events: none'>{}%".format(
-                                margin + hstep * (1.5 + j), margin + vstep * (2.5 + i), *text_color,
+                            "<text text-anchor='middle' alignment-baseline='baseline' x='{}' y='{}' style='font-size:12px;fill:rgb({},{},{});font-family:Arial;pointer-events: none'>{}%</text>".format(
+                                margin + hstep * (1.5 + j), margin + vstep * (2.5 + i) - 2, *text_color,
                                 round(100 * record[i][1][j], 1)))
 
-                        # These next two animate the colors to change when the user mouses over / off the week label
-                        outfile.write(
-                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='{}_{}.mouseover'/>\n".format(
-                                *alt_color, *text_color, i, j))
-                        outfile.write(
-                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='{}_{}.mouseout'/></text>\n".format(
-                                *text_color, *alt_color, i, j))
-
                         # Add the cumulative probability text
-                        # Should the text be white or black?
-                        text_color = Utils.get_text_contrast_color(ra, ga, ba)
-
-                        # set the alt color to the opposite of the text color
-                        alt_color = Utils.get_text_contrast_color(r, g, b)
-
-                        # Write the probability in the box
                         outfile.write(
-                            "<text text-anchor='left' alignment-baseline='bottom' x='{}' y='{}' style='font-size:8px;fill:rgb({},{},{});font-family:Arial;pointer-events: none'>{}%".format(
-                                margin * 1.5 + hstep * (1 + j), margin * 0.5 + vstep * (3 + i), *text_color,
+                            "<text text-anchor='end' alignment-baseline='baseline' x='{}' y='{}' style='font-size:8px;fill:rgb({},{},{});font-family:Arial;pointer-events: none'>{}%</text>".format(
+                                margin * 0.8 + hstep * (2 + j), margin * 0.5 + vstep * (3 + i), *text_color,
                                 round(abs(100 * (1 - sum(record[i][1][x] for x in range(0, j)))), 1)))
+                        if old:
+                            diff = round(100 * (record[i][2][j] - record[i][1][j]), 1)
+                            if diff > 0:
+                                txt = '+{}'.format(diff)
+                            elif diff == 0:
+                                txt = '+0.0'
+                            else:
+                                txt = str(diff)
 
-                        # These next two animate the colors to change when the user mouses over / off the week label
+                            # Write the probability change in the box
+                            outfile.write(
+                                "<text text-anchor='middle' alignment-baseline='hanging' x='{}' y='{}' style='font-size:12px;fill:rgb({},{},{});font-family:Arial;pointer-events: none'>({}%)</text>\n".format(
+                                    margin + hstep * (1.5 + j), margin + vstep * (2.5 + i) + 2, *text_color,
+                                    txt))
+                    elif old:
+                        old_xw = sum(x * record[i][2][x] for x in range(len(record[i][2])))
+                        new_xw = sum(x * record[i][1][x] for x in range(len(record[i][1])))
+                        diff = round(new_xw - old_xw, 1)
+                        if diff > 0:
+                            txt = '+{}'.format(diff)
+                            r, g, b = 0, 205, 0
+                            weight = 'bolder'
+                        elif diff == 0:
+                            txt = '+0.0'
+                            r, g, b = 0, 0, 0
+                            weight = 'normal'
+                        else:
+                            txt = str(diff)
+                            r, g, b = 255, 77, 77
+                            weight = 'bolder'
+
                         outfile.write(
-                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='{}_{}.mouseover'/>\n".format(
-                                *alt_color, *text_color, i, j))
+                            "<text text-anchor='middle' alignment-baseline='baseline ' x='{}' y='{}' style='font-size:13px;fill:rgb(0,0,0);font-family:Arial;pointer-events: none'>{}</text>".format(
+                                margin + hstep * (1.5 + j), margin + vstep * (2.5 + i) - 3, round(new_xw, 1)))
+
+                        # How did the win expectation change?
                         outfile.write(
-                            "<animate fill='freeze' dur='0.1s' to='rgb({},{},{})' from='rgb({},{},{})' attributeName='fill' begin='{}_{}.mouseout'/></text>\n".format(
-                                *text_color, *alt_color, i, j))
+                            "<text text-anchor='middle' alignment-baseline='hanging ' x='{}' y='{}' style='font-weight:{};font-size:13px;fill:rgb({},{},{});font-family:Arial;pointer-events: none'>({})</text>".format(
+                                margin + hstep * (1.5 + j), margin + vstep * (2.5 + i) + 3, weight, r, g, b, txt))
+
                     else:
-                        # Assign the color code.
+                        # Draw a gray box
                         outfile.write(
-                            "fill:rgb({},{},{})'/>\n".format(150, 150, 150))
+                            "<rect id='{}_{}' x='{}' y='{}' width='{}' height='{}' style='fill:rgb({},{},{})'/>\n".format(
+                                i, j, margin + hstep * (1 + j), margin + vstep * (2 + i), hstep, vstep, 150, 150, 150))
 
             # This set of loops draws the grid over the table.
             for i in range(2, rows):
