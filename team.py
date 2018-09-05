@@ -100,10 +100,10 @@ class Team:
 
         last_win_prob = self.win_probabilities[best_match]
 
-        record = self.project_win_totals(week=week - 1)
+        record = self.project_win_totals(week=week)
         played = self.get_played_games()
         if old:
-            prior = self.project_win_totals(week - 2)
+            prior = self.project_win_totals(week - 1)
         if not os.path.exists(".\svg output\{} - {}".format(method, scale)):
             os.makedirs(".\svg output\{} - {}".format(method, scale))
         path = os.path.join(".\svg output\{} - {}".format(method, scale),
@@ -188,7 +188,7 @@ class Team:
                                    text=str(round(100 * record[i][j], 1)) + '%')
 
                     if old:
-                        diff = round(100 * (prior[i][j] - record[i][j]), 1)
+                        diff = round(100 * (record[i][j] - prior[i][j]), 1)
                         if diff > 0:
                             txt = '(+{})%'.format(diff)
                         elif diff < 0:
@@ -251,8 +251,7 @@ class Team:
                                text='{} - {}'.format(*played[i][0:2]))
 
             elif old:
-                diff = round(100 * last_win_prob[i] - 100 * cur_win_prob[i],
-                             1)
+                diff = round(100 * (cur_win_prob[i] - last_win_prob[i]), 1)
                 if diff > 0:
                     txt = '(+{}%)'.format(diff)
                     r, g, b = 0, 205, 0
@@ -268,7 +267,7 @@ class Team:
 
                 # Add the probability text in the prob column
                 graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i) - 2,
-                               alignment='middle', text=round(100 * cur_win_prob[i], 1))
+                               alignment='middle', text=str(round(100 * cur_win_prob[i], 1)) + '%')
 
                 # Write the probability change in the box
                 graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i) + 8, alignment='middle',

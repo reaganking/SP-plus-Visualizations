@@ -4,6 +4,7 @@ import os
 import re
 import urllib.parse
 from colorsys import hls_to_rgb
+from datetime import datetime
 
 from subprocess import Popen
 
@@ -162,16 +163,15 @@ class Utils:
 
     @staticmethod
     def scrape_spplus(
-            url='https://www.sbnation.com/college-football/2018/8/24/17768218/2018-college-football-rankings-projections-strength-schedule'):
+        url='https://www.footballoutsiders.com/stats/ncaa2018'):
         result = []
 
         r = requests.get(url, headers=Utils.headers)
 
-        table = bs(r.text).find('table', {'class': 'p-data-table'})
-
-        for row in table.findAll('tr')[2:]:
+        for row in bs(r.text).findAll('tr')[1:]:
             cells = row.findAll('td')
-            result.append({'name': cells[0].text, 'sp+': float(cells[1].text)})
+            if cells[0].text != 'Team':
+                result.append({'name': cells[0].text, 'sp+': float(cells[4].text)})
 
         return result
 
@@ -192,19 +192,18 @@ class Utils:
             spplus = [x['s&p+'] for x in Utils.scrape_spplus(url)]
         return (sum([(x - sum(spplus) / len(spplus)) ** 2 for x in spplus]) / len(spplus)) ** 0.5
 
+    @staticmethod
+    def update_spplus():
+        with open("schedule.json", "r") as file:
+            schedule = json.load(file)
 
-'''
-with open("schedule.json", "r") as file:
-    schedule = json.load(file)
+        new = Utils.scrape_spplus()
 
-new = Utils.scrape_spplus()
+        for team in new:
+            try:
+                schedule[team['name'].lower()]['sp+'][datetime.now().strftime("%Y-%m-%d")] = team['sp+']
+            except KeyError:
+                print(team)
 
-for team in new:
-    try:
-        schedule[team['name'].lower()]['sp+'] = [team['sp+']]
-    except KeyError:
-        print(team)
-
-with open("schedule.json", "w") as file:
-    json.dump(schedule, file, indent=4, sort_keys=True)
-'''
+        with open("schedule.json", "w") as file:
+            json.dump(schedule, file, indent=4, sort_keys=True)
