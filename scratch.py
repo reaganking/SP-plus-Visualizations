@@ -56,6 +56,6 @@ def make_team_graphs(old=True, scale=None, week=-1):
 
 
 load_schedule()
-make_conf_graphs(old=True)
-make_cluster_graphs(old=True)
+#make_conf_graphs(old=True)
+#make_cluster_graphs(old=True)
 make_team_graphs(old=True, week=1)

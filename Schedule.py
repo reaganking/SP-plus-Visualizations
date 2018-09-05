@@ -161,6 +161,7 @@ class Schedule(object):
                             result += [json.loads(response.text)]
         with open('new schedule.json', 'w+') as file:
             json.dump(result, file, indent=4, sort_keys=True)
+        return result
 
     def normalize_schedule(self, method='spplus', week=-1):
         # A method to ensure that all games have a total win probability equal to one
@@ -285,26 +286,43 @@ class Schedule(object):
                 new = json.load(infile)
         for game in new:
             away = find(game['away']['nameRaw'])
-            for i in range(len(self.data[away]['schedule'])):
-                if self.data[away]['schedule'][i]['id'] == game['id']:
-                    for key in ['startDate', 'startTime']:
-                        self.data[away]['schedule'][i][key] = game[key]
-                    for key in ['scoreBreakdown', 'teamRank', 'winner']:
-                        self.data[away]['schedule'][i][key] = game['away'][key]
-                    self.data[away]['schedule'][i]['scoreBreakdown'] = [int(x) for x in self.data[away]['schedule'][i][
-                        'scoreBreakdown']]
-                    break
-
+            try:
+                for i in range(len(self.data[away]['schedule'])):
+                    if self.data[away]['schedule'][i]['id'] == game['id']:
+                        for key in ['startDate', 'startTime']:
+                            self.data[away]['schedule'][i][key] = game[key]
+                        for key in ['scoreBreakdown', 'teamRank', 'winner']:
+                            self.data[away]['schedule'][i][key] = game['away'][key]
+                        try:
+                            self.data[away]['schedule'][i]['scoreBreakdown'] = [int(x) if len(x)>0 else 0
+                                                                                for x in self.data[away]['schedule'][i][
+                                                                                    'scoreBreakdown']]
+                        except ValueError as e:
+                            print("problem with scores for {}".format(away))
+                            pass
+                        break
+            except KeyError:
+                print("uh oh")
+                pass
             home = find(game['home']['nameRaw'])
-            for i in range(len(self.data[home]['schedule'])):
-                if self.data[home]['schedule'][i]['id'] == game['id']:
-                    for key in ['startDate', 'startTime']:
-                        self.data[home]['schedule'][i][key] = game[key]
-                    for key in ['scoreBreakdown', 'teamRank', 'winner']:
-                        self.data[home]['schedule'][i][key] = game['home'][key]
-                    self.data[home]['schedule'][i]['scoreBreakdown'] = [int(x) for x in self.data[home]['schedule'][i][
-                        'scoreBreakdown']]
-                    break
+            try:
+                for i in range(len(self.data[home]['schedule'])):
+                    if self.data[home]['schedule'][i]['id'] == game['id']:
+                        for key in ['startDate', 'startTime']:
+                            self.data[home]['schedule'][i][key] = game[key]
+                        for key in ['scoreBreakdown', 'teamRank', 'winner']:
+                            self.data[home]['schedule'][i][key] = game['home'][key]
+                        try:
+                            self.data[home]['schedule'][i]['scoreBreakdown'] = [int(x) if len(x)>0 else 0
+                                                                                for x in self.data[home]['schedule'][i][
+                                                                                    'scoreBreakdown']]
+                        except ValueError as e:
+                            print("problem with scores for {}".format(away))
+                            pass
+
+                        break
+            except KeyError:
+                pass
 
     def to_csv(self, csv_file):
         with open(csv_file, 'w+', newline='') as outfile:
@@ -327,7 +345,8 @@ class Schedule(object):
                         else:
                             row.append(elem[val])
                     csvwriter.writerow(row)
-s=Schedule('schedule.json')
-for team in s.data:
-    s.data[team]['sp+'] = {'2018-08-23': s.data[team]['sp+']['2018-08-23'][0][0]}
+
+
+s = Schedule('schedule.json')
+s.update_from_NCAA(new='new schedule.json')
 s.save_to_file()

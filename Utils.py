@@ -130,8 +130,6 @@ class Utils:
         result = {}
         out = ''
         for j in scale:
-
-
             url = 'https://github.com/EvRoHa/SP-plus-Visualizations/tree/master/png output/sp+ - {}/'.format(j)
             r = requests.get(url, headers=Utils.headers)
 
