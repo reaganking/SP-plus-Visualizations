@@ -2,12 +2,14 @@ import base64
 import csv
 import json
 import os
+import pprint
 import re
 from datetime import datetime
 
 import requests
 
-from defs import FBS
+from defs import FBS, WEEKS
+from poll import APPoll
 from team import Team
 from utils import Utils
 
@@ -15,7 +17,7 @@ from utils import Utils
 class Schedule(object):
     def __init__(self, file):
         self.file = file
-        with open(file, 'r') as infile:
+        with open(file, 'r', encoding='utf8') as infile:
             self.data = json.load(infile)
 
     def clean_team_name(self, name):
@@ -208,19 +210,6 @@ class Schedule(object):
             win_total_probs = team.project_win_totals()[1][-1]
             self.data[t]['sp+ expected wins'] = sum([win_total_probs[i] * i for i in range(len(win_total_probs))])
 
-    def save_to_file(self, file=None):
-        if not file:
-            file = self.file
-
-        if file == self.file:
-            if input('Overwrite existing schedule file? Y/N: ')[0].lower() != 'y':
-                file = input('New file name: ')
-                if file[-5:] != '.json':
-                    file += '.json'
-
-        with open(file, 'w+') as outfile:
-            json.dump(self.data, outfile, indent=4, sort_keys=True)
-
     def populate_URIs(self):
         for file in os.listdir("./Resources"):
             if file.endswith(".jpg"):
@@ -231,6 +220,19 @@ class Schedule(object):
                         self.data[name][file[:-4].lower()] = uri
                     except KeyError:
                         print("File for {}, but not found in schedule.".format(name, uri))
+
+    def save_to_file(self, file=None):
+        if not file:
+            file = self.file
+
+        if file == self.file:
+            if input('Overwrite existing schedule file? Y/N: ')[0].lower() != 'y':
+                file = input('New file name: ')
+                if file[-5:] != '.json':
+                    file += '.json'
+
+        with open(file, 'w+', encoding='utf8') as outfile:
+            json.dump(self.data, outfile, indent=4, sort_keys=True, ensure_ascii=False)
 
     def swap_teams(self, team_a, team_b):
         # TODO: Tidy up this code
@@ -294,7 +296,7 @@ class Schedule(object):
                         for key in ['scoreBreakdown', 'teamRank', 'winner']:
                             self.data[away]['schedule'][i][key] = game['away'][key]
                         try:
-                            self.data[away]['schedule'][i]['scoreBreakdown'] = [int(x) if len(x)>0 else 0
+                            self.data[away]['schedule'][i]['scoreBreakdown'] = [int(x) if len(x) > 0 else 0
                                                                                 for x in self.data[away]['schedule'][i][
                                                                                     'scoreBreakdown']]
                         except ValueError as e:
@@ -313,7 +315,7 @@ class Schedule(object):
                         for key in ['scoreBreakdown', 'teamRank', 'winner']:
                             self.data[home]['schedule'][i][key] = game['home'][key]
                         try:
-                            self.data[home]['schedule'][i]['scoreBreakdown'] = [int(x) if len(x)>0 else 0
+                            self.data[home]['schedule'][i]['scoreBreakdown'] = [int(x) if len(x) > 0 else 0
                                                                                 for x in self.data[home]['schedule'][i][
                                                                                     'scoreBreakdown']]
                         except ValueError as e:
@@ -323,6 +325,60 @@ class Schedule(object):
                         break
             except KeyError:
                 pass
+
+    def update_rankings(self, year=datetime.now().year, week=None) -> None:
+        if not week:
+            date = max(
+                datetime.strptime(w[1], '%Y-%m-%d') for w in WEEKS if
+                datetime.strptime(w[1], '%Y-%m-%d') <= datetime.now()).strftime('%Y-%m-%d')
+            week = [x[1] for x in WEEKS].index(date) + 1
+        elif 0 < week < len(WEEKS):
+            date = WEEKS[week][1]
+        else:
+            raise ValueError("invalid week")
+        print('Retrieving AP poll for {} week {}'.format(year, week))
+        ap = APPoll(week=week, year=year)
+        ap.scrape()
+        date = ap.ballots['date']
+        print('poll published on {}'.format(date))
+        not_in_poll = []
+        copy = dict(ap.ballots['results'])
+        for team in self.data:
+            if date not in self.data[team]['rankings']['AP'].keys():
+                self.data[team]['rankings']['AP'][date] = {'overall': -1, 'voters': {}}
+
+            # cross reference the teams to the keys used by the AP
+            if team == 'texas am':
+                key = 'Texas A&M'
+            elif team == 'byu':
+                key = 'Brigham Young'
+            elif team == 'ole miss':
+                key = 'Mississippi'
+            elif team.split()[0] != 'utah' and (team[0] == 'u' or team[-1] == 'u'):
+                key = team.upper()
+            else:
+                key = team.title()
+
+            try:
+                self.data[team]['rankings']['AP'][date]['overall'] = ap.ballots['results'][key]['rank']
+                for v in ap.ballots['voters']:
+                    if key in ap.ballots['voters'][v]['rankings']:
+                        self.data[team]['rankings']['AP'][date]['voters'][v] = {
+                            'outlet': ap.ballots['voters'][v]['outlet'],
+                            'rank': ap.ballots['voters'][v]['rankings'].index(key) + 1}
+
+                del ap.ballots['results'][key]
+            except KeyError:
+                not_in_poll.append(team)
+        pp = pprint.PrettyPrinter(indent=4)
+        if len(ap.ballots['results']) > 0:
+            print('Portions of the poll couldn\'t be found:')
+            pp.pprint(ap.ballots['results'])
+        if input('Display the full AP results? (Y/N) ')[0].lower() == 'y':
+            pp.pprint(copy)
+        if input('Display teams not found in the AP Poll? (Y/N) ')[0].lower() == 'y':
+            print('Teams not appearing in the AP poll:')
+            pp.pprint(not_in_poll)
 
     def to_csv(self, csv_file):
         with open(csv_file, 'w+', newline='') as outfile:
@@ -348,5 +404,8 @@ class Schedule(object):
 
 
 s = Schedule('schedule.json')
-s.update_from_NCAA(new='new schedule.json')
+for team in s.data:
+    s.data[team]['rankings']['AP'] = {}
+s.update_rankings(week=1)
+s.update_rankings(week=2)
 s.save_to_file()
