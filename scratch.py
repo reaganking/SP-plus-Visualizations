@@ -25,20 +25,20 @@ def make_cluster_graphs(absolute=False, old=None, scale=None):
             current.make_standings_projection_graph(method='sp+', absolute=absolute, old=old, file=cluster, scale=scale)
 
 
-def make_conf_graphs(absolute=False, old=None, scale=None):
+def make_conf_graphs(absolute=False, old=None, scale=None, week=-1):
     for conference in PFIVE + GFIVE:
         conf = Conference(name=conference, schedule=schedule)
         if not scale:
             for color in ['team', 'red-green', 'red-blue']:
                 try:
                     conf.make_standings_projection_graph(absolute=absolute, method='sp+', file=conference, old=old,
-                                                         scale=color)
+                                                         scale=color, week=week)
                 except KeyError:
                     print('problem with {}'.format(conf))
         else:
             try:
                 conf.make_standings_projection_graph(absolute=absolute, method='sp+', file=conference, old=old,
-                                                     scale=scale)
+                                                     scale=scale, week=week)
             except KeyError:
                 print('problem with {}'.format(conf))
 
@@ -56,6 +56,6 @@ def make_team_graphs(old=True, scale=None, week=-1):
 
 
 load_schedule()
-#make_conf_graphs(old=True)
+make_conf_graphs(old=True, week=1)
 #make_cluster_graphs(old=True)
-make_team_graphs(old=True, week=1)
+#make_team_graphs(old=True, week=1)

@@ -131,7 +131,7 @@ class Team:
         # Add the horizontal header label; it is at the very top of the svg and
         # covers the right 16 columns, with centered text
         graph.add_text(margin + hstep * (cols - (cols - 4) / 2),
-                       margin + vstep * 0.5 - 4,
+                       margin + vstep * 0.5 - 4, size=13,
                        alignment='middle', text='Total Wins as projected by {}'.format(method.upper()))
 
         if not week or week == 0:
@@ -340,7 +340,7 @@ class Team:
             # Draw the outline box for the win total header label
             graph.add_rect(margin + hstep * 4, margin, hstep * (cols - 4), vstep, fill='none', stroke_width=2)
 
-            graph.write_file()
+        graph.write_file()
 
     def project_win_totals(self, week=-1):
         if (week < 0) or (week > len(self.win_probabilities)):
