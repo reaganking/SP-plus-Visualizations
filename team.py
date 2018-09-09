@@ -1,7 +1,7 @@
 import csv
 import os
 from datetime import datetime
-
+import re
 from defs import WEEKS
 from graph import Graph
 from utils import Utils
@@ -17,21 +17,28 @@ class Team:
             assert isinstance(name, str), "Name is not a string!"
             self.name = name.lower()
             self.conference = self.schedule[self.name]['conference']
-            self.expected_wins = self.schedule[self.name]['sp+ expected wins']
             self.logo_URI = self.schedule[self.name]['logoURI']
             self.spplus = self.schedule[self.name]['sp+']
+
+            # Create an array of individual game win probabilities
+            # Each vector corresponds to an entry in the S&P+ values list, indicating chronological change
             self.win_probabilities = {}
             for x in self.spplus:
                 cur = self.spplus[x]
                 self.win_probabilities[x] = []
                 date = datetime.strptime(x, "%Y-%m-%d")
                 for i in range(len(self.schedule[self.name]['schedule'])):
+                    # Get the opponent S&P+ value
                     opp_sp = self.schedule[self.schedule[self.name]['schedule'][i]['opponent']]['sp+']
+                    # Use the most recent S&P+ values prior to the specified date
+                    # Note there might be a misalignment between the S&P+ value dates for different teams, especially FCS teams
                     best_match = max(
                         datetime.strptime(dt, '%Y-%m-%d') for dt in opp_sp.keys() if
                         datetime.strptime(dt, '%Y-%m-%d') <= date).strftime('%Y-%m-%d')
                     osp = opp_sp[best_match]
+                    # Who has the 2.5 point home field advantage?
                     loc = self.schedule[self.name]['schedule'][i]['home-away']
+                    # Calculate the win probability and record it
                     self.win_probabilities[x].append(Utils.calculate_win_prob_from_spplus(cur, osp, loc))
 
             # If a game was already played, assign 100% or 0% win probability
@@ -57,6 +64,22 @@ class Team:
             except KeyError:
                 self.division = "none"
 
+    @staticmethod
+    def expected_wins(vec):
+        return sum(x * vec[x] for x in range(len(vec)))
+
+    def get_best_sp_match(self, week):
+        start, end = datetime.strptime(WEEKS[week - 1][0], '%Y-%m-%d'), datetime.strptime(WEEKS[week - 1][1],
+                                                                                          '%Y-%m-%d')
+        try:
+            date = max(
+                datetime.strptime(dt, '%Y-%m-%d') for dt in self.win_probabilities.keys() if
+                start <= datetime.strptime(dt, '%Y-%m-%d') <= end).strftime('%Y-%m-%d')
+        except ValueError:
+            date = max(datetime.strptime(dt, '%Y-%m-%d') for dt in self.win_probabilities.keys() if
+                           datetime.strptime(dt, '%Y-%m-%d') <= end).strftime('%Y-%m-%d')
+        return date
+
     def get_played_games(self):
         # Determine which games were already played and record the score for those that were
         played = []
@@ -75,33 +98,16 @@ class Team:
     def make_win_probability_graph(self, file='out', hstep=50, vstep=50, margin=5, logowidth=40, logoheight=40,
                                    menuheight=40, absolute=False, old=None, week=0, method='sp+', scale='red-green'):
 
-        start, end = datetime.strptime(WEEKS[week][0], '%Y-%m-%d'), datetime.strptime(WEEKS[week][1], '%Y-%m-%d')
+        cur_date = self.get_best_sp_match(week=week)
+        cur_win_prob = self.win_probabilities[cur_date]
+        cur_sp = self.spplus[cur_date]
 
-        try:
-            best_match = max(
-                datetime.strptime(dt, '%Y-%m-%d') for dt in self.win_probabilities.keys() if
-                start <= datetime.strptime(dt, '%Y-%m-%d') <= end).strftime('%Y-%m-%d')
-        except ValueError:
-            best_match = max(datetime.strptime(dt, '%Y-%m-%d') for dt in self.win_probabilities.keys()).strftime(
-                '%Y-%m-%d')
-
-        cur_win_prob = self.win_probabilities[best_match]
-
-        start, end = datetime.strptime(WEEKS[week - 1][0], '%Y-%m-%d'), datetime.strptime(WEEKS[week - 1][1],
-                                                                                          '%Y-%m-%d')
-
-        try:
-            best_match = max(
-                datetime.strptime(dt, '%Y-%m-%d') for dt in self.win_probabilities.keys() if
-                start <= datetime.strptime(dt, '%Y-%m-%d') <= end).strftime('%Y-%m-%d')
-        except ValueError:
-            best_match = max(datetime.strptime(dt, '%Y-%m-%d') for dt in self.win_probabilities.keys()).strftime(
-                '%Y-%m-%d')
-
-        last_win_prob = self.win_probabilities[best_match]
-
+        last_date = self.get_best_sp_match(week=week - 1)
+        last_win_prob = self.win_probabilities[last_date]
+        last_sp = self.spplus[last_date]
         record = self.project_win_totals(week=week)
         played = self.get_played_games()
+
         if old:
             prior = self.project_win_totals(week - 1)
         if not os.path.exists(".\svg output\{} - {}".format(method, scale)):
@@ -128,26 +134,48 @@ class Team:
         except IndexError:
             pass
 
+        # Add the S&P+ value
+        if cur_sp > 0:
+            txt = '+{}'.format(cur_sp)
+        else:
+            txt = str(cur_sp)
+        graph.add_text(margin + hstep,
+                       margin + vstep / 2 - 10,
+                       size=13,
+                       alignment='middle', anchor='left', text='SP+: {}'.format(txt))
+        graph.add_text(margin + hstep,
+                       margin + vstep / 2,
+                       size=8,
+                       alignment='middle', anchor='left', text='as of {}'.format(cur_date))
+        if cur_sp - last_sp > 0:
+            txt = '+' + str(round(cur_sp - last_sp, 1))
+        else:
+            txt = str(round(cur_sp - last_sp, 1))
+        graph.add_text(margin + hstep,
+                       margin + vstep / 2 + 10,
+                       size=8,
+                       alignment='middle', anchor='left', text='Change from {}: {}'.format(last_date, txt))
+
         # Add the horizontal header label; it is at the very top of the svg and
         # covers the right 16 columns, with centered text
-        graph.add_text(margin + hstep * (cols - (cols - 4) / 2),
+        graph.add_text(margin + hstep * (cols - (cols - 3) / 2),
                        margin + vstep * 0.5 - 4, size=13,
                        alignment='middle', text='Total Wins as projected by {}'.format(method.upper()))
 
         if not week or week == 0:
-            first_week, second_week = 0, 0
+            first_week = 0
         else:
             first_week = week - 1
-            second_week = week
 
-        graph.add_text(margin + hstep * (cols - (cols - 4) / 2),
+        graph.add_text(margin + hstep * (cols - (cols - 3) / 2),
                        margin + vstep * 0.5 + 9, size=13,
-                       alignment='middle', text='(change from week {} to week {})'.format(first_week, second_week))
+                       alignment='middle', text='(change after week {} games)'.format(first_week))
 
         # Add column labels for the Week, H/A and Opp
-        graph.add_text(margin + hstep * 0.5, margin + vstep * 1.5, size=13, text='Week')
-        graph.add_text(margin + hstep * 1.5, margin + vstep * 1.5, size=13, text='H/A')
-        graph.add_text(margin + hstep * 2.5, margin + vstep * 1.5, size=13, text='OPP')
+        graph.add_text(margin + hstep * 0.5, margin + vstep * 1.5, alignment='middle', size=13, text='When?')
+        graph.add_text(margin + hstep * 1.5, margin + vstep * 1.5, alignment='middle', size=13, text='Where?')
+        graph.add_text(margin + hstep * 2.5, margin + vstep * 1.5, alignment='middle', size=13, text='OPP')
+        graph.add_text(0.8 * margin + hstep * 4, vstep * 2, alignment='middle', anchor='end', size=8, text='Opp. SP+')
 
         # Add column labels for the Win Prob and (change)
         graph.add_text(margin + hstep * 3.5, margin + vstep * 1.5 - 3, size=10, text='Win Prob')
@@ -212,8 +240,8 @@ class Team:
 
             if old:
                 j = len(record) + 1
-                old_xw = sum(x * prior[i][x] for x in range(len(prior[i])))
-                new_xw = sum(x * record[i][x] for x in range(len(record[i])))
+                old_xw = Team.expected_wins(prior[i])
+                new_xw = Team.expected_wins(record[i])
                 diff = round(new_xw - old_xw, 1)
                 if diff > 0:
                     txt = '(+{})'.format(diff)
@@ -250,33 +278,58 @@ class Team:
                 graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i) + 12,
                                text='{} - {}'.format(*played[i][0:2]))
 
-            elif old:
-                diff = round(100 * (cur_win_prob[i] - last_win_prob[i]), 1)
-                if diff > 0:
-                    txt = '(+{}%)'.format(diff)
+            else:
+                # Add the opponent S&P+ value
+                opp_sp = self.schedule[self.schedule[self.name]['schedule'][i]['opponent']]['sp+']
+                # Use the most recent S&P+ values prior to the specified date
+                # Note there might be a misalignment between the S&P+ value dates for different teams, especially FCS teams
+                d = datetime.strptime(cur_date, '%Y-%m-%d')
+                date = max(
+                    datetime.strptime(dt, '%Y-%m-%d') for dt in opp_sp.keys() if
+                    datetime.strptime(dt, '%Y-%m-%d') <= d).strftime('%Y-%m-%d')
+                osp = opp_sp[date]
+                if osp > 0:
+                    txt = '+{}'.format(osp)
                     r, g, b = 0, 205, 0
                     weight = 'bolder'
-                elif diff < 0:
-                    txt = '(' + str(diff) + '%)'
+                elif osp < 0:
+                    txt = str(osp)
                     r, g, b = 255, 77, 77
                     weight = 'bolder'
                 else:
-                    txt = '(+0.0%)'
+                    txt = str(osp)
                     r, g, b = 0, 0, 0
                     weight = 'normal'
 
-                # Add the probability text in the prob column
-                graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i) - 2,
-                               alignment='middle', text=str(round(100 * cur_win_prob[i], 1)) + '%')
+                graph.add_text(0.5 * margin + hstep * 4, vstep * (3 + i), alignment='middle', anchor='end', size=8,
+                               weight=weight, color=(r, g, b), text=txt)
+                if old:
+                    diff = round(100 * (cur_win_prob[i] - last_win_prob[i]), 1)
+                    if diff > 0:
+                        txt = '(+{}%)'.format(diff)
+                        r, g, b = 0, 205, 0
+                        weight = 'bolder'
+                    elif diff < 0:
+                        txt = '(' + str(diff) + '%)'
+                        r, g, b = 255, 77, 77
+                        weight = 'bolder'
+                    else:
+                        txt = '(+0.0%)'
+                        r, g, b = 0, 0, 0
+                        weight = 'normal'
 
-                # Write the probability change in the box
-                graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i) + 8, alignment='middle',
-                               color=(r, g, b), size=10, text=txt,
-                               weight=weight)
+                    # Add the probability text in the prob column
+                    graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i) - 2,
+                                   alignment='middle', text=str(round(100 * cur_win_prob[i], 1)) + '%')
 
-            else:
-                graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i),
-                               alignment='central', text=round(100 * cur_win_prob[i], 1))
+                    # Write the probability change in the box
+                    graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i) + 8, alignment='middle',
+                                   color=(r, g, b), size=10, text=txt,
+                                   weight=weight)
+
+                else:
+                    graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i),
+                                   alignment='central', text=round(100 * cur_win_prob[i], 1))
 
         for j in range(0, len(record) + 1):
             if j != 1:
@@ -284,8 +337,14 @@ class Team:
             else:
                 txt = 'Win'
             # Add the column label
-            graph.add_text(margin + hstep * (4.5 + j), margin + vstep * 1.5, alignment='middle', size=13,
-                           text='{} {}'.format(j, txt))
+            graph.add_text(margin + hstep * (4.5 + j), margin + vstep * 1.5 - 7, alignment='middle', size=13,
+                           text=j)
+            graph.add_text(margin + hstep * (4.5 + j),
+                           margin + vstep * 1.5 + 7,
+                           size=13,
+                           alignment='middle',
+                           text=txt)
+
         if old:
             # Add the column label
             graph.add_text(margin + hstep * (len(record) + 5.5), margin + vstep * 1.5 - 10, alignment='middle', size=10,
@@ -306,12 +365,19 @@ class Team:
             # Add the home / away data
             for i in range(0, rows - 1):
                 if self.schedule[self.name]['schedule'][i]['home-away'] == 'home':
-                    loc = 'vs'
+                    loc = 'HOME'
                 else:
-                    loc = '@'
+                    loc = 'AWAY'
 
-                graph.add_text(margin + hstep * 1.5, margin + vstep * (2.5 + i), alignment='middle', size=13,
+                graph.add_text(margin + hstep * 1.5, margin + vstep * (2.5 + i) - 8, alignment='middle', size=13,
                                text=loc)
+
+                # Get the game location
+                loc = self.schedule[self.name]['schedule'][i]['location'].split(',')[-2:]
+                graph.add_text(margin + hstep * 1.5, margin + vstep * (2.5 + i) + 2, alignment='middle', size=8,
+                               text=loc[0])
+                graph.add_text(margin + hstep * 1.5, margin + vstep * (2.5 + i) + 12, alignment='middle', size=8,
+                               text=loc[1])
 
                 # Add the opponent logo
                 try:
@@ -319,13 +385,22 @@ class Team:
                     graph.add_image(2 * hstep + margin + (hstep - logowidth) / 2,
                                     vstep * (2 + i) + margin + (vstep - logoheight) / 2, logowidth, logoheight,
                                     self.schedule[opponent]['logoURI'])
-
                 except KeyError:
                     pass
 
                 # Add the row week label
-                graph.add_text(margin + hstep * 0.5, margin + vstep * (2.5 + i), alignment='middle', size=13,
-                               text=i + 1)
+                graph.add_text(margin + hstep * 0.5, margin + vstep * (2.5 + i) - 8, alignment='middle', size=10,
+                               text='Week ' + str(i + 1))
+
+                # Add the date and time
+                d = self.schedule[self.name]['schedule'][i]['startDate']
+                t = self.schedule[self.name]['schedule'][i]['startTime']
+                graph.add_text(margin + hstep * 0.5, margin + vstep * (2.5 + i)+2, alignment='middle', size=8,
+                               text=d)
+                if t == 'TBA':
+                    t = 'Time TBA'
+                graph.add_text(margin + hstep * 0.5, margin + vstep * (2.5 + i) + 12, alignment='middle', size=8,
+                               text=t)
 
             # Draw the outline box for the table
             graph.add_rect(margin, margin + vstep, hstep * cols, vstep * (rows), fill='none', stroke_width=2)
@@ -338,7 +413,7 @@ class Team:
             graph.add_rect(margin, margin + vstep, hstep * cols, vstep, fill='none', stroke_width=2)
 
             # Draw the outline box for the win total header label
-            graph.add_rect(margin + hstep * 4, margin, hstep * (cols - 4), vstep, fill='none', stroke_width=2)
+            graph.add_rect(margin + hstep * 4, margin, hstep * (cols - 5), vstep, fill='none', stroke_width=2)
 
         graph.write_file()
 
@@ -346,15 +421,7 @@ class Team:
         if (week < 0) or (week > len(self.win_probabilities)):
             week = -1
 
-        start, end = datetime.strptime(WEEKS[week][0], '%Y-%m-%d'), datetime.strptime(WEEKS[week][1], '%Y-%m-%d')
-
-        try:
-            best_match = max(
-                datetime.strptime(dt, '%Y-%m-%d') for dt in self.win_probabilities.keys() if
-                start <= datetime.strptime(dt, '%Y-%m-%d') <= end).strftime('%Y-%m-%d')
-        except ValueError:
-            best_match = max(datetime.strptime(dt, '%Y-%m-%d') for dt in self.win_probabilities.keys()).strftime(
-                '%Y-%m-%d')
+        best_match = self.get_best_sp_match(week)
 
         win_probs = [x for x in self.win_probabilities[best_match]]
 

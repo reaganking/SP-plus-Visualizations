@@ -7,12 +7,12 @@ from team import Team
 
 
 def load_schedule():
-    with open("schedule.json", "r") as file:
+    with open("schedule.json", "r", encoding='utf8') as file:
         global schedule
         schedule = json.load(file)
 
 
-def make_cluster_graphs(absolute=False, old=None, scale=None):
+def make_cluster_graphs(absolute=False, old=None, scale=None, week=-1):
     groups = {'fbs': FBS, 'pfive': PFIVE, 'gfive': GFIVE, 'independent': ['independent']}
     for cluster in groups:
         current = Cluster(schedule=schedule,
@@ -20,9 +20,9 @@ def make_cluster_graphs(absolute=False, old=None, scale=None):
         if not scale:
             for color in ['team', 'red-green', 'red-blue']:
                 current.make_standings_projection_graph(method='sp+', absolute=absolute, old=old, file=cluster,
-                                                        scale=color)
+                                                        scale=color, week=week)
         else:
-            current.make_standings_projection_graph(method='sp+', absolute=absolute, old=old, file=cluster, scale=scale)
+            current.make_standings_projection_graph(method='sp+', absolute=absolute, old=old, file=cluster, scale=scale, week=week)
 
 
 def make_conf_graphs(absolute=False, old=None, scale=None, week=-1):
@@ -56,6 +56,6 @@ def make_team_graphs(old=True, scale=None, week=-1):
 
 
 load_schedule()
-make_conf_graphs(old=True, week=1)
-#make_cluster_graphs(old=True)
-#make_team_graphs(old=True, week=1)
+make_conf_graphs(old=True, week=3)
+make_cluster_graphs(old=True, week=3)
+make_team_graphs(old=True, week=3)

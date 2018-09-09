@@ -5,6 +5,8 @@ import os
 import pprint
 import re
 from datetime import datetime
+import requests
+from bs4 import BeautifulSoup as bs
 
 import requests
 
@@ -204,12 +206,6 @@ class Schedule(object):
                     except TypeError:
                         print('problem with {}, {}'.format(team, opponent))
 
-    def populate_expected_wins(self):
-        for t in self.data:
-            team = Team(name=t, schedule=self.data)
-            win_total_probs = team.project_win_totals()[1][-1]
-            self.data[t]['sp+ expected wins'] = sum([win_total_probs[i] * i for i in range(len(win_total_probs))])
-
     def populate_URIs(self):
         for file in os.listdir("./Resources"):
             if file.endswith(".jpg"):
@@ -233,6 +229,20 @@ class Schedule(object):
 
         with open(file, 'w+', encoding='utf8') as outfile:
             json.dump(self.data, outfile, indent=4, sort_keys=True, ensure_ascii=False)
+
+    @staticmethod
+    def scrape_spplus(
+        url='https://www.footballoutsiders.com/stats/ncaa2018'):
+        result = []
+
+        r = requests.get(url, headers=Utils.headers)
+
+        for row in bs(r.text).findAll('tr')[1:]:
+            cells = row.findAll('td')
+            if cells[0].text != 'Team':
+                result.append({'name': cells[0].text, 'sp+': float(cells[4].text)})
+
+        return result
 
     def swap_teams(self, team_a, team_b):
         # TODO: Tidy up this code
@@ -380,6 +390,15 @@ class Schedule(object):
             print('Teams not appearing in the AP poll:')
             pp.pprint(not_in_poll)
 
+    def update_spplus(self):
+        new = Schedule.scrape_spplus()
+
+        for team in new:
+            try:
+                self.data[team['name'].lower()]['sp+'][datetime.now().strftime("%Y-%m-%d")] = team['sp+']
+            except KeyError:
+                print(team)
+
     def to_csv(self, csv_file):
         with open(csv_file, 'w+', newline='') as outfile:
             csvwriter = csv.writer(outfile)
@@ -404,8 +423,6 @@ class Schedule(object):
 
 
 s = Schedule('schedule.json')
-for team in s.data:
-    s.data[team]['rankings']['AP'] = {}
-s.update_rankings(week=1)
-s.update_rankings(week=2)
+s.update_spplus()
 s.save_to_file()
+

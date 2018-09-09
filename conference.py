@@ -59,21 +59,20 @@ class Conference:
 
         graph = Graph(path=path, width=hstep * cols + 2 * margin, height=vstep * rows + 2 * margin)
 
-        # Add the horizontal header label; it is at the very top of the svg and covers all but the first column, with centered text
-        graph.add_text(margin + hstep * (cols - (cols - 1) / 2), margin + vstep * 0.5 - 4, size=13, alignment='middle',
+        # Add the horizontal header label; it is at the very top of the svg and covers the win columns, with centered text
+        graph.add_text(margin + hstep * (cols / 2), margin + vstep * 0.5 - 4, size=13, alignment='middle',
                        text='Total Wins as projected by {}'.format(method.upper()))
 
         if not week or week == 0:
-            first_week, second_week = 0, 0
+            first_week = 0
         else:
             first_week = week - 1
-            second_week = week
 
         # Add the horizontal header label; it is at the very top of the svg and covers all but the first column, with centered text
-        graph.add_text(margin + hstep * (cols - (cols - 1) / 2),
+        graph.add_text(margin + hstep * (cols / 2),
                        margin + vstep * 0.5 + 9,
                        size=13, alignment='middle',
-                       text='(change from week {} to week {})'.format(first_week, second_week))
+                       text='(change after week {} games)'.format(first_week))
 
         # Add column labels for the Team Name
         graph.add_text(margin + hstep * 0.5, margin + vstep * 1.5, alignment='middle', size=13, text='Team')
@@ -136,12 +135,18 @@ class Conference:
                             txt = 'Wins'
                         else:
                             txt = 'Win'
+
                         # Add the column label
                         graph.add_text(margin + hstep * (1.5 + j),
-                                       margin + vstep * 1.5,
+                                       margin + vstep * 1.5 - 7,
                                        size=13,
                                        alignment='middle',
-                                       text='{} {}'.format(j, txt))
+                                       text=j)
+                        graph.add_text(margin + hstep * (1.5 + j),
+                                       margin + vstep * 1.5 + 7,
+                                       size=13,
+                                       alignment='middle',
+                                       text=txt)
 
                 if j < len(record[i][1]):
                     if absolute:
@@ -175,7 +180,7 @@ class Conference:
                                    text=str(round(abs(100 * (1 - sum(record[i][1][x] for x in range(0, j)))), 1)) + '%')
 
                     if old:
-                        diff = round(100 * (record[i][2][j] - record[i][1][j]), 1)
+                        diff = round(100 * (record[i][1][j] - record[i][2][j]), 1)
                         if diff > 0:
                             txt = '(+{})%'.format(diff)
                         elif diff < 0:
@@ -250,6 +255,10 @@ class Conference:
                                    color=(r, g, b),
                                    weight=weight,
                                    text=txt)
+                else:
+                    # Draw the color-coded box
+                    graph.add_rect(margin + hstep * (1 + j), margin + vstep * (2 + i), hstep, vstep,
+                                   color='none', fill=(150, 150, 150))
 
         # This set of loops draws the grid over the table.
         for i in range(2, rows):
@@ -279,5 +288,5 @@ class Conference:
         graph.add_rect(margin, margin + vstep, hstep * cols, vstep, color=(0, 0, 0), fill='none', stroke_width=2)
 
         # Draw the outline box for the win total header label
-        graph.add_rect(margin + hstep, margin, hstep * (cols - 1), vstep, color=(0, 0, 0), fill='none', stroke_width=2)
+        graph.add_rect(margin + hstep, margin, hstep * (cols - 3), vstep, color=(0, 0, 0), fill='none', stroke_width=2)
         graph.write_file()
