@@ -27,14 +27,14 @@ class Utils:
     def download_logos(width=40, height=40):
         # Quick and dirty method to scrape logos from ESPN; they need minor editorial cleanup afterward
         r = requests.get('http://www.espn.com/college-football/teams')
-        results = bs(r.text).findAll('a', href=re.compile('^http://www.espn.com/college-football/team/_/id/'))
+        results = bs(r.text).findAll('a', href=re.compile('^/college-football/team/_/id/'))
         if not os.path.exists('./Resources/'):
             os.makedirs('./Resources/')
 
         for link in results:
-            id = link['href'][47:link['href'].find('/', 47)]
-            name = link['href'][link['href'].find('/', 47) + 1:link['href'].rfind('-')]
-            name = name.replace('-', ' ').title()
+            foo = link['href'].split('/')
+            id = foo[5]
+            name = foo[6].split('-')[0].title()
             pic_url = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/{}.png&h={}&w={}'.format(id,
                                                                                                           height,
                                                                                                           width)
@@ -160,20 +160,6 @@ class Utils:
         return out
 
     @staticmethod
-    def scrape_spplus(
-        url='https://www.footballoutsiders.com/stats/ncaa2018'):
-        result = []
-
-        r = requests.get(url, headers=Utils.headers)
-
-        for row in bs(r.text).findAll('tr')[1:]:
-            cells = row.findAll('td')
-            if cells[0].text != 'Team':
-                result.append({'name': cells[0].text, 'sp+': float(cells[4].text)})
-
-        return result
-
-    @staticmethod
     def get_spplus_stdv(
             url='https://www.sbnation.com/college-football/2018/2/9/16994486/2018-college-football-rankings-projections',
             schedule=None):
@@ -189,19 +175,3 @@ class Utils:
         else:
             spplus = [x['s&p+'] for x in Utils.scrape_spplus(url)]
         return (sum([(x - sum(spplus) / len(spplus)) ** 2 for x in spplus]) / len(spplus)) ** 0.5
-
-    @staticmethod
-    def update_spplus():
-        with open("schedule.json", "r") as file:
-            schedule = json.load(file)
-
-        new = Utils.scrape_spplus()
-
-        for team in new:
-            try:
-                schedule[team['name'].lower()]['sp+'][datetime.now().strftime("%Y-%m-%d")] = team['sp+']
-            except KeyError:
-                print(team)
-
-        with open("schedule.json", "w") as file:
-            json.dump(schedule, file, indent=4, sort_keys=True)

@@ -1,5 +1,5 @@
 class Graph(object):
-    def __init__(self, path, width, height):
+    def __init__(self, path, width, height, background=(255, 255, 255)):
         self.path = path
 
         self.content = ["<svg version='1.1'\n\t" +
@@ -9,7 +9,7 @@ class Graph(object):
                         "xmlns='http://www.w3.org/2000/svg'\n\t" +
                         "xmlns:xlink='http://www.w3.org/1999/xlink'\n\t" +
                         "style='shape-rendering:crispEdges;'>\n",
-                        "<rect width='100%' height='100%' style='fill:rgb(255,255,255)' />\n"]
+                        "<rect width='100%' height='100%' style='fill:rgb({},{},{})' />\n".format(*background)]
 
     def add_image(self, x, y, width, height, uri):
         s = "<image x='{}' y='{}'" \

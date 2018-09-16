@@ -1,7 +1,7 @@
 import csv
 import os
 from datetime import datetime
-import re
+
 from defs import WEEKS
 from graph import Graph
 from utils import Utils
@@ -77,7 +77,7 @@ class Team:
                 start <= datetime.strptime(dt, '%Y-%m-%d') <= end).strftime('%Y-%m-%d')
         except ValueError:
             date = max(datetime.strptime(dt, '%Y-%m-%d') for dt in self.win_probabilities.keys() if
-                           datetime.strptime(dt, '%Y-%m-%d') <= end).strftime('%Y-%m-%d')
+                       datetime.strptime(dt, '%Y-%m-%d') <= end).strftime('%Y-%m-%d')
         return date
 
     def get_played_games(self):
@@ -90,7 +90,11 @@ class Team:
                 if x['id'] == y['id']:
                     pa = sum(y['scoreBreakdown'])
             if datetime.strptime(x['startDate'], '%Y-%m-%d') < datetime.now():
-                played.append([pf, pa, x['winner']])
+                if x['canceled'] == 'true':
+                    status = 'canceled'
+                else:
+                    status = x['winner']
+                played.append([pf, pa, status])
             else:
                 played.append(None)
         return played
@@ -268,15 +272,19 @@ class Team:
 
         for i in range(0, rows - 1):
             if played[i]:
-                if played[i][2] == 'true':
-                    wl = 'WON'
+                if played[i][2] == 'canceled':
+                    graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i), alignment='central', size=9,
+                                   text='CANCELED')
                 else:
-                    wl = 'LOST'
-                # summarize the game
-                graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i) - 3, alignment='central', text=wl)
+                    if played[i][2] == 'true':
+                        wl = 'WON'
+                    else:
+                        wl = 'LOST'
+                    # summarize the game
+                    graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i) - 3, alignment='central', text=wl)
 
-                graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i) + 12,
-                               text='{} - {}'.format(*played[i][0:2]))
+                    graph.add_text(margin + hstep * 3.5, margin + vstep * (2.5 + i) + 12,
+                                   text='{} - {}'.format(*played[i][0:2]))
 
             else:
                 # Add the opponent S&P+ value
@@ -395,7 +403,7 @@ class Team:
                 # Add the date and time
                 d = self.schedule[self.name]['schedule'][i]['startDate']
                 t = self.schedule[self.name]['schedule'][i]['startTime']
-                graph.add_text(margin + hstep * 0.5, margin + vstep * (2.5 + i)+2, alignment='middle', size=8,
+                graph.add_text(margin + hstep * 0.5, margin + vstep * (2.5 + i) + 2, alignment='middle', size=8,
                                text=d)
                 if t == 'TBA':
                     t = 'Time TBA'

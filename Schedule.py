@@ -5,14 +5,12 @@ import os
 import pprint
 import re
 from datetime import datetime
+
 import requests
 from bs4 import BeautifulSoup as bs
 
-import requests
-
 from defs import FBS, WEEKS
 from poll import APPoll
-from team import Team
 from utils import Utils
 
 
@@ -226,13 +224,14 @@ class Schedule(object):
                 file = input('New file name: ')
                 if file[-5:] != '.json':
                     file += '.json'
+                raise TypeError
 
         with open(file, 'w+', encoding='utf8') as outfile:
             json.dump(self.data, outfile, indent=4, sort_keys=True, ensure_ascii=False)
 
     @staticmethod
     def scrape_spplus(
-        url='https://www.footballoutsiders.com/stats/ncaa2018'):
+            url='https://www.footballoutsiders.com/stats/ncaa2018'):
         result = []
 
         r = requests.get(url, headers=Utils.headers)
@@ -250,9 +249,9 @@ class Schedule(object):
 
         for team in self.data:
             if team == team_a:
-                data[team_b] = self.data[team]
+                data[team_b]['schedule'] = self.data[team]['schedule']
             elif team == team_b:
-                data[team_a] = self.data[team]
+                data[team_a]['schedule'] = self.data[team]['schedule']
 
         tmp = sp[team_a]['sp+']
         data[team_b]['sp+'] = sp[team_b]['sp+']
@@ -296,45 +295,104 @@ class Schedule(object):
         else:
             with open(new, 'r') as infile:
                 new = json.load(infile)
+
+        keys = {'canceled', 'home-away', 'location', 'opponent', 'scoreBreakdown', 'startDate', 'startTime', 'winner'}
         for game in new:
             away = find(game['away']['nameRaw'])
-            try:
-                for i in range(len(self.data[away]['schedule'])):
-                    if self.data[away]['schedule'][i]['id'] == game['id']:
-                        for key in ['startDate', 'startTime']:
-                            self.data[away]['schedule'][i][key] = game[key]
-                        for key in ['scoreBreakdown', 'teamRank', 'winner']:
-                            self.data[away]['schedule'][i][key] = game['away'][key]
-                        try:
-                            self.data[away]['schedule'][i]['scoreBreakdown'] = [int(x) if len(x) > 0 else 0
-                                                                                for x in self.data[away]['schedule'][i][
-                                                                                    'scoreBreakdown']]
-                        except ValueError as e:
-                            print("problem with scores for {}".format(away))
-                            pass
-                        break
-            except KeyError:
-                print("uh oh")
-                pass
-            home = find(game['home']['nameRaw'])
-            try:
-                for i in range(len(self.data[home]['schedule'])):
-                    if self.data[home]['schedule'][i]['id'] == game['id']:
-                        for key in ['startDate', 'startTime']:
-                            self.data[home]['schedule'][i][key] = game[key]
-                        for key in ['scoreBreakdown', 'teamRank', 'winner']:
-                            self.data[home]['schedule'][i][key] = game['home'][key]
-                        try:
-                            self.data[home]['schedule'][i]['scoreBreakdown'] = [int(x) if len(x) > 0 else 0
-                                                                                for x in self.data[home]['schedule'][i][
-                                                                                    'scoreBreakdown']]
-                        except ValueError as e:
-                            print("problem with scores for {}".format(away))
-                            pass
+            if away and self.data[away]['conference'] in FBS:
+                found = False
+                try:
+                    for i in range(len(self.data[away]['schedule'])):
+                        if self.data[away]['schedule'][i]['id'] == game['id']:
+                            found = True
+                            for key in ['startDate', 'startTime']:
+                                self.data[away]['schedule'][i][key] = game[key]
+                            for key in ['scoreBreakdown', 'teamRank', 'winner']:
+                                self.data[away]['schedule'][i][key] = game['away'][key]
+                            try:
+                                self.data[away]['schedule'][i]['scoreBreakdown'] = [int(x) if len(x) > 0 else 0
+                                                                                    for x in
+                                                                                    self.data[away]['schedule'][i][
+                                                                                        'scoreBreakdown']]
+                            except ValueError as e:
+                                print("problem with scores for {}".format(away))
+                                pass
+                            break
+                except KeyError as e:
+                    print("couldn't find {}".format(e))
+                    pass
+                if not found:
+                    foo = {x: None for x in keys}
+                    foo['canceled'] = 'false'
+                    foo['home-away'] = 'away'
+                    foo['location'] = game['location']
+                    foo['opponent'] = game['home']['nameSeo']
+                    foo['scoreBreakdown'] = [int(x) if len(x) > 0 else 0 for x in game[away]['scoreBreakdown']]
+                    foo['startDate'] = game['startDate']
+                    foo['startTime'] = game['startTime']
+                    foo['winner'] = game['away']['winner']
+                    self.data[away]['schedule'].append(foo)
 
-                        break
-            except KeyError:
-                pass
+            home = find(game['home']['nameRaw'])
+            if home and self.data[home]['conference'] in FBS:
+                found = False
+                try:
+                    for i in range(len(self.data[home]['schedule'])):
+                        if self.data[home]['schedule'][i]['id'] == game['id']:
+                            found = True
+                            for key in ['startDate', 'startTime']:
+                                self.data[home]['schedule'][i][key] = game[key]
+                            for key in ['scoreBreakdown', 'teamRank', 'winner']:
+                                self.data[home]['schedule'][i][key] = game['home'][key]
+                            try:
+                                self.data[home]['schedule'][i]['scoreBreakdown'] = [int(x) if len(x) > 0 else 0
+                                                                                    for x in
+                                                                                    self.data[home]['schedule'][i][
+                                                                                        'scoreBreakdown']]
+                            except ValueError as e:
+                                print("problem with scores for {}".format(away))
+                                pass
+
+                            break
+                except KeyError as e:
+                    print("couldn't find {}".format(e))
+                    pass
+                if not found:
+                    foo = {x: None for x in keys}
+                    foo['canceled'] = 'false'
+                    foo['home-away'] = 'home'
+                    foo['location'] = game['location']
+                    foo['opponent'] = game['away']['nameSeo']
+                    foo['scoreBreakdown'] = [int(x) if len(x) > 0 else 0 for x in game[home]['scoreBreakdown']]
+                    foo['startDate'] = game['startDate']
+                    foo['startTime'] = game['startTime']
+                    foo['winner'] = game['home']['winner']
+                    self.data[away]['schedule'].append(foo)
+
+    def update_game(self, game_id, field, new_val):
+        c = 0
+
+        def find_game(t, g):
+            for j in range(len(self.data[t]['schedule'])):
+                if self.data[t]['schedule'][j]['id'] == str(g):
+                    if field in self.data[t]['schedule'][j]:
+                        self.data[t]['schedule'][j][field] = new_val
+                        return 1
+                    else:
+                        return -1
+            return 0
+
+        for team in self.data:
+            res = find_game(team, game_id)
+            c += res
+            if res >= 0:
+                continue
+            else:
+                print('Not a valid field choice: {}'.format(field))
+                return
+
+        print('Found {} occurrences of game id {} '.format(c, game_id))
+
 
     def update_rankings(self, year=datetime.now().year, week=None) -> None:
         if not week:
@@ -390,6 +448,7 @@ class Schedule(object):
             print('Teams not appearing in the AP poll:')
             pp.pprint(not_in_poll)
 
+
     def update_spplus(self):
         new = Schedule.scrape_spplus()
 
@@ -398,6 +457,7 @@ class Schedule(object):
                 self.data[team['name'].lower()]['sp+'][datetime.now().strftime("%Y-%m-%d")] = team['sp+']
             except KeyError:
                 print(team)
+
 
     def to_csv(self, csv_file):
         with open(csv_file, 'w+', newline='') as outfile:
@@ -423,6 +483,5 @@ class Schedule(object):
 
 
 s = Schedule('schedule.json')
-s.update_spplus()
+s.update_from_NCAA()
 s.save_to_file()
-
