@@ -5,6 +5,7 @@ for %%f in (*.svg) do (
       -z ^
       --export-background-opacity=0 ^
       --export-png="%%~dpnf.png" ^
+      --export-dpi=100 ^
       --file="%%~f"
 
 )
